@@ -36,7 +36,5 @@ public class Q2_1 {
 				break;
 			}
 		}
-
 	}
-
 }

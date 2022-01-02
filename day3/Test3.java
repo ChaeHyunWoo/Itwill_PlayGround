@@ -7,33 +7,32 @@ public class Test3 {
 		int n, sum;
 		
 		
-		//1ë¶€í„° 100ê¹Œì§€ì˜ í•©
+		//1ºÎÅÍ 100±îÁöÀÇ ÇÕ
 		sum = 0;
 		for(n=1; n<=100; n++) {
 			sum += n;
 		}
-		System.out.println("1ë¶€í„° 100ê¹Œì§€ì˜ í•© : " + sum);
+		System.out.println("1ºÎÅÍ 100±îÁöÀÇ ÇÕ : " + sum);
 		
-		//í™€ìˆ˜ì˜ í•©
+		//È¦¼öÀÇ ÇÕ
 		sum = 0;
 		for(n=1; n<=100; n += 2) {
 			sum += n;
 		}
-		System.out.println("1ë¶€í„° 100ê¹Œì§€ì˜ í™€ìˆ˜ì˜ í•© : " + sum);
+		System.out.println("1ºÎÅÍ 100±îÁö È¦¼öÀÇ ÇÕ : " + sum);
 		
-		//ì§ìˆ˜ì˜ í•©
+		//Â¦¼öÀÇ ÇÕ
 		sum = 0;
 		for(n=0; n<=100; n+=2) {
 			sum += n;
 		}
-		System.out.println("1ë¶€í„° 100ê¹Œì§€ì˜ í™€ìˆ˜ì˜ í•© : " + sum);
+		System.out.println("1ºÎÅÍ 100±îÁö Â¦¼öÀÇ ÇÕ : " + sum);
 		
-		//3ì˜ ë°°ìˆ˜ì˜ í•©
+		//3ÀÇ ¹è¼öÀÇ ÇÕ
 		sum = 0;
 		for(n=3; n<=100; n+=3) {
 			sum += n;
 		}
-		System.out.println("1ë¶€í„° 100ê¹Œì§€ì˜ 3ì˜ ë°°ìˆ˜ì˜ í•© : " + sum);
+		System.out.println("1ºÎÅÍ 100±îÁö 3ÀÇ ¹è¼öÀÇ ÇÕ : " + sum);
 	}
-
 }

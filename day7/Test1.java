@@ -9,7 +9,7 @@ class Circle {	//사용자한테 반지름값을 받아서 계산해서 출력
 	
 	//초기화 메소드.매개변수 이용
 	public void setData(int r) {//setData(int r, Circle this)내부적으로는 이렇게 처리된다.
-		
+	   //우회도로
 		this.r = r;	//전역변수 r, 지역변수 r처럼 이름이 동일하면 java가 구분하지 못함. 전역변수로 인식하기 위해 this 사용.
 					//this는 me와 같다(클래스이름의 대명사)
 					//Circle를 this로 바꾼것이다.(클래스안에 같은 클래스명을 쓰면 오류가뜨기에)

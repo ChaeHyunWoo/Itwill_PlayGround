@@ -2,8 +2,8 @@ package com.day2;
 
 import java.util.*;
 
-//ScannerëŠ” ë‹¨ë½ ë¬¸ìë¥¼ êµ¬ë¶„í•´ì„œ ë°ì´í„°ë¥¼ ì…ë ¥ë°›ì„ ìˆ˜ ìˆìŒ.
-// ê¸°ë³¸ ë‹¨ë½ì€ ê³µë°±ì´ë‹¤.
+//Scanner´Â ´Ü¶ô ¹®ÀÚ¸¦ ±¸ºĞÇØ¼­ µ¥ÀÌÅÍ¸¦ ÀÔ·Â¹ŞÀ» ¼ö ÀÖÀ½.
+//±âº» ´Ü¶ôÀº °ø¹éÀÌ´Ù.
 public class Test6 {
 
 	public static void main(String[] args) {
@@ -13,19 +13,19 @@ public class Test6 {
 		String name;
 		int kor, eng, mat;
 
-		// System.out.println("ì´ë¦„ êµ­ì–´ ì˜ì–´ ìˆ˜í•™ ?? ");// suzi 40 50 70
-		System.out.println("ï¿½Ì¸ï¿½,ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½? ");// suzi 40 50 70
+		// System.out.println("ÀÌ¸§ ±¹¾î ¿µ¾î ¼öÇĞ? ");// suzi 40 50 70
+		System.out.println("ÀÌ¸§,±¹¾î,¿µ¾î,¼öÇĞ? ");// suzi 40 50 70
 
-		sc = new Scanner(sc.next()).useDelimiter("\\s*,\\s*");// ì •ê·œí™” í‘œí˜„ì‹
+		sc = new Scanner(sc.next()).useDelimiter("\\s*,\\s*");// Á¤±ÔÈ­ Ç¥Çö½Ä
 
-		name = sc.next(); // ì´ë¦„
-		kor = sc.nextInt(); // êµ­ì–´
-		eng = sc.nextInt(); // ì˜ì–´
-		mat = sc.nextInt(); // ìˆ˜í•™
+		name = sc.next(); // ÀÌ¸§
+		kor = sc.nextInt(); // ±¹¾î
+		eng = sc.nextInt(); // ¿µ¾î
+		mat = sc.nextInt(); // ¼öÇĞ
 
-		System.out.println(name + ":" + (kor + eng + mat) + "ì ");
+		System.out.println(name + ":" + (kor + eng + mat) + "Á¡");
 
-		sc.close(); // ê¼­ ì¨ì•¼í•˜ëŠ”ê±´ ì•„ë‹˜
+		sc.close(); // ²À ½á¾ßÇÏ´Â°Ç ¾Æ´Ô.
 	}
 
 }

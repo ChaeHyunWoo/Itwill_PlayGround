@@ -1,11 +1,11 @@
 package com.day7;
 
-class Rect { //전부 instance변수와
+class Rect { //전부 instance변수와 instance 메소드
 	
-	private int w, h;// 인스턴스 변수
+	private int w, h;// 전역변수, 인스턴스 변수
 	
-	public void set(int w, int h) {
-		
+	public void set(int w, int h) { // 전역변수와 매개변수의 이름이 같으면 혼란이 생겨 this를 사용
+									// 우회해서 초기화.
 		this.w = w;
 		this.h = h;
 	}
@@ -73,7 +73,5 @@ public class Test4 {
 		ob.print(l);
 		ob.print(a);
 		ob.print(a, l);
-		
-		
 	}
 }

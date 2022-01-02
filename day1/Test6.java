@@ -9,28 +9,27 @@ public class Test6 {
 	public static void main(String[] args) throws IOException {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		/*
-		ë°‘ë³€(width)ì™€ ë†’ì´(height)ë¥¼ ì…ë ¥ë°›ì•„ ì‚¼ê²©í˜• ë„“ì´(a) êµ¬í•˜ê¸°
-		ë°‘ë³€? : 10
-		ë†’ì´? : 10
-		ë„“ì´? : xx
-		ë„“ì´ = ë°‘ë³€ * ë†’ì´ / 2
-		 */
+		
+		//¹Øº¯(width)¿Í ³ôÀÌ(height)¸¦ ÀÔ·Â¹Ş¾Æ »ï°İÇü ³ĞÀÌ(a) ±¸ÇÏ±â
+		//¹Øº¯? : 10
+		//³ôÀÌ? : 10
+		//³ĞÀÌ? : xx
+		//³ĞÀÌ = ¹Øº¯ * ³ôÀÌ / 2
 		
 		
 		int width, height;
 		double a;
 		
 		
-		System.out.println("ï¿½Øºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì´ï¿½?");
+		System.out.println("¹Øº¯ÀÇ ±æÀÌ´Â?");
 		width = Integer.parseInt(br.readLine());
 		
-		System.out.println("ï¿½ï¿½ï¿½Ì´ï¿½?");
+		System.out.println("³ôÀÌ´Â?");
 		height = Integer.parseInt(br.readLine());
 		
 		a = width * height/2.0;
 		
-		System.out.println("ï¿½ï¿½ï¿½Ì´ï¿½? " + a);
+		System.out.println("³ĞÀÌ´Â? " + a);
 		
 	}
 

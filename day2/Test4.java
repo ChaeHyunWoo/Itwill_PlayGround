@@ -8,10 +8,10 @@ public class Test4 {
 
 	public static void main(String[] args) throws IOException {
 		
-		// ì œì–´ë¬¸ ë°˜ë³µë¬¸
-		//ì¡°ê±´ë¬¸(ì œì–´ë¬¸) : forë¬¸, switchë¬¸
-		//ë°˜ë³µë¬¸ :whileë¬¸, forë¬¸, do - whileë¬¸
-
+		//=Á¦¾î¹®, ¹İº¹¹®
+		//Á¶°Ç¹®(Á¦¾î¹®) : for¹®, switch¹®
+		//¹İº¹¹® : while¹®, for¹®, do-while¹®, 
+	
 		
 		BufferedReader br = new BufferedReader(
 				new InputStreamReader(System.in));
@@ -19,24 +19,24 @@ public class Test4 {
 		int num;
 		String str = "";
 		
-		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ : ");
-		num = Integer.parseInt(br.readLine()); // ë°˜í™˜í•˜ëŠ”ê°’ì€ ë¬¸ìë¼ì„œ intë¡œ ë³€í™˜
+		System.out.println("¼ıÀÚ ÀÔ·Â : ");
+		num = Integer.parseInt(br.readLine()); //¿¹¿ÜÃ³¸®ÇØ¾ßÇÏ°í ¹İÈ¯ÇÏ´Â°ªÀº ¹®ÀÚ¶ó¼­ int·Î Çüº¯È¯
 		
-		/*//ifë¬¸ ì¡°ê±´(ë‹¨ì¼ ifë¬¸)
+		/*//if¹® Á¶°Ç(´ÜÀÏ if¹®)
 		if(num%2 == 0) {
-			str = "ì§ìˆ˜";
+			str = "Â¦¼ö";
 		}
-		if(num%2 != 0) {  // != 0 ì´ë¼ê³  ì¨ë„ë˜ê³  == 1 ì´ë¼ ì¨ë„ë¨
-			str = "í™€ìˆ˜";
+		if(num%2 != 0) {  // != 0 ÀÌ¶ó½áµµµÇ°í == 1ÀÌ¶ó ½áµµµÊ 
+			str = "È¦¼ö";
 		} */
 		
 		if(num %2 == 0) {
-			str = "Â¦ï¿½ï¿½";
+			str = "Â¦¼ö";
 		} else {
-			str = "È¦ï¿½ï¿½";
+			str = "È¦¼ö";
 		}
 		
-		System.out.println(num + ":" + str); //Initialize variable ë³€ìˆ˜ê°’ ì´ˆê¸°í™” í•˜ë¼ëŠ” ì˜¤ë¥˜
+		System.out.println(num + ":" + str); //Initialize variable º¯¼ö°ª ÃÊ±âÈ­ ÇÏ¶ó´Â ¿À·ù
 		
 	}
 

@@ -13,16 +13,16 @@ public static void main(String[] args) throws IOException {
 		int num1, num2;
 		char oper;
 		
-		System.out.print("ì²«ë²ˆì§¸ ìˆ˜ : ");
+		System.out.print("Ã¹¹øÂ° ¼ö : ");
 		num1 = sc.nextInt();
 		
-		System.out.print("ë‘ë²ˆì§¸ ìˆ˜ : ");
+		System.out.print("µÎ¹øÂ° ¼ö : ");
 		num2 = sc.nextInt();
 		
-		System.out.print("ì—°ì‚°ì[+, -, *, /] : ");
+		System.out.print("¿¬»êÀÚ[+, -, *, /] : ");
 		
-		oper = (char)System.in.read(); //system.in.readê°€ ìœ„ì˜ ì—°ì‚°ì ê¸°í˜¸ì˜ ì•„ìŠ¤í‚¤ ì½”ë“œë¥¼ ì½ì–´ì¤€ë‹¤.
-		//Test 7ë²ˆ switchë¬¸ì„ if-elseë¡œ ë°”ê¿”ë´„
+		oper = (char)System.in.read(); //system.in.read°¡ À§ÀÇ ¿¬»êÀÚ ±âÈ£ÀÇ ¾Æ½ºÅ° ÄÚµå¸¦ ÀĞ¾îÁØ´Ù.
+		//Test7¹ø switch¹®À» if-else if·Î ¹Ù²ãº½
 		
 		if(oper == '+') {
 			System.out.printf("%d%c%d = %d %n", num1, oper, num2, (num1+num2));

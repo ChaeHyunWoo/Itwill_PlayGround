@@ -4,17 +4,17 @@ public class Test4 {
 
 	public static void main(String[] args) {
 		
-		// ë‹¤ì¤‘ forë¬¸
+		// ´ÙÁß for¹®
 		
 		int i, j;
 		
-		for(i=2; i<=9; i++) { //2ë‹¨ ~ 9ë‹¨
+		for(i=2; i<=9; i++) { //2´Ü~9´Ü
 			
 			
-			System.out.println(i + "ï¿½ï¿½");
+			System.out.println(i + "´Ü");
 			
 			
-			for(j=1; j<=9; j++) {
+			for(j=1; j<=9; j++) { //ex) 2´ÜÀÏ¶§ 1ºÎÅÍ 9±îÁö 9¹øÀ» µ¹°ÔµÈ´Ù (2*1 ~ 2*9)
 				
 				//System.out.println(i + "*" + j + "=" + (i*j));
 				System.out.printf("%d * %d = %d %n", i, j, (i*j));

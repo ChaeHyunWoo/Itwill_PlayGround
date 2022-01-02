@@ -1,4 +1,4 @@
-package com.day3_Q;
+package com.day3;
 
 import java.util.Scanner;
 

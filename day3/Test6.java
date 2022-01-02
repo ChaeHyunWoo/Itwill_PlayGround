@@ -10,11 +10,11 @@ public class Test6 {
 		
 		int su;
 		
-		System.out.print("1~3ì´ë‚´ì˜ ìˆ˜ : "); // 1 2 3
+		System.out.print("1~3ÀÌ³»ÀÇ ¼ö : "); // 1 2 3
 		su = sc.nextInt();
 		
-		switch(su) {
-			
+		switch(su) {	//switch¹®Àº if¹®À¸·Î º¯È¯ °¡´ÉÇÏ´Ù.	shitch( ) °ıÈ£ ¾È¿¡´Â 8°³ÀÇ ÀÚ·áÇü°ú string °¡´É
+															    // charÇüÀÌ ¿À¸é ' ' ¸¦ÇØÁÖ°í ¹®ÀÚ¿­ÀÌ ¿À¸é " " 
 		case 3: 
 			System.out.println("***");
 			break;
@@ -27,9 +27,7 @@ public class Test6 {
 			break;
 			
 			default:
-				System.out.print("ìˆ«ì ì…ë ¥ ì˜¤ë¥˜ !");
+				System.out.print("¼ıÀÚ ÀÔ·Â ¿À·ù !");
 		}
-		
 	}
-
 }

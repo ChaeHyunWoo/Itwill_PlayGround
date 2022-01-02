@@ -6,39 +6,39 @@ public class Test1 {
 
 	public static void main(String[] args) {
 		
-		// ë°˜ë³µë¬¸(for, while, do-while)
+		//¹İº¹¹®(for, while, do-while)
 		
 		Scanner sc = new Scanner(System.in);
 		
 		int dan;
 		
-		System.out.print("ë‹¨ ì…ë ¥ : ");
+		System.out.print("´Ü ÀÔ·Â : ");
 		dan = sc.nextInt();
 		
-		//forë¬¸ : ìµœì†Œê°’,ìµœëŒ€ê°’orì¦ê°€ê°’ì„ ì •í™•íˆ ì•Œë©´ ë¬´ì¡°ê±´ forë¬¸
+		//for¹® : ÃÖ¼Ò°ª,ÃÖ´ë°ª or Áõ°¡°ªÀ» Á¤È®È÷ ¾Ë¸é ¹«Á¶°Ç for¹®
+		System.out.println("for¹® ÀÌ¿ë");
 		for(int i=1; i<=9; i++) {
 			System.out.println(dan + "*" + i + "=" +(dan*i));
 		}
 		
 		System.out.println("----------------------------");
 		
-		//whileë¬¸ : ê°’ì´ ì •í™•í•˜ì§€ ì•Šì„ ë•Œ ì‚¬ìš©
+		//while¹® : °ªÀÌ Á¤È®ÇÏÁö ¾ÊÀ» ¶§ »ç¿ë
+		System.out.println("while¹® ÀÌ¿ë");
 		int j=0;
 		while(j<9) {
-			j++; // ì¦ê°ì‹ì„ ì•ˆì“°ë©´ j=1ì´ ë¬´í•œë°˜ë³µë¨.ì¦ê°ì‹ì„ printlnë°‘ì— ë„£ìœ¼ë©´ j*0 ë¶€í„° ë‚˜ì™€ì„œ ì¦ê°ì‹ì€ ìœ„ì—
+			j++; //Áõ°¨½ÄÀ» ¾È¾²¸é J=1ÀÌ ¹«ÇÑ¹İº¹µÊ. Áõ°¨½ÄÀ» println¹Ø¿¡ ³ÖÀ¸¸é j *0ºÎÅÍ ³ª¿Í¼­ Áõ°¨½ÄÀº À§¿¡
 			System.out.println(dan + "*" + j + "=" + (dan*j));
 			
 		}
 		System.out.println("----------------------------");
 		
-		//do-whileë¬¸ : ë¨¼ì € ì‚¬ìš©ìí•œí…Œ ì •ë³´ë¥¼ ìš”êµ¬í•˜ê³  ìš”êµ¬í•œ ì •ë³´ë¥¼ ë³´ê³  í™•ì¸ í•  ë•Œ ì‚¬ìš©
+		//do-while¹® : ¸ÕÀú »ç¿ëÀÚÇÑÅ× Á¤º¸¸¦ ¿ä±¸ÇÏ°í  ¿ä±¸ÇÑ Á¤º¸¸¦ º¸°í È®ÀÎ ÇÒ ¶§ »ç¿ëÇÑ´Ù
+		System.out.println("do-while¹® ÀÌ¿ë");
 		int k=0;
 		do {
 			k++;
 			System.out.println(dan + "*" + k + "=" + (dan*k));
-		} while(k<9);
-		
-		
+		} while(k<9);	
 	}
-
 }

@@ -7,35 +7,35 @@ public class Test2 {
 
 	public static void main(String[] args) throws IOException {
 		
-		//ì…ë ¥í•œ ìˆ˜ ê¹Œì§€ì˜ í•©ê³„ êµ¬í•˜ê¸°
-
+		//ÀÔ·ÂÇÑ ¼ö±îÁöÀÇ ÇÕ°è¸¦ ±¸ÇÏ±â
+		
 		Scanner sc = new Scanner(System.in);
 		
 		int su, sum = 0;
 		char ch;
 		
-		while(true) { //ë¬´í•œë£¨í”„
+		while(true) { //¹«ÇÑ·çÇÁ
 			
 			do {
-				System.out.println("ì›í•˜ëŠ” ìˆ˜ : ");//100
+				System.out.print("¿øÇÏ´Â ¼ö : ");//100
 				su = sc.nextInt();
-			} while(su<1 || su>5000); // ì›í•˜ëŠ” ìˆ˜ë¥¼ ì…ë ¥í•˜ë˜ whileì— ì¡°ê±´ì„ ê±´ë‹¤
-			//ì¡°ê±´ì„ ë°˜ëŒ€ë¡œ ì ì–´ì•¼ whileì„ ë¹ ì ¸ë‚˜ì˜¨ë‹¤.
+			} while(su<1 || su>5000); //¿øÇÏ´Â¼ö¸¦ ÀÔ·ÂÇÏµÇ while¿¡ Á¶°ÇÀ» °Ç´Ù
+			//Á¶°ÇÀ» ¹İ´ë·Î Àû¾î¾ß whileÀ» ºüÁ®³ª¿Â´Ù.
 			
-			sum = 0; //í•œë²ˆ ì—°ì‚°ì„ í•˜ë©´ sumê°’ì„ ì´ˆê¸°í™” í•´ì¤€ë‹¤.
+			sum = 0; //ÇÑ¹ø ¿¬»êÀ» ÇÏ¸é sum°ªÀ» ÃÊ±âÈ­ ÇØÁØ´Ù. ÃÊ±âÈ­¸¦ ¾ÈÇÏ¸é °ªÀÌ ´©ÀûµÈ´Ù!
 			for(int i=1; i<=su; i++) {
 				
-				sum += i; //sum = sum + i;(sumì— ê°’ ëˆ„ì )
+				sum += i; //sum = sum + i;(sum¿¡ °ª ´©Àû)
 			}
 			
-			System.out.println("1~" + su + "~ê¹Œì§€ì˜ í•© : " + sum);
+			System.out.println("1~" + su + "±îÁöÀÇ ÇÕ : " + sum);
 			
-			System.out.print("ê³„ì†í• ë˜? [Y/N]");// Y,y,N,n
+			System.out.print("°è¼ÓÇÒ·¡? [Y/N]");// Y,y,N,n
 			ch = (char)System.in.read();
 			
-			if(ch != 'Y' && ch !='y') { //Tip ì–‘ìª½ì´ ë¶€ì •(!=)ì´ë©´ ì¤‘ê°„ì— ||(or) ì“°ì§€ë§ê³  &&(and)ë¥¼ ì¨ì•¼í•¨!
-				System.out.println("ï¿½ï¿½ï¿½Î±×·ï¿½ ï¿½ï¿½ï¿½ï¿½");
-				break; //breakëŠ” ifë¬¸, whileë¬¸, do-whileë¬¸, forë¬¸, switchë¬¸ ë“±ì— ë‹¤ ì‚¬ìš© ê°€ëŠ¥í•˜ë‹¤.
+			if(ch != 'Y' && ch !='y') { //Tip ¾çÂÊÀÌ ºÎÁ¤(!=)ÀÌ ³ª¿À¸é Áß°£¿¡ ||(or)¾²¸é ¾ÈµÇ°í &&(and)¸¦ ½á¾ßÇÔ.!!!
+				System.out.println("ÇÁ·Î±×·¥ Á¾·á");
+				break; //break´Â if¹®, while¹®, do-while¹®, for¹®, switch¹® µî¿¡ ´Ù »ç¿ë °¡´ÉÇÏ´Ù.
 			}
 		}
 	}

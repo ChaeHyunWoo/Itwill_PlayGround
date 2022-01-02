@@ -6,39 +6,38 @@ public class Test8 {
 
 	public static void main(String[] args) {
 		
-		// ï¿½è¿­
+		// ¹è¿­
 		int[] num = new int[5]; //int num[] = new int[5];
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("5ê°œì˜ ë³€ìˆ˜ : "); // 5  7  9  2  3
+		System.out.print("´Ù¼¸°³ÀÇ º¯¼ö : "); // 5  7  9  2  3
 		
 		
 		for(int i=0; i<num.length; i++) {
 			num[i] = sc.nextInt();
 		}
 		
-		//í•˜ë‹¨ ë°°ì—´ì„ ìœ„ì˜ forë¬¸ 2ì¤„ë¡œ ë°”ê¿ˆ
+		//ÇÏ´Ü ¹è¿­À» À§ÀÇ for¹® 2ÁÙ·Î ¹Ù²Ş
 		/*num[0] = sc.nextInt();
 		num[1] = sc.nextInt();
 		num[2] = sc.nextInt();
 		num[3] = sc.nextInt();
 		num[4] = sc.nextInt();*/
 		
-					//i<num.length; ì•„ë˜ì™€ ê°™ë‹¤
+					//i<num.length; ¾Æ·¡¶û °°´Ù
 		for(int i=0; i<=num.length-1; i++) {
 			System.out.println("num["+ i +"]:" + num[i]);//System.out.println("num[1]:" + num[i]);
 			
 		}
 		
-		System.out.println("ë°°ì—´ ê°¯ìˆ˜ : " + num.length);// ë°°ì—´ì˜ lengthsms ()ê´„í˜¸ê°€ ì—†ë‹¤.
+		System.out.println("¹è¿­ °¹¼ö : " + num.length);// ¹è¿­ÀÇ length´Â ()°ıÈ£°¡ ¾ø´Ù. 
 		
 		
 		num[3] = 100;
-		System.out.println("num[3]:" + num[3]); //num[3]ì„ ì¶œë ¥
+		System.out.println("num[3]:" + num[3]); //num[3]¸¦ Ãâ·Â
 		
-		int a = num[3] - 30; //ë°°ì—´ 3ì— ë“¤ì–´ìˆëŠ”ìˆ˜(100)ì—ì„œ -30ì„ í•¨
+		int a = num[3] - 30; //¹è¿­ 3¿¡ µé¾îÀÖ´Â¼ö(100)¿¡¼­ -30À» ÇÔ
 		System.out.println("a:" + a);
 	}
-
 }

@@ -5,30 +5,31 @@ public class Test3 {
 	public static void main(String[] args) {
 		
 		int r = 10;
-		float area, length;//ì‚´ìˆ˜í˜•
+		float area, length;//½Ç¼öÇü
 		
 		area = r * r * 3.14f;
 		length = r * 2 * 3.14f;
 		
-		System.out.println(area); //ì›ì˜ ë„“ì´
-		System.out.println(length); //ì›ì˜ ë‘˜ë ˆ
+		System.out.println(area); //¿øÀÇ ³Êºñ
+		System.out.println(length); //¿øÀÇ µÑ·¹
 		
-		System.out.println("ë°˜ì§€ë¦„ : " + r + ", ë©´ì  : " + area);
+		System.out.println("¹İÁö¸§ : " + r + ", ¸éÀû: " + area);
 		
-		System.out.printf("ë°˜ì§€ë¦„ : %d, ë©´ì  :%.2f\n", r, area);
-		//%fì—ì„œ ì†Œìˆ˜ì  2ë²ˆì§¸ìë¦¬ê¹Œì§€ ë³´ê³ ì‹¶ìœ¼ë©´ %.2fë¥¼ ì“´ë‹¤.
+		System.out.printf("¹İÁö¸§ : %d, ¸éÀû :%.2f\n", r, area);
+		//%f¿¡¼­ ¼Ò¼öÁ¡ 2¹øÂ°Â¥¸®±îÁö º¸°íÇÁ¸é %.2f¸¦ ¾´´Ù.
 		
 		//-------------------------------------------
 		
-		// floatê³¼ intëŠ” ê°™ì€ 4byteì´ì§€ë§Œ floatê°€ ë” í¬ë‹¤/ javaëŠ” 2ì§„ìˆ˜ ê³µë¶€ ê¹Šê²Œ x
+		// float°ú int´Â °°Àº 4byteÀÌÁö¸¸ float°¡ ´õÅ©´Ù/java´Â 2Áø¼ö °øºÎx
 		int a=5;
 		float b;
 		
-		b=a; // ì•”ì‹œì  í˜•ë³€í™˜
+		b=a; // ¾Ï½ÃÀû Çüº¯È¯
 		System.out.println(b);//5.0
-		//ë°˜ëŒ€ë¡œí•˜ë©´ ì—ëŸ¬ ë°œìƒ - why? - floatì´ intë³´ë‹¤ ë” í¬ê¸° ë•Œë¬¸
+		//¹İ´ë·ÎÇÏ¸é ¿¡·¯ why? floatÀÌ intº¸´Ù ´õ Å©±â¶§¹® 
+		//Å«°ÍÀº ÀÛÀº°Í¿¡ µé¾î°¥ ¼ö ¾ø´Ù.
 		
-		a = (int)b;  //ê°•ì œ í˜•ë³€í™˜
+		a = (int)b;  //°­Á¦ Çüº¯È¯
 		System.out.println(a);//5
 		
 	}

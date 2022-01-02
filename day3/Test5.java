@@ -6,30 +6,8 @@ public class Test5 {
 		
 		int i, j;
 		
-		/*for(i=1; i<=5; i++) {
-			
-			for(j=1; j<=5-i; j++) {
-				System.out.print(" ");
-			}
-			
-			for(j=1; j<=i; j++) {
-				System.out.print("*");
-			}
-			System.out.println();
-		}
 		
-		for(i=5; i>=1; i--) { // i=i-1
-			
-			for(j=1; j<=5; j++) {
-				System.out.print(" ");
-			}
-			
-			for(j=1; j<=i; j++) {
-				System.out.print("*");
-			}
-			System.out.println();
-	}*/
-		//
+		// Á¤»ï°¢Çü ¸¸µé±â 
 		for(i=1; i<=5; i++) {
 			
 			for(j=1; j<=5-i; j++) {
@@ -41,7 +19,8 @@ public class Test5 {
 			}
 			System.out.println();
 		}
-		// * ì°ê¸° ì—­ì‚¼ê°í˜• ëª¨ì–‘
+		System.out.println();
+		//¿ª»ï°¢Çü
 		for(i=5; i>=1; i--) {
 			
 			for(j=1; j<=5-i; j++) {

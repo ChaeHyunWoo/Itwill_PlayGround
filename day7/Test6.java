@@ -69,12 +69,11 @@ public class Test6 {
 		
 		System.out.println("-----------------------------------");
 		
-		RectA ob2 = new RectA(100, 200);
+		RectA ob2 = new RectA(100, 200); // 오버로딩된 생성자를 통해 객체 생성 시 초기화 바로 진행
 		a = ob2.area();
 		l = ob2.length();
 		ob2.print(a);
 		ob2.print(a, l);
-		
 		
 		
 	}

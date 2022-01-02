@@ -1,4 +1,4 @@
-package com.day3_Q;
+package com.day3;
 /* 4. 아래와 같이 구구단을 출력하세요
 
         2* 1= 2         3* 1= 3         4* 1= 4         5* 1= 5

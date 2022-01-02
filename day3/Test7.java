@@ -12,17 +12,17 @@ public class Test7 {
 		int num1, num2;
 		char oper;
 
-		System.out.print("ì²«ë²ˆì§¸ ìˆ˜ : ");
+		System.out.print("Ã¹¹øÂ° ¼ö : ");
 		num1 = sc.nextInt();
 
-		System.out.print("ë‘ë²ˆì§¸ ìˆ˜ : ");
+		System.out.print("µÎ¹øÂ° ¼ö : ");
 		num2 = sc.nextInt();
 
-		System.out.print("ì—°ì‚°ì[+, -, *, /] : ");
+		System.out.print("¿¬»êÀÚ[+, -, *, /] : ");
 
-		oper = (char)System.in.read(); //system.in.readê°€ ìœ„ì˜ ì—°ì‚°ì ê¸°í˜¸ì˜ ì•„ìŠ¤í‚¤ ì½”ë“œë¥¼ ì½ì–´ì¤€ë‹¤.
+		oper = (char)System.in.read(); //system.in.read°¡ À§ÀÇ ¿¬»êÀÚ ±âÈ£ÀÇ ¾Æ½ºÅ° ÄÚµå¸¦ ÀĞ¾îÁØ´Ù.
 
-		switch(oper) {
+		switch(oper) {	// ¹®ÀÚ¸¦ ¹Ş¾Æ¼­ ' ' Ç¥½Ã!
 
 		case '+':
 			System.out.printf("%d%c%d = %d %n", num1, oper, num2, (num1+num2));
@@ -42,5 +42,4 @@ public class Test7 {
 		default:								// %c = oper
 		}
 	}
-
 }

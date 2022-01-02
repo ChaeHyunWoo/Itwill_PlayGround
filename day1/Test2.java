@@ -4,19 +4,19 @@ public class Test2 {
 	
 	public static void main(String[] args) {
 		
-		//ë³€ìˆ˜ ì„ ì–¸
-		//ìë£Œí˜• int : ì •ìˆ˜(ë²”ìœ„ : ì•½ -21ì–µ~21ì–µ) / ìë£Œí˜•ì€ 8ê°œ + String
-		int a=10; // intí˜• ë³€ìˆ˜ aë¥¼ ì„ ì–¸í•˜ê³  10ìœ¼ë¡œ ì´ˆê¸°í™”
+		//º¯¼ö ¼±¾ğ
+		//ÀÚ·áÇü int : Á¤¼ö(¹üÀ§ : ¾à-21¾ï ~ 21¾ï) /ÀÚ·áÇüÀº 8°³ + String
+		int a=10; // intÇü º¯¼öa¸¦ ¼±¾ğÇÏ°í 10À¸·Î ÃÊ±âÈ­
 		int b=5;
 		
-		int c,d; // ì“°ë ˆê¸° ê°’ì´ ë“¤ì–´ìˆìŒ
+		int c,d; // ¾²·¹±â °ªÀÌ µé¾îÀÖÀ½
 		
 		System.out.println(a); //10
 		System.out.println(b); //5
-		//System.out.println(c); // ì»´íŒŒì¼ ì˜¤ë¥˜_ì½”ë”© ìƒì—ëŠ” ë¬¸ì œì—†ëŠ”ë° ì‹¤í–‰í•˜ë©´ ëœ¨ëŠ” ì˜¤ë¥˜ëŠ” ëŸ°íƒ€ì„ ì˜¤ë¥˜
+		//System.out.println(c); // ÄÄÆÄÀÏ ¿À·ù / ÄÚµù »ó¿¡´Â ¹®Á¦¾ø´Âµ¥ ½ÇÇàÇÏ¸é ¶ß´Â ¿À·ù´Â ·±Å¸ÀÓ ¿À·ù.
 		
 		c = a + b;
-		System.out.println(c);//15     // syso í˜¹ì€ sout ì“°ê³  ì»¨íŠ¸ë¡¤ + ìŠ¤í˜ì´ìŠ¤ ëˆ„ë¥´ë©´ (println) ìë™ì™„ì„±
+		System.out.println(c);//15     // syso  È¤Àº sout ¾²°í ÄÁÆ®·Ñ+½ºÆäÀÌ½º (println)ÀÚµ¿¿Ï¼º
 		
 		d = a - b;
 		System.out.println(d);//5
@@ -25,7 +25,7 @@ public class Test2 {
 		System.out.println();
 		System.out.println(a + "-" + b + "=" + d);
 		
-		//printfì˜ fëŠ” format(ëª¨ì–‘)ì´ë‹¤.
+		//printfÀÇ f´Â format(¸ğ¾ç)ÀÌ´Ù.//%nÀº ÁÙ¹Ù²Ş \nÀ» ½áµµµÊ 
 		System.out.printf("%d + %d = %d %n", a, b, c);
 		System.out.printf("%d - %d = %d\n", a, b, d);
 		

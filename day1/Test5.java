@@ -8,30 +8,30 @@ public class Test5 {
 
 	public static void main(String[] args) throws IOException {
 		
-		//ì„ ì–¸
+		//¼±¾ğ
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		
-		String name; //Stringì€ ìë£Œí˜•ì²˜ëŸ¼ ì“°ì§€ë§Œ í´ë˜ìŠ¤ì´ë‹¤.
+		String name; //StringÀº ÀÚ·áÇüÃ³·³ ¾²Áö¸¸ Å¬·¡½ºÀÌ´Ù.
 		int kor, eng, tot;
 		
-		//ì…ë ¥
-		System.out.print("ì´ë¦„?"); //suzi
+		//ÀÔ·Â
+		System.out.print("ÀÌ¸§?"); //suzi
 		name = br.readLine();
 		
-		System.out.println("êµ­ì–´?");//60
+		System.out.println("±¹¾î?");//60
 		kor = Integer.parseInt(br.readLine());
 		
-		System.out.println("ì˜ì–´?"); //70
+		System.out.println("¿µ¾î?"); //70
 		eng = Integer.parseInt(br.readLine());
 		
-		//ì—°ì‚°
+		//¿¬»ê
 		tot = kor + eng;
 		
-		//ì¶œë ¥
-		System.out.println("ì´ë¦„: " + name);
-		System.out.println("êµ­ì–´: " + kor +", ì˜ì–´: " + eng);
-		System.out.println("ì´ì : " + tot + "ì ");
+		//Ãâ·Â
+		System.out.println("ÀÌ¸§: " + name);
+		System.out.println("±¹¾î: " + kor +", ¿µ¾î: " + eng);
+		System.out.println("ÃÑÁ¡: " + tot + "Á¡");
 	}
 
 }

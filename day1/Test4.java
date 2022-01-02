@@ -3,38 +3,37 @@ package com.day1;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-// 		íŒ¨í‚¤ì§€		í´ë˜ìŠ¤
+//     /ÆĞÅ°Áö/Å¬·¡½º
 public class Test4 {
 
 	public static void main(String[] args) throws IOException {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		/* Scannerí´ë˜ìŠ¤ë‘ ë¹„ìŠ·í•´ì„œ ì§‘ê°€ì„œ ì°¾ì•„ë³´ê¸°
-
-		System.in : í‚¤ë³´ë“œë¡œ ì…ë ¥í•œ 1byteì˜ ë¬¸ì
-		InputStreamReader : System.inë¡œ ì½ì€ 1byteë¥¼ ë¬¸ì(2byte)ë¡œ ë³€ê²½
-		BufferedReader : ë©”ëª¨ë¦¬ìƒì— ì €ì¥ ê³µê°„ ìƒì„± (ìœ„ì—ì„œëŠ” ì €ì¥ê³µê°„ ì´ë¦„ì„ brë¡œ ì„ ì–¸í–ˆìŒ)
-		ì–¸ì œë¶€í„° ì½ëƒ ì—”í„°(Enter)ê¹Œì§€ ì½ìŒ */
+		//? ScannerÅ¬·¡½º¶û ºñ½ÁÇØ¼­ Áı°¡¼­ Ã£¾Æº¸±â 
+		
+		//System.in : Å°º¸µå·Î ÀÔ·ÂÇÑ 1byteÀÇ ¹®ÀÚ
+		//InputStreamReader : System.in·Î ÀĞÀº 1byte¸¦ ¹®ÀÚ(2byte)·Î º¯°æ
+		//BufferedReader : ¸Ş¸ğ¸®»ó¿¡ ÀúÀå °ø°£ »ı¼º (À§¿¡¼­´Â ÀúÀå°ø°£ ÀÌ¸§À» br·Î ¼±¾ğÇßÀ½)
+		//¾ğÁ¦ºÎÅÍ ÀĞ³Ä ¿£ÅÍ(Enter)±îÁö ÀĞÀ½ 
 		
 		
 		
-		//int r;
-		double r;
+		int r;
+		//double r;
 		double area, length;
 		
-		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?"); 
+		System.out.println("¹İÁö¸§?"); 
 		
-		//r = Integer.parseInt(br.readLine());
-		r = Double.parseDouble(br.readLine());
+		r = Integer.parseInt(br.readLine());
+		//r = Double.parseDouble(br.readLine());
 		
-		//Integer.parseInt ìˆ«ì(ì •ìˆ˜)ë¡œ ë°”ê¾¼ë‹¤/ ë°”ê¾¼ í›„ rì— ë„£ëŠ”ë‹¤
-		area = r * r * 3.14; // ìœ„ì—ì„œ areaë¥¼ doubleë¡œ ì„ ì–¸í•´ì„œ ì˜¤ë¥˜ ì•ˆëœ¸
+		//Integer.parseInt ¼ıÀÚ(Á¤¼ö)·Î¹Ù²Û´Ù/ ¹Ù²Û ÈÄ r¿¡ ³Ö´Â´Ù
+		area = r * r * 3.14; // À§¿¡¼­ area¸¦ double·Î ¼±¾ğÇØ¼­ ¿À·ù ¾È¶ä
 		length = r * 2 * 3.14;
 		
-		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : " + r);
-		System.out.println("ï¿½ï¿½ï¿½ï¿½ : " + area);
-		System.out.println("ï¿½Ñ·ï¿½ : " + length);
+		System.out.println("¹İÁö¸§ : " + r);
+		System.out.println("³ĞÀÌ : " + area);
+		System.out.println("µÑ·¹ : " + length);
 	
 	}
-
 }

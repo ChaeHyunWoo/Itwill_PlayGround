@@ -10,17 +10,18 @@ package com.day7;
 //단 호출 시 제일 선두에서만 호출 가능하다.// 생성자는 기본적으로 생략되어 있다.
 public class Test5 {
 	
-	private int x;
+	private int x;	//instance 변수
 	
-	public Test5() {// 기본 생성자 // 생성자는 기본적으로 생략되어 있다.
+	public Test5() {// 기본 생성자 // 생성자는 기본적으로 생략되어 있다. 오버로딩(중복정의)할거 아니면 생략
+		//기본 생성자 특징 : 반환값 없음. 
 		
 		this(50); // = Test5(int x)
 		System.out.println("기본 생성자...");
-		x = 10;
+		x = 10; //생성자를 통한 변수초기화
 		System.out.println("x : " + x);
 	}
 	
-	public Test5(int x) {
+	public Test5(int x) {	// 필요에 의해 만드는 오버로딩된 생성자
 		
 		System.out.println("오버로딩된 생성자...");
 		this.x = x;

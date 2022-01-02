@@ -3,18 +3,21 @@ package com.day6;
 //main절이 있는 클래스에만 public가 들어가고 나머지 클래스에는 class만 정의
 
 
-class SubClass {
+class SubClass { //int값 2개를 저장할 수 있는 클래스.
 	
 	int a, b; //instance변수(전역변수)
 	
 }
 
-public class Test1 {
+public class Test1 { 
 
 	public static void main(String[] args) {
 		
-		SubClass ob1 = new SubClass();
+		SubClass ob1 = new SubClass(); // new로 객체를 생성한 전역변수는 초기값이 들어있다.
 		SubClass ob2 = new SubClass();
+		
+		// 인스턴스변수는 반드시 메모리를 다른곳에 저장
+		
 		
 		System.out.println("ob1.a: " + ob1.a);	//0
 		System.out.println("ob1.b: " + ob1.b);	//0
@@ -39,5 +42,4 @@ public class Test1 {
 		
 		// 메모리공간은 모두 각자 따로 쓴다.
 	}
-
 }

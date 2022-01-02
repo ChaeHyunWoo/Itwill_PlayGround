@@ -56,7 +56,4 @@ public class Q1 {
 	System.out.println("제일 큰 숫자 "+ max +", 제일 작은 숫자 "+ min);
 
 	}
-
 }
-
-

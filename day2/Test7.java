@@ -6,11 +6,9 @@ public class Test7 {
 
 	public static void main(String[] args) {
 		
-		/*
-		3ê°œì˜ ìˆ˜ë¥¼ ìž…ë ¥ë°›ì•„ì„œ ìž‘ì€ìˆ˜ì—ì„œ í° ìˆ˜ ìˆœìœ¼ë¡œ ì¶œë ¥(ì˜¤ë¦„ì°¨ìˆœ)
-		3ê°œì˜ ìˆ˜? 952
-		ê²°ê³¼ : 2 5 9
-		 */
+		//3°³ÀÇ ¼ö¸¦ ÀÔ·Â ¹Þ¾Æ¼­ ÀÛÀº¼ö¿¡¼­ Å« ¼ö ¼øÀ¸·Î Ãâ·Â(¿À¸§Â÷¼ø)
+		//3°³ÀÇ ¼ö? 9 5 2
+		//°á°ú : 2 5 9
 		Scanner result = new Scanner(System.in);
 		int num1;
 		int num2;
@@ -18,14 +16,14 @@ public class Test7 {
 		int temp;
 		
 		
-		System.out.println("3ê°œì˜ ìˆ˜?");//9 5 2
+		System.out.println("3°³ÀÇ ¼ö?");//9 5 2
 		
 		num1 = result.nextInt();//9
 		num2 = result.nextInt();//5
 		num3 = result.nextInt();//2
 		
 	
-		//3ê°œì˜ ìˆ˜ ë¹„êµë°©ë²• 1ë²ˆì§¸
+		//3 °³ÀÇ ¼ö ºñ±³¹æ¹ý 1¹øÂ°
 		/*if(num1>num2) {
 			temp = num1;
 			num1 = num2;
@@ -44,7 +42,7 @@ public class Test7 {
 			num2 = temp;*/
 		
 		
-		//3ê°œì˜ ìˆ˜ ë¹„êµë°©ë²• 2ë²ˆì§¸
+		//3 °³ÀÇ ¼ö ºñ±³¹æ¹ý 2¹øÂ°
 		if(num1>num2) {
 			temp = num1;
 			num1 = num2;
@@ -63,8 +61,8 @@ public class Test7 {
 			num3 = temp;
 		}
 		
-		System.out.println("1ë²ˆ : " + num1 + ", 2ë²ˆ : " + num2 + ", 3ë²ˆ : " + num3);
-		//System.out.printf("ï¿½ï¿½ï¿½ : %d %d %d %n", num1, num2, num3);
+		System.out.println("1¹ø : " + num1 + ", 2¹ø : " + num2 + ", 3¹ø : " + num3);
+		//System.out.printf("°á°ú : %d %d %d %n", num1, num2, num3);
 			
 			
 	}

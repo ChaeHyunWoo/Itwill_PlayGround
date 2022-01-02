@@ -6,7 +6,7 @@ public class Test5_1 {
 		
 		int i, j;
 		
-		//*ì°ê¸° ëª¨ëž˜ì‹œê³„ ëª¨ì–‘
+		//*Âï±â ¸ð·¡½Ã°è ¸ð¾ç
 		for(i=5; i>=1; i--) {
 			
 			for(j=1; j<=5-i; j++) {
@@ -31,5 +31,4 @@ public class Test5_1 {
 			System.out.println();
 		}
 	}
-
 }

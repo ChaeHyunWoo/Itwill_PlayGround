@@ -51,9 +51,9 @@ public class Test1 {
 		nalsu += 1; //y년 m월1일
 		
 		// 주의수 계산
-		week = nalsu % 7; // 3
+		//week = nalsu % 7; // 3
 		
-		System.out.println(week);
+		//System.out.println(week);
 		System.out.println("\n  일  월  화  수  목  금  토");
 		System.out.println("------------------------------");
 		
