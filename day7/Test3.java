@@ -9,14 +9,11 @@ public class Test3 {
 		//Data ob = new Data();
 		//ob.print();
 		
-		Data.getInstance();// 클래스이름.메소드명
-		
-		//Calendar now1 = new Calendar();
-		//Calendar now2 = new Calendar();
-		//Calendar now3 = new Calendar();
-		//Calendar now4 = new Calendar();
+		//Data클래스.getInstance메서드
+		Data.getInstance(); // 클래스이름.메소드명
 		
 		Calendar now = Calendar.getInstance();
+
 	}
 
 }
