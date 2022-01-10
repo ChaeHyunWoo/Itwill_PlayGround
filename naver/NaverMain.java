@@ -3,6 +3,8 @@ package com.naver;
 import java.util.Scanner;
 
 //score3처럼 List로 네이버 회원가입 만들기 3시20분~6시까지
+//메뉴 : 회원가입, 회원전체출력, 아이디검색
+//조건 : 회원가입 시 아이디는 8~15자이내, 영문자 숫자 혼용
 public class NaverMain {
 
 	public static void main(String[] args) throws Exception {
