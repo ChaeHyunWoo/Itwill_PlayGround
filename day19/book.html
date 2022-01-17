@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Book XML 파싱</title>
+
+<script type="text/javascript">
+
+	var xmlDoc = new ActiveXObject("Msxml2.DOMDocument");
+	xmlDoc.load("book.xml");
+	
+	function printNodeItem(){
+		
+		//var root = xmlDoc.getElementsByTagName("booklist")[0]; 아래와 같은코딩
+		var root = xmlDoc.documentElement;
+		
+		var books = root.getElementsByTagName("book");
+		
+		var out = "";
+		
+		for(var i=0;i<books.length;i++){
+			
+			//var book = books[i]; 처럼 변수에 넣어 짧게 써줄수도있다.
+			            //books의 0번째 1번째
+			out += "\n분류: " + books[i].getAttribute("kind")
+				+ ", 제목: " + books[i].getElementsByTagName("title")[0]
+			            		.firstChild.nodeValue
+			    + ", 저자: " + books[i].getElementsByTagName("author")[0]
+								.firstChild.nodeValue
+				+ ", 가격: " + books[i].getElementsByTagName("price")[0]
+								.firstChild.nodeValue;
+		}
+		alert(out);
+	}
+	
+</script>
+
+</head>
+<body>
+
+
+
+
+<input type="button" value="노드출력" onclick="printNodeItem();"/> 
+
+
+
+</body>
+</html>
