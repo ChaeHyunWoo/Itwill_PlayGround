@@ -18,6 +18,43 @@ public class hello extends Thread {
     
 	@Override
 	public void run() {
+		
+		try {
+			
+			int j=0;
+			while(j<2) {
+				
+			
+			String[] can = {"     ___#________",
+							"    // *       //",
+							"   //    음    //",
+							"  //    료  * //",
+							" //*   수    //",
+							"//     *    //",
+							"￣￣￣￣￣￣￣",
+							"              ",
+							"___#________     ",
+							"\\\\ *       \\\\",
+							" \\\\    음   \\\\",
+							"  \\\\  * 료   \\\\",
+							"   \\\\    수 * \\\\",
+							"    \\\\    *    \\\\",
+							"    ￣￣￣￣￣￣￣"     };
+			
+			for(int i=0; i<can.length; i++) {
+				
+				System.out.println(can[i]);
+				
+				sleep(300);
+			}
+			j++;
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+		/*
 		int i=0;
 		while(i<3) {
 			
@@ -45,7 +82,7 @@ public class hello extends Thread {
 			}
 		}
 	}
-	
+	*/
 	
 	public static void admine() {
 		
@@ -220,9 +257,6 @@ public class hello extends Thread {
 			System.out.print("메뉴 입력 : ");
 			int num = sc.nextInt();
 			
-			
-			
-
 			hello p1 = new hello();
 			p1.start();
 
