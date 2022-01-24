@@ -3,3 +3,95 @@ SELECT * FROM TAB;
 --모든데이터 가져오기
 /* 범위 주석 */
 SELECT * FROM CUSTOM;
+
+SELECT * FROM COMPANY;
+
+SELECT USERID, PAY, ROUND(PAY, -4) PAY FROM COMPANY;
+
+SELECT * FROM CUSTOM;
+
+--770322-1****** --주민번호 뽑기
+SELECT RPAD(SUBSTR(JUMIN, 1, 8), 14, '*') JUMIN FROM CUSTOM;
+
+
+SELECT COUNT(*) INWON FROM CUSTOM
+WHERE JOB = '회사원'; -- 177
+
+SELECT COUNT(*) INWON FROM CUSTOM
+WHERE SCHOL = '대졸'; -- 43
+
+SELECT COUNT(*) INWON FROM CUSTOM
+WHERE ADDR1 LIKE '서울%';
+
+SELECT COUNT(*) INWON FROM CUSTOM
+WHERE POINT >= 200;
+
+
+--테이블의 이름과 컬럼의 이름은 중복되면 안된다.
+SELECT * FROM COMPANY;
+
+--포지션이 대리인 사람은 몇명이냐
+SELECT COUNT(PAY) FROM COMPANY
+WHERE POSIT = '대리';
+
+--포지션이 대리인 사람이 받는 PAY의 총합?
+SELECT SUM(PAY) FROM COMPANY
+WHERE POSIT = '대리';
+
+
+SELECT * FROM CUSTOM;
+
+--직업 별 인원수 구하기
+SELECT JOB, COUNT(*) INWON FROM CUSTOM
+GROUP BY JOB;
+
+--학력 별 POINT의 평균 구하기
+SELECT SCHOL, ROUND(AVG(POINT)) INWON FROM CUSTOM
+GROUP BY SCHOL;
+
+--지역별 POINT 합계 구하기 -- ""찍은 이유는 MAX랑 MIN이 함수를 인식될까봐 찍음
+SELECT ADDR1, ROUND(SUM(POINT)) INWON, MAX(POINT) "MAX", MIN(POINT) "MIN" FROM CUSTOM
+GROUP BY ADDR1;
+
+
+--성별 나이의 평균, 인원수 구하기
+SELECT SEX,ROUND(AVG(AGE))"AVG", COUNT(*) "CNT" FROM CUSTOM GROUP BY SEX;
+
+
+SELECT
+CASE SEX
+WHEN '1' THEN '남자'
+WHEN '0' THEN '여자'
+END GENDER
+, ROUND(AVG(AGE)) "AVG", COUNT(*) "CNT"
+FROM CUSTOM
+GROUP BY SEX;
+
+/*
+SELECT 
+CASE 컬럼명                         
+	WHEN 1 THEN 100                          
+	WHEN 2 THEN 200                         
+	WHEN 3 THEN 300                         
+	WHEN 4 THEN 400                          
+	ELSE 500                        
+END AS RESULT             
+FROM DUAL;
+*/
+
+
+
+SELECT * FROM COMPANY;
+
+--직책별 월급의 합, 평균, MAX, MIN
+SELECT POSIT, COUNT(*) CNT, ROUND(AVG(PAY)) 평균, MAX(PAY) 최대, MIN(PAY) 최소
+FROM COMPANY GROUP BY POSIT; -- DB에 없는 컬럼으로 만들어서 이 테이플은 파생 테이블이다.
+
+
+--직책별 월급의 합, 평균, MAX, MIN (HAVING 사용하기)
+--ORDER BY는 별칭을 써도 정렬되지만 나머지는 안된다. 
+SELECT POSIT, COUNT(*) CNT, ROUND(AVG(PAY)) 평균, MAX(PAY) 최대, MIN(PAY) 최소
+FROM COMPANY GROUP BY POSIT 
+HAVING COUNT(*) > 60;
+
+

@@ -281,4 +281,348 @@ WHERE MANAGER IS NULL; --매니저가 NULL인 데이터 찾기
 SELECT * FROM PERSONNEL
 WHERE MANAGER IS NOT NULL;
 
-      
+------------------------------------------------------------------------------------------------------------------------------
+
+--01/24일 시작
+
+--우선 순위
+
+--업무가 MANAGER이고 급여가 1500이상인 사원 또는 업무가 
+--SALESMAN 인 사원의 정보를 찾으세요
+SELECT * FROM PERSONNEL WHERE (JOB = 'MANAGER') AND PAY >= 1500 OR JOB = 'SALESMAN'; --괄호를 묶은것이 먼저 연산이 된다
+
+--업무가 'PRESIDENT' 또는 'SALESMAN'이며 페이가 1500이상인 사원을 찾으시오
+SELECT * FROM PERSONNEL WHERE JOB IN ('PRESIDENT','SALESMAN') AND PAY >= 1500;
+
+--함수
+
+--숫자 함수
+--ROUND(반올림)
+SELECT ROUND(45.275,1) FROM DUAL; --45.3
+SELECT ROUND(45.275,-1) FROM DUAL; --50
+
+--  1  2  3  4  .  5  6  7
+-- -4 -3 -2 -1  0  1  2  3
+
+SELECT PNO,PNAME,PAY,ROUND(PAY,-2) FROM PERSONNEL;
+
+--TRUNC(절삭) 그 해당자리에 나머지를 그냥 자른다.
+SELECT TRUNC(45.249,2) FROM DUAL; --45.24
+SELECT TRUNC(45.245,-1) FROM DUAL; --40
+
+SELECT PNO,PNAME,PAY,TRUNC(PAY,-2) FROM PERSONNEL; --반올림 안하고 다 자름
+
+--CEIL/FLOOR(올림/내림) : 정수만 반환
+SELECT CEIF(461.21) FROM DUAL; -- 462
+SELECT FLOOR(461.91) FROM DUAL;  -- 461
+
+--MOD(나머지)
+SELECT MOD(10,3) FROM DUAL;
+
+--ABS(절대값) - 무조건 양수로 만들어줌
+SELECT ABS(-123) FROM DUAL;
+
+--SIGN(반환값이 양수면 1, 음수면 -1, 0이면 0)
+SELECT SIGN(100), SIGN(-100), SIGN(0) FROM DUAL;
+
+--지수
+SELECT POWER(2,4) FROM DUAL; -- 2의 4승 값이 나옴
+
+--제곱근
+SELECT SQRT(9) FROM DUAL; -- 3 (루트)
+
+
+
+--문자 함수
+--UPPER(소문자 -> 대문자)
+SELECT UPPER('oracle') FROM DUAL;
+
+--LOWER(대문자 -> 소문자)
+SELECT LOWER('ORACLE') FROM DUAL;
+
+SELECT * FROM DIVISION;
+
+SELECT DNO, DNAME FROM DIVISION
+WHERE DNAME = UPPER('sales');
+
+SELECT DNO, DNAME FROM DIVISION
+WHERE LOWER(DNAME) = 'sales';
+
+--INITCAP - 첫 글자만 대문자로 출력
+SELECT INITCAP('korea fighting') FROM DUAL;
+
+--CONCAT - ||와 동일한 의미( 두 문자열 연결)
+SELECT PNAME || DNO FROM PERSONNEL;
+SELECT CONCAT(PNAME, DNO) FROM PERSONNEL;
+
+--LENGTH - 문자열의 길이 출력
+SELECT LENGTH('KOREA FIGHTING') FROM DUAL; -- 14
+
+--SUBSTR - 부분 문자열을 출력 / x번째 문자부터 y개
+SELECT SUBSTR('ABCDEFG', 1, 3) FROM DUAL; --ABC
+SELECT SUBSTR('ABCDEFG', 3, 2) FROM DUAL; --CD
+SELECT SUBSTR('ABCDEFG', -3, 2) FROM DUAL; --EF
+SELECT SUBSTR('ABCDEFG', -4) FROM DUAL; --DEFG
+
+
+--INSTR - 찾는 문자열의 위치를 반환
+SELECT INSTR('ABCDEFG', 'C') FROM DUAL; -- 3
+
+SELECT INSTR('AAAAAAA', 'A') FROM DUAL; -- 1       sql은 index번호가 1부터 시작함 그래서 찾는 데이터가 없으면 0이 나옴
+SELECT INSTR('AAAAAAA', 'a') FROM DUAL; -- 0
+
+
+--RPAD/LPAD
+-- RPAD : 주어진 자릿수만큼 오른쪽에 채운다. 
+-- LPAD : 주어진 자릿수만큼 왼쪽에 채운다.
+SELECT RPAD(PNAME, 15, '*') FROM PERSONNEL;
+
+--RTRIM/LTRIM
+-- RTRIM : 반대로
+-- LTRIM : 첫번째 문자열 왼쪽부터 두 번째 문자열을 지워줌
+SELECT RTRIM('ABBBBB', 'B') FROM DUAL; -- B를 다 지워라
+SELECT RTRIM('A     ', ' ') FROM DUAL; --공백지워라
+
+SELECT RTRIM('ABBABB', 'B') FROM DUAL; 
+
+
+--날짜 함수
+--SYSDATE(GETDATE())
+SELECT SYSDATE FROM DUAL; -- 현재 날짜(시간까지 포함)를 읽어와라
+
+--SQL에서도 날짜는 JAVA처럼 연산이 가능하다.
+SELECT SYSDATE + 4 FROM DUAL; 
+
+SELECT STARTDATE-1, STARTDATE, STARTDATE+1 FROM PERSONNEL; -- 입사 전날 , 당일, 입사 다음날 
+
+
+--KIM 사원이 오늘까지 근무한 날수(년수)를 구하세요.
+SELECT SYSDATE, STARTDATE, ROUND((SYSDATE - STARTDATE)/365) || '년' YEARS
+FROM PERSONNEL WHERE PNAME = 'KIM';
+
+SELECT SYSDATE, STARTDATE, CEIL((SYSDATE - STARTDATE)/365) || '년' YEARS
+FROM PERSONNEL WHERE PNAME = 'KIM'; --ROUND보다 CEIL를 쓰는게 더 좋다 여기서는
+
+
+--ROUND   - 날짜에도 적용가능하다
+SELECT STARTDATE, ROUND(STARTDATE, 'YEAR') FROM PERSONNEL; -- YEAR로 반올림
+
+SELECT STARTDATE, ROUND(STARTDATE, 'MONTH') FROM PERSONNEL; -- MONTH로 반올림
+
+SELECT STARTDATE, ROUND(STARTDATE, 'DD') FROM PERSONNEL; -- DAY로 반올림
+
+--TRUNC ( 절삭) -- 날짜도 절삭가능
+SELECT STARTDATE, TRUNC(STARTDATE, 'MONTH') FROM PERSONNEL; 
+
+
+--MONTHS_BETWEEN ( 달 수 구하기)
+SELECT ROUND(MONTHS_BETWEEN(SYSDATE, '2002/06/01')/12) YEAR FROM DUAL;
+
+--LAST_DAY (입사한 달의 마지막날 구하기)
+SELECT STARTDATE, LAST_DAY(STARTDATE) FROM PERSONNEL;
+
+--NEXT_DAY (오늘기준 돌아오는 토요일 구하기) - 돌아오는 날 구하기
+SELECT NEXT_DAY(SYSDATE, '토요일') FROM DUAL;
+
+--ADD_MONTHS (오늘 기준으로 4개월 뒤 구하기)
+SELECT ADD_MONTHS(SYSDATE, 4) FROM DUAL;
+--ADD_MONTHS  오늘 기준으로 24개월 뒤 구하기
+SELECT ADD_MONTHS(SYSDATE, 24) FROM DUAL;
+
+
+
+--변환 함수(TO_CHAR)
+
+--대표적인 예는 TO_CHAR  (숫자나 날짜를 문자로 변경해준다)      많이 쓴다  
+--MM : 달수(10)
+--MON : 3문자 달이름(MAR)
+--MONTH : 달의 풀네임(MARCH)
+--DD : 달의 날짜수(22)
+--D : 주의 일 수(2)
+--DY : 3문자 요일이름(MON)
+--DAY : 일의 풀네임(화)
+--YYYY : 4자리 년도
+--YY : 2자리 연도
+--RM : 로마식 달수
+
+--문자는 연산이 안된다. 여기선 날짜를 문자로 바뀐 것이다.
+SELECT SYSDATE, TO_CHAR(SYSDATE, 'D') FROM DUAL; --2
+SELECT SYSDATE, TO_CHAR(SYSDATE, 'DY') FROM DUAL; -- 월
+SELECT SYSDATE, TO_CHAR(SYSDATE, 'RM') FROM DUAL; -- 1
+SELECT SYSDATE, TO_CHAR(SYSDATE, 'MON') FROM DUAL; --1월
+SELECT SYSDATE, TO_CHAR(SYSDATE, 'DAY') FROM DUAL; --월요일
+SELECT SYSDATE, TO_CHAR(SYSDATE, 'YYYY-MM-DD') FROM DUAL; -- 2022-01-24 ------> 이 코딩 많이씀 외우기 !! 중요!! 필수!!
+SELECT SYSDATE, TO_CHAR(SYSDATE, 'DD-MM-YY') FROM DUAL;
+
+
+
+--시간 형식
+/*
+HH, HH12
+HH24
+MI : 분
+SS : 초
+SSSSS : 초의 자릿수
+AM, PM : 오전, 오후
+A.M, P.M : 오전, 오후 (위와 동일)
+*/
+SELECT TO_CHAR(SYSDATE, 'HH24:MI:SS') FROM DUAL; -- 현재 시간이 문자로 보여진다.
+SELECT TO_CHAR(SYSDATE, 'AMHH:MI:SS') FROM DUAL;
+
+
+
+--숫자 형식 
+/*
+9 : 자릿수(9999 -> 1218)
+0 : 자릿수가 비면 0으로 표시(09999 -> 01234) 
+PR : 음수(9999, PR -> <1234>) -회계에서 자주 사용
+, : 천 자릿수(9,999 -> 1,000)
+*/
+SELECT TO_CHAR(12506, '$099,999.99') FROM DUAL; -- $012,506.00
+
+
+-- 서수
+-- SP, TH
+SELECT SYSDATE, TO_CHAR(SYSDATE, 'DD') FROM DUAL;
+SELECT SYSDATE, TO_CHAR(SYSDATE, 'DDSP') FROM DUAL;
+SELECT SYSDATE, TO_CHAR(SYSDATE, 'DDTH') FROM DUAL;
+SELECT SYSDATE, TO_CHAR(SYSDATE, 'DDSPTH') FROM DUAL;
+
+
+-- TO_DATE  (문자를 날짜로 바꿈)  + 문자를 날짜로 바꾸었기 때문에 연산이 가능함
+SELECT TO_DATE('22-01-24', 'YY-MM-DD') + 10 FROM DUAL;
+SELECT TO_DATE('13:38', 'HH24:MI') FROM DUAL;
+
+--TO_NUMBER (문자를 숫자로 바꿈)
+SELECT TO_NUMBER('123') + 100 FROM DUAL;
+
+SELECT TO_NUMBER('ABC') FROM DUAL; -- 에러! 
+
+--NVL
+
+--보너스가 있으면 쓰고 없으면 0으로 바꾼다.
+SELECT BONUS, NVL(BONUS, 0) FROM PERSONNEL;
+
+--MANAGER  값이 있으면 쓰고 없으면 NON MANAGER를 넣어라
+SELECT MANAGER FROM PERSONNEL;
+
+DESC PERSONNEL; -- 데이터 타입 보기
+
+SELECT MANAGER, NVL(TO_CHAR(MANAGER), 'NON MANAGER') FROM PERSONNEL;
+
+
+--DECODE
+--각 사원의 급여를 부서번호가 10인 경우 10%를 증가시키고, 부서번호가 20인 경우 20% 증가시키고,
+--나머지 부서는 30%를 증가
+SELECT PNAME, BONUS, DNO, PAY,
+DECODE(DNO,10,PAY*1.1, 20,PAY*1.2, PAY*1.3) 인상분--IF문과 비슷 DNO가 10인경우 PAY를 10%증가
+FROM PERSONNEL;
+
+
+--급여가 3500이상인 경우에는 GRADE를 'GOOD'로 표시하고 3500미만인 경우에는 'POOR'를 출력하시오(SIGN)
+SELECT * FROM PERSONNEL;
+
+SELECT PNAME, PAY,
+DECODE(SIGN(PAY-3500),1, 'GRADE', 'POOR') GRADE 
+FROM PERSONNEL;
+
+
+
+--그룹 함수  - 그룹 함수는 결과가 무조건 1개 나옴.
+--COUNT
+SELECT COUNT(*) FROM PERSONNEL; -- 모든 데이터를 새라 어디? PERSONNEL테이블의
+
+--급여가 3000이상인 사원의 수
+
+SELECT COUNT(*) FROM PERSONNEL
+WHERE PAY >= 3000;
+
+SELECT COUNT(MANAGER) FROM PERSONNEL; -- 매너저 라는 컬럼의 인원수를 새라(NULL값은 셀 수 없어서 10개X 9개가 나온다)
+
+SELECT COUNT(BONUS) FROM PERSONNEL; -- 3
+
+
+--AVG
+SELECT AVG(PAY) FROM PERSONNEL; --PAY의 평균
+
+--SUM
+SELECT SUM(PAY) FROM PERSONNEL;
+
+--MAX/MIN
+SELECT MAX(PAY), MIN(PAY) FROM PERSONNEL;
+
+SELECT * FROM PERSONNEL;
+-- 사원 중에 입사한지 가장 오래된 직원을 찾으시오
+SELECT MIN(STARTDATE) FROM PERSONNEL;
+
+--입사한지 가장 오래된 사원과 신입사원과의 날 수를 찾으시오
+SELECT ROUND((MAX(STARTDATE) - MIN(STARTDATE))/365) AS 년 FROM PERSONNEL;
+
+
+--분석 함수
+--부서별 평균
+SELECT DISTINCT DNO, AVG(PAY) OVER(PARTITION BY DNO) -- DISTINCT를 써서 각각 부서별 평균을 구한다.
+FROM PERSONNEL;
+
+--월급 1200을 받는 사람 순위 (이건 공식이다)
+SELECT * FROM PERSONNEL ORDER BY PAY DESC;
+
+SELECT RANK(1200) WITHIN GROUP (ORDER BY PAY DESC) RANK
+FROM PERSONNEL;
+
+
+SELECT PNAME, PAY, RANK() OVER(ORDER BY PAY DESC) RANK --랭크 구하는 공식( 나중에 씀 꼭 외우기)
+FROM PERSONNEL;
+
+
+--GROUP BY
+SELECT PNAME FROM PERSONNEL; -- 이걸 다중값 반환 쿼리라고 한다.
+
+SELECT * FROM PERSONNEL WHERE PAY = 1600; -- 다중값 반환 쿼리
+
+
+SELECT COUNT(*) FROM PERSONNEL; -- 이걸 단일값 반환 쿼리라고 한다.
+
+
+
+SELECT PNAME, MIN(STARTDATE) FROM PERSONNEL; --PNAME은 단일, MIN은 다중값을 반환하는 쿼리라고 에러 뜸!!!
+
+
+--하위 쿼리 (나중에 배울거임) 쿼리 안에 쿼리가 들어가있음
+SELECT PNAME, STARTDATE FROM PERSONNEL
+WHERE STARTDATE = (SELECT MIN(STARTDATE) FROM PERSONNEL);
+
+
+--GROUP BY 문제
+--부서별 평균 급여를 구하세요.
+SELECT DNO, AVG(PAY) FROM PERSONNEL -- 부서별 평균이기에 SELECT 앞에 DNO(부서)를 적어준다!
+GROUP BY DNO;
+
+
+
+SELECT STARTDATE, 
+EXTRACT(YEAR FROM STARTDATE) 년,
+EXTRACT(MONTH FROM STARTDATE) 월,
+EXTRACT(DAY FROM STARTDATE) 일         -- FROM 앞에는 쉼표가 있으면 안되서 여기선 지워준다.
+FROM PERSONNEL;
+
+
+-- 각 부서의 평균 급여가 전체 평균급여(2972.5)보다 크면 'GOOD'   ---어렵다.. 공식 자체를 외우기
+-- 작으면 'POOR' 를 출력하시오
+
+SELECT AVG(PAY) FROM PERSONNEL;
+
+SELECT DNO, AVG(PAY),
+DECODE(SIGN(AVG(PAY) - (SELECT AVG(PAY) FROM PERSONNEL)), 1, 'GOOD', 'POOR') AS GRADE
+FROM PERSONNEL
+GROUP BY DNO;
+
+
+--GROUP BY의 조건문은 HAVING이다. 
+SELECT AVG(PAY) FROM PERSONNEL;
+
+SELECT DNO, AVG(PAY),
+DECODE(SIGN(AVG(PAY) - (SELECT AVG(PAY) FROM PERSONNEL)), 1, 'GOOD', 'POOR') AS GRADE
+FROM PERSONNEL
+GROUP BY DNO
+HAVING DNO = 20;
