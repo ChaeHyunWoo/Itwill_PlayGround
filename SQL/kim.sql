@@ -286,12 +286,11 @@ WHERE MANAGER IS NOT NULL;
 --01/24일 시작
 
 --우선 순위
-
 --업무가 MANAGER이고 급여가 1500이상인 사원 또는 업무가 
 --SALESMAN 인 사원의 정보를 찾으세요
-SELECT * FROM PERSONNEL WHERE (JOB = 'MANAGER') AND PAY >= 1500 OR JOB = 'SALESMAN'; --괄호를 묶은것이 먼저 연산이 된다
+SELECT * FROM PERSONNEL WHERE (JOB = 'MANAGER') AND PAY >=1500 OR JOB = 'SALESMAN'; --괄호를 묶은것이 먼저 연산이 된다
 
---업무가 'PRESIDENT' 또는 'SALESMAN'이며 페이가 1500이상인 사원을 찾으시오
+--업무가 'PRESIDENT'이거나 'SALESMAN'이며 페이가 1500이상인 사원을 찾으시오
 SELECT * FROM PERSONNEL WHERE JOB IN ('PRESIDENT','SALESMAN') AND PAY >= 1500;
 
 --함수
@@ -340,46 +339,40 @@ SELECT UPPER('oracle') FROM DUAL;
 --LOWER(대문자 -> 소문자)
 SELECT LOWER('ORACLE') FROM DUAL;
 
-SELECT * FROM DIVISION;
-
 SELECT DNO, DNAME FROM DIVISION
 WHERE DNAME = UPPER('sales');
 
 SELECT DNO, DNAME FROM DIVISION
 WHERE LOWER(DNAME) = 'sales';
 
---INITCAP - 첫 글자만 대문자로 출력
+--INITCAP
 SELECT INITCAP('korea fighting') FROM DUAL;
 
---CONCAT - ||와 동일한 의미( 두 문자열 연결)
+--CONCAT
 SELECT PNAME || DNO FROM PERSONNEL;
 SELECT CONCAT(PNAME, DNO) FROM PERSONNEL;
 
---LENGTH - 문자열의 길이 출력
+--LENGTH
 SELECT LENGTH('KOREA FIGHTING') FROM DUAL; -- 14
 
---SUBSTR - 부분 문자열을 출력 / x번째 문자부터 y개
+--SUBSTR
 SELECT SUBSTR('ABCDEFG', 1, 3) FROM DUAL; --ABC
 SELECT SUBSTR('ABCDEFG', 3, 2) FROM DUAL; --CD
 SELECT SUBSTR('ABCDEFG', -3, 2) FROM DUAL; --EF
 SELECT SUBSTR('ABCDEFG', -4) FROM DUAL; --DEFG
 
 
---INSTR - 찾는 문자열의 위치를 반환
-SELECT INSTR('ABCDEFG', 'C') FROM DUAL; -- 3
+--INSTR
+SELECT INSTR('ABCDEFG', 'C') FROM DUAL;
 
 SELECT INSTR('AAAAAAA', 'A') FROM DUAL; -- 1       sql은 index번호가 1부터 시작함 그래서 찾는 데이터가 없으면 0이 나옴
 SELECT INSTR('AAAAAAA', 'a') FROM DUAL; -- 0
 
 
 --RPAD/LPAD
--- RPAD : 주어진 자릿수만큼 오른쪽에 채운다. 
--- LPAD : 주어진 자릿수만큼 왼쪽에 채운다.
 SELECT RPAD(PNAME, 15, '*') FROM PERSONNEL;
 
 --RTRIM/LTRIM
--- RTRIM : 반대로
--- LTRIM : 첫번째 문자열 왼쪽부터 두 번째 문자열을 지워줌
 SELECT RTRIM('ABBBBB', 'B') FROM DUAL; -- B를 다 지워라
 SELECT RTRIM('A     ', ' ') FROM DUAL; --공백지워라
 
@@ -411,6 +404,7 @@ SELECT STARTDATE, ROUND(STARTDATE, 'MONTH') FROM PERSONNEL; -- MONTH로 반올림
 
 SELECT STARTDATE, ROUND(STARTDATE, 'DD') FROM PERSONNEL; -- DAY로 반올림
 
+
 --TRUNC ( 절삭) -- 날짜도 절삭가능
 SELECT STARTDATE, TRUNC(STARTDATE, 'MONTH') FROM PERSONNEL; 
 
@@ -418,7 +412,7 @@ SELECT STARTDATE, TRUNC(STARTDATE, 'MONTH') FROM PERSONNEL;
 --MONTHS_BETWEEN ( 달 수 구하기)
 SELECT ROUND(MONTHS_BETWEEN(SYSDATE, '2002/06/01')/12) YEAR FROM DUAL;
 
---LAST_DAY (입사한 달의 마지막날 구하기)
+--LAST_DATY (입사한 달의 마지막날 구하기)
 SELECT STARTDATE, LAST_DAY(STARTDATE) FROM PERSONNEL;
 
 --NEXT_DAY (오늘기준 돌아오는 토요일 구하기) - 돌아오는 날 구하기
@@ -628,6 +622,7 @@ GROUP BY DNO
 HAVING DNO = 20;
 
 
+
 ----------1월25일---------------------------------------------
 
 --SELF JOIN
@@ -695,6 +690,300 @@ WHERE (PAY,NVL(BONUS, -1)) IN (SELECT PAY,NVL(BONUS, -1) FROM PERSONNEL WHERE DN
 SELECT PNAME,DNO,PAY,BONUS FROM PERSONNEL
 WHERE (PAY=1600 AND BONUS=500) OR (PAY=1450 AND BONUS=300)
 OR (PAY=1200 AND BONUS=0) OR (PAY=3550 AND BONUS IS NULL);
+
+
+
+------------------------------ 1월26일 수요일 -------------------------------------------------------------------------
+
+--dml(date mipulation language)
+
+--insert(삽입), update(수정), delete(삭제)
+
+
+SELECT * FROM DIVISION;
+DESC DIVISION;
+
+--MSSQL에서는 INTO를 생략해도되지만 오라클에서는 반드시 써야함
+INSERT INTO DIVISION VALUES (50, 'OPERATION', '031-111-222', 'DAEGU');
+
+INSERT INTO DIVISION VALUES (60); --에러뜸 WHY? 이 60을 컬럼중에 어디에 넣을지 정해주지 않아서 에러뜸
+
+INSERT INTO DIVISION (DNO) VALUES (60); -- 위는 에러떠서 이렇게 해야함
+
+INSERT INTO DIVISION (DNAME, POSITION) VALUES ('ACCOUNT', 'DAEJUN'); -- 에러 NOT NULL이라 값이 안들어감 NOT NULL로 되있으면 반드시 값을 줘야함
+
+INSERT INTO PERSONNEL (PNO,PNAME, PAY, DNO)
+VALUES (7711, 'YOUNG', 4000, 20);
+
+SELECT * FROM PERSONNEL; --비어있는 공간은 암시적 NULL 삽입
+DESC PERSONNEL;
+
+INSERT INTO DIVISION VALUES(70, 'PLANNING', '012-333-4444', NULL); -- NULL 대신 ''써도 된다. -- 이게 명시적 NULL삽입
+
+SELECT * FROM DIVISION;
+
+INSERT INTO PERSONNEL (PNO, PNAME, JOB, STARTDATE, DNO)
+VALUES (1300, 'CHO', 'SALESMAN',SYSDATE, 10);
+
+SELECT * FROM PERSONNEL;
+
+SELECT STARTDATE, TO_CHAR(STARTDATE, 'YYYY-MM-DD') NALJJA FROM PERSONNEL;
+--INSERT는 NOT NULL이 들어가있으면 반드시 값을 넣어줘야 한다.
+
+
+--치환 변수( 이건 오라클에만 있다.)
+SELECT PNO, PNAME, JOB, STARTDATE, DNO
+FROM PERSONNEL
+WHERE DNO = &DIV_DNO; -- &를 써서 치환함수인걸 알려줌
+
+
+SELECT * FROM MANAGER; -- PERSONNEL의 구조는 그대로 카피해서 가져오는데 데이터는 안가지고옴.
+SELECT * FROM SALESMAN;
+SELECT * FROM BUSEO; -- 삽입한 데이터가 보이지 않는다. -세이브가 되지 않았기 때문에
+SELECT * FROM DIVISION; -- 삽입한 데이터가 보인다.
+
+COMMIT;-- SAVE
+
+SELECT * FROM SAWON; -- SAWON는 PERSONNEL테이블의 모든 데이터가 다 들어가있음.
+
+SELECT * FROM TAB;
+
+/*
+CREATE TABLE MANAGER
+AS 
+	SELECT * FROM PERSONNEL
+	WHERE 1=2;                ---조건을 거짓으로 해서 구조만 가져오고 데이터는 안가지고온다.
+
+CREATE TABLE BUSEO
+AS SELECT * FROM DIVISION;
+
+CREATE TABLE SAWON
+AS SELECT * FROM PERSONNEL;
+
+CREATE TABLE EXAM1
+AS SELECT * FROM PERSONNEL;
+
+CREATE TABLE EXAM2
+AS SELECT * FROM DIVISION;
+*/
+
+--SUBQUERY
+SELECT * FROM MANAGER;
+DESC MANAGER;
+
+SELECT * FROM PERSONNEL
+WHERE JOB = 'MANAGER';
+
+INSERT INTO MANAGER(PNO, PNAME, PAY, STARTDATE)
+SELECT PNO, PNAME, PAY, STARTDATE FROM PERSONNEL
+WHERE JOB = 'MANAGER';
+
+SELECT * FROM MANAGER;
+
+--업무가 SALESMAN인 사원의 모든 정보를 SALESMAN 테이블로 복사하기
+SELECT * FROM SALESMAN;
+
+INSERT INTO SALESMAN
+SELECT * FROM PERSONNEL
+WHERE JOB = 'SALESMAN';
+
+COMMIT;
+
+
+--UPDATE
+
+--사원 번호가 1111인 사원의 부서를 30으로 수정
+SELECT * FROM PERSONNEL WHERE PNO=1111;
+--UPDATE문은 반드시 조건문이 와야함 안쓰면 모든 데이터가 바뀜
+UPDATE PERSONNEL SET DNO=30  -- 테이블 이름을 먼저써주고, 값을 넣어줘야하니 SET쓰고 부서번호를 바꿔야해서 DNO=30
+WHERE PNO=1111;
+
+UPDATE PERSONNEL SET JOB='SALESMAN',MANAGER=1111, STARTDATE=SYSDATE,BONUS=200 
+WHERE PNO=7711;
+
+SELECT * FROM PERSONNEL;
+
+COMMIT; --UPDATE도 반드시 COMMIT을 해줘야 한다. COMMIT을 하기 전에는 메모리 상에만 존재.COMMIT을 해야 DB에 반영
+
+
+SELECT * FROM SAWON;
+
+UPDATE SAWON SET DNO=20; -- SAWON DNO를 20으로 바꿀거다. 이렇게만 실행하면 모든 DNO가 20으로 바뀌어서 조건을 줘야함.
+
+ROLLBACK; -- 최근 COMMIT곳까지 취소된다.(복구)
+
+
+
+--UPDATE도 SUBQUERY로 수정 가능
+SELECT * FROM PERSONNEL
+WHERE DNO = (SELECT DNO FROM DIVISION WHERE DNAME='SALES'); --SELECT해보고 UPDATE하기
+
+UPDATE PERSONNEL SET JOB='SALESMAN'
+WHERE DNO = (SELECT DNO FROM DIVISION WHERE DNAME='SALES'); -- MANAGER를 SALESMAN으로 바꾸기
+
+
+/*
+SELECT * FROM PERSONNEL
+WHERE DNO = (SELECT DNO FROM DIVISION WHERE DNAME='SALES'); --SELECT해보고 UPDATE하기
+
+위의 SELECT문을 JOIN문으로 바꾸기
+*/
+SELECT A.* -- PERSONNEL의 모든 데이터를 가져올거니 A.*
+FROM PERSONNEL A, DIVISION B
+WHERE A.DNO = B.DNO AND DNAME = 'SALES'; 
+
+--UPDATE로 바꾸기
+UPDATE PERSONNEL SET JOB='SALESMAN'		--에러! -> 오라클에서는 JOIN문으로 UPDATE 못함.
+FROM PERSONNEL A, DIVISION B
+WHERE A.DNO = B.DNO AND DNAME = 'SALES'; -- 오라클에서는 X , MS-SQL에서는 된다.
+
+
+COMMIT;
+
+
+--DELETE
+
+-- DELETE도 UPDATE랑 같다. 앞부분을 바꾸면된다.
+--사원번호가 1300인 사원을 삭제하시오.         -> 삭제할려면 1300인 사원을 검색을 먼저해야함
+
+SELECT * FROM PERSONNEL WHERE PNO=1300;
+DELETE FROM PERSONNEL WHERE PNO=1300; -- DELETE 에서 FROM 생략이 가능하다.
+
+
+SELECT * FROM SAWON;
+
+DELETE SAWON; -- 이렇게 하면 SAWON테이블이 다 삭제된다. 이거도 메모리 상에서만 삭제된거라 ROLLBACK사용해서 복구
+
+ROLLBACK;
+
+
+-- 부서명이 BUSAN인 부서의 부서번호를 찾아 그 부서에 해당하는 직원의 정보를 삭제하시오.
+
+SELECT * FROM DIVISION;
+
+SELECT * FROM PERSONNEL 
+WHERE DNO=(SELECT DNO FROM DIVISION WHERE POSITION='BUSAN');
+
+
+DELETE PERSONNEL 
+WHERE DNO=(SELECT DNO FROM DIVISION WHERE POSITION='BUSAN');
+
+COMMIT;
+
+
+--DML 문장 실행 시 에러
+
+--SELECT 에러
+SELECT * FROM PERSONNEL;
+DESC PERSONNEL; -- PNO는 NOT NULL이라 하단 코드는 에러가 뜸
+--unique constraint (KIM.PERSONNEL_PNO_PK) violated -> PK의 제약조건 : 중복X, NULL X, 테이블당 1개의 컬럼만 만들 수 있다.
+
+INSERT INTO PERSONNEL (PNO,PNAME,DNO) VALUES(1300,'SONG',99);
+
+SELECT * FROM USER_CONSTRAINTS; --제약조건을 저장해놓은 테이블이 있는데 보는 방법
+
+--UPDATE 에러
+SELECT * FROM DIVISION; --DIVISION 테이블의 DNO는 PERSONNEL테이블의 DNO가 참조하고 있다.
+SELECT * FROM PERSONNEL;
+
+UPDATE PERSONNEL SET DNO=90 -- 에러! DIVISION에는 DNO 90이 없기때문에 
+
+--DELETE 에러
+DELETE DIVISION WHERE DNO=30;  -- DIVISION을 참조해서 PERSONNEL의 30을 만들었기에 DIVISION에 있는 DNO=30을 지울 수 없다.
+
+
+
+-- 4. tcl(transaction control language)
+--    commit (save랑 같다) , rollback (취소의 개념)     --DB에서는 매우 중요하다!!!!
+
+--AUTO COMMIT
+--DDL(CREATE, ALTER, DROP,RENAME)
+--DCL(GRANT, REVOKE)
+
+SELECT * FROM TAB;
+
+SELECT * FROM DIVISION;
+
+
+-- 3. ddl(data difinition language)
+--    create, alter, drop, rename
+
+-- OBJECT : TABLE, INDEX, SYNONYM, SEQUENCE, VIEW
+
+/*
+TABLE
+DATA TYPE
+CHAR : 문자(고정길이) -- 정해진 문자의 길이일때는 CHAR 사용
+VARCHAR2 : 문자(가변길이) -- 문자길이가 불확실하면 가변 길이 VARCHAR2 사용
+NUMBER(P,S) : 숫자
+DATE : 날짜(고정길이)
+LONG : 문자(가변길이, 2GB)
+*/
+
+
+--직접 TABLE 만들기
+
+CREATE TABLE BUSE01  -- CREATE는 오토커밋이라 ROLLBACK 안?
+(DNO NUMBER(2),
+DNAME VARCHAR(14),
+ZIPCODE CHAR(7));
+
+SELECT * FROM BUSE01;
+DESC BUSE01;
+
+INSERT INTO BUSE01 VALUES (10, 'AAA', '123-123'); -- 테이블에 데이터 넣기 -> 이거하고 SELECT 실행하면 결과나옴
+
+INSERT INTO BUSE01 VALUES (20, 'BBB', '222-333');
+
+/*
+CREATE 규칙
+1.영문자 시작(30자)
+2.영문자,숫자 사용가능(공백허용안함)
+3.특수문자는 _,$,#만 사용가능
+4.이름은 중복허용안함
+5.컬럼명이 틀려야함
+6.예약어 사용못함
+
+--사용가능한 이름
+Sawon,P_NO,Division10,Name_Rule
+
+--사용불가능한 이름
+10division, $sal, p-no, Alter
+
+*/
+
+CREATE TABLE CUSTOM
+(ID CHAR(5) CONSTRAINT CUSTOM_ID_PK PRIMARY KEY,
+PWD CHAR(3),
+NAME CHAR(6),
+ADDR VARCHAR2(50),
+ZIP CHAR(5),
+BIRTH DATE,
+JUMIN CHAR(14),
+AGE NUMBER, -- 뒤에 숫자 안적어주면 다 넣으라는 뜻
+TEL CHAR(10));
+
+DESC CUSTOM;
+INSERT INTO CUSTOM VALUES ('A001','123','SUZI','서울','12345','94-10-10',
+'941010-2123456','27','0101231234');
+
+SELECT * FROM CUSTOM;
+INSERT INTO CUSTOM VALUES (NULL,'123','INNA','서울','12345','94-10-10',
+'941010-2123456','40','0101231234'); -- NULL이라 에러뜸(데이터 안들어감)
+
+INSERT INTO CUSTOM VALUES ('A001','123','INA','서울','12345',SYSDATE,
+'941010-2123456','40','0101231234'); -- 에러뜸 !   -> 같은 데이터라 안들어감
+
+DROP TABLE CUSTOM; -- DROP은  테이블 삭제
+
+SELECT * FROM CUSTOM;
+
+SELECT * FROM USER_CONSTRAINTS; -- 딕셔너리 라고 부른다.
+
+COMMIT; -- 저장
+
+
+
 
 
 

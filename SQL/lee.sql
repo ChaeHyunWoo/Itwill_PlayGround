@@ -103,7 +103,6 @@ NON-EQUI JOIN -- 이건 오라클에만 존재.
 OUTER JOIN
 CROSS JOIN -- 사용 거의 안함
 SELF JOIN
-
 INNER(EQUI)는 90%  SELF 는 10% 이 2개는 많이 사용함
 */
 
