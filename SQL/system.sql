@@ -1,0 +1,64 @@
+-- system
+
+
+-- 권한을 줄 때(GRANT) - (계정만드는 권한)
+
+GRANT CREATE USER TO kim; -- kim한테 권한을 준다.
+
+SELECT * FROM DBA_USERS;-- 어떤 계정들이 만들어졌는데 보는 명령어이다.(지금은 에러뜸) -- 이명령어는 DBA만 실행할 수 있다.
+
+GRANT CONNECT,RESOURCE,UNLIMITED TABLESPACE TO TEST;
+
+ALTER USER TEST ACCOUNT LOCK; -- TEST계정 LOCK -> 잠금
+
+ALTER USER TEST IDENTIFIED BY ABC ACCOUNT UNLOCK; -- TEST계정 UNLOCK 하면서 비밀번호 변경(ABC로)
+
+
+--권한을 뺏을 때(REVOKE)
+
+REVOKE CREATE USER FROM kim; -- KIM한테서 CREATE 권한을 뺏어옴
+
+/*
+-- 권한의 종류
+
+SYSYTEM 권한 - DATABASE의 OBJECT들을 생성(CREATE), 수정(ALTER), 삭제(DROP) 할 수 있는 권한
+             - DBA -> USER
+             
+OBJECT 권한 - OBJECT 내용을 추가(INSERT), 변경(UPDATE), 삭제(DELETE), 검색(SELECT) 할 수 있는 권한
+            - USER -> USERS
+
+
+OBJECT : TABLE, SEQUENCE, VIEW
+
+*/
+
+ -- (SYSTEM)시스템 권한
+SELECT * FROM SYSTEM_PRIVILEGE_MAP; -- (SYSTEM)시스템 권한
+
+
+GRANT CREATE SESSION,RESOURCE,UNLIMITED TABLESPACE TO SUZI; -- SUZI한테 CREATE 권한을 준다.
+
+REVOKE RESOURCE, UNLIMITED TABLESPACE FROM SUZI; -- SUZI한테 권한을 뺏는다.
+
+
+GRANT CREATE ROLE TO KIM; -- KIM한테 ROLE을 만들 수 있는 권한을 줌
+
+CREATE ROLE MANAGER;
+
+GRANT CREATE USER,CREATE VIEW TO MANAGER; --MANAGER 안에 CREATE USER, CREATE VIEW 권한이 들어감
+
+SELECT * FROM DBA_ROLES; -- ROLES의 종류 검색
+
+SELECT * FROM ROLE_SYS_PRIVS; --DBA의 능력종류
+
+--DBA의 능력종류에서  MANAGER에 무슨 권한이 있는지 검색
+SELECT * FROM ROLE_SYS_PRIVS
+WHERE ROLE = 'MANAGER';
+
+GRANT MANAGER TO SUZI; -- MANAGER 이라는  ROLE를 SUZI한테 준다.
+
+REVOKE MANAGER FROM SUZI;
+
+-- (OBJECT) 오브젝트 권한
+-- 이건 일반사용자가 일반 사용자한테 주는 권한이다.
+
