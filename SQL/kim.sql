@@ -1356,7 +1356,7 @@ FOREIGN KEY
 UNIQUE KEY
 NOT NULL
 CHECK
-
+ 
 */
 
 --테이블을 만들면서 PRIMARY KEY를 만드는 방법
