@@ -396,15 +396,15 @@ WHERE A.DEPTNO, B.DEPTNO(+) AND SAL > AVG(SAL);
 
 -- 14. EMP 테이블에서 업무별로 월급이 평균 월급보다 낮은 사원을 부서번호,이름,급여를 출력하는 SELECT문을 작성하시오.
 
-
- 
-
- 
+SELECT DEPTNO, ENAME, SAL FROM EMP A,
+(SELECT JOB, AVG(SAL)"AVG" FROM EMP GROUP BY JOB)B WHERE A.JOB = B.JOB(+) AND SAL < "AVG";
 
 -- 15. EMP 테이블에서 적어도 한명 이상으로부터 보고를 받을 수 있는 사원을 업무,이름,사원번호,부서번호를 출력하는 SELECT문을 작성하시오.
 
- 
+SELECT JOB,ENAME,EMPNO,DEPTNO FROM EMP
+WHERE EMPNO IN(SELECT DISTINCT MGR FROM EMP WHERE MGR IS NOT NULL);
 
- 
+-- 16. EMP 테이블에서 말단 사원의 사원번호,이름,업무,부서번호를 출력하는 SELECT문을 작성하시오. 
 
--- 16. EMP 테이블에서 말단 사원의 사원번호,이름,업무,부서번호를 출력하는 SELECT문을 작성하시오.
+SELECT EMPNO,ENAME,JOB,DEPTNO FROM EMP
+WHERE EMPNO NOT IN(SELECT DISTINCT MGR FROM EMP WHERE MGR IS NOT NULL);
