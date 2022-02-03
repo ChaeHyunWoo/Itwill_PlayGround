@@ -471,3 +471,170 @@ SELECT * FROM (SELECT * FROM CUSTOM WHERE ADDR1 = '경기도') A;
 --위와 다른방법
 SELECT * FROM (SELECT * FROM CUSTOM WHERE ADDR1 = '경기도') A
 WHERE A.AGE<=20;
+
+
+---------------------------------------------------2월 3일------------------------------------------------------------------
+
+
+
+create table 사원
+(사원번호 number(10),
+사원명 varchar2(10),
+부서번호 number(2),
+직급 varchar2(10),
+우편번호 char(7),
+주소 varchar2(50),
+전화번호 char(15),
+급여 number(5),
+커미션 number(5),
+입사일 date,
+성별 char(6),
+사수번호 number(10)
+);
+
+
+insert into 사원 values(2001,'이순신',10,'부장','125-365','서울 용산구','02-985-1254',3500,100,'1980-12-01','남자',null);
+insert into 사원 values(2002,'홍길동',10,'대리','354-865','서울 강남구','02-865-1254',4000,'','2000-01-25','남자',2004);
+insert into 사원 values(2003,'성유리',20,'사원','587-456','부산 해운대구','051-256-9874',2500,100,'2002-05-24','여자',2002);
+insert into 사원 values(2004,'옥주현',30,'과장','987-452','서울 강남구','02-33-6589',5000,'','1997-03-22','여자',2001);
+insert into 사원 values(2005,'길건',10,'대리','123-322','서울 성동구','02-888-9564',3000,100,'1999-07-15','여자',2004);
+insert into 사원 values(2006,'한지혜',20,'사원','154-762','서울 송파구','02-3369-9874',2000,'','2003-05-22','여자',2005);
+insert into 사원 values(2007,'박솔미',30,'대리','367-985','서울 영등포구','02-451-2563',3000,100,'2006-01-25','여자',2004);
+insert into 사원 values(2008,'이효리',40,'사원','552-126','서울 중구','02-447-3256',2000,'','2001-02-02','여자',2007);
+
+select * from 사원;
+DESC 사원; --사원 테이블의 자료형이 나옴
+commit;
+
+-----------------------------------------이게 PL SQL이다.
+--select,insert,update,delete만 사용가능
+DECLARE
+TYPE FIRSTTYPE IS RECORD
+--(A VARCHAR2, B VARCHAR2, C NUMBER); -- 이렇게 써도 되지만 
+(A 사원.사원명%TYPE,B 사원.직급%TYPE, C 사원.급여%TYPE); -- 좀더 쉽게 쓸수 있다 
+
+CUS FIRSTTYPE;--CUS라는 변수를 선언하고 FORSTTYPE를 CUS에 넣는다 
+
+BEGIN --문으로 시작하고 
+SELECT 사원명,직급,급여 INTO CUS FROM 사원 WHERE 사원번호=2001;--사원명 직급 급여 INTO해서 CUS에 넣는다 
+
+DBMS_OUTPUT.PUT_LINE('--------------------------');
+DBMS_OUTPUT.PUT_LINE('사원명 직급 급여');
+DBMS_OUTPUT.PUT_LINE(CUS.A||'  '||CUS.B||'  '||TO_CHAR(CUS.C));
+DBMS_OUTPUT.PUT_LINE('현재 질의한 계정은 '||USER||'입니다');--여기서 USER는 SYSTEM 변수이다 
+DBMS_OUTPUT.PUT_LINE('현재 질의한 시간은 '||TO_CHAR(SYSDATE,'YYYY-MM-DD HH:MM:SS'));--SYDATE를 읽어와서 내가 원하는 입맛으로 표현한다 
+END;--끝난다
+
+SELECT * FROM 사원;
+
+SELECT 사원번호,사원명,직급,급여,커미션,F_TAX(2001) TAX FROM 사원 -- 함수부분 CMD캡처한걸 여기서 실행
+WHERE 사원번호=2001;
+
+
+--지금부터하는 코딩은  SCRIPT(파일)로 저장한다
+ACCEPT ID PROMPT '검색할 아이디를 입력하세요: ';--ID는 사용자정의 변수
+
+DECLARE
+
+TYPE GOGAK IS RECORD --GOGAK이라는 데이터타입(RECORD)를 만듬
+(A CUSTOM.USERID%TYPE, --A라는 변수를 만들고 
+B CUSTOM.USERNAME%TYPE,
+C NUMBER(12,2),
+D NUMBER(5));
+
+CUS GOGAK;
+
+BEGIN
+SELECT C.USERID, C.USERNAME, S.합계, S.구입횟수 INTO CUS
+FROM CUSTOM C, --CUSTOM를 C라 하고
+(SELECT USERID, SUM(PRICE) 합계, COUNT(*) 구입횟수
+FROM SALES
+GROUP BY USERID) S --이 괄호를 S로 만듬
+WHERE C.USERID = S.USERID AND C.USERID ='&ID';--ACCEPT ID PROMPT 위의 ID값을 가져옴
+
+DBMS_OUTPUT.PUT_LINE('아이디: '||CUS.A);
+DBMS_OUTPUT.PUT_LINE('이  름: '||CUS.B);
+DBMS_OUTPUT.PUT_LINE('판매액: '||CUS.C);
+DBMS_OUTPUT.PUT_LINE('금  액: '||CUS.D);
+
+END;
+
+SELECT * FROM CUSTOM;
+
+
+--직책을 입력 받아 그 직책의 급여의 총액,평균월급,인원수를 찾으시오
+
+CREATE OR REPLACE PROCEDURE SEARCHJIK
+(JIK IN VARCHAR2)
+IS --IS를 기준으로 아래는 블럭 안에서 사용할 변수
+A NUMBER;=0;
+B NUMBER(12,2);=0; --여긴 자릿값을 줬음
+C NUMBER:=0;
+BEGIN
+SELECT SUM(PAY),AVG(PAY),COUNT(*) INTO A,B,C
+FROM COMPANY WHERE POSIT=JIK;
+
+DMBS_OUTPUT.PUT.LINE('급여총액: '||A||'원');
+DMBS_OUTPUT.PUT.LINE('평균월급: '||B||'원');
+DMBS_OUTPUT.PUT.LINE('인원수: '||C||'명');
+END SEARCHJIK; --END뒤에 SEARCHJIK생략가능
+
+
+SELECT * FROM COMPANY;
+
+SELECT SUM(PAY),ROUND(AVG(PAY)),COUNT(*)
+FROM COMPANY WHERE POSIT=JIK;
+GROUP BY POSIT;
+
+
+
+
+
+--CUSTOM 테이블에 INSERT 시키는 프로시저(CUS_IN)
+CREATE OR REPLACE PROCEDURE CUS_IN
+(A VARCHAR2,B VARCHAR2,C VARCHAR2,D NUMBER,E VARCHAR2,
+F VARCHAR2,G VARCHAR2,H VARCHAR2,I VARCHAR2,J VARCHAR2,
+K VARCHAR2,L VARCHAR2,M NUMBER,N DATE,)
+IS
+BEGIN
+INSERT INTO CUSTOM VALUES (A,B,C,D,E,F,G,H,I,J,K,L,M,N);
+COMMIT;
+END;
+
+EXEC CUS_IN('A002','INNA','123',27,'0','123-123','서울',
+'강남구','역삼동','010-123-1234','가수','대졸',123,SYSDATE);
+
+--CUSTOM 테이블에 UPDATE 시키는 프로시저(CUS_UP)
+CREATE OR REPLACE PROCEDURE CUS_UP
+(A VARCHAR2,B VARCHAR2,C VARCHAR2,D NUMBER,E VARCHAR2,
+F VARCHAR2,G VARCHAR2,H VARCHAR2,I VARCHAR2,J VARCHAR2,
+K VARCHAR2,L VARCHAR2,M NUMBER,N DATE,)
+IS
+BEGIN
+UPDATE CUSTOM SET USERNAME=B, JUMIN=C, AGE=D, SEX=E,
+ZIP=F, ADDR1=G, ADDR2=H, ADDR3=I, TEL=J, JOB=K, SCHOL=L,
+POINT=M, REGDATE=N
+WHERE USERID=A;
+COMMIT;
+END;
+
+
+
+--CUSTOM 테이블에 DELETE 시키는 프로시져(CUS_DEL)
+CREATE OR REPLACE PROCEDURE CUS_DEL
+(A VARCHAR2)
+IS
+BEGIN
+DELETE CUSTOM WHERE USERNAME=B, JUMIN=C, AGE=D, SEX=E,
+ZIP=F, ADDR1=G, ADDR2=H, ADDR3=I, TEL=J, JOB=K, SCHOL=L,
+
+
+
+
+
+
+
+
+
+
+
