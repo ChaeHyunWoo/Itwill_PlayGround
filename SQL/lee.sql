@@ -473,7 +473,7 @@ SELECT * FROM (SELECT * FROM CUSTOM WHERE ADDR1 = '경기도') A
 WHERE A.AGE<=20;
 
 
----------------------------------------------------2월 3일------------------------------------------------------------------
+---------------------------------------------------@@@@@@@@@@@@@  2월 3일  @@@@@@@@@@@@@@------------------------------------------------------------------
 
 
 
@@ -508,12 +508,14 @@ commit;
 
 -----------------------------------------이게 PL SQL이다.
 
+--Anonymous
+
 DECLARE --이름없는 PROCEDURE
 TYPE FIRSTTYPE IS RECORD
 --(A VARCHAR2, B VARCHAR2, C NUMBER); -- 이렇게 써도 되지만 
 (A 사원.사원명%TYPE,B 사원.직급%TYPE, C 사원.급여%TYPE); -- 좀더 쉽게 쓸수 있다 
 
-CUS FIRSTTYPE;--CUS라는 변수를 선언하고 FORSTTYPE를 CUS에 넣는다 
+CUS FIRSTTYPE;--CUS라는 변수를 선언하고 FORSTTYPE레코드 저장공간을 생성해서 CUS에 넣는다   -> 자바에서 객체 생성 개념과 동일함.
 
 BEGIN --문으로 시작하고 
 SELECT 사원명,직급,급여 INTO CUS FROM 사원 WHERE 사원번호=2001;--사원명 직급 급여 INTO해서 CUS에 넣는다 
@@ -526,7 +528,7 @@ DBMS_OUTPUT.PUT_LINE('현재 질의한 시간은 '||TO_CHAR(SYSDATE,'YYYY-MM-DD HH:MM:SS
 END;--끝난다
 --------------------------------------------------------------------------------------------------
 DECLARE
-SAWON_RECORD 사원%ROWTYPE; --테이블의 모든 컬럼을 쓸때 ROWTYPE 씀
+SAWON_RECORD 사원%ROWTYPE; -- 전체 컬럼의 데이터 타입을 읽어와야 할 때 사용 / 사원 테이블의 행 TYPE를 모두 읽어와라
 BEGIN
 SELECT * INTO SAWON_RECORD FROM 사원 WHERE 사원번호=2002;
 DBMS_OUTPUT.PUT_LINE('사원번호: '|| SAWON_RECORD.사원번호);
@@ -536,32 +538,31 @@ DBMS_OUTPUT.PUT_LINE('주소: '|| SAWON_RECORD.주소);
 DBMS_OUTPUT.PUT_LINE('입사일: '|| SAWON_RECORD.입사일);
 END;
 
-
+--익명의 프로시져 반복문 사용
 DECLARE
-TYPE SANAME_TYPE IS TABLE OF 사원.사원명%TYPE
+TYPE SANAME_TYPE IS TABLE OF 사원.사원명%TYPE -- 사원명으로 만들 데이터타입을 SANAME_TABLE_TYPE에 저장
 INDEX BY BINARY_INTEGER;
 
 TYPE JIK_TYPE IS TABLE OF 사원.직급%TYPE
 INDEX BY BINARY_INTEGER;
 
-SANAME_COL SANAME_TYPE;--타입을 콜럼에 넣겟다
+SANAME_COL SANAME_TYPE;--컬럼 선언
 JIK_COL JIK_TYPE;
 
-I BINARY_INTEGER := 0;
+I BINARY_INTEGER := 0; -- 정수형 변수 I 선언
  
 BEGIN
 
---K는 변수
-FOR K IN (SELECT 사원명, 직급 FROM 사원) LOOP
+FOR K IN (SELECT 사원명, 직급 FROM 사원) LOOP -- FOR문 시작 / K는 변수
 I := I + 1;
 SANAME_COL(I) := K.사원명;
 JIK_COL(I) := k.직급;
-END LOOP;
+END LOOP; --FOR문 종료
 
 DBMS_OUTPUT.PUT_LINE('사원명 직급');
 DBMS_OUTPUT.PUT_LINE('-----------');
 
-FOR J IN 1..I LOOP--1부터 I까지
+FOR J IN 1..I LOOP--1부터 I까지 (자바의 확장 FOR문과 유사함)
 DBMS_OUTPUT.PUT_LINE(RPAD(SANAME_COL(J), 12) || RPAD(JIK_COL(J), 9));
 END LOOP;
 
@@ -570,15 +571,15 @@ END;--BEGIN의 END
 
 -------------------------------------------------------------------------------------------
 
---저장 PROCEDURE
+--저장 PROCEDURE(기본적으로 가장 많이 사용하는 프로시저)
 
 CREATE OR REPLACE PROCEDURE CHANGE_PAY
-(V_SANO IN NUMBER, V_NEW_PAY IN NUMBER)
+(V_SANO IN NUMBER, V_NEW_PAY IN NUMBER) -- 이름을 호출하면서 사용하는 매개변수 작성
 IS 
-BEGIN
+BEGIN -- BEGIN문에서 내부적으로 사용하는 변수 작성 시 IS 뒤에 작성
 UPDATE 사원 SET 급여 = V_NEW_PAY WHERE 사원번호 = V_SANO; --EXEC CHANGE_PAY(2001, 5000);
-COMMIT;
-END CHANGE_PAY;
+COMMIT; -- UPDATE문을 실행한 뒤 COMMIT을 해줘야 변경 내용이 저장된다.
+END CHANGE_PAY; -- CHANGE_PAY 프로시저명 생략하고 END; 만 써도 된다.
 
 --PROCEDURE의 이름을 쓰거나 안써도된다.
 
@@ -587,18 +588,24 @@ END CHANGE_PAY;
 --IN :외부에서 받아내는 값을 의미. 생략가능.매개변수
 --OUT :외부로 내보내주는 값.
 
-EXEC CHANGE_PAY(2001, 5000); --UPDATE이므로 한번 실행하고 끝.
+EXEC CHANGE_PAY(2001, 5000); -- 프로시저 실행 / UPDATE이므로 한번 실행하고 끝.
+SELECT * FROM 사원 WHERE 사원번호 = '2001'; -- 변경 내용 확인 가능
+
 EXEC CHANGE_PAY(2002, 3000);
+SELECT * FROM 사원 WHERE 사원번호 = '2005';
+
 
 -------함수 만들기
 CREATE OR REPLACE FUNCTION F_TAX
 (V_SANO IN NUMBER)
-RETURN NUMBER
+RETURN NUMBER -- RETURN(리턴)값은 세미콜론 ; 이 없음
 IS
-V_TAX NUMBER;
+V_TAX NUMBER; -- 내부 변수 선언
+
+--함수 실행
 BEGIN
 SELECT ((급여*12) + NVL(커미션, 0))*0.05 INTO V_TAX
-FROM 사원 WHERE 사원번호 = V_SANO;
+FROM 사원 WHERE 사원번호 = V_SANO; --여기까지
 
 RETURN V_TAX;
 END F_TAX;
@@ -609,6 +616,9 @@ SELECT 사원번호,사원명,직급,급여,커미션,F_TAX(2001) TAX FROM 사원 -- 함수부분 CM
 WHERE 사원번호=2001;
 
 --지금부터하는 코딩은  SCRIPT(파일)로 저장한다
+SET SERVEROUTPUT ON
+SET VERIFY OFF -- 변수의 값이 변경된 내용을 보여주는 명령어
+
 ACCEPT ID PROMPT '검색할 아이디를 입력하세요: ';--ID는 사용자정의 변수
 
 DECLARE
@@ -619,7 +629,7 @@ B CUSTOM.USERNAME%TYPE,
 C NUMBER(12,2),
 D NUMBER(5));
 
-CUS GOGAK;
+CUS GOGAK; -- CUS는 A,B,C,D 4개의 변수를 저장할 수 있는 레코드
 
 BEGIN
 SELECT C.USERID, C.USERNAME, S.합계, S.구입횟수 INTO CUS
@@ -627,7 +637,7 @@ FROM CUSTOM C, --CUSTOM를 C라 하고
 (SELECT USERID, SUM(PRICE) 합계, COUNT(*) 구입횟수
 FROM SALES
 GROUP BY USERID) S --이 괄호를 S로 만듬
-WHERE C.USERID = S.USERID AND C.USERID ='&ID';--ACCEPT ID PROMPT 위의 ID값을 가져옴
+WHERE C.USERID = S.USERID AND C.USERID ='&ID';--ACCEPT에서 받은 입력값이 &ID로 할당 된다.
 
 DBMS_OUTPUT.PUT_LINE('아이디: '||CUS.A);
 DBMS_OUTPUT.PUT_LINE('이  름: '||CUS.B);
@@ -635,6 +645,7 @@ DBMS_OUTPUT.PUT_LINE('판매액: '||CUS.C);
 DBMS_OUTPUT.PUT_LINE('금  액: '||CUS.D);
 
 END;
+/
 
 SELECT * FROM CUSTOM;
 
@@ -668,17 +679,8 @@ GROUP BY POSIT;
 
 
 --CUSTOM 테이블에 INSERT 시키는 프로시저(CUS_IN)
-CREATE OR REPLACE PROCEDURE CUS_IN;
-(A CUSTOM.USERID%TYPE, B CUSTOM.USERNAME%TYPE, C CUSTOM.JUMIN%TYPE,
- D CUSTOM.AGE%TYPE, E CUSTOM.SEX%TYPE, F CUSTOM.ZIP%TYPE, G CUSTOM.ADDR1%TYPE,
- H CUSTOM.ADDR2%TYPE, I CUSTOM.ADDR3%TYPE, J CUSTOM.TEL%TYPE, K CUSTOM.JOB%TYPE,
- L CUSTOM.SCHOL%TYPE, M CUSTOM.POINT%TYPE, N CUSTOM.REGDATE%TYPE)
-IS
-BEGIN
-INSERT INTO CUSTOM VALUES (A,B,C,D,E,F,G,H,I,J,K,L,M,N);
-COMMIT;
-END;
-------------------------------------------------------------------
+
+--프로시저 생성
 CREATE OR REPLACE PROCEDURE CUS_IN
 (A VARCHAR2,B VARCHAR2,C VARCHAR2,D NUMBER,E VARCHAR2,F VARCHAR2,G VARCHAR2,
 H VARCHAR2,I VARCHAR2,J VARCHAR2,K VARCHAR2,L VARCHAR2,M NUMBER,N DATE)
@@ -688,8 +690,16 @@ INSERT INTO CUSTOM VALUES(A,B,C,D,E,F,G,H,I,J,K,L,M,N);
 COMMIT;
 END;
 
+--INSERT PROCEDURE를 이용한 데이터 입력
 EXEC CUS_IN('A002', 'INNA', '222', 27, '0', '123-123','서울','강남구', '역삼동', '010-1234-5678', '가수', '대졸', 123, SYSDATE);
 EXEC CUS_IN('A001', 'SUZI', '123', 27, '0', '123-123','서울','강남구', '역삼동', '010-1234-5678', '가수', '대졸', 123, SYSDATE);
+
+SELECT * FROM CUSTOM WHERE USERID = 'A002'; -- 조회
+
+
+
+
+
 
 --CUSTOM 테이블에 UPDATE 시키는 프로시저(CUS_UP)
 CREATE OR REPLACE PROCEDURE CUS_UP
@@ -705,7 +715,12 @@ WHERE USERID=A;
 COMMIT;
 END;
 
-EXEC CUS_UP('A001', 'YUNA', '222', 27, '0', '123-123','서울','강남구', '역삼동', '010-1234-5678', '가수', '대졸', 123, SYSDATE);
+EXEC CUS_IN('A001', 'SUZI', '123', 27, '0', '123-123','서울','강남구', '역삼동', '010-1234-5678', '가수', '대졸', 123, SYSDATE);
+
+
+
+
+
 
 --CUSTOM 테이블에 DELETE 시키는 프로시져(CUS_DEL)
 CREATE OR REPLACE PROCEDURE CUS_DEL
@@ -717,11 +732,11 @@ COMMIT;
 END;
 
 EXEC CUS_DEL('A001');
-
-
----함수
 SELECT * FROM CUSTOM WHERE USERID = 'A001';
 
+---함수
+
+-- 부피를 구하는 함수
 CREATE OR REPLACE FUNCTION F_COBVOL
 (GILI IN NUMBER, POK IN NUMBER, NOPI IN NUMBER)
 RETURN NUMBER
@@ -734,6 +749,8 @@ END;
 
 SELECT F_COBVOL(4, 7, 8) FROM DUAL;
 
+-----
+--이름을 입력받아 성을 뺀 이름만 반환
 CREATE OR REPLACE FUNCTION F_NAME
 (A IN VARCHAR2)
 RETURN VARCHAR2
@@ -743,6 +760,9 @@ BEGIN
 B := SUBSTR(A, -2);
 RETURN B;
 END;
+
+SELECT USERNAME, F_NAME(USERNAME) 이름 FROM CUSTOM;
+
 
 SELECT USERNAME, F_NAME(USERNAME) NAME FROM CUSTOM WHERE ADDR1 = '제주도';
 
@@ -755,11 +775,6 @@ SELECT USERNAME, F_NAME(USERNAME) NAME FROM CUSTOM WHERE ADDR1 = '제주도';
 --사용자에게 입력받아서 출력하기
 --입사일(REGDATE)를 입력받아 사원명, 입사일, 근무기간(6년 2RODNJF)을 출력
 
-SELECT
-FLOOR(MONTHS_BETWEEN(SYSDATE, '1994-10-10')/12) || '년' ||
-FLOOR(MOD(MONTHS_BETWEEN(SYSDATE, '1994-10-10'), 12)) || '개월'
-FROM DUAL;
-
 CREATE OR REPLACE FUNCTION F_SDAY
 (V_DATE IN DATE)
 RETURN VARCHAR2
@@ -771,6 +786,12 @@ FLOOR(MONTHS_BETWEEN(SYSDATE, V_DATE)/12) || '년' ||
 FLOOR(MOD(MONTHS_BETWEEN(SYSDATE, V_DATE), 12)) || '개월';
 RETURN GUNDATE;
 END;
+--실행
+SELECT USERNAME 사원명, TO_CHAR(REGDATE, 'YYYY-MM-DD')입사일, F_SDAY(REGDATE) 연차 FROM CUSTOM;
+
+
+
+
 
 COL GUNDATE FORMAT A10;
 SELECT USERNAME, REGDATE, F_SDAY(REGDATE) GUNDATE FROM CUSTOM
@@ -797,6 +818,9 @@ END IF;
  RETURN GENDER;
 END;
 
+--결과 조회
+SELECT USERNAME, JUMIN, F_GENDER(JUMIN) GENDER FROM CUSTOM;
+
 COL GENDER FORMAT A10;
 SELECT USERNAME, JUMIN, F_GENDER(JUMIN) GENDER
 FROM CUSTOM WHERE  ADDR1 = '제주도';
@@ -816,6 +840,7 @@ NALZA := NALZA + D;
 RETURN NALZA;
 END;
 
+--결과 조회
 SELECT USERNAME, REGDATE, F_GAEYAK(REGDATE, 1, 11, 29) GAEYAK
 FROM CUSTOM WHERE ADDR1 = '제주도';
 
@@ -828,6 +853,8 @@ DESC CUSTOM;
 
 
 --IF
+
+--급여에 따른 등급 매기기
 CREATE OR REPLACE FUNCTION F_PAYGRADE
 (V_PAY IN NUMBER)
 RETURN VARCHAR2
@@ -885,7 +912,7 @@ CREATE OR REPLACE PROCEDURE P_FOR
 IS
 BEGIN
 FOR I IN 21..30 LOOP
-INSERT INTO LOOP1 (NO) VALUES(I);
+INSERT INTO LOOP1(NO) VALUES(I);
 COMMIT;
 END LOOP;
 END;
