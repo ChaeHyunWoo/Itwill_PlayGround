@@ -17,7 +17,7 @@ public class Test2 {
 		//DB연결방법
 		//1. DriverManager가 Connection을 생성
 		//2. Connection이 Statement를 생성 (sql구문을 실행하는 인터페이스) - statement는 종류가 3가지
-		//3. Statement가 쿼리(query)를 실행해준다.
+		//3. Statement가 쿼리(query)를 실행(execute)
 		
 		if(conn==null) { //만약에 연결이 안된 경우
 			System.out.println("데이터베이스 연결 실패!!");
