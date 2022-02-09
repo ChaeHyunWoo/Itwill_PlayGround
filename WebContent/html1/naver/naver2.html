@@ -5,53 +5,6 @@
 
 <title>네이버 : 회원가입</title>
 
-<style>
-
-.text_box {
-
-  width:500px;
-  height:50px;
-  font-size:20px;
-}
-
-.birth {
-  width:160px;
-  height:50px;
-  font-size:20px;
-
-}
-.birth2 {
-  width:160px;
-  height:55px;
-  font-size:20px;
-
-}
-.button {
- width: 510px;
- height: 50px;
- font-size: 15px;
- color:white;
- background-color: #01C707
-}
-.checkbox {
- width: 510px;
- height: 50px;
- font-size: 15px;
-}
-.checkbox2 {
- width: 255px;
- height: 50px;
- font-size: 15px;
-}
-.button2 {
- width: 245px;
- height: 55px;
- font-size: 15px;
- color:white;
- background-color: #01C707
-}
-</style>
-
 <script type="text/javascript">
 
 	function idpwCheck() { //데이터를 보낼 때 사용하는 함수
@@ -112,7 +65,7 @@
 			document.myForm.birth1.focous();
 			return;
 		}
-		if(!f.birth2.value) {
+		if(f.birth2.value == "") {
 			
 			alert("월 입력하세용");
 			document.myForm.birth2.focous();
@@ -124,38 +77,24 @@
 			document.myForm.birth3.focous();
 			return;
 		}
-		//성별
-		if(!f.gender.value) {
-			
-			alert("성별 입력하세용");
-			document.myForm.gender.focous();
-			return;
-		}
-		//이메일
-		if(f.email.value == "") {
-			
-			alert("이메일을 입력하세용");
-			document.myForm.email.focous();
-			return;
-		}
 		
 		//휴대전화
-		if(f.choice.value == "") {
+		if(f.tel1.value == "") {
 			
-			alert("국적을 선택해용");
-			document.myForm.choice.focous();
+			alert("앞자리 넣어라");
+			document.myForm.tel1.focous();
 			return;
 		}
-		if(f.tel.value == "") {
+		if(f.tel2.value == "") {
 			
-			alert("전화번호 써주세용");
-			document.myForm.tel.focous();
+			alert("중간 넣어라");
+			document.myForm.tel2.focous();
 			return;
 		}
-		if(f.phone.value == "") {
+		if(f.tel3.value == "") {
 			
-			alert("인증번호 써주세용");
-			document.myForm.phone.focous();
+			alert("끝자리 넣어라");
+			document.myForm.tel3.focous();
 			return;
 		}
 		
@@ -179,48 +118,42 @@
 <div align="center" >
 <img src="nana.PNG"/>
 
-<table style="font-size: 15pt; font-family: 돋움" cellpadding="3">
-
+<table style="font-size: 10pt; font-family: 돋움" cellpadding="3">
 
 <tr>                      
 	<td><strong>아이디</strong></td>
 </tr>
 <tr>
-	<td><input type="text" class="text_box"  name="id" size="40" placeholder="아이디입력"></td>
+	<td><input type="text" name="id" size="40" placeholder="아이디입력" placeholder-position="right"></td>
 </tr>
 
 <tr>
 	<td><b>비밀번호</b></td>
 </tr>
 <tr>
-	<td>
-		<input type="password" class="text_box" name="pwd1" placeholder="비밀번호 입력"
-		style="background : url('잠금이미지.PNG') no-repeat;  background-position: 95%";>
-	</td>
+	<td><input type="password" name="pwd1" size="40" placeholder="비밀번호 입력"></td>
 </tr>
 
 <tr>
 	<td><b>비밀번호 재확인</b></td>
 </tr>
 <tr>
-	<td><input type="password" name="pwd2" class="text_box"  placeholder="비밀번호 재확인"
-	style="background : url('잠금이미지.PNG') no-repeat;  background-position: 95%";></td>
+	<td><input type="password" name="pwd2" size="40" placeholder="비밀번호 재확인"></td>
 </tr>
 
 <tr>
 	<td><strong>이름</strong></td>
 </tr>
 <tr>
-	<td><input type="text" name="name" class="text_box"></td>
+	<td><input type="text" name="name" size="40"></td>
 </tr>
 
 <tr>
 	<td><strong>생년월일</strong></td>
 </tr>
 <tr>
-	<td><input type="text" name="birth1"  class="birth" placeholder="년(4자)"> 
-	<select name="birth2" class="birth2">
-	<option>월</option>
+	<td><input type="text" name="birth1" size="7" placeholder="년(4자)"> 
+	<select name="birth2" style="width: 100px; height: 23px;">
 	<option>1월</option>
 	<option>2월</option>
 	<option>3월</option>
@@ -235,28 +168,7 @@
 	<option>12월</option>
 	
 	</select>
- <input type="text" name="birth3" class="birth placeholder="일(2자)"></td>
-</tr>
-
-
-<tr>
-	<td><strong>성별</strong></td>
-</tr>
-<tr>
-	<td>
-	<select name="gender" class="checkbox" >
-	<option>성별</option>
-	<option>남성</option>
-	<option>여성</option>
-	</select>
-	</td>
-</tr>
-
-<tr>
-	<td><strong>이메일</strong></td>
-</tr>
-<tr>
-	<td><input type="text" name="email" class="text_box"></td>
+ <input type="text" name="birth3" size="7" placeholder="일(2자)"></td>
 </tr>
 
 <tr>
@@ -264,31 +176,31 @@
 </tr>
 <tr>
 	<td>
-	<select name="choice" class="checkbox">
-	<option>선택</option>
-	<option>대한민국 +82</option>
-	<option>영국 +44</option>
-	<option>캐나다 +1</option>
+	<select name="tel1" style="width: 300px; height: 30px;">
+	<option>010</option>
+	<option>011</option>
+	<option>777</option>
 	</select>
 	</td>
 </tr>
 <tr>
 	<td>
-	<input type="text" name="tel" class="checkbox2" placeholder="전화번호 입력">
-	<button class="button2">인증번호받기</button>
+	<input type="text" name="tel2" size="25" >
+	<button style="width: 100px; color:white; background-color: #01C707">인증번호받기</button>
 	<!-- <input type="button" style="width: 100px; height: 25px;"> -->
 	</td>
 </tr>
 <tr>
 	<td>
-	<input type="text" name="phone" class="text_box"  placeholder="인증번호 입력하세요" ></td>
+	<input type="text" name="tel3" size="25" ></td>
 </tr>
 
 <tr>
 	<td>
-	<button onclick="idpwCheck();" class="button">가입하기</button>
+	<button onclick="idpwCheck();" style="width: 300px; height: 25px; color:white; background-color: #01C707">가입하기</button>
 	<!-- <input type="button"  style="width: 300px; height: 25px;"> -->
 </tr>
+
 
 </table>
 
