@@ -12,9 +12,9 @@
 	String birth3 = request.getParameter("birth3");
 	String gender = request.getParameter("gender");
 	String email = request.getParameter("email");
-	String tel1 = request.getParameter("choice");
-	String tel2 = request.getParameter("tel");
-	String tel3 = request.getParameter("phone");
+	String choice = request.getParameter("choice");
+	String tel = request.getParameter("tel");
+	String phone = request.getParameter("phone");
 
 
 
