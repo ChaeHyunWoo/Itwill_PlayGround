@@ -1,3 +1,4 @@
+<%@page import="com.util.MyUtil"%>
 <%@page import="com.board.BoardDTO"%>
 <%@page import="java.util.List"%>
 <%@page import="com.board.BoardDAO"%>
@@ -12,8 +13,45 @@
 	Connection conn = DBConn.getConnection();
 	BoardDAO dao = new BoardDAO(conn);
 	
-	List<BoardDTO> lists = dao.getLists(); //list에 DB에 있는 데이터가 들어간다
-	//이제 밑의 코딩에서 데이터를 풀어서 보여주면 된다.
+	
+	MyUtil myUtil = new MyUtil();
+	
+	//get방식으로 넘어온 페이지 번호(myUtil...)
+	String pageNum = request.getParameter("pageNum"); //겟파라미터로 받는다
+
+	int currentPage = 1;
+	
+	if(pageNum != null) {
+		
+		currentPage = Integer.parseInt(pageNum);
+	}
+	
+	//전체 데이터 갯수 구하기
+	int dataCount = dao.getDataCount();
+	
+	//하나의 페이지에 표시할 데이터 갯수
+	int numPerPage = 3;
+	
+	//전체 페이지 갯수
+	int totalPage = myUtil.getPageCount(numPerPage, dataCount);
+	
+	//데이터를 삭제해서 페이지가 줄었을 때
+	if(currentPage > totalPage) {
+		currentPage = totalPage;
+	}
+	
+	//DB에서 가져올 데이터의 시작과 끝
+	int start = (currentPage-1) * numPerPage+1;
+	int end = currentPage * numPerPage;
+	
+	List<BoardDTO> lists = dao.getLists(start, end); 
+
+	//페이징 처리
+	String listUrl = "list.jsp";
+	
+	
+	String pageIndexList = 
+			myUtil.pageIndexList(currentPage, totalPage, listUrl);
 	
 	DBConn.close();
 	
@@ -67,7 +105,11 @@
 		<%for(BoardDTO dto : lists){ %>
 			<dl>
 				<dd class="num"><%=dto.getNum() %></dd>
-				<dd class="subject"><%=dto.getSubject() %></dd>
+				<dd class="subject">
+				<a href="<%=cp%>/board/article.jsp?num=<%=dto.getNum()%>&pageNum=<%=currentPage%>">
+				<%=dto.getSubject() %></a>
+				<!-- currentPage는 현재 내가보고있는 페이지 -->
+				</dd>
 				<dd class="name"><%=dto.getName() %></dd>
 				<dd class="created"><%=dto.getCreated() %></dd>
 				<dd class="hitCount"><%=dto.getHitCount() %></dd>
@@ -75,7 +117,7 @@
 			<%} %>
 		</div>
 		<div id="footer">
-			1 2 3
+			<%=pageIndexList %>
 		</div>
 		
 	</div>
