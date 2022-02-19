@@ -1,3 +1,5 @@
+<%@page import="java.net.URLDecoder"%>
+<%@page import="java.net.URLEncoder"%>
 <%@page import="com.board.BoardDAO"%>
 <%@page import="com.util.DBConn"%>
 <%@page import="java.sql.Connection"%>
@@ -18,10 +20,34 @@
 	
 	dao.updateData(dto);
 	
+	String searchKey = request.getParameter("searchKey");
+	String searchValue = request.getParameter("searchValue");
+	
+	if(searchValue != null) {
+			
+		if(request.getMethod().equalsIgnoreCase("GET")) {
+			searchValue = URLDecoder.decode(searchValue, "UTF-8");
+		}
+			
+	}else {
+		searchKey = "subject";
+		searchValue = "";
+	}
+	
+	
+	String param = "";
+	//null이 아니면 검색을 한 것이다.
+	if(!searchValue.equals("")) {
+		
+		//이때 주소를 만들어준다
+		param = "&searchKey=" + searchKey;
+		param+= "&searchValue=" + URLEncoder.encode(searchValue, "UTF-8");
+		
+	}
+	
 	DBConn.close();
 	
-	response.sendRedirect("list.jsp?pageNum=" + pageNum); //여기서 pageNum을 가지고 나온다.
-
+	response.sendRedirect("list.jsp?pageNum=" + pageNum + param);
 
 %>
 

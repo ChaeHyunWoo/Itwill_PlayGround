@@ -1,7 +1,39 @@
+<%@page import="java.net.URLEncoder"%>
+<%@page import="com.board.BoardDAO"%>
+<%@page import="com.util.DBConn"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.net.URLDecoder"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%
 	request.setCharacterEncoding("UTF-8");
 	String cp = request.getContextPath();
+	
+	String pageNum = request.getParameter("pageNum");
+	
+	String searchKey = request.getParameter("searchKey");
+	String searchValue = request.getParameter("searchValue");
+	
+	if(searchValue != null) {
+			
+		if(request.getMethod().equalsIgnoreCase("GET")) {
+			searchValue = URLDecoder.decode(searchValue, "UTF-8");
+		}
+			
+	}else {
+		searchKey = "subject";
+		searchValue = "";
+	}
+	
+	String param = "";
+	//null이 아니면 검색을 한 것이다.
+	if(!searchValue.equals("")) {
+		
+		//이때 주소를 만들어준다
+		param = "&searchKey=" + searchKey;
+		param+= "&searchValue=" + URLEncoder.encode(searchValue, "UTF-8");
+		
+	}
+	
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -146,7 +178,7 @@
 		<input type="reset" value=" 다시입력 " class="btn2" 
 		onclick="document.myForm.subject.focus();"/>
 		<input type="button" value=" 작성취소 " class="btn2" 
-		onclick="javascript:location.href='<%=cp%>/board/list.jsp';"/>
+		onclick="javascript:location.href='<%=cp%>/board/list.jsp?=<%=param%>&pageNum=<%=pageNum%>';"/>
 	</div>
 	
 	</form>

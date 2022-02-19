@@ -12,9 +12,11 @@
 	int nowMonth = cal.get(Calendar.MONTH)+1;
 	int nowDay = cal.get(Calendar.DAY_OF_MONTH);
 	
+	//클라이언트에 의해 넘어온 데이터(첫 시작시 null)
 	String strYear = request.getParameter("strYear");
 	String strMonth = request.getParameter("strMonth");
 	
+	//표시할 달력의 년,월
 	int year = nowYear;
 	int month = nowMonth;
 	
@@ -26,11 +28,13 @@
 		month = Integer.parseInt(strMonth); //위와 동일
 	}
 	
+	//표시할 달력 세팅
 	cal.set(year, month-1, 1);
 	
 	int startDay = 1;
 	int endDay = cal.getActualMaximum(Calendar.DAY_OF_MONTH);//말일 구하기
 	
+	//year년 month월 1일의 week구하기
 	int week = cal.get(Calendar.DAY_OF_WEEK);//주의 수 구하기
 
 %>
@@ -64,10 +68,11 @@
 		
 	}
 	
-	function calendarChange() {
+	function selected() {
 		
 		var f = document.myForm;
 		
+		f.action = "login.jsp?year=<%=year%>&month=<%=month %>";
 		f.submit();
 	}
 
@@ -75,8 +80,7 @@
 </script>
 
 </head>
-<body onload="sendIt();">
-<form action="" method="get" name="myForm">
+<body>
 <table border="1" width="600" align="center" style="font-size: 10pt;">
 
 <tr height="20">
@@ -110,7 +114,7 @@
 		<b>로그인을 하면 새로운 세상이 보입니다</b>
 	<%}else{ %>
 	
-	<!-- 달력 시작 -->
+	
 <form action="" name="myForm" method="get">
 
 <!-- 달력 년도 select,option -->
@@ -122,30 +126,32 @@
 		<img src="today.png" width="35" height="25" align="left">
 		
 		<!-- 년도 고르기 -->
-		<select name="strYear" onchange="calendarChange();">
+		<select name="strYear" onchange="selected();">
 		
 		<%
 		for(int i=(year-5); i<=year+5; i++) {
 			
 			if(i != year) {
 				
-				out.print("<option value>" + i +"</option>");
+				out.print("<option value='" + i +"'>" + i + "</option>");
 			}else{
-				out.print("<option value '" + "'selected = 'selected'>" + i +"</option>");
+				out.print("<option value= '" + i + "'selected = 'selected'>" + i +"</option>");
 			}
 		}
 		%>
 		</select><b>년</b>
 		
 		<!-- 월 고르기 -->
-		<select name="strMonth" onchange="calendarChange();">
+		<select name="strMonth" onchange="selected();">
 		
 		<%
 		for(int i=(month-1); i<=month+10; i++) {
 			
 			if(i != month) {
 				
-				out.print("<option value>" + i + "</option>");
+				out.print("<option value='" + i +"'>" + i + "</option>");
+			}else{
+				out.print("<option value= '" + i + "'selected = 'selected'>" + i +"</option>");
 			}
 		}
 		%>
@@ -154,9 +160,8 @@
 		</td>
 	</tr>
 </table>
-</form>
 
-	
+
 <table align="center" width="210" cellpadding="2" cellspacing="1" bgcolor="#cccccc">
 	
 
@@ -219,11 +224,10 @@
 		
 </form>
 		
-	<%} %>
+<%} %>
 	</td>
 </tr>
 	
 </table>
-</form>
 </body>
 </html>

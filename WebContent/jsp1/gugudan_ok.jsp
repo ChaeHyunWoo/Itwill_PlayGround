@@ -3,6 +3,11 @@
 	request.setCharacterEncoding("UTF-8");
 
 	int dan = Integer.parseInt(request.getParameter("dan"));
+	
+	//2. ServletContext인터페이스
+	ServletContext context = getServletContext();
+	String gender = context.getInitParameter("gender");
+	
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -25,6 +30,6 @@
 
 %>
 
-
+작성자:<%=gender %>
 </body>
 </html>

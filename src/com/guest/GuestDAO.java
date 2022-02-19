@@ -6,9 +6,10 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+//DAO는 테이블에 데이터를 넣는 클래스이기때문에 table을 만들었으면 dao도 만들 수 있음
 public class GuestDAO {
 	
-	
+	//의존성 주입(객체를 생성함에 동시에 초기화)
 	private Connection conn = null;
 	
 	public GuestDAO(Connection conn) {
@@ -83,8 +84,44 @@ public class GuestDAO {
 	}
 	
 	
+	//전체 데이터 갯수
+	public int getDataCount() {
+		
+		int totalCount = 0;
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql;
+		
+		try {
+			
+			sql = "select nvl(count(*),0) from guest"; // nvl(count(num)) 대신 nvl(count(*),0)가능
+			
+			pstmt =conn.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				totalCount = rs.getInt(1); //첫번째 값 받아냄
+			}
+			
+			rs.close();
+			pstmt.close();
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		
+		return totalCount;
+		
+	}
+	
+	
+	
+	
+	
 	//전체 데이터(가져오기)
-	public List<GuestDTO> getLists() {
+	public List<GuestDTO> getLists(int start, int end) {
 		
 		List<GuestDTO> lists = new ArrayList<GuestDTO>();
 		
@@ -94,11 +131,17 @@ public class GuestDAO {
 		
 		try {
 			
-			sql = "select num,name,email,homepage,content,";
+			sql = "select * from (";
+			sql+= "select rownum rnum, data.* from(";
+			sql+= "select num,name,email,homepage,content,";
 			sql+= "created,ipAddr from guest ";
-			sql+= "order by num desc";
+			sql+= "order by num desc) data) ";
+			sql+= "where rnum>=? and rnum<=?";
 			
 			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
 			
 			rs = pstmt.executeQuery();
 			

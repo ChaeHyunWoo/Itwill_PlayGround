@@ -24,8 +24,8 @@
 <!-- input type를 hidden으로 쓰면 우리 눈에는 데이터 값이 안보이지만 (숨겨져있다,) 
 데이터가 넘어가서 ex3으로 넘어간다. 보고싶으면 hidden을 text로 바꾸면 보인다.
  -->
-아이디: <input type="hidden" name="userId" size="10"/><br/>
-패스워드: <input type="hidden" name="userPwd" size="10"/><br/>
+아이디: <input type="text" name="userId" size="10"/><br/>
+패스워드: <input type="text" name="userPwd" size="10"/><br/>
 
 <input type="text" name="userName" value= <%=userName %>>
 <input type="text" name="userBirth" value=<%=userBirth %>>

@@ -1,3 +1,5 @@
+<%@page import="java.net.URLEncoder"%>
+<%@page import="java.net.URLDecoder"%>
 <%@page import="com.board.BoardDTO"%>
 <%@page import="com.board.BoardDAO"%>
 <%@page import="com.util.DBConn"%>
@@ -12,13 +14,38 @@
 	
 	Connection conn = DBConn.getConnection();
 	BoardDAO dao = new BoardDAO(conn);
-	
 	BoardDTO dto = dao.getReadData(num);
+	
+	String searchKey = request.getParameter("searchKey");
+	String searchValue = request.getParameter("searchValue");
+	
+	if(searchValue != null) {
+			
+		if(request.getMethod().equalsIgnoreCase("GET")) {
+			searchValue = URLDecoder.decode(searchValue, "UTF-8");
+		}
+			
+	}else {
+		searchKey = "subject";
+		searchValue = "";
+	}
+	
+	
+	String param = "";
+	//null이 아니면 검색을 한 것이다.
+	if(!searchValue.equals("")) {
+		
+		//이때 주소를 만들어준다
+		param = "&searchKey=" + searchKey;
+		param+= "&searchValue=" + URLEncoder.encode(searchValue, "UTF-8");
+		
+	}
+	
 	
 	DBConn.close();
 	
 	if(dto==null) {
-		response.sendRedirect("list.jsp");
+		response.sendRedirect("list.jsp" + pageNum + param);
 	}
 	
 %>
@@ -84,6 +111,13 @@
 		}
 		f.pwd.value = str;
 		
+		var temp = '<%=dto.getPwd()%>';
+		if(str != temp) {
+			alert("패스워드 틀림!");
+			f.pwd.focus();
+			return;
+		}
+		
 		f.action = "<%=cp%>/board/updated_ok.jsp";
 		f.submit();
 		
@@ -147,7 +181,7 @@
 			<dl>
 				<dt>패스워드</dt>
 				<dd>
-				<input type="password" name="pwd" value="<%=dto.getPwd() %>" size="35" 
+				<input type="password" name="pwd" size="35" 
 				maxlength="7" class="boxTF"/>
 				&nbsp;(게시물 수정 및 삭제시 필요!!)
 				</dd>
@@ -160,10 +194,13 @@
 	
 		<input type="hidden" name="num" value="<%=dto.getNum()%>"/>
 		<input type="hidden" name="pageNum" value="<%=pageNum%>"/>
+		<input type="hidden" name="searchKey" value="<%=searchKey%>"/>
+		<input type="hidden" name="searchValue" value="<%=searchValue%>"/>
+	
 	
 		<input type="button" value=" 수정하기 " class="btn2" onclick="sendIt();"/>
 		<input type="button" value=" 수정취소 " class="btn2" 
-		onclick="javascript:location.href='<%=cp%>/board/list.jsp?pageNum=<%=pageNum%>';"/>
+		onclick="javascript:location.href='<%=cp%>/board/list.jsp?pageNum=<%=pageNum%><%=param%>';"/>
 	</div>
 	
 	</form>

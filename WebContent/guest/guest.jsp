@@ -1,3 +1,4 @@
+<%@page import="com.util.MyUtil"%>
 <%@page import="com.guest.GuestDTO"%>
 <%@page import="java.util.List"%>
 <%@page import="com.util.DBConn"%>
@@ -11,9 +12,41 @@
 	//GuestDAO dao = new GuestDAO(conn); 
 	//위의 2줄을 1줄로 가능
 	GuestDAO dao = new GuestDAO(DBConn.getConnection());
+	
+	MyUtil myUtil = new MyUtil();
 	List<GuestDTO> lists = null;
 	
-	lists = dao.getLists();
+	int dataCount = dao.getDataCount();
+	
+	//Myutil에서 page가 넘어온다.
+	String pageNum = request.getParameter("pageNum");
+	
+	int currentPage = 1;
+	
+	if(pageNum!=null) {
+		currentPage = Integer.parseInt(pageNum);
+	}
+	
+	int numPerPage = 5;
+	int totalPage = 0;
+	
+	//이건 혹시나 해서 검사하기 0이 아닐때만 실행해라
+	if(dataCount!=0) {
+		totalPage = myUtil.getPageCount(numPerPage, dataCount);
+	}
+	
+	if(currentPage>totalPage) {
+		currentPage = totalPage;
+	}
+	
+	int start = (currentPage-1) * numPerPage + 1;
+	int end = currentPage * numPerPage;
+	
+	lists = dao.getLists(start,end);
+	
+	String urlList = cp + "/guest/guest.jsp";
+	String pageIndexList = 
+			myUtil.pageIndexList(currentPage, totalPage, urlList);
 	
 	//int num = Integer.parseInt(request.getParameter("num"));
 	
@@ -30,6 +63,15 @@
 <link rel="stylesheet" href="<%=cp%>/guest/data/style.css"/>
 
 <script type="text/javascript" src="<%=cp%>/guest/data/guest.js"></script>
+
+<script type="text/javascript">
+
+	function isDelete(num) {
+		
+		location.href="<%=cp%>/guest/delete.jsp?num=" + num;
+	}
+
+</script>
 
 </head>
 <body>
@@ -139,25 +181,47 @@ style="margin: auto;">
 </tr>
 
 <tr height="20">
-	<td width="50%" style="padding-left: 5px;">
-작성일 : <%=dto.getCreated() %> (<%=dto.getIpAddr() %>)&nbsp;&nbsp;
+	<td style="padding-left: 5px;">
+	작성일 : <%=dto.getCreated() %> (<%=dto.getIpAddr() %>)
 	</td>
 	<td align="right" style="padding: 5px;">
-    	<a href= "<%=cp %>/guest/delete.jsp?num=<%=dto.getNum()%>">삭제</a>
+    	<a href="javascript:isDelete('<%=dto.getNum() %>')">삭제</a>
 	</td>
 </tr>
+<tr><td colspan="2" bgcolor="#dbdbdb" height="1"></td></tr>
 
-<tr height="20" bgcolor="#FFFFFF">
-	<td colspan="2" style="padding-left: 5px;">
-<%=dto.getContent() %>
+<tr>
+	<td bgcolor="#ffffff" colspan="2" height="20" valign="top" style="padding-left: 5px;">
+	<%=dto.getContent().replace("\r", "<br/>") %>
 	</td>
-</tr>	  
-</table>
+</tr>	
 
-<table width="560" border="0" cellpadding="0" cellspacing="0" style="margin: auto;">
-<tr><td height="3" bgcolor="#dbdbdb" align="center"></td></tr>
+<tr><td colspan="2" bgcolor="#dbdbdb" height="3"></td></tr>
+  
 </table>
 
 <%} %>
+ 
+<%if(dataCount==0) { %>
+<table width="560" border="0" cellpadding="0" cellspacing="0"
+bgcolor="#eeeeee" style="margin: auto;">
+
+<tr align="center" height="50">
+	<td>
+	<b>등록된 자료가 없습니다.</b>
+	</td>
+</tr>
+</table>
+<%}else{ %>
+<table width="560" border="0" cellpadding="0" cellspacing="0"
+bgcolor="#ffffff" style="margin: auto;">
+<tr align="center" height="30">
+	<td>
+	<%=pageIndexList %>
+	</td>
+</tr>
+</table>
+<%} %>
+<br/><br/>
 </body>
 </html>

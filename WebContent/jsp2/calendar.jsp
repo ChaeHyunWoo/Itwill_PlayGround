@@ -5,14 +5,14 @@
 
 	Calendar cal = Calendar.getInstance();
 	
-	//오늘 날짜
+	//오늘 날짜구하기
 	int nowYear = cal.get(Calendar.YEAR);
 	int nowMonth = cal.get(Calendar.MONTH) + 1; //달력은 월을 0~11월로 갖고있기에 +1를 해줘야함
 	int nowDay = cal.get(Calendar.DAY_OF_MONTH); //일 구하기
 	
 	//클라이언트가 넘겨준 데이터
-	String strYear = request.getParameter("year");
-	String strMonth = request.getParameter("month");
+	String strYear = request.getParameter("year");//처음 실행하게되면 null / 넘어오는 데이터가 없기 때문
+	String strMonth = request.getParameter("month");//처음 실행하게되면 null
 	
 	int year = nowYear;  
 	//2022년  처음 실행할 때는 값(년,월)이 없기때문에 2022년을 찍어줘야한다.
@@ -43,11 +43,13 @@
 		nextMonth=1;
 	}
 	
+	//표시할 달력 세팅
 	cal.set(year, month-1, 1);
 	
 	int startDay = 1;
-	int endDay = cal.getActualMaximum(Calendar.DAY_OF_MONTH);//말일 구하기
+	int endDay = cal.getActualMaximum(Calendar.DAY_OF_MONTH);//말일 구하기(calendar가 알아서 구해줌)
 	
+	//year년 month월 1일의 week구하기
 	int week = cal.get(Calendar.DAY_OF_WEEK);//주의 수 구하기
 	
 %>
@@ -125,7 +127,10 @@ td {
 	
 	for(int i=startDay; i<=endDay; i++) {
 		
+		//글꼴색
 		String fontColor = (newLine==0) ? "red" : (newLine==6) ? "blue" : "black";
+		
+		//오늘날짜 배경색
 		String bgColor = (nowYear==year)&&
 				(nowMonth==month)&&(nowDay==i)?"#e5e4e6":"#ffffff";
 		
@@ -133,18 +138,18 @@ td {
 				"'><font color='" + fontColor + "'>" + i + "</font></td>");
 		//<td align='center' bgcolor = '#ffffff'><font color='black'>10</font></td>
 		
-		newLine++;
+		newLine++; //한칸찍을때마다 증가
 		
 		if(newLine==7 && i!=endDay) {
 			out.print("</tr><tr height='20'>");
 			
-			newLine=0;
+			newLine=0; //초기화해야 빨강/파랑색이 적용
 		}
 		
 	}
 	
 	//빈칸 td만들기 - td를 다 만들고 닫아줘야함
-	while(newLine>0 && newLine<7) {
+	while(newLine>0 && newLine<7) { //남은 칸 수를 흰색으로 변경
 		out.print("<td bgcolor='#ffffff'>&nbsp;</td>");
 		newLine++;
 		

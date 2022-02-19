@@ -16,7 +16,7 @@ public class BoardDAO {
 		this.conn = conn;
 	}
 
-	// num의 최대값
+	// num의 최대값 구하기
 	public int getMaxNum() {
 
 		int maxNum = 0;
@@ -88,40 +88,44 @@ public class BoardDAO {
 	}
 
 	// 전체 데이터 갯수 구하기
-	public int getDataCount() {
+	public int getDataCount(String searchKey, String searchValue) {
 
-		int totalCount = 0;
-
+	int totalCount = 0;
+		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql;
-
+		
 		try {
-
-			sql = "select nvl(count(*),0) from board";
-
+			
+			searchValue = "%" + searchValue + "%";
+			
+			sql = "select nvl(count(*),0) from board ";
+			sql+= "where " + searchKey + " like ?";
+			
 			pstmt = conn.prepareStatement(sql);
-
+			
+			pstmt.setString(1, searchValue);
+			
 			rs = pstmt.executeQuery();
-
-			if (rs.next()) {
-
-				totalCount = rs.getInt(1); // 파생컬럼이니 1을 써서 첫번째 데이터 나와라
+			
+			if(rs.next()) {
+				totalCount = rs.getInt(1);
 			}
-
+			
 			rs.close();
 			pstmt.close();
-
+			
+			
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
-
 		return totalCount;
-
 	}
 
-	// 전체 데이터
-	public List<BoardDTO> getLists(int start, int end) {
+	// 전체 데이터 출력(페이지마다 개수 제한)
+	public List<BoardDTO> getLists(int start, int end,String searchKey, String searchValue) {
+	//rownum을 매개변수로 할당해서 해당범위만 list로 출력
 
 		List<BoardDTO> lists = new ArrayList<BoardDTO>();
 		PreparedStatement pstmt = null;
@@ -129,45 +133,50 @@ public class BoardDAO {
 		String sql;
 
 		try {
-
+			
+			searchValue = "%" + searchValue + "%";
+			
 			sql = "select * from (";
-			sql += "select rownum rnum, data.* from (";
-			sql += "select num,name,subject,hitCount,";
-			sql += "to_char(created,'YYYY-MM-DD') created ";
-			sql += "from board order by num desc) data) ";
-			sql += "where rnum>=? and rnum<=?";
-
+			sql+= "select rownum rnum, data.* from (";
+			sql+= "select num,name,subject,hitcount,";
+			sql+= "to_char(created,'YYYY-MM-DD') created ";
+			sql+= "from board where " + searchKey + " like ? ";
+			sql+= "order by num desc) data) " ;
+			sql+= "where rnum>=? and rnum<=?";
+			
 			pstmt = conn.prepareStatement(sql);
-
-			pstmt.setInt(1, start);
-			pstmt.setInt(2, end);
-
+			
+			pstmt.setString(1, searchValue);
+			pstmt.setInt(2, start);
+			pstmt.setInt(3, end);
+			
 			rs = pstmt.executeQuery();
-
-			while (rs.next()) {
-
+			
+			while(rs.next()) {
+				
 				BoardDTO dto = new BoardDTO();
-
+				
 				dto.setNum(rs.getInt("num"));
 				dto.setName(rs.getString("name"));
 				dto.setSubject(rs.getString("subject"));
 				dto.setHitCount(rs.getInt("hitCount"));
 				dto.setCreated(rs.getString("created"));
-
+				
 				lists.add(dto);
 			}
-
+			
 			rs.close();
 			pstmt.close();
 
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
-
+		
 		return lists;
-
 	}
-
+	
+	
+	
 	// num으로 조회한 한개의 데이터
 	public BoardDTO getReadData(int num) {
 

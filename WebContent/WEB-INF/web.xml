@@ -9,4 +9,60 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  <servlet>
+  	<servlet-name>helloServlet</servlet-name>
+  	<servlet-class>com.svt.Test1</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>helloServlet</servlet-name>
+  	<url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+  
+  
+  <!-- 1. ServletConfig 인터페이스 -->
+  <!-- 해당 Servlet에서만 사용가능 -->
+  <servlet>
+  	<servlet-name>test2Servlet</servlet-name>
+  	<servlet-class>com.svt.Test2</servlet-class>
+  		<init-param>
+  			<param-name>name</param-name>
+  			<param-value>배수지</param-value>
+  		</init-param>
+  		<init-param>
+  			<param-name>age</param-name>
+  			<param-value>27</param-value>
+  		</init-param>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>test2Servlet</servlet-name>
+  	<url-pattern>/itwill</url-pattern>
+  </servlet-mapping>
+  
+  
+  <!-- 2. ServletContext인터페이스 -->
+  <!-- 애를 쓰면 모든 곳에 인식 가능 context라는 말이 나오면 모든 곳(글로벌)
+       어떠한 클래스 명도 안적어서 범용적으로 사용 가능하다. -->
+  <context-param>
+  	<param-name>gender</param-name>
+  	<param-value>여자</param-value>
+  </context-param>
+  
+  
+  <servlet>
+  	<servlet-name>test3Servlet</servlet-name>
+  	<servlet-class>com.svt.Test3</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>test3Servlet</servlet-name>
+  	<url-pattern>/ss1</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
 </web-app>
+
+
