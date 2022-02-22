@@ -43,8 +43,7 @@
   
   
   <!-- 2. ServletContext인터페이스 -->
-  <!-- 애를 쓰면 모든 곳에 인식 가능 context라는 말이 나오면 모든 곳(글로벌)
-       어떠한 클래스 명도 안적어서 범용적으로 사용 가능하다. -->
+  <!-- 동일 웹 프로그램안에 모든 서블릿 또는 JSP에서 사용가능함-->
   <context-param>
   	<param-name>gender</param-name>
   	<param-value>여자</param-value>
@@ -58,6 +57,39 @@
   <servlet-mapping>
   	<servlet-name>test3Servlet</servlet-name>
   	<url-pattern>/ss1</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  	<servlet-name>boardServlet</servlet-name>
+  	<servlet-class>com.board.BoardServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>boardServlet</servlet-name>
+  	<url-pattern>/sboard/*</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  	<servlet-name>scoreServlet</servlet-name>
+  	<servlet-class>com.score.ScoreServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>scoreServlet</servlet-name>
+  	<url-pattern>/jumsu/*</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  	<servlet-name>memberServlet</servlet-name>
+  	<servlet-class>com.join.MemberServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>memberServlet</servlet-name>
+  	<url-pattern>/join/*</url-pattern>
   </servlet-mapping>
   
   

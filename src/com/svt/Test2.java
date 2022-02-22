@@ -33,8 +33,10 @@ public class Test2 extends HttpServlet {
 		ServletContext context = getServletContext();
 		String gender = context.getInitParameter("gender");
 		
+		//한글 인코딩
 		resp.setContentType("text/html;charset=utf-8");
 		
+		//객체생성
 		PrintWriter pw = resp.getWriter();
 		
 		pw.print("<html><body>");

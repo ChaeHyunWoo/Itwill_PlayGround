@@ -11,7 +11,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import com.join.CustomInfo;
 import com.util.DBConn;
 import com.util.MyUtil;
 
@@ -44,7 +46,7 @@ public class BoardServlet extends HttpServlet{
 		BoardDAO dao = new BoardDAO(conn);
 		
 		//애를 제외한 모든 객체는 공통으로 하는하는 객체이다
-		MyUtil myUtil = new MyUtil();
+		MyUtil myUtil = new MyUtil(); //애는 페이징 처리 클래스이다.
 		
 		String cp = req.getContextPath(); // cp는 -> /study 이다
 		String uri = req.getRequestURI(); // -> /study/sboard/sboard/created.do (uri는 전체 주소)
@@ -53,6 +55,20 @@ public class BoardServlet extends HttpServlet{
 		
 		//uri에 created.do가 있으면 if문을 실행해라
 		if(uri.indexOf("created.do")!=-1) {
+			
+			//로그아웃상태에서 게시판 글올리기를 하면 로그인 화면으로 보내버린다.
+			//로그인 상태이면 글올리기로 넘어간다.
+			HttpSession session = req.getSession();
+			
+			CustomInfo info = (CustomInfo)session.getAttribute("customInfo");
+			
+			if(info == null) {
+				
+				url = "/member/login.jsp";
+				forward(req, resp, url);
+				
+				return; //info가 null일때 아래 코드를 실행시키면 안되니 return을 쓴다.
+			}
 			
 			url = "/bbs/created.jsp";//이 주소를 직접 찾아간다.
 			forward(req, resp, url);
@@ -75,7 +91,6 @@ public class BoardServlet extends HttpServlet{
 			
 			dao.insertData(dto);
 			
-			//DB에 insert 시켰으니 DB의 내용을 읽어와야함
 			url = cp + "/sboard/list.do";
 			resp.sendRedirect(url);
 		

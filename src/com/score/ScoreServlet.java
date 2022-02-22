@@ -41,12 +41,13 @@ public class ScoreServlet extends HttpServlet{
 		String cp = req.getContextPath();
 		String uri = req.getRequestURI();
 		String url;
-		
+		// 데이터 출력 
 		if(uri.indexOf("write.do")!= -1 ) {
 			
 			url = "/sung/write.jsp";
 			forward(req, resp, url);
 			
+		// 추가	
 		}else if(uri.indexOf("write_ok.do")!= -1) {
 			
 			ScoreDTO dto = new ScoreDTO();
@@ -69,7 +70,8 @@ public class ScoreServlet extends HttpServlet{
 			
 			url = "/sung/list.jsp";
 			forward(req, resp, url);
-			
+		
+		// 삭제	
 		}else if(uri.indexOf("updated.do")!= -1) {
 			
 			String hak = req.getParameter("hak");

@@ -36,6 +36,7 @@
 	
 	searchKey = "subject";
 	
+	
 	//검색값이 있을 경우
 	if(searchValue != null) {
 		
@@ -48,7 +49,8 @@
 	}else {
 		searchKey = "subject";
 		searchValue = "";
-	}
+	} 
+	
 	
 	//검색 - 검색기능을 사용할 경우 get방식의 주소에 추가로 적용.
 	String param = "";
@@ -156,7 +158,7 @@
 		</div>
 		<div id="rightHeader">
 			<input type="button" value=" 글올리기 " class="btn2" 
-			onclick="javascript:location.href='<%=cp%>/board/created.jsp?<%=param%>&pageNum=<%=pageNum%>';"/>			
+			onclick="javascript:location.href='<%=cp%>/board/created.jsp?=<%=param%>&pageNum=<%=pageNum%>';"/>			
 		</div>	
 	</div>
 	<div id="bbsList_list">

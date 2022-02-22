@@ -104,7 +104,8 @@
 				<dt>작 성 자</dt>
 				<dd>
 				<input type="text" name="name" size="35" 
-				maxlength="20" class="boxTF"/>
+				maxlength="20" class="boxTF"
+				value="${sessionScope.customInfo.userName }"/>
 				</dd>
 			</dl>		
 		</div>

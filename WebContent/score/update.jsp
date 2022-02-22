@@ -61,8 +61,13 @@ td {
 	background: #e6e6e6
 }
 
-</style>
 
+a {
+	text-decoration: none;
+	color: blue;
+}
+
+</style>
 
 </head>
 <body>
