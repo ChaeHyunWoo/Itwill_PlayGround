@@ -64,14 +64,18 @@
 				<div class="bbsCreated_bottomLine">
 					<dl>
 						<dt>아&nbsp;이&nbsp;디</dt>
-						<dd>${dto.userId }</dd>
+						<dd>
+						${dto.userId }
+						</dd>
 					</dl>
 				</div>
 
 				<div class="bbsCreated_bottomLine">
 					<dl>
 						<dt>이&nbsp;&nbsp;&nbsp;&nbsp;름</dt>
-						<dd>${dto.userName }</dd>
+						<dd>
+						${dto.userName }
+						</dd>
 					</dl>
 				</div>
 
@@ -87,7 +91,9 @@
 
 				<div class="bbsCreated_bottomLine">
 					<dl>
-						<dt>생&nbsp;&nbsp;&nbsp;&nbsp;일</dt>
+						<dt>
+						생&nbsp;&nbsp;&nbsp;&nbsp;일
+						</dt>
 						<dd>
 							<input type="text" name="userBirth" size="35" maxlength="50"
 								value="${dto.userBirth }" class="boxTF" /><b>[YYYY-MM-DD]</b>
@@ -97,7 +103,9 @@
 
 				<div class="bbsCreated_bottomLine">
 					<dl>
-						<dt>전&nbsp;&nbsp;&nbsp;&nbsp;화</dt>
+						<dt>
+						전&nbsp;&nbsp;&nbsp;&nbsp;화
+						</dt>
 						<dd>
 							<input type="text" name="userTel" size="35" maxlength="50"
 								value="${dto.userTel }" class="boxTF" />
