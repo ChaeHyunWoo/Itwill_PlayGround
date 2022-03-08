@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config 
+PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+"http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<!-- 각각의 기능에 대한 환경설정 -->
+
+<!-- 객체 생성 -->
+
+<!-- /board.do 가 오면 com.board.BoardAction 으로 가라 갈때 boardForm가져가라 parameter : a.jsp?a=10&b=20 딸려가면서
+ 어느메소드 찾아가라고 명시해줌메소드에 담을 메소드가 필요하다.scope = request : "영역 이객체가 충돌될수있으니 
+ request한도내에서 인식 1:1 관계에서만 boardAction 까지만 
+ http://localhost:8080/struts/board.do?method=writeparameter = method = > ?method=writeparameter="method" 
+ -> method 에 wrtie 가 들어오게된다.created 문자를 가져오면 /board/created.jsp 로 이동해라 
+ forward일때 실제주소 , redirect 일때 가상주소 -->
+
+
+
+<struts-config>
+
+	<form-beans>
+		<form-bean name="boardForm" type="com.board.BoardForm"/>
+	</form-beans>
+	
+	<action-mappings>
+		<action path="/board" type="com.board.BoardAction"
+			name="boardForm" scope="request" parameter="method">
+			<forward name="created" path="/board/created.jsp"/>
+			<forward name="save" redirect="true" path="/board.do?method=list"/>
+			<forward name="list" path="/board/list.jsp"/>
+			<forward name="article" path="/board/article.jsp"/>
+			<forward name="updated" path="/board/updated.jsp"/>
+			<!-- <forward name="updated_ok" redirect="true" path="/board.do?method=list"/> -->
+		
+		
+		
+		</action>
+		
+	</action-mappings>
+
+</struts-config>
