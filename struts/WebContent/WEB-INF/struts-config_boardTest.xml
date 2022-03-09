@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config 
+PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+"http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<!-- <forward name="created_ok" redirect="true" :세션이나 update.delete,insert는 redirect를 써야함 -->
+
+<struts-config>
+
+	<form-beans>
+		<form-bean name="boardTestForm" type="com.boardTest.BoardForm"/>
+	</form-beans>
+	
+	<action-mappings>
+	
+		<action path="/boardTest" type="com.boardTest.BoardAction"
+			name="boardTestForm" scope="request" parameter="method">
+			
+			<forward name="created" path="/boardTest/created.jsp"/>
+			<forward name="created_ok" redirect="true" path="/boardTest.do?method=list"/>
+			<forward name="list" path="/boardTest/list.jsp"/>
+			<forward name="article" path="/boardTest/article.jsp"/>
+		
+		</action>
+	
+	</action-mappings>
+
+</struts-config>

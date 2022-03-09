@@ -5,19 +5,20 @@ PUBLIC "-/ibatis.apache.org//DTO SQL Map 2.0//EN"
 
 <!-- parameterClass: 가져오는 것 / resultClass : 내보내는것 -->
 
+<!-- Mapper -->
 <sqlMap namespace="board">
-
 <select id="maxNum" resultClass="int">
 	select nvl(max(num),0) from board
 </select>
 
+<!-- 게시글 입력(insert) -->
 <insert id="insertData" parameterClass="com.boardTest.BoardForm">
 	insert into board (num,subject,name,email,content,pwd,
 	ipAddr,hitCount,created) values (#num#,#subject#,#name#,
 	#email#,#content#,#pwd#,#ipAddr#,0,sysdate)
 </insert>
 
-<!-- 반복적인 내용을 처리하는 방법 -->
+<!-- 반복적인 내용을 처리 -->
 <sql id="where-list">
 
 	<!-- searchkey에 subject가 오면 이 where문을 실행한다. -->
@@ -42,8 +43,6 @@ PUBLIC "-/ibatis.apache.org//DTO SQL Map 2.0//EN"
 </sql>
 
 
-
-
 <!--resultClass는 반환값  /int 대신 Integer써도 된다. -->
 <!-- 매개변수는 parameterClass /여기에 매개변수를 하나밖에 못써서 
 commonDAO에서 map에 2개의 매개변수를 넣어줘서 여기에 map을 씀-->
@@ -55,6 +54,7 @@ commonDAO에서 map에 2개의 매개변수를 넣어줘서 여기에 map을 씀
 	<include refid="where-list"/>
 </select>
 
+<!-- list 데이터 조회 -->
 <select id="listData" resultClass="com.boardTest.BoardForm"
 	parameterClass="map">
 	select * from(
@@ -63,6 +63,7 @@ commonDAO에서 map에 2개의 매개변수를 넣어줘서 여기에 map을 씀
 	select <include refid="field-list"/> from board
 	where $searchKey$ like '%' || #searchValue# || '%'
 	order by num desc) data)
+	<!-- CDATA 안에 있는 것은 모두 텍스트로 변환 -->
 <![CDATA[
 	where rnum >= #start# and rnum <= #end#
 ]]>

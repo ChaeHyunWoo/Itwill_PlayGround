@@ -9,12 +9,14 @@ PUBLIC "-/ibatis.apache.org//DTO SQL Map Config 2.0//EN"
 <!-- <dataSource type="SIMPLE"> -> 단일 DB사용 -->
 <!-- property : 등록 -->
 <!-- sqlMap resource :  com/util/sqlMap/boardTest_sqlMap.xml 를 불러옴-->
-<sqlMapConfig>
 
+<!-- Config(환경설정파일) -->
+<sqlMapConfig>
 	<settings
 	cacheModelsEnabled="false"	
 	useStatementNamespaces="true"/> 
 	
+	<!-- DB연결자.JDBC등록된 내용도있고, 이 내용도 함께 존재해야함 -->
 	<transactionManager type="JDBC" commitRequired="false">
 		<dataSource type="SIMPLE">
 			<property name="JDBC.Driver" value="oracle.jdbc.driver.OracleDriver"/>
@@ -25,15 +27,4 @@ PUBLIC "-/ibatis.apache.org//DTO SQL Map Config 2.0//EN"
 	</transactionManager>
 	
 	<sqlMap resource="com/util/sqlMap/boardTest_sqlMap.xml"/>
-	
-
-
-
-
-
-
-
-
-
-
 </sqlMapConfig>
