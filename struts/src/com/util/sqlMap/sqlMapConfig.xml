@@ -27,4 +27,6 @@ PUBLIC "-/ibatis.apache.org//DTO SQL Map Config 2.0//EN"
 	</transactionManager>
 	
 	<sqlMap resource="com/util/sqlMap/boardTest_sqlMap.xml"/>
+	<sqlMap resource="com/util/sqlMap/fileTest_sqlMap.xml"/>
+	
 </sqlMapConfig>

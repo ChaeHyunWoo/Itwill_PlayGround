@@ -20,7 +20,8 @@
   			/WEB-INF/struts-config.xml,
   			/WEB-INF/struts-config_test.xml,
   			/WEB-INF/struts-config_board.xml,
-  			/WEB-INF/struts-config_boardTest.xml
+  			/WEB-INF/struts-config_boardTest.xml,
+  			/WEB-INF/struts-config_fileTest.xml
   		</param-value>
   	</init-param>
   	<load-on-startup>2</load-on-startup>

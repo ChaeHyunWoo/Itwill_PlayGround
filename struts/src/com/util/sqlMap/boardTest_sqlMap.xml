@@ -103,5 +103,17 @@ commonDAO에서 map에 2개의 매개변수를 넣어줘서 여기에 map을 씀
 ]]>
 </select>
 
+<!-- 수정 -->
+<update id="updateData" parameterClass="com.boardTest.BoardForm">
+	update board set name=#name#,subject=#subject#,email=#email#,
+	content=#content#,pwd=#pwd# where num=#num#
+</update>
+
+
+<!-- 삭제 -->
+<delete id="deleteData" parameterClass="int">
+	delete board where num=#num#
+</delete>
+
 
 </sqlMap>
