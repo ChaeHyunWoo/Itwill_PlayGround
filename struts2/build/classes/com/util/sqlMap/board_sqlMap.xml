@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="bbs">
+
+<typeAlias alias="boardDTO" type="com.board.BoardDTO"/>
+
+<select id="maxBoardNum" resultClass="int">
+	select nvl(max(boardNum),0) from bbs
+</select>
+
+<insert id="insertData" parameterClass="BoardDTO">
+	insert into bbs (boardNum,name,pwd,email,subject,content,
+	ipAddr,groupNum,depth,orderNo,parent,hitCount,created) values 
+	(#boardNum#,#name#,#pwd#,#email#,#subject#,#content#,
+	#ipAddr#,#groupNum#,#depth#,#orderNo#,#parent#,0,sysdate) 
+	
+
+</insert>
+
+<select id="dataCount" resultClass="int" parameterClass="map">
+	select nvl(count(*),0) from bbs
+	where $searchKey$ like '%' || #searchValue# || '%'
+</select>
+
+<select id="listData" resultClass="boardDTO" parameterClass="map">
+	select * from (
+	select rownum rnum, data.* from (
+	select boardNum,name,subject,depth,hitCount,
+	to_char(created, 'YYYY-MM-DD') created from bbs
+	where $searchKey$ like '%' || #searchValue# || '%'
+	order by groupNum desc, orderNo asc) data)
+<![CDATA[	
+	where rnum>=#start# and rnum<=#end#
+]]>
+</select>
+
+<update id="hitCountUpdate" parameterClass="int">
+	update bbs set hitCount=hitCount+1 where boardNum=#boardNum#
+</update>
+
+<select id="readData" parameterClass="int" resultClass="boardDTO">
+	select boardNum,name,email,subject,content,ipAddr,groupNum,depth,orderNo,parent,hitCount,created
+	from bbs where boardNum=#boardNum#
+</select>
+
+<select id="preReadData" parameterClass="map" resultClass="boardDTO">
+	select data.* from (
+	select boardNum,subject from bbs
+	where ($searchKey$ like '%' || #searchValue# || '%')
+<![CDATA[	
+	and ((groupNum=#groupNum# and orderNo<#orderNo#) or (groupNum>#groupNum#))
+	order by groupNum asc, orderNo desc) data
+	where rownum=1
+]]>
+</select>
+<select id="nextReadData" parameterClass="map" resultClass="boardDTO">
+	select data.* from (
+	select boardNum,subject from bbs
+	where ($searchKey$ like '%' || #searchValue# || '%')
+<![CDATA[	
+	and ((groupNum=#groupNum# and orderNo>#orderNo#) or (groupNum<#groupNum#))
+	order by groupNum desc, orderNo asc) data
+	where rownum=1
+]]>	
+</select>
+</sqlMap>
