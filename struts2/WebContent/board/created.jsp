@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>게 시 판(Struts 2)</title>
+<title>답 변 형 게 시 판(Struts2)</title>
 
 <link rel="stylesheet" type="text/css" href="<%=cp%>/board/css/style.css"/>
 <link rel="stylesheet" type="text/css" href="<%=cp%>/board/css/created.css"/>
@@ -37,13 +37,11 @@
 			return;
 		}		
 		
-		/* 
-		if(!isValidKorean(str)){
+	/* 	if(!isValidKorean(str)){
 			alert("\n이름을 정확히 입력하세요.");
 			f.name.focus()
 			return;
-		} 
-		*/		
+		}		 */
 		f.name.value = str;
 		
 		if(f.email.value){
@@ -72,15 +70,17 @@
 		}
 		f.pwd.value = str;
 		
-		
+		/*  입력  수정  댓글 */
+		/* request.setAttribute("mode", "create"); */
+		/* 주소를 분리해놨다.  */
 		if(f.mode.value=="create") {
 			f.action = "<%=cp%>/bbs/created.action";
-		} else if(f.mode.value="update") {
+		}else if(f.mode.value=="update") {
 			f.action = "<%=cp%>/bbs/updated.action";
-		} else if(f.mode.value="reply") {
+		}else if(f.mode.value=="reply") {
 			f.action = "<%=cp%>/bbs/reply.action";
 		}
-		
+
 		f.submit();
 		
 	}
@@ -93,7 +93,7 @@
 
 <div id="bbs">
 	<div id="bbs_title">
-		게 시 판(Struts 2)
+		답 변 형 게 시 판(Struts2)
 	</div>
 	
 	<form action="" method="post" name="myForm">
@@ -111,7 +111,7 @@
 		
 		<div class="bbsCreated_bottomLine">
 			<dl>
-				<dt>작 성 자</dt>
+				<dt>작성자</dt>
 				<dd>
 				<input type="text" name="name" value="${dto.name }" size="35" 
 				maxlength="20" class="boxTF"/>
@@ -154,54 +154,55 @@
 	
 	<div id="bbsCreated_footer">
 	
+		<!-- 수정으로 쓸곳 , 수정하기 위해서 필요한것이다. -->
 		<input type="hidden" name="boardNum" value="${dto.boardNum }"/>
-		<input type="hidden" name="pageNum" value="${dto.pageNum }"/>
 		
+		<!-- 변수에 담아서 보내주무르 dto.pageNum에서 pageNum으로 바꾼다. 
+		req.setAttribute( -->
+		<input type="hidden" name="pageNum" value="${pageNum }"/>
+		
+		<!-- 댓글달때 필요하므로 써놓음 -->
 		<input type="hidden" name="groupNum" value="${dto.groupNum }"/>
 		<input type="hidden" name="orderNo" value="${dto.orderNo }"/>
 		<input type="hidden" name="depth" value="${dto.depth }"/>
-		<input type="hidden" name="parent" value="${dto.parent }"/>
 		
+		<!-- parent에는 부모의 boardNum이 들어간다.  -->
+		<input type="hidden" name="parent" value="${dto.boardNum }"/>
+		
+		<!--  입력용인지 수정용인지 댓글용인지 -->
 		<input type="hidden" name="mode" value="${mode }"/>
-	
+		
+		
+		<c:if test="${mode=='create' }">
 		<input type="button" value=" 등록하기 " class="btn2" onclick="sendIt();"/>
 		<input type="reset" value=" 다시입력 " class="btn2" 
 		onclick="document.myForm.subject.focus();"/>
-		<input type="button" value=" 작성취소 " class="btn2" 
-		onclick="javascript:location.href='<%=cp%>/bbs/list.action';"/>
+		<!-- 넘어갈때 pageNum도 넘어갈수있게 한다.  -->
+		<input type="button" value=" 작성취소 " class="btn2"
+		 onclick="javascript:location.href='<%=cp%>/bbs/list.action?pageNum=${pageNum }';"/>
+		</c:if>
+		 
+		<c:if test="${mode=='update' }">
+		<input type="button" value=" 수정하기 " class="btn2" onclick="sendIt();"/>
+		<!-- 넘어갈때 pageNum도 넘어갈수있게 한다.  -->
+		<input type="button" value=" 수정취소 " class="btn2"
+		 onclick="javascript:location.href='<%=cp%>/bbs/list.action?pageNum=${pageNum }';"/>
+		</c:if>
+		 
+		<c:if test="${mode=='reply' }">
+		<input type="button" value=" 답변등록하기 " class="btn2" onclick="sendIt();"/>
+		<input type="reset" value=" 다시입력 " class="btn2" 
+		onclick="document.myForm.subject.focus();"/>
+		<!-- 넘어갈때 pageNum도 넘어갈수있게 한다.  -->
+		<input type="button" value=" 작성취소 " class="btn2"
+		 onclick="javascript:location.href='<%=cp%>/bbs/list.action?pageNum=${pageNum }';"/>
+		</c:if>
+		 
 	</div>
-	
 	</form>
-
 </div>
-
-
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

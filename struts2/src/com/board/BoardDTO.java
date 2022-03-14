@@ -2,7 +2,7 @@ package com.board;
 
 public class BoardDTO {
 	
-	private int listNum;
+	private int listNum;//일렬번호
 	
 	private int boardNum;
 	private String name;
@@ -22,7 +22,7 @@ public class BoardDTO {
 	private String searchValue;
 	private String pageNum;
 	
-	private String mode;
+	private String mode;//입력(create), 수정(update), 답글작성
 
 	public int getListNum() {
 		return listNum;

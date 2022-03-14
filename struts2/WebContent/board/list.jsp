@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>게 시 판(Struts2)</title>
+<title>답 변 형 게 시 판(Struts2)</title>
 
 <link rel="stylesheet" type="text/css" href="<%=cp%>/board/css/style.css"/>
 <link rel="stylesheet" type="text/css" href="<%=cp%>/board/css/list.css"/>
@@ -33,7 +33,7 @@
 <div id="bbsList">
 
 	<div id="bbsList_title">
-		게 시 판 (Struts2)
+		답 변 형 게 시 판(Struts2)
 	</div>
 	<div id="bbsList_header">
 		<div id="leftHeader">
@@ -64,27 +64,42 @@
 		</div>
 		<div id="lists">
 		<c:forEach var="dto" items="${lists }">
+		
 			<dl>
 				<dd class="num">${dto.listNum }</dd>
 				<dd class="subject">
+				
+				<c:if test="${dto.depth!=0 }">
+					<c:forEach var="i" begin="1" end="${dto.depth }" step="1">
+						&nbsp;
+					</c:forEach>
+					<img alt="" src="<%=cp%>/board/image/re.gif"/>
+				</c:if>
+				
 				<a href="${urlArticle }&boardNum=${dto.boardNum }">${dto.subject }</a></dd>
 				<dd class="name">${dto.name }</dd>
 				<dd class="created">${dto.created }</dd>
 				<dd class="hitCount">${dto.hitCount }</dd>
 			</dl>
-		</c:forEach>	
+			
+			</c:forEach>
+			
+			
+			
 		</div>
-		
 		<div id="footer">
 			<p>
-				<c:if test="${tatalDataCount!=0 }">
+				<c:if test="${totalDataCount!=0 }">
 				${pageIndexList }
 				</c:if>
-							<c:if test="${tatalDataCount==0 }">
+							<c:if test="${totalDataCount==0 }">
 				"등록된 게시물이 없어..."
 				</c:if>
-		</div>	
-	</div>	
+			
+		</div>
+		
+	</div>
+	
 </div>
 
 </body>
