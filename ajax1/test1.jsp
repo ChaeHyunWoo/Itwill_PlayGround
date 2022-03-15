@@ -19,8 +19,7 @@
 
 	function sendIt() {
 		
-		//var xmlHttp = new XMLHTTPRequest();
-		
+		//XMLHttpRequest 객체 생성을 하는 메서드를 모듈화하여 사용
 		xmlHttp = createXMLHttpRequest(); //시작할때 0번
 		
 		var query = "";
@@ -32,10 +31,16 @@
 		query = "test1_ok.jsp?su1=" + su1 + "&su2=" + su2 + "&oper=" + oper;
 		
 		//이름은 사용자 정의
-		xmlHttp.onreadystatechange = callback;//갔다가 돌아오면서 자동으로 실행된다.
+		//onreadystatechage 메서드
+		//서버가 작업을 마치고 클라이언트에게 정보를 돌려줄 때 자동으로 실행할 메서드를 지정
+		xmlHttp.onreadystatechange = callback; //callback 함수 밑에 정의
 		
+		//open(); : 주소를 보내기위해 하는 준비작업
 		xmlHttp.open("GET",query,true);// 1번   /get방식으로 query를 보내고 true를 준다 / post방식일때는 false
-												//get방식으로 보낼것인데 쿼리를 위 주소로 보내고 true(비동기방식)값 줌
+									   //get방식으로 보낼것인데 쿼리를 위 주소로 보내고 true(비동기방식)값 줌
+		
+		//send(); : 보내는 명령어
+		//POST방식으로 전송 시 send에 전송해야하는 데이터값을 파라미터로 넣어준다.
 		xmlHttp.send(null); // 2번 비동기 방식으로 보낸다.
 		
 		//3번은 서버에서 실행되고 될때마다 3번을 보내주고 다 되면 4번을 보내준다
@@ -56,7 +61,7 @@
 	}
 	
 	function printData() {
-		//넘어오는 xml "root"를 읽어내서 result에 담는다.
+		//넘어오는 xml파일의 "root"를 읽어내서 result에 담는다.
 		var result = xmlHttp.responseXML.getElementsByTagName("root")[0];
 		//돌려주는 데이터가 xml이다.xml받을 준비를 해놓음
 		
