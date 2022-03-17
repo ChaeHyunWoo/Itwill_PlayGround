@@ -19,29 +19,25 @@
 		//XMLHttpRequest = new ActiveXObject("Msxml2.XMLHTTP");
 		
 		//크롬
-		XMLHttpRequest = new XMLHttpRequest();
+		XMLHttpRequest = new XMLHttpRequest();  //객체 생성
 		
-		XMLHttpRequest.open("GET","helloAjax_ok.jsp",true);
+		XMLHttpRequest.open("GET","helloAjax_ok.jsp",true);//요청을 초기화하면서 요청 방식, 주소, 동기화 여부 지정
 		XMLHttpRequest.onreadystatechange = viewMessage; //콜백함수 이름을 viewMessage로 할 것이다.
-		XMLHttpRequest.send(null); //get방식으로 보내니까 null
+		XMLHttpRequest.send(null); //요청을 보낸다 - get방식으로 보내니까 null
 		
 	}
 	
-	
-	//돌아올때 콜백함수 자동실행 - 서버에서 응답이 왔을 때 실행되는 메서드
+	//돌아올때 콜백함수(viewMessage) 자동실행 - 서버에서 응답이 왔을 때 실행되는 메서드
 	function viewMessage() {
 		
-		//돌아오는 데이터가 텍스트이면 Text로 받는다.
+		//helloAjax_ok.jsp를 갔다가 넘어오는 response는 Text이다.
 		var responseText = XMLHttpRequest.responseText;
 		 
 		var divE = document.getElementById("printDIV");
 		 
 		divE.innerHTML = responseText;
 		
-		
 	}
-	
-	
 
 </script>
 

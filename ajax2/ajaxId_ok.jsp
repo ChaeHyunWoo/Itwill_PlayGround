@@ -20,7 +20,7 @@
 		if(userId.startsWith("suzi")) {
 			str = userId + "는 유효한 아이디 입니다.";
 		}else {
-			str = userId + "는 유요한 아이디가 아닙니다.";
+			str = userId + "는 유효한 아이디가 아닙니다.";
 		}
 	}
 	

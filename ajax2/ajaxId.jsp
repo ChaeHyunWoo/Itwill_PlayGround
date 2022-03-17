@@ -13,11 +13,10 @@
 <script type="text/javascript">
 
 	var XMLHttpRequest;
-	XMLHttpRequest = new XMLHttpRequest();
+	XMLHttpRequest = new XMLHttpRequest();// 객체 생성
 	
+	//하단 <input>태그에 onkeyup = requestGet();를 써서 손가락을 땔때마다 함수를 실행하도록 함
 	function requestGet() {
-		
-		
 		
 		var f = document.myForm;
 		
@@ -29,18 +28,19 @@
 		
 		var params = "?userId=" + f.userId.value;
 		
+		//요청을 초기화하면서 요청 방식, 주소, 동기화 여부 지정
 		XMLHttpRequest.open("GET","ajaxId_ok.jsp" + params, true);
-		XMLHttpRequest.onreadystatechange = viewMessage;
+		XMLHttpRequest.onreadystatechange = viewMessage; //viewMessage를 콜백함수로 지정
 		XMLHttpRequest.send(null); //get방식이니 null
 	}
 	
 	
-	//콜백함수
+	//콜백함수 : viewMessage
 	function viewMessage() {
 		
 		if(XMLHttpRequest.readyState==4) {
 			if(XMLHttpRequest.status==200) {
-				
+				//서버 응답 이상 없음
 				var str = XMLHttpRequest.responseText;
 				
 				var divE = document.getElementById("resultDIV");

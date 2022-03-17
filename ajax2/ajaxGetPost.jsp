@@ -15,7 +15,8 @@
 	var XMLHttpRequest; //객체를 전역변수로 만듬
 	
 	function getXMLHttpRequest() {
-		
+		//XMLHttpRequest 객체 생성하기
+		//브라우저마다 객체 생성이 다르기 때문에 try-catch문으로 작성
 		if(window.ActiveXObject) {//IE
 			
 			try {//IE5.0이후
@@ -31,9 +32,10 @@
 		
 	}
 	
+	//Get전송 버튼 클릭 시 실행되는 메서드
 	function ajaxRequestGet() {
 		
-		var data = document.myForm.greeting.value;
+		var data = document.myForm.greeting.value;// Form의 데이터 가져오기
 		
 		if(data==""){
 			alert("데이터 입력해라!");
@@ -47,7 +49,7 @@
 		XMLHttpRequest.send(null); //get방식일때는 null
 	}
 	
-	
+	//Post전송 버튼 클릭 시 실행되는 메서드
 	function ajaxRequestPost() {
 		
 		var data = document.myForm.greeting.value;
@@ -75,17 +77,17 @@
 	function viewMessage() {
 		
 		var divE = document.getElementById("printDIV");
-		
+		//1.요청페이지 정보설정, 2.서버에 요청을 보내기 시작, 3.서버에서 요청처리
 		if(XMLHttpRequest.readyState==1||
 				XMLHttpRequest.readyState==2||
 				XMLHttpRequest.readyState==3) {
 			
 			divE.innerHTML =
-				"<img src='./image/processing.gif' width='50' height='50'/>"; //이미지 태그다. <img>로 써도된다,
+				"<img src='./image/processing.gif' width='50' height='50'/>";//이미지태그 출력
 				
-		}else if(XMLHttpRequest.readyState==4) { // 4가오면 정상적으로 실행된 것
+		}else if(XMLHttpRequest.readyState==4) { // 서버의 처리완료 시 4가 반환
 			
-			divE.innerHTML = XMLHttpRequest.responseText;
+			divE.innerHTML = XMLHttpRequest.responseText;//response로 넘어오는 text할당
 		}
 		
 	}

@@ -4,6 +4,7 @@
 	request.setCharacterEncoding("UTF-8");
 	String cp = request.getContextPath();
 	
+	//프로토콜의 버전 확인
 	//String protocol = request.getProtocol();
 	//System.out.print(protocol);
 	
@@ -19,10 +20,9 @@
 	//넘어오는 데이터
 	String greeting = request.getParameter("greeting");
 	
-	for(int i=0;i<3500;i++) {
+	for(int i=0;i<20000;i++) {
 		System.out.print("처리중...");
 	}
 %>
 
 <%="Server:" + greeting %>
-
