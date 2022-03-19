@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="fileTestDB">
+
+<typeAlias alias="ftdbDTO" type="com.fileTestDB.FileTestDBDTO"/>
+
+<select id="maxBoardNum" resultClass="int">
+	select nvl(max(num),0) from fileTest1
+</select>
+
+<insert id="insertData" parameterClass="ftdbDTO">
+	insert into fileTest1 (num,subject,saveFileName,originalFileName,userIdTxt) values
+	(#num#,#subject#,#saveFileName#,#originalFileName#,#userIdTxt#)
+</insert>
+
+<select id="readMember" parameterClass="String" resultClass="ftdbDTO">
+	select userId,userPwd,userName,userBirth,userTel from member 
+	where userId like '%' || #userId# || '%'
+</select>
+
+<select id="readData" parameterClass="int" resultClass="ftdbDTO">
+	select num,subject,saveFileName,originalFileName,userIdTxt
+	from fileTest1 where num=#num#
+</select>
+
+<select id="dataCount" resultClass="int">
+	select nvl(count(*),0) from fileTest1
+</select>
+
+<select id="listData" resultClass="ftdbDTO" parameterClass="map">
+	select * from (
+	select rownum rnum, data.* from (
+	select num,subject,saveFileName,originalFileName,userIdTxt
+	from fileTest1
+	order by num desc) data)
+<![CDATA[	
+	where rnum>=#start# and rnum<=#end#
+]]>
+</select>
+
+<delete id="deleteData" parameterClass="int">
+	delete fileTest1
+	where num=#num#
+</delete>
+
+</sqlMap>
