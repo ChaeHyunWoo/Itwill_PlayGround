@@ -16,7 +16,7 @@ PUBLIC "-/ibatis.apache.org//DTO SQL Map Config 2.0//EN"
 	cacheModelsEnabled="false"	
 	useStatementNamespaces="true"/> 
 	
-	<sqlMap resource="com/util/sqlMap/temp_sqlMap.xml"/>
+	<sqlMap resource="com/util/sqlMap/bbs_sqlMap.xml"/>
 	
 	
 </sqlMapConfig>

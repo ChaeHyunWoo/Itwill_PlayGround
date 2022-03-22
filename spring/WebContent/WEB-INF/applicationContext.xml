@@ -50,6 +50,10 @@ p:configLocation="WEB-INF/sqlMapConfig/sqlMapConfig.xml"/>
 		<ref bean="sqlMapClientTemplate"/>
 	</property>
 </bean>  이걸 CommonDAOImpl.java에 써준다-->
+
+<!-- 이런식으로 쓸수있지만 어노테이션으로 만들었다. -->
+<!-- <bean id="myUtil" class="com.util.MyUtil"/> 객체 생성시 myUtil 가져다가 그냥 쓸수있다. -->
+<!-- <bean id="fileManager" class="com.util.FileManager"/> 객체 생성시 myUtil 가져다가 그냥 쓸수있다. -->
 	
 
 </beans>  
