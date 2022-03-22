@@ -1,5 +1,8 @@
 package com.util;
 
+import org.springframework.stereotype.Service;
+
+@Service("myUtil") //일반클래스(그냥 객체생성한다음에 클래스안에 메소드 깔끔하게 가져다 쓸때)
 public class MyUtil {
 
 	// currentPageSetup page numPerBlock 

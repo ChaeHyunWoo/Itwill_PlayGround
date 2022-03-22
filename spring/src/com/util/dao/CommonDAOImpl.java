@@ -5,10 +5,13 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
-
+import org.springframework.stereotype.Repository;
 
 //인터페이스를 구현한 클래스
+
+@Repository("dao") //dao라는 이름으로 객체 생성 / @Repository : Database에 관련된 객체생성(저장소에 관련된)
 public class CommonDAOImpl implements CommonDAO {
+	
 	
 	@Autowired
 	private SqlMapClientTemplate sqlMapClientTemplate;
