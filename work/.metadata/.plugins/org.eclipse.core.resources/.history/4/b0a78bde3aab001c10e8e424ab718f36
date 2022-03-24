@@ -1,0 +1,14 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="false" pageEncoding="UTF-8" %>
+<html>
+<head>
+	<title>Home</title>
+</head>
+<body>
+
+<h2>Spring MVC Controller Test</h2>
+
+<h3>1. <a href=""</h3>
+
+</body>
+</html>

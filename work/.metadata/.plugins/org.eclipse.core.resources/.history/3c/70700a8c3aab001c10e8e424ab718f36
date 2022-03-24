@@ -1,0 +1,8 @@
+package com.exe.springmvc;
+
+import org.springframework.stereotype.Controller;
+
+@Controller("test.controller")
+public class TestController {
+
+}

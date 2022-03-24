@@ -1,0 +1,38 @@
+package com.exe.springdi4;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component("serviceConsumer")
+public class ServiceConsumer {
+	
+	@Autowired //Autowired + Qualifier 합친게 @Resource이다.
+	@Qualifier("messageService") //명확하게 이름을 지정해줘서 잘 찾을수있게해줌.
+	MessageService ms; // MessageService ms = new MessageService();
+	
+	@Autowired
+	TimeService ts;
+	
+	@Autowired
+	JobService js;
+	
+	
+	
+	
+	public void consumerService() {
+	
+	//반환값은 String
+	String message = ms.getMessage();
+	System.out.println(message);
+	
+	String time = ts.getTimeString();
+	System.out.println(time);
+	
+	//애는 자체적으로 출력을 갖고있어서 호출만 해면 나옴
+	js.getJob();
+	
+	}
+	
+
+}
