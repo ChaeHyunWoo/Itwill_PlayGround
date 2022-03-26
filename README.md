@@ -1,2 +1,2 @@
 
-Spring Framework 3.0 버전 + STS 3 사용
+Spring Framework 3.0 + STS 3 IDE 사용
