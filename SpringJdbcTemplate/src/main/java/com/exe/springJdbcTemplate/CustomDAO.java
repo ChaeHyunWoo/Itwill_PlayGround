@@ -21,6 +21,7 @@ public class CustomDAO {
 	
 	Connection conn = null;
 	
+	//데이터 저장
 	public int insertData(CustomDTO dto) {
 		
 		int result = 0;
@@ -51,7 +52,7 @@ public class CustomDAO {
 		return result;
 		
 	}
-	
+	//데이터 수정
 	public int updateData(CustomDTO dto) {
 		
 		int result = 0;
@@ -83,7 +84,7 @@ public class CustomDAO {
 		
 	}
 	
-	
+	//데이터 삭제
 	public int deleteData(String id) {
 		
 		int result = 0;
@@ -113,7 +114,7 @@ public class CustomDAO {
 		
 	}
 	
-	
+	//모든 데이터 출력
 	public List<CustomDTO> getList(String id) {
 		
 		List<CustomDTO> lists = new ArrayList<CustomDTO>();
@@ -156,7 +157,7 @@ public class CustomDAO {
 		
 	}
 	
-	//하나의 데이터 가져옴
+	//하나의 데이터 출력
 	public CustomDTO getReadData(String id) {
 		
 		CustomDTO dto = null;

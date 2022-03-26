@@ -1,0 +1,7 @@
+package com.exe.springJdbcTemplate;
+
+public interface Service {
+	
+	String getMessage();
+
+}

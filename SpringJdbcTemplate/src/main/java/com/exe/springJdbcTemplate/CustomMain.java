@@ -9,7 +9,7 @@ public class CustomMain {
 
 	public static void main(String[] args) {
 		
-		//콘솔에서는 이게 필요
+		//콘솔에서는 이 소스가 필요하다.
 		GenericXmlApplicationContext context = 
 				new GenericXmlApplicationContext("app-context.xml");//app-context.xml객체생성
 		
@@ -18,7 +18,7 @@ public class CustomMain {
 		// context에 만들어진 객체가 들어가있음
 		
 		//customDAO라는 이름으로 만들어진 Bean객체를 가져와서 dao에 넣음
-		//이건 일반 JDBC  
+		//이건 Java의 JDBC  
 		//CustomDAO dao = (CustomDAO)context.getBean("customDAO");
 		
 		//스프링의 JDBC
@@ -30,15 +30,15 @@ public class CustomMain {
 		
 		dto = new CustomDTO();
 		
-		dto.setId("333"); 
-		dto.setName("아이유"); 
+		dto.setId("555"); 
+		dto.setName("한효주"); 
 		dto.setAge(27);
 		 
 		dao.insertData(dto);
 		System.out.println("insert 완료");
 		 
 		
-		//select
+		//select(모든 데이터 검색)
 		/* List<CustomDTO> lists = dao.getList();
 		
 		for(CustomDTO dto1 : lists) {
@@ -50,7 +50,7 @@ public class CustomMain {
 		System.out.println("select 완료.."); */
 		
 		
-		//OneSelect
+		//OneSelect(하나의 데이터 검색)
 		/* dto = dao.getReadData("111");
 		
 		if(dto!=null) {
@@ -61,7 +61,7 @@ public class CustomMain {
 		System.out.println("OneSelect 완료..."); */
 		
 		
-		//update
+		//update(데이터 수정)
 		/*dto = new CustomDTO();
 		dto.setId("222");
 		dto.setName("정인성");
@@ -72,7 +72,7 @@ public class CustomMain {
 		System.out.println("update 완료..."); */
 		
 		
-		//delete
+		//delete(데이터 삭제)
 		/*dao.deleteData("222");
 		
 		System.out.println("delete 완료.."); */

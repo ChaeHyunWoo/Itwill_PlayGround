@@ -12,14 +12,17 @@
 
 	<context:component-scan base-package="com.exe.springmybatis" />
 	
+	<!-- customDAO만 사용하면 밑에 작성한 것들이 다 딸려온다.(제어의 역전:IOC -->
 	<bean id="customDAO" class="com.exe.springmybatis.CustomDAO"> <!-- dataSource부터 제어의 역전~ -->
 		<property name="sessionTemplate" ref="sessionTemplate"/> <!-- name은 메소드의 이름이니 내맘대로. 의존성 주입. ref는 밑의 id -->
 	</bean>
 	
+	<!-- 아래 SqlSessionFactoryBean을 읽는다. -->
 	<bean id="sessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sessionFactory"/>
 	</bean>
 	
+	<!-- 데이터 소스를 읽음 -->
 	<bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/> <!-- 얘의 name은 org~안에있으니 바꾸면안됌 -->
 		<property name="configLocation" value="classpath:/com/exe/springmybatis/mybatis-config.xml"/>

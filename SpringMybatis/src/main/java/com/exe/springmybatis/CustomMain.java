@@ -10,6 +10,7 @@ public class CustomMain {
 	public static void main(String[] args) {
 		
 		//콘솔에서는 이게 필요
+		//app-context.xml에서 객체생성한 것을 여기에 의존성 주입
 		GenericXmlApplicationContext context = 
 				new GenericXmlApplicationContext("app-context.xml");//app-context.xml객체생성
 		
@@ -21,17 +22,17 @@ public class CustomMain {
 		CustomDTO dto;
 		
 		//insert
-		/*
-		dto = new CustomDTO();
 		
-		dto.setId("777");
-		dto.setName("조이쿵");
+		dto = new CustomDTO(); //객체 생성해서 데이터 넣음
+		
+		dto.setId("241");
+		dto.setName("홍길동");
 		dto.setAge(26);
 		
 		dao.insertData(dto);
 		
-		System.out.println("insert 완료");
-		*/
+		System.out.println("MyBatis-insert 완료");
+		
 		
 		
 		//select				
@@ -50,7 +51,7 @@ public class CustomMain {
 		
 		
 		  //OneSelect 
-		  
+		  /*
 		  dto = dao.getReadData(777);
 		 
 		  if(dto!=null) { System.out.printf("%s %s %d\n",
@@ -59,7 +60,7 @@ public class CustomMain {
 		  }
 		  
 		  System.out.println("Oneselect 완료.");
-		  
+		  */
 		  
 		//update
 		/*

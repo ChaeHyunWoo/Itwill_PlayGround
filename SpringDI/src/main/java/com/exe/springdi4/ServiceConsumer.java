@@ -24,7 +24,6 @@ public class ServiceConsumer {
 		this.js = js;
 	}
 	
-	
 	public void consumerService() {
 	
 		/*
@@ -40,8 +39,8 @@ public class ServiceConsumer {
 	System.out.println(message);
 	
 	
-	String time = ts.getTimeString();
-	System.out.println(time);
+	//String time = ts.getTimeString();
+	//System.out.println(time);
 	
 	
 	//애는 자체적으로 출력을 갖고있어서 호출만 해면 나옴
