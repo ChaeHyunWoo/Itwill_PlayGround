@@ -1,9 +1,0 @@
-package com.exe.springdi2;
-
-public class MessageMain {
-
-	public static void main(String[] args) {
-		
-	}
-
-}

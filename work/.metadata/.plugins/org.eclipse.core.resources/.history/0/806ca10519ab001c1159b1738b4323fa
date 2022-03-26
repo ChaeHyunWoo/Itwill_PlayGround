@@ -1,5 +1,0 @@
-package com.exe.springdi3;
-//완충지대
-public class MessageService {
-
-}

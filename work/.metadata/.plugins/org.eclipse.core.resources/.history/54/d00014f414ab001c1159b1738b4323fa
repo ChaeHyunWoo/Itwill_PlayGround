@@ -1,7 +1,0 @@
-package com.exe.springdi1;
-
-public interface Service {
-	
-	String getMessage();
-
-}
