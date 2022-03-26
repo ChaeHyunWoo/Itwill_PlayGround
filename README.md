@@ -1,1 +1,1 @@
-Spring Framework 3.0 + STS 3 IDE + JDK8
+Spring Framework 3.0 + STS 3 IDE + JDK8 
