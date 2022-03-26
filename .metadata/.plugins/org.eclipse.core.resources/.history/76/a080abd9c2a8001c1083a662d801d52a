@@ -1,0 +1,12 @@
+package com.di.test;
+
+public class TestService {
+	
+	private Test test;
+	
+	//»ı¼ºÀÚ
+	public TestService(Test test) {
+		this.test = test;
+	}
+
+}

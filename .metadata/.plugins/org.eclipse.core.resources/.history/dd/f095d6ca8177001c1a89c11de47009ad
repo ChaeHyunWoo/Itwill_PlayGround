@@ -1,0 +1,146 @@
+package com.day18;
+
+import java.awt.BorderLayout;
+import java.awt.Frame;
+import java.awt.TextArea;
+import java.awt.TextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.net.DatagramPacket;
+import java.net.InetAddress;
+import java.net.MulticastSocket;
+
+public class ChatCS extends Frame implements Runnable, ActionListener {
+
+	private static final long serialVersionUID = 1L;
+
+	private MulticastSocket ms = null;//내부에서 사용할 멀티소켓
+	private InetAddress xGroup = null;
+	
+	private String host = "230.0.0.2";
+	private int port = 7777;
+	private String userName = "현우";
+	
+	private TextArea ta = new TextArea();
+	private TextField tf = new TextField();
+	
+	//DatagramSocket : UDP로 데이터그램 패킷을 전송하거나 수신
+	//DatagramPacket : UDP를 이용하여 전송될 수 있는 데이터
+	//MulticastSocket : 다수의 클라이언트에 데이터그램을 전송@@
+	//D class 범위 : 224.0.0.0 ~ 239.255.255.255
+	
+	public ChatCS() {
+		
+		ta.setEditable(false);
+		add(ta, BorderLayout.CENTER);
+		
+		add(tf, BorderLayout.SOUTH);
+		tf.addActionListener(this);
+		
+		addWindowListener(new WindowAdapter() {
+			
+			@Override
+			public void windowClosing(WindowEvent e) {
+				System.exit(0);
+			}
+		});
+		
+		setTitle("그룹채팅 [" + host + "]");
+		setSize(400, 400);
+		setVisible(true);
+		tf.requestFocus();
+	}
+	
+	
+	
+	public void setup() {
+		
+		try {
+			
+			xGroup = InetAddress.getByName(host); // ip
+			ms = new MulticastSocket(port); // port
+			
+			//특정 그룹에 포함
+			ms.joinGroup(xGroup);
+			
+			Thread th = new Thread(this);
+			th.start();
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+	}
+	
+	
+	public void disConnect() {
+		
+		try {
+			
+			ms.leaveGroup(xGroup);
+			ms.close();
+			
+		} catch (Exception e) {
+			
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+		new ChatCS().setup();
+
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		String str = tf.getText().trim();
+		if(str.equals(""))
+			return; 
+		
+		byte[] buffer = (userName + "]" + str).getBytes();
+		
+		try {
+			
+			DatagramPacket dp = new DatagramPacket(buffer, buffer.length, xGroup, port);
+			
+			ms.send(dp); // 보낸다.
+			
+			tf.setText("");
+			tf.requestFocus();
+			
+			
+		} catch (Exception e2) {
+			System.out.println(e2.toString());
+		}
+	}
+
+	@Override
+	public void run() {
+		
+		//스레드를 통해 반대편에서 보내는 문자를 받음
+		
+		try {
+			
+			while(true) {
+				
+				byte[] buffer = new byte[512]; // 한번 받을 때 512자 만큼 받음
+				
+				DatagramPacket dp = new DatagramPacket(buffer, buffer.length);
+				
+				ms.receive(dp);
+				
+				String str = new String(dp.getData()).trim();
+				
+				ta.append(str + "\r\n");
+				
+			}
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+			disConnect();
+		}
+		
+	}
+}

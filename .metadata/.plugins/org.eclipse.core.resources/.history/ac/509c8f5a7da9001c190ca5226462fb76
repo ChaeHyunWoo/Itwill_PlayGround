@@ -1,0 +1,16 @@
+package com.test1;
+//Authenticator인터페이스를 구현한 클래스
+public class LoginAUthenticatorImpl implements Authenticator {
+
+	@Override
+	public void authen(String userId, String userPwd) 
+			throws UserException {
+		
+		if(!userId.equals("suzi") && !userPwd.equals("123")) {
+			
+			throw new UserException("invalid id: " + userId);
+		}
+		
+	}
+
+}

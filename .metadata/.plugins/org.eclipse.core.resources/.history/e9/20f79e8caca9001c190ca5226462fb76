@@ -1,0 +1,5 @@
+package com.bbs;
+
+public class BoardCommand {
+
+}

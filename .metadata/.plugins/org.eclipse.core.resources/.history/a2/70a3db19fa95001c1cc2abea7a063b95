@@ -1,0 +1,2339 @@
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+	request.setCharacterEncoding("UTF-8");
+	String cp = request.getContextPath();
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="ko" style="--vh:6.96px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="./Acne Studios – 남성 및 여성 레디투웨어, 액세서리, 신발, 데님 더보기_files/520025771488408" async=""></script><script src="./Acne Studios – 남성 및 여성 레디투웨어, 액세서리, 신발, 데님 더보기_files/identity.js.다운로드" async=""></script><script type="text/javascript" async="" src="./Acne Studios – 남성 및 여성 레디투웨어, 액세서리, 신발, 데님 더보기_files/fbevents.js.다운로드"></script><script type="text/javascript" async="" src="./Acne Studios – 남성 및 여성 레디투웨어, 액세서리, 신발, 데님 더보기_files/f.txt"></script><script type="text/javascript" async="" src="./Acne Studios – 남성 및 여성 레디투웨어, 액세서리, 신발, 데님 더보기_files/analytics.js.다운로드"></script><script type="text/javascript" async="" src="./Acne Studios – 남성 및 여성 레디투웨어, 액세서리, 신발, 데님 더보기_files/js"></script><script type="text/javascript" async="" src="./Acne Studios – 남성 및 여성 레디투웨어, 액세서리, 신발, 데님 더보기_files/recaptcha__ko.js.다운로드" crossorigin="anonymous" integrity="sha384-i3lo6hheHvfawVCejiAK60oKeg+VawnO5VLcxIBNtGhKtDkiBZ3QtmmY2Lbdb2Qi"></script><script async="" src="./Acne Studios – 남성 및 여성 레디투웨어, 액세서리, 신발, 데님 더보기_files/gtm.js.다운로드"></script><script src="./Acne Studios – 남성 및 여성 레디투웨어, 액세서리, 신발, 데님 더보기_files/optimize.js.다운로드"></script>
+<meta name="naver-site-verification" content="20bb2c8935103f7c069024558cd8d65d7e401c9a">
+<meta name="baidu-site-verification" content="code-vnTOv0HKAo">
+<link rel="preload" href="./Acne Studios – 남성 및 여성 레디투웨어, 액세서리, 신발, 데님 더보기_files/main.js.다운로드" as="script">
+<link rel="preload" href="./Acne Studios – 남성 및 여성 레디투웨어, 액세서리, 신발, 데님 더보기_files/login.js.다운로드" as="script">
+<script defer="" src="./Acne Studios – 남성 및 여성 레디투웨어, 액세서리, 신발, 데님 더보기_files/main.js.다운로드"></script>
+<script defer="" src="./Acne Studios – 남성 및 여성 레디투웨어, 액세서리, 신발, 데님 더보기_files/login.js.다운로드"></script>
+<link rel="preload" href="./Acne Studios – 남성 및 여성 레디투웨어, 액세서리, 신발, 데님 더보기_files/main.css" as="style">
+<link rel="preload" href="https://www.acnestudios.com/on/demandware.static/Sites-acne_kr-Site/-/ko_KR/v1645687201867/icons/acne_studios_logo.svg" as="image">
+<link rel="preload" href="https://www.acnestudios.com/on/demandware.static/Sites-acne_kr-Site/-/ko_KR/v1645687201867/fonts/helvetica-now-w05-text-regular.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="https://www.acnestudios.com/on/demandware.static/Sites-acne_kr-Site/-/ko_KR/v1645687201867/fonts/helvetica-monospaced-w05-paneuropean-roman.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="https://www.acnestudios.com/on/demandware.static/Sites-acne_kr-Site/-/ko_KR/v1645687201867/fonts/helvetica-now-w05-micro-medium.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="./Acne Studios – 남성 및 여성 레디투웨어, 액세서리, 신발, 데님 더보기_files/main.css">
+
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,viewport-fit=cover,user-scalable=0">
+<meta name="description" content="">
+<meta name="keywords" content="Acne Studios ">
+<meta property="og:site_name" content="Acne Studios">
+<meta property="og:title" content="Sites-acne_kr-Site">
+<meta property="og:image" content="https://www.acnestudios.com/on/demandware.store/Sites-acne_kr-Site/ko_KR/%2fimages%2fnoimagemedium%2epng">
+<title>Acne Studios – 남성 및 여성 레디투웨어, 액세서리, 신발, 데님 더보기</title>
+<link href="https://www.acnestudios.com/on/demandware.static/Sites-acne_kr-Site/-/default/dw3b8a727f/favicon/favicon.ico" rel="shortcut icon">
+<link rel="apple-touch-icon" sizes="57x57" href="https://www.acnestudios.com/on/demandware.static/Sites-acne_kr-Site/-/default/dw8319d4fa/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://www.acnestudios.com/on/demandware.static/Sites-acne_kr-Site/-/default/dwe0700068/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://www.acnestudios.com/on/demandware.static/Sites-acne_kr-Site/-/default/dw0f68f486/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://www.acnestudios.com/on/demandware.static/Sites-acne_kr-Site/-/default/dwd8e9c4d3/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://www.acnestudios.com/on/demandware.static/Sites-acne_kr-Site/-/default/dw78a971a1/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://www.acnestudios.com/on/demandware.static/Sites-acne_kr-Site/-/default/dwe9192e47/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://www.acnestudios.com/on/demandware.static/Sites-acne_kr-Site/-/default/dwdd181196/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://www.acnestudios.com/on/demandware.static/Sites-acne_kr-Site/-/default/dw388a0d83/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.acnestudios.com/on/demandware.static/Sites-acne_kr-Site/-/default/dw833511c1/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://www.acnestudios.com/on/demandware.static/Sites-acne_kr-Site/-/default/dw18f4beae/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.acnestudios.com/on/demandware.static/Sites-acne_kr-Site/-/default/dwb932d63d/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="https://www.acnestudios.com/on/demandware.static/Sites-acne_kr-Site/-/default/dwa52c4195/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.acnestudios.com/on/demandware.static/Sites-acne_kr-Site/-/default/dwff1a5a51/favicon/favicon-16x16.png">
+<meta name="msapplication-TileImage" content="/on/demandware.static/Sites-acne_kr-Site/-/default/dw3a34f00d/favicon/ms-icon-144x144.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+<script src="./Acne Studios – 남성 및 여성 레디투웨어, 액세서리, 신발, 데님 더보기_files/platform.js.다운로드" async="" defer=""></script>
+<meta name="google-site-verification" content="NrTztLfxE72LKdaOP10h0dgp6lsd3jakKcf6nwlk7AA">
+<script type="text/javascript">
+        (function(){
+            window.ARCHIVES_STARTDATE_REMOTE = '';
+            window.ARCHIVES_URL_REMOTE = '';
+        }());
+    </script>
+<script>
+        var experimentValueJson = {
+  "action": "ABTest-GetOptimizeExperimentValue",
+  "queryString": "",
+  "locale": "ko_KR",
+  "experimentValue": "beVjUnvyTnCFRrLbdyxJ5A.0"
+};
+        var experimentValue = experimentValueJson.experimentValue;
+
+        window.experiments = experimentValue;
+        window.google_analytics_web_property_id = "UA-649968-4";
+    </script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);}) (window, document, 'script', 'dataLayer', 'GTM-WRRN7ZS');</script><script>window.GTM_ENABLED = 'true';window.GTM_CONTAINER_ID = 'GTM-WRRN7ZS';window.GTM_PARAMS = { currency: 'KRW' };</script>
+<script>
+    var experimentValueJson = {
+  "action": "ABTest-GetOptimizeExperimentValue",
+  "queryString": "",
+  "locale": "ko_KR",
+  "experimentValue": "beVjUnvyTnCFRrLbdyxJ5A.0"
+};
+    var experimentValue = experimentValueJson.experimentValue;
+
+    window.experiments = experimentValue;
+    window.google_analytics_web_property_id = "UA-649968-4";
+</script>
+<script>
+    window.onRecaptchaLoad = function () {
+        window.recaptchaLoaded = true
+    }
+</script>
+<script src="./Acne Studios – 남성 및 여성 레디투웨어, 액세서리, 신발, 데님 더보기_files/api.js.다운로드" defer="" async=""></script>
+<script type="text/javascript">//<!--
+/* <![CDATA[ (head-active_data.js) */
+var dw = (window.dw || {});
+dw.ac = {
+    _analytics: null,
+    _events: [],
+    _category: "",
+    _searchData: "",
+    _anact: "",
+    _anact_nohit_tag: "",
+    _analytics_enabled: "true",
+    _timeZone: "Asia/Seoul",
+    _capture: function(configs) {
+        if (Object.prototype.toString.call(configs) === "[object Array]") {
+            configs.forEach(captureObject);
+            return;
+        }
+        dw.ac._events.push(configs);
+    },
+	capture: function() { 
+		dw.ac._capture(arguments);
+		// send to CQ as well:
+		if (window.CQuotient) {
+			window.CQuotient.trackEventsFromAC(arguments);
+		}
+	},
+    EV_PRD_SEARCHHIT: "searchhit",
+    EV_PRD_DETAIL: "detail",
+    EV_PRD_RECOMMENDATION: "recommendation",
+    EV_PRD_SETPRODUCT: "setproduct",
+    applyContext: function(context) {
+        if (typeof context === "object" && context.hasOwnProperty("category")) {
+        	dw.ac._category = context.category;
+        }
+        if (typeof context === "object" && context.hasOwnProperty("searchData")) {
+        	dw.ac._searchData = context.searchData;
+        }
+    },
+    setDWAnalytics: function(analytics) {
+        dw.ac._analytics = analytics;
+    },
+    eventsIsEmpty: function() {
+        return 0 == dw.ac._events.length;
+    }
+};
+/* ]]> */
+// -->
+</script>
+<script type="text/javascript">//<!--
+/* <![CDATA[ (head-cquotient.js) */
+var CQuotient = window.CQuotient = {};
+CQuotient.clientId = 'aaxv-acne_kr';
+CQuotient.realm = 'AAXV';
+CQuotient.siteId = 'acne_kr';
+CQuotient.instanceType = 'prd';
+CQuotient.locale = 'ko_KR';
+CQuotient.fbPixelId = '__UNKNOWN__';
+CQuotient.activities = [];
+CQuotient.cqcid='';
+CQuotient.cquid='';
+CQuotient.cqeid='';
+CQuotient.cqlid='';
+/* Turn this on to test against Staging Einstein */
+/* CQuotient.useTest= true; */
+CQuotient.initFromCookies = function () {
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+	  var c = ca[i];
+	  while (c.charAt(0)==' ') c = c.substring(1,c.length);
+	  if (c.indexOf('cqcid=') == 0) {
+		CQuotient.cqcid=c.substring('cqcid='.length,c.length);
+	  } else if (c.indexOf('cquid=') == 0) {
+		  var value = c.substring('cquid='.length,c.length);
+		  if (value) {
+		  	var split_value = value.split("|", 3);
+		  	if (split_value.length > 0) {
+			  CQuotient.cquid=split_value[0];
+		  	}
+		  	if (split_value.length > 1) {
+			  CQuotient.cqeid=split_value[1];
+		  	}
+		  	if (split_value.length > 2) {
+			  CQuotient.cqlid=split_value[2];
+		  	}
+		  }
+	  }
+	}
+}
+CQuotient.getCQCookieId = function () {
+	if(window.CQuotient.cqcid == '')
+		window.CQuotient.initFromCookies();
+	return window.CQuotient.cqcid;
+};
+CQuotient.getCQUserId = function () {
+	if(window.CQuotient.cquid == '')
+		window.CQuotient.initFromCookies();
+	return window.CQuotient.cquid;
+};
+CQuotient.getCQHashedEmail = function () {
+	if(window.CQuotient.cqeid == '')
+		window.CQuotient.initFromCookies();
+	return window.CQuotient.cqeid;
+};
+CQuotient.getCQHashedLogin = function () {
+	if(window.CQuotient.cqlid == '')
+		window.CQuotient.initFromCookies();
+	return window.CQuotient.cqlid;
+};
+CQuotient.trackEventsFromAC = function (/* Object or Array */ events) {
+try {
+	if (Object.prototype.toString.call(events) === "[object Array]") {
+		events.forEach(_trackASingleCQEvent);
+	} else {
+		CQuotient._trackASingleCQEvent(events);
+	}
+} catch(err) {}
+};
+CQuotient._trackASingleCQEvent = function ( /* Object */ event) {
+	if (event && event.id) {
+		if (event.type === dw.ac.EV_PRD_DETAIL) {
+			CQuotient.trackViewProduct( {id:'', alt_id: event.id, type: 'raw_sku'} );
+		} // not handling the other dw.ac.* events currently
+	}
+};
+CQuotient.trackViewProduct = function(/* Object */ cqParamData){
+	var cq_params = {};
+	cq_params.cookieId = CQuotient.getCQCookieId();
+	cq_params.userId = CQuotient.getCQUserId();
+	cq_params.emailId = CQuotient.getCQHashedEmail();
+	cq_params.loginId = CQuotient.getCQHashedLogin();
+	cq_params.product = cqParamData.product;
+	cq_params.realm = cqParamData.realm;
+	cq_params.siteId = cqParamData.siteId;
+	cq_params.instanceType = cqParamData.instanceType;
+	cq_params.locale = CQuotient.locale;
+	
+	if(CQuotient.sendActivity) {
+		CQuotient.sendActivity(CQuotient.clientId, 'viewProduct', cq_params);
+	} else {
+		CQuotient.activities.push({activityType: 'viewProduct', parameters: cq_params});
+	}
+};
+/* ]]> */
+// -->
+</script>
+<link rel="alternate" hreflang="en-IT" href="https://www.acnestudios.com/it/en/register-account">
+<link rel="alternate" hreflang="en-AU" href="https://www.acnestudios.com/au/en/register-account">
+<link rel="alternate" hreflang="en-BE" href="https://www.acnestudios.com/be/en/register-account">
+<link rel="alternate" hreflang="en-CA" href="https://www.acnestudios.com/ca/en/register-account">
+<link rel="alternate" hreflang="en-CH" href="https://www.acnestudios.com/ch/en/register-account">
+<link rel="alternate" hreflang="zh-CN" href="https://www.acnestudios.com/cn/zh/register-account">
+<link rel="alternate" hreflang="en-CN" href="https://www.acnestudios.com/cn/en/register-account">
+<link rel="alternate" hreflang="de-DE" href="https://www.acnestudios.com/de/de/register-account">
+<link rel="alternate" hreflang="en-DE" href="https://www.acnestudios.com/de/en/register-account">
+<link rel="alternate" hreflang="en-DK" href="https://www.acnestudios.com/dk/en/register-account">
+<link rel="alternate" hreflang="en-FI" href="https://www.acnestudios.com/fi/en/register-account">
+<link rel="alternate" hreflang="fr-FR" href="https://www.acnestudios.com/fr/fr/register-account">
+<link rel="alternate" hreflang="en-FR" href="https://www.acnestudios.com/fr/en/register-account">
+<link rel="alternate" hreflang="en-HK" href="https://www.acnestudios.com/hk/en/register-account">
+<link rel="alternate" hreflang="ja-JP" href="https://www.acnestudios.com/jp/ja/register-account">
+<link rel="alternate" hreflang="en-JP" href="https://www.acnestudios.com/jp/en/register-account">
+<link rel="alternate" hreflang="ko-KR" href="https://www.acnestudios.com/kr/ko/register-account">
+<link rel="alternate" hreflang="en-KR" href="https://www.acnestudios.com/kr/en/register-account">
+<link rel="alternate" hreflang="en-NL" href="https://www.acnestudios.com/nl/en/register-account">
+<link rel="alternate" hreflang="en-NO" href="https://www.acnestudios.com/no/en/register-account">
+<link rel="alternate" hreflang="en" href="https://www.acnestudios.com/emea/en/register-account">
+<link rel="alternate" hreflang="en" href="https://www.acnestudios.com/apac/en/register-account">
+<link rel="alternate" hreflang="en" href="https://www.acnestudios.com/eu/en/register-account">
+<link rel="alternate" hreflang="en" href="https://www.acnestudios.com/americas/en/register-account">
+<link rel="alternate" hreflang="en-SE" href="https://www.acnestudios.com/se/en/register-account">
+<link rel="alternate" hreflang="en-GB" href="https://www.acnestudios.com/uk/en/register-account">
+<link rel="alternate" hreflang="en-US" href="https://www.acnestudios.com/us/en/register-account">
+<link rel="alternate" hreflang="x-default" href="https://www.acnestudios.com/kr/ko/register-account">
+<link rel="canonical" href="https://www.acnestudios.com/kr/ko/register-account">
+<script src="./Acne Studios – 남성 및 여성 레디투웨어, 액세서리, 신발, 데님 더보기_files/f(1).txt"></script></head>
+<body data-locale="ko_KR" class="layout--header-stuck">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WRRN7ZS"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="page page-account-register" data-action="Account-Register" data-querystring="">
+
+<div id="screen-size-indicator" class="screen-size-indicator"></div>
+<header class="header">
+<button type="button" class="state-container-toggle flex--grow-1 as-cell link--main-nav show-for-small-down navigation-state-container-toggle" aria-expanded="false" aria-controls="navigation-state-container" onclick="document.body.classList.add(&#39;state--navigation&#39;)" data-lazy-init="{&quot;addStateTrigger&quot;: {&quot;state&quot;: &quot;navigation&quot;}}">
+<span class="navigation navigation--burger">
+<svg class="svg-icon" width="10" height="20" viewBox="0 0 10 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="10" height="20" fill="white"></rect>
+<rect y="8" width="10" height="1" fill="black"></rect>
+<rect y="11" width="10" height="1" fill="black"></rect>
+<rect y="14" width="10" height="1" fill="black"></rect>
+</svg>
+</span>
+<span class="navigation navigation--menu">
+메뉴
+</span>
+</button>
+<nav id="navigation-state-container" aria-hidden="true" class="navigation-state-container state-container--overflow-auto---small-down">
+<a class="as-cell link--home-url" href="https://www.acnestudios.com/kr/ko/home" title="Acne Studios 홈">
+Acnestudios.com
+</a>
+<button type="button" class="as-cell link--main-nav border-top---small-down icon--chevron-right---small-down icon-placement--right" aria-expanded="false" data-search-mode="shop-woman" aria-controls="shop-woman-state-container" onclick="document.body.classList.add(&#39;state--shop-woman&#39;)">여성
+</button>
+<button type="button" class="as-cell link--main-nav border-top---small-down icon--chevron-right---small-down icon-placement--right" aria-expanded="false" data-search-mode="shop-man" aria-controls="shop-man-state-container" onclick="document.body.classList.add(&#39;state--shop-man&#39;)">남성
+</button>
+<div class="as-cell show-for-small-down border-top---small-down"></div>
+<button type="button" class="as-cell link--main-nav show-for-small-down border-top---small-down icon--chevron-right---small-down icon-placement--right" data-lazy-init="{ &quot;addStateTrigger&quot;: { &quot;state&quot;: &quot;contactus&quot; } }" aria-expanded="false" aria-controls="contactus-state-container" onlcick="document.body.classList.add(&#39;state--contactus&#39;)">고객 지원
+</button>
+<button class="header__account button link--main-nav show-for-small-down border-top---small-down icon--chevron-right---small-down icon-placement--right" href="#account" onclick="document.body.classList.add(&#39;state--account&#39;)" aria-expanded="false" aria-controls="account-state-container" data-lazy-init="{&quot;addStateTrigger&quot;: {&quot;state&quot;: &quot;account&quot;}}">
+계정
+</button>
+<a href="https://www.acnestudios.com/kr/ko/stores" class="as-cell link--main-nav show-for-small-down border-top---small-down">
+스토어
+</a>
+<button class="country-selector-trigger country-selector-bar border-top---small-down color--black---small-down as-cell link--main-nav show-for-small-down" id="location-toggle" onclick="document.body.classList.add(&#39;state--choose-location&#39;)" aria-expanded="false" aria-controls="choose-location-state-container" data-lazy-init="{&quot;addStateTrigger&quot;: {&quot;state&quot;: &quot;choose-location&quot;}}">
+<div class="country-selector-bar">
+<div class="country-selector-bar__flag">
+<span class="flag flag-kr">
+</span></div>
+<div class="country-selector-bar__label">
+<span class="shipping-to"> 배송지: </span>
+<span class="valid-in"> 다음에서만 유효함 </span>
+<span data-shipping-to="">대한민국</span>
+</div>
+</div>
+</button>
+<button type="button" aria-expanded="false" onclick="document.body.classList.remove(&#39;state--navigation&#39;)" aria-controls="navigation-state-container" class="button as-cell hide-for-medium-up state-close-trigger state-close-trigger--navigation">닫기</button>
+</nav>
+<div class="header__search">
+<button class="header__search-button as-cell link--main-nav---small-down color--gray---medium-up text--align-right---small-down state-container-toggle" onclick="document.body.classList.add(&#39;state--search&#39;)" aria-expanded="false" aria-controls="search" data-search-mode="default">
+<span class="show-for-medium-up" data-search-button-title="">검색</span>
+<span class="hide-for-medium-up">
+<svg class="svg-icon" width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="45" height="45" fill="white"></rect>
+<circle cx="21.5" cy="14.5" r="4" stroke="black"></circle>
+<rect x="24.0859" y="17.793" width="1" height="5.09141" transform="rotate(-45 24.0859 17.793)" fill="black"></rect>
+</svg>
+</span>
+</button>
+<button type="button" class="header__search-button-back as-cell show-for-medium-up state-close-trigger state-close-trigger--search" title="뒤로 가기" aria-expanded="false">취소</button>
+</div>
+<button class="header__account button link--main-nav show-for-medium-up" href="#account" onclick="document.body.classList.add(&#39;state--account&#39;)" aria-expanded="false" aria-controls="account-state-container">
+계정
+</button>
+<button role="button" class="global-contactus as-cell link--main-nav text--align-right show-for-small-down state-container-toggle border-right--concrete" onclick="document.body.classList.add(&#39;state--contactus&#39;)" aria-expanded="false" aria-controls="contactus-state-container" data-lazy-init="{&quot;addStateTrigger&quot;: {&quot;state&quot;: &quot;contactus&quot;}}">
+<svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="45" height="45" fill="white"></rect>
+<rect x="20" y="13" width="1" height="1" fill="black"></rect>
+<rect x="23" y="13" width="1" height="1" fill="black"></rect>
+<rect x="20" y="15" width="4" height="1" fill="black"></rect>
+<path d="M16.5 10.5V10H16V10.5H16.5ZM27.5 10.5H28V10H27.5V10.5ZM27.5 18.5V19H28V18.5H27.5ZM26 18.5V18H25.7929L25.6464 18.1464L26 18.5ZM23.5 21H23V22.2071L23.8536 21.3536L23.5 21ZM23.5 18.5H24V18H23.5V18.5ZM16.5 18.5H16V19H16.5V18.5ZM16.5 11H27.5V10H16.5V11ZM27 10.5V18.5H28V10.5H27ZM27.5 18H26V19H27.5V18ZM25.6464 18.1464L23.1464 20.6464L23.8536 21.3536L26.3536 18.8536L25.6464 18.1464ZM24 21V18.5H23V21H24ZM23.5 18H16.5V19H23.5V18ZM17 18.5V10.5H16V18.5H17Z" fill="black"></path>
+</svg>
+</button>
+<button type="button" class="header__cart as-cell link--main-nav state-trigger--cart text--align-right state-container-toggle" onclick="document.body.classList.add(&#39;state--cart&#39;)" aria-expanded="false" aria-controls="cart">
+
+<span class="minicart-bag--lable">
+쇼핑백
+</span>
+<span class="minicart--icon">
+<svg class="svg-icon" width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="30" height="45" fill="white"></rect>
+<rect x="18" y="12.5" width="9" height="7" stroke="black"></rect>
+<rect x="20" y="10.5" width="5" height="2" stroke="black"></rect>
+</svg>
+</span>
+<span class="font--monospace space--before products--count" data-cart-count="" is-not-zero="false">00</span>
+</button>
+</header>
+<nav id="shop-woman-state-container" tabindex="-1" aria-hidden="true" class="shop-woman-state-container state-container state-container--overflow-auto grid grid--striped grid--dense highlight-visited-links">
+<div class="state-container__header border-bottom--black cell--span-all flex flex--space-between show-for-small-down">
+<button type="button" aria-expanded="false" onclick="document.body.classList.remove(&#39;state--navigation&#39;)" aria-controls="navigation-state-container" class="as-cell button icon--angle-left state-close-trigger--navigation">뒤로 가기</button>
+<h2 class="as-cell">여성</h2>
+<button type="button" aria-expanded="false" onclick="document.body.classList.remove(&#39;state--shop-woman&#39;)" aria-controls="shop-woman-state-container" class="as-cell button icon--x state-close-trigger--shop-woman">닫기</button>
+</div>
+<div class="sub-menu__section cell--span-all---small-down cell--span-4---medium-up ">
+<div class="sub-menu__title as-cell cell--is-even show-for-medium-up">
+신상
+</div>
+<button type="button" role="menuitem" class="link--main-nav as-cell hide-for-medium-up" area-expanded="false" data-lazy-init="{&quot;contentToggle&quot;: {&quot;toggleId&quot;: &quot;신상-shop-woman&quot;, &quot;contentElHideClass&quot;: &quot;show-for-medium-up&quot;, &quot;triggerElActiveClass&quot;: &quot;opened&quot;}}">
+<span class="icon--chevron-toggle left" aria-hidden="true"></span>
+<span class="sub-category--name">신상</span>
+</button>
+<div id="신상-shop-woman" class="show-for-medium-up category-flyout border-bottom--concrete" aria-hidden="false" data-content-toggle-id="신상-shop-woman">
+<a role="menuitem" class="link as-cell " href="https://www.acnestudios.com/kr/ko/woman/new-arrivals/">
+신상품
+</a>
+<a role="menuitem" class="link as-cell cell--is-even" href="https://www.acnestudios.com/kr/ko/woman/suits-and-sets/">
+수트
+</a>
+<a role="menuitem" class="link as-cell " href="https://www.acnestudios.com/kr/ko/woman/face/slogan-print/">
+페이스 컬렉션: 슬로건 프린트
+</a>
+</div>
+</div>
+<div class="sub-menu__section cell--span-all---small-down cell--span-4---medium-up ">
+<div class="sub-menu__title as-cell cell--is-even show-for-medium-up">
+의류
+</div>
+<button type="button" role="menuitem" class="link--main-nav as-cell hide-for-medium-up" area-expanded="false" data-lazy-init="{&quot;contentToggle&quot;: {&quot;toggleId&quot;: &quot;의류-shop-woman&quot;, &quot;contentElHideClass&quot;: &quot;show-for-medium-up&quot;, &quot;triggerElActiveClass&quot;: &quot;opened&quot;}}">
+<span class="icon--chevron-toggle left" aria-hidden="true"></span>
+<span class="sub-category--name">의류</span>
+</button>
+<div id="의류-shop-woman" class="show-for-medium-up category-flyout border-bottom--concrete" aria-hidden="false" data-content-toggle-id="의류-shop-woman">
+<a role="menuitem" class="link as-cell " href="https://www.acnestudios.com/kr/ko/woman/outerwear/">
+아우터웨어
+</a>
+<a role="menuitem" class="link as-cell cell--is-even" href="https://www.acnestudios.com/kr/ko/woman/suit-jackets/">
+수트 재킷
+</a>
+<a role="menuitem" class="link as-cell " href="https://www.acnestudios.com/kr/ko/woman/knitwear/">
+니트웨어
+</a>
+<a role="menuitem" class="link as-cell cell--is-even" href="https://www.acnestudios.com/kr/ko/woman/sweatshirts/">
+스웨트셔츠
+</a>
+<a role="menuitem" class="link as-cell " href="https://www.acnestudios.com/kr/ko/woman/shirts-and-blouses/">
+블라우스
+</a>
+<a role="menuitem" class="link as-cell cell--is-even" href="https://www.acnestudios.com/kr/ko/woman/t-shirts/">
+티셔츠
+</a>
+<a role="menuitem" class="link as-cell " href="https://www.acnestudios.com/kr/ko/woman/dresses/">
+드레스
+</a>
+<a role="menuitem" class="link as-cell cell--is-even" href="https://www.acnestudios.com/kr/ko/woman/jeans/">
+진
+</a>
+<a role="menuitem" class="link as-cell " href="https://www.acnestudios.com/kr/ko/woman/trousers/">
+팬츠
+</a>
+<a role="menuitem" class="link as-cell cell--is-even" href="https://www.acnestudios.com/kr/ko/woman/shorts/">
+쇼츠
+</a>
+<a role="menuitem" class="link as-cell " href="https://www.acnestudios.com/kr/ko/woman/skirts/">
+스커트
+</a>
+<a role="menuitem" class="link as-cell cell--is-even" href="https://www.acnestudios.com/kr/ko/woman/face/">
+페이스 컬렉션
+</a>
+<a role="menuitem" class="link as-cell " href="https://www.acnestudios.com/kr/ko/woman/children/">
+키즈
+</a>
+</div>
+</div>
+<div class="sub-menu__section cell--span-all---small-down cell--span-4---medium-up ">
+<div class="sub-menu__title as-cell cell--is-even show-for-medium-up">
+슈즈와 액세서리
+</div>
+<button type="button" role="menuitem" class="link--main-nav as-cell hide-for-medium-up" area-expanded="false" data-lazy-init="{&quot;contentToggle&quot;: {&quot;toggleId&quot;: &quot;슈즈와-액세서리-shop-woman&quot;, &quot;contentElHideClass&quot;: &quot;show-for-medium-up&quot;, &quot;triggerElActiveClass&quot;: &quot;opened&quot;}}">
+<span class="icon--chevron-toggle left" aria-hidden="true"></span>
+<span class="sub-category--name">슈즈와 액세서리</span>
+</button>
+<div id="슈즈와-액세서리-shop-woman" class="show-for-medium-up category-flyout border-bottom--concrete" aria-hidden="false" data-content-toggle-id="슈즈와-액세서리-shop-woman">
+<a role="menuitem" class="link as-cell " href="https://www.acnestudios.com/kr/ko/woman/shoes/">
+슈즈
+</a>
+<a role="menuitem" class="link as-cell cell--is-even" href="https://www.acnestudios.com/kr/ko/woman/scarves/">
+스카프
+</a>
+<a role="menuitem" class="link as-cell " href="https://www.acnestudios.com/kr/ko/woman/bags/">
+가방
+</a>
+<a role="menuitem" class="link as-cell cell--is-even" href="https://www.acnestudios.com/kr/ko/woman/small-leather-goods/">
+스몰 레더 굿즈
+</a>
+<a role="menuitem" class="link as-cell " href="https://www.acnestudios.com/kr/ko/woman/hats/">
+모자
+</a>
+<a role="menuitem" class="link as-cell cell--is-even" href="https://www.acnestudios.com/kr/ko/woman/jewellery/">
+주얼리
+</a>
+<a role="menuitem" class="link as-cell " href="https://www.acnestudios.com/kr/ko/woman/belts/">
+벨트
+</a>
+<a role="menuitem" class="link as-cell cell--is-even" href="https://www.acnestudios.com/kr/ko/woman/accessories/other/">
+기타 액세서리
+</a>
+</div>
+</div>
+<a role="menuitem" class="link--main-nav as-cell show-for-small-down border-bottom--concrete" href="https://www.acnestudios.com/kr/ko/woman/bags/">
+<span class="sub-category--name">가방</span>
+</a>
+<a role="menuitem" class="link--main-nav as-cell show-for-small-down border-bottom--concrete" href="https://www.acnestudios.com/kr/ko/woman/scarves/">
+<span class="sub-category--name">스카프</span>
+</a>
+<div class="sub-menu__section cell--span-all---small-down cell--span-4---medium-up ">
+<div class="sub-menu__title as-cell cell--is-even show-for-medium-up">
+런웨이
+</div>
+<button type="button" role="menuitem" class="link--main-nav as-cell hide-for-medium-up" area-expanded="false" data-lazy-init="{&quot;contentToggle&quot;: {&quot;toggleId&quot;: &quot;런웨이-shop-woman&quot;, &quot;contentElHideClass&quot;: &quot;show-for-medium-up&quot;, &quot;triggerElActiveClass&quot;: &quot;opened&quot;}}">
+<span class="icon--chevron-toggle left" aria-hidden="true"></span>
+<span class="sub-category--name">런웨이</span>
+</button>
+<div id="런웨이-shop-woman" class="show-for-medium-up category-flyout border-bottom--concrete" aria-hidden="false" data-content-toggle-id="런웨이-shop-woman">
+<a role="menuitem" class="link as-cell " href="https://www.acnestudios.com/kr/ko/woman/ss22/">
+2022 봄/여름
+</a>
+</div>
+</div>
+<button type="button" aria-expanded="false" onclick="document.body.classList.remove(&#39;state--shop-woman&#39;)" aria-controls="shop-woman-state-container" class="button action--color-white icon--x state-close-trigger state-close-trigger--shop-woman show-for-medium-up">닫기</button>
+</nav>
+<nav id="shop-man-state-container" tabindex="-1" aria-hidden="true" class="shop-man-state-container state-container state-container--overflow-auto grid grid--striped grid--dense highlight-visited-links">
+<div class="state-container__header border-bottom--black cell--span-all flex flex--space-between show-for-small-down">
+<button type="button" aria-expanded="false" onclick="document.body.classList.remove(&#39;state--navigation&#39;)" aria-controls="navigation-state-container" class="as-cell button icon--angle-left state-close-trigger--navigation">뒤로 가기</button>
+<h2 class="as-cell">남성</h2>
+<button type="button" aria-expanded="false" onclick="document.body.classList.remove(&#39;state--shop-man&#39;)" aria-controls="shop-man-state-container" class="as-cell button icon--x state-close-trigger--shop-man">닫기</button>
+</div>
+<div class="sub-menu__section cell--span-all---small-down cell--span-4---medium-up ">
+<div class="sub-menu__title as-cell cell--is-even show-for-medium-up">
+신상
+</div>
+<button type="button" role="menuitem" class="link--main-nav as-cell hide-for-medium-up" area-expanded="false" data-lazy-init="{&quot;contentToggle&quot;: {&quot;toggleId&quot;: &quot;신상-shop-man&quot;, &quot;contentElHideClass&quot;: &quot;show-for-medium-up&quot;, &quot;triggerElActiveClass&quot;: &quot;opened&quot;}}">
+<span class="icon--chevron-toggle left" aria-hidden="true"></span>
+<span class="sub-category--name">신상</span>
+</button>
+<div id="신상-shop-man" class="show-for-medium-up category-flyout border-bottom--concrete" aria-hidden="false" data-content-toggle-id="신상-shop-man">
+<a role="menuitem" class="link as-cell " href="https://www.acnestudios.com/kr/ko/man/new-arrivals/">
+신상품
+</a>
+<a role="menuitem" class="link as-cell cell--is-even" href="https://www.acnestudios.com/kr/ko/man/rabin-huissen/">
+Acne Studios x Rabin Huissen
+</a>
+<a role="menuitem" class="link as-cell " href="https://www.acnestudios.com/kr/ko/man/suits/">
+수트
+</a>
+<a role="menuitem" class="link as-cell cell--is-even" href="https://www.acnestudios.com/kr/ko/man/face/slogan-print/">
+페이스 컬렉션: 슬로건 프린트
+</a>
+<a role="menuitem" class="link as-cell " href="https://www.acnestudios.com/kr/ko/man/statue-print/">
+조각상 프린트
+</a>
+</div>
+</div>
+<div class="sub-menu__section cell--span-all---small-down cell--span-4---medium-up ">
+<div class="sub-menu__title as-cell cell--is-even show-for-medium-up">
+의류
+</div>
+<button type="button" role="menuitem" class="link--main-nav as-cell hide-for-medium-up" area-expanded="false" data-lazy-init="{&quot;contentToggle&quot;: {&quot;toggleId&quot;: &quot;의류-shop-man&quot;, &quot;contentElHideClass&quot;: &quot;show-for-medium-up&quot;, &quot;triggerElActiveClass&quot;: &quot;opened&quot;}}">
+<span class="icon--chevron-toggle left" aria-hidden="true"></span>
+<span class="sub-category--name">의류</span>
+</button>
+<div id="의류-shop-man" class="show-for-medium-up category-flyout border-bottom--concrete" aria-hidden="false" data-content-toggle-id="의류-shop-man">
+<a role="menuitem" class="link as-cell " href="https://www.acnestudios.com/kr/ko/man/outerwear/">
+아우터웨어
+</a>
+<a role="menuitem" class="link as-cell cell--is-even" href="https://www.acnestudios.com/kr/ko/man/sweatshirts/">
+스웨트셔츠
+</a>
+<a role="menuitem" class="link as-cell " href="https://www.acnestudios.com/kr/ko/man/knitwear/">
+니트웨어
+</a>
+<a role="menuitem" class="link as-cell cell--is-even" href="https://www.acnestudios.com/kr/ko/man/t-shirts/">
+티셔츠
+</a>
+<a role="menuitem" class="link as-cell " href="https://www.acnestudios.com/kr/ko/man/shirts/">
+셔츠
+</a>
+
+<a role="menuitem" class="link as-cell cell--is-even" href="https://www.acnestudios.com/kr/ko/man/suit-jackets/">
+수트 재킷
+</a>
+<a role="menuitem" class="link as-cell " href="https://www.acnestudios.com/kr/ko/man/jeans/">
+진
+</a>
+<a role="menuitem" class="link as-cell cell--is-even" href="https://www.acnestudios.com/kr/ko/man/trousers/">
+팬츠
+</a>
+<a role="menuitem" class="link as-cell " href="https://www.acnestudios.com/kr/ko/man/shorts/">
+쇼츠
+</a>
+<a role="menuitem" class="link as-cell cell--is-even" href="https://www.acnestudios.com/kr/ko/man/face/">
+페이스 컬렉션
+</a>
+<a role="menuitem" class="link as-cell " href="https://www.acnestudios.com/kr/ko/man/children/">
+키즈
+</a>
+</div>
+</div>
+<div class="sub-menu__section cell--span-all---small-down cell--span-4---medium-up ">
+<div class="sub-menu__title as-cell cell--is-even show-for-medium-up">
+슈즈와 액세서리
+</div>
+<button type="button" role="menuitem" class="link--main-nav as-cell hide-for-medium-up" area-expanded="false" data-lazy-init="{&quot;contentToggle&quot;: {&quot;toggleId&quot;: &quot;슈즈와-액세서리-shop-man&quot;, &quot;contentElHideClass&quot;: &quot;show-for-medium-up&quot;, &quot;triggerElActiveClass&quot;: &quot;opened&quot;}}">
+<span class="icon--chevron-toggle left" aria-hidden="true"></span>
+<span class="sub-category--name">슈즈와 액세서리</span>
+</button>
+<div id="슈즈와-액세서리-shop-man" class="show-for-medium-up category-flyout border-bottom--concrete" aria-hidden="false" data-content-toggle-id="슈즈와-액세서리-shop-man">
+<a role="menuitem" class="link as-cell " href="https://www.acnestudios.com/kr/ko/man/shoes/">
+슈즈
+</a>
+<a role="menuitem" class="link as-cell cell--is-even" href="https://www.acnestudios.com/kr/ko/man/scarves/">
+스카프
+</a>
+<a role="menuitem" class="link as-cell " href="https://www.acnestudios.com/kr/ko/man/hats/">
+모자
+</a>
+<a role="menuitem" class="link as-cell cell--is-even" href="https://www.acnestudios.com/kr/ko/man/bags/">
+가방
+</a>
+<a role="menuitem" class="link as-cell " href="https://www.acnestudios.com/kr/ko/man/small-leather-goods/">
+스몰 레더 굿즈
+</a>
+<a role="menuitem" class="link as-cell cell--is-even" href="https://www.acnestudios.com/kr/ko/man/jewellery/">
+주얼리
+</a>
+<a role="menuitem" class="link as-cell " href="https://www.acnestudios.com/kr/ko/man/belts/">
+벨트
+</a>
+<a role="menuitem" class="link as-cell cell--is-even" href="https://www.acnestudios.com/kr/ko/man/accessories/other/">
+기타 액세서리
+</a>
+</div>
+</div>
+<a role="menuitem" class="link--main-nav as-cell show-for-small-down border-bottom--concrete" href="https://www.acnestudios.com/kr/ko/man/bags/">
+<span class="sub-category--name">가방</span>
+</a>
+<a role="menuitem" class="link--main-nav as-cell show-for-small-down border-bottom--concrete" href="https://www.acnestudios.com/kr/ko/man/scarves/">
+<span class="sub-category--name">스카프</span>
+</a>
+<div class="sub-menu__section cell--span-all---small-down cell--span-4---medium-up ">
+<div class="sub-menu__title as-cell cell--is-even show-for-medium-up">
+런웨이
+</div>
+<button type="button" role="menuitem" class="link--main-nav as-cell hide-for-medium-up" area-expanded="false" data-lazy-init="{&quot;contentToggle&quot;: {&quot;toggleId&quot;: &quot;런웨이-shop-man&quot;, &quot;contentElHideClass&quot;: &quot;show-for-medium-up&quot;, &quot;triggerElActiveClass&quot;: &quot;opened&quot;}}">
+<span class="icon--chevron-toggle left" aria-hidden="true"></span>
+<span class="sub-category--name">런웨이</span>
+</button>
+<div id="런웨이-shop-man" class="show-for-medium-up category-flyout border-bottom--concrete" aria-hidden="false" data-content-toggle-id="런웨이-shop-man">
+<a role="menuitem" class="link as-cell " href="https://www.acnestudios.com/kr/ko/man/fw22/">
+2022 가을/겨울
+</a>
+<a role="menuitem" class="link as-cell cell--is-even" href="https://www.acnestudios.com/kr/ko/man/ss22/">
+SS22
+</a>
+</div>
+</div>
+<button type="button" aria-expanded="false" onclick="document.body.classList.remove(&#39;state--shop-man&#39;)" aria-controls="shop-man-state-container" class="button action--color-white icon--x state-close-trigger state-close-trigger--shop-man show-for-medium-up">닫기</button>
+</nav>
+<nav id="account-state-container" class="account-state-container state-container bg--white bg--striped---medium-up state-container--overflow-auto---small-down" tabindex="-1" aria-hidden="true">
+<div class="state-container__header border-bottom--black cell--span-all flex flex--space-between show-for-small-down">
+<button type="button" aria-expanded="false" onclick="document.body.classList.remove(&#39;state--navigation&#39;)" aria-controls="navigation-state-container" class="as-cell button icon--angle-left state-close-trigger--navigation">뒤로 가기</button>
+<h2 class="as-cell">계정</h2>
+<button type="button" aria-expanded="false" onclick="document.body.classList.remove(&#39;state--account&#39;)" aria-controls="account-state-container" class="as-cell button icon--x state-close-trigger--account">닫기</button>
+</div>
+<a class="as-cell link border-top---small-down" href="https://www.acnestudios.com/kr/ko/account/orders?rurl=3">주문 &amp; 반품</a>
+<a class="as-cell link border-top---small-down" href="https://www.acnestudios.com/kr/ko/my-information?rurl=4">내 정보</a>
+<a class="as-cell link border-top---small-down" href="https://www.acnestudios.com/kr/ko/account/wishlist?rurl=5">위시리스트
+<span class="color--black text--pull-right font--monospace">
+<svg class="svg-icon svg-icon-favorite" width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.64645 2.35355L6 2.70711L6.35355 2.35355L8.20711 0.5H9.79289L11.5 2.20711V4.79289L6 10.2929L0.5 4.79289V2.20711L2.20711 0.5H3.79289L5.64645 2.35355Z" fill="none" stroke="#0018A8"></path>
+</svg>
+<span>0</span></span>
+</a>
+<div class="as-cell border-top---small-down"></div>
+<a class="as-cell link border-top---small-down" href="https://www.acnestudios.com/kr/ko/my-account">로그인</a>
+<a class="as-cell link border-top---small-down" href="https://www.acnestudios.com/kr/ko/register-account">회원가입</a>
+<button type="button" aria-expanded="false" onclick="document.body.classList.remove(&#39;state--account&#39;)" aria-controls="account-state-container" class="button action--color-white icon--x state-close-trigger state-close-trigger--account show-for-medium-up">닫기</button>
+</nav>
+
+<div id="search" class="search-state-container state-container grid grid--no-height" tabindex="-1" aria-hidden="true">
+<script>
+    window.searchSuggestions = JSON.parse('{"searchSuggestions":[{"category":"shop-woman","subCategories":[{"parent":["woman","new-arrivals"],"name":"신상품","section":"신상","url":"/kr/ko/woman/new-arrivals/"},{"parent":["woman","suits-and-sets"],"name":"수트","section":"신상","url":"/kr/ko/woman/suits-and-sets/"},{"parent":["woman","face","slogan-print"],"name":"페이스 컬렉션: 슬로건 프린트","section":"신상","url":"/kr/ko/woman/face/slogan-print/"},{"parent":["woman","outerwear"],"name":"아우터웨어","section":"의류","url":"/kr/ko/woman/outerwear/"},{"parent":["woman","suit-jackets"],"name":"수트 재킷","section":"의류","url":"/kr/ko/woman/suit-jackets/"},{"parent":["woman","knitwear"],"name":"니트웨어","section":"의류","url":"/kr/ko/woman/knitwear/"},{"parent":["woman","sweatshirts"],"name":"스웨트셔츠","section":"의류","url":"/kr/ko/woman/sweatshirts/"},{"parent":["woman","shirts-and-blouses"],"name":"블라우스","section":"의류","url":"/kr/ko/woman/shirts-and-blouses/"},{"parent":["woman","t-shirts"],"name":"티셔츠","section":"의류","url":"/kr/ko/woman/t-shirts/"},{"parent":["woman","dresses"],"name":"드레스","section":"의류","url":"/kr/ko/woman/dresses/"},{"parent":["woman","jeans"],"name":"진","section":"의류","url":"/kr/ko/woman/jeans/"},{"parent":["woman","trousers"],"name":"팬츠","section":"의류","url":"/kr/ko/woman/trousers/"},{"parent":["woman","shorts"],"name":"쇼츠","section":"의류","url":"/kr/ko/woman/shorts/"},{"parent":["woman","skirts"],"name":"스커트","section":"의류","url":"/kr/ko/woman/skirts/"},{"parent":["woman","face"],"name":"페이스 컬렉션","section":"의류","url":"/kr/ko/woman/face/"},{"parent":["woman","children"],"name":"키즈","section":"의류","url":"/kr/ko/woman/children/"},{"parent":["woman","shoes"],"name":"슈즈","section":"슈즈와 액세서리","url":"/kr/ko/woman/shoes/"},{"parent":["woman","scarves"],"name":"스카프","section":"슈즈와 액세서리","url":"/kr/ko/woman/scarves/"},{"parent":["woman","bags"],"name":"가방","section":"슈즈와 액세서리","url":"/kr/ko/woman/bags/"},{"parent":["woman","small-leather-goods"],"name":"스몰 레더 굿즈","section":"슈즈와 액세서리","url":"/kr/ko/woman/small-leather-goods/"},{"parent":["woman","hats"],"name":"모자","section":"슈즈와 액세서리","url":"/kr/ko/woman/hats/"},{"parent":["woman","jewellery"],"name":"주얼리","section":"슈즈와 액세서리","url":"/kr/ko/woman/jewellery/"},{"parent":["woman","belts"],"name":"벨트","section":"슈즈와 액세서리","url":"/kr/ko/woman/belts/"},{"parent":["woman","accessories","other"],"name":"기타 액세서리","section":"슈즈와 액세서리","url":"/kr/ko/woman/accessories/other/"},{"parent":["woman","ss22"],"name":"2022 봄/여름","section":"런웨이","url":"/kr/ko/woman/ss22/"}]},{"category":"shop-man","subCategories":[{"parent":["man","new-arrivals"],"name":"신상품","section":"신상","url":"/kr/ko/man/new-arrivals/"},{"parent":["man","rabin-huissen"],"name":"acne studios x rabin huissen","section":"신상","url":"/kr/ko/man/rabin-huissen/"},{"parent":["man","suits"],"name":"수트","section":"신상","url":"/kr/ko/man/suits/"},{"parent":["man","face","slogan-print"],"name":"페이스 컬렉션: 슬로건 프린트","section":"신상","url":"/kr/ko/man/face/slogan-print/"},{"parent":["man","statue-print"],"name":"조각상 프린트","section":"신상","url":"/kr/ko/man/statue-print/"},{"parent":["man","outerwear"],"name":"아우터웨어","section":"의류","url":"/kr/ko/man/outerwear/"},{"parent":["man","sweatshirts"],"name":"스웨트셔츠","section":"의류","url":"/kr/ko/man/sweatshirts/"},{"parent":["man","knitwear"],"name":"니트웨어","section":"의류","url":"/kr/ko/man/knitwear/"},{"parent":["man","t-shirts"],"name":"티셔츠","section":"의류","url":"/kr/ko/man/t-shirts/"},{"parent":["man","shirts"],"name":"셔츠","section":"의류","url":"/kr/ko/man/shirts/"},{"parent":["man","suit-jackets"],"name":"수트 재킷","section":"의류","url":"/kr/ko/man/suit-jackets/"},{"parent":["man","jeans"],"name":"진","section":"의류","url":"/kr/ko/man/jeans/"},{"parent":["man","trousers"],"name":"팬츠","section":"의류","url":"/kr/ko/man/trousers/"},{"parent":["man","shorts"],"name":"쇼츠","section":"의류","url":"/kr/ko/man/shorts/"},{"parent":["man","face"],"name":"페이스 컬렉션","section":"의류","url":"/kr/ko/man/face/"},{"parent":["man","children"],"name":"키즈","section":"의류","url":"/kr/ko/man/children/"},{"parent":["man","shoes"],"name":"슈즈","section":"슈즈와 액세서리","url":"/kr/ko/man/shoes/"},{"parent":["man","scarves"],"name":"스카프","section":"슈즈와 액세서리","url":"/kr/ko/man/scarves/"},{"parent":["man","hats"],"name":"모자","section":"슈즈와 액세서리","url":"/kr/ko/man/hats/"},{"parent":["man","bags"],"name":"가방","section":"슈즈와 액세서리","url":"/kr/ko/man/bags/"},{"parent":["man","small-leather-goods"],"name":"스몰 레더 굿즈","section":"슈즈와 액세서리","url":"/kr/ko/man/small-leather-goods/"},{"parent":["man","jewellery"],"name":"주얼리","section":"슈즈와 액세서리","url":"/kr/ko/man/jewellery/"},{"parent":["man","belts"],"name":"벨트","section":"슈즈와 액세서리","url":"/kr/ko/man/belts/"},{"parent":["man","accessories","other"],"name":"기타 액세서리","section":"슈즈와 액세서리","url":"/kr/ko/man/accessories/other/"},{"parent":["man","fw22"],"name":"2022 가을/겨울","section":"런웨이","url":"/kr/ko/man/fw22/"},{"parent":["man","ss22"],"name":"ss22","section":"런웨이","url":"/kr/ko/man/ss22/"}]}]}');
+    window.searchTitles = {
+        "shop-woman": "여성",
+        "shop-man": "남성",
+        "sale": "세일",
+        searchLabelWoman: "여성 제품 검색'",
+        searchLabelMan: "남성 제품 검색",
+        searchLabelDefault: "검색"
+    };
+</script>
+<div class="search-state-container__inner">
+<form role="search" action="https://www.acnestudios.com/kr/ko/search" method="get" name="simpleSearch" data-search-form="">
+<div class="field">
+<input class="field-size--small form-control search-field" type="search" name="q" value="" placeholder="검색어 입력" role="combobox" aria-describedby="search-assistive-text" aria-haspopup="listbox" aria-owns="search-results" aria-expanded="false" aria-autocomplete="list" aria-activedescendant="" aria-controls="search" aria-label="Enter Keyword or Item No." autocomplete="off" autofocus="" data-search-input="">
+<button type="submit" class="visually-hidden search-submit" aria-hidden="true" tabindex="-1">
+검색
+</button>
+<div class="field__error" id="email--error" aria-hidden="true"></div>
+<a href="https://www.acnestudios.com/kr/ko/register-account#" onclick="document.body.classList.remove(&#39;state--search&#39;)" aria-expanded="false" aria-controls="search" class="as-cell state-close-trigger state-close-trigger--search">취소</a>
+<input type="hidden" value="ko_KR" name="lang">
+<div class="progress-bar" style="display: none;">
+<div class="progress-bar--status" role="progressbar" aria-valuetext="로딩" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+<div class="progress-bar--message as-cell loading--results_heading" aria-hidden="true">로딩 <span></span></div>
+</div>
+<div class="suggestions-wrapper" data-url="/on/demandware.store/Sites-acne_kr-Site/ko_KR/SearchServices-GetSuggestions?q="></div>
+<div class="featured" data-featured-suggestions="">
+</div>
+<div class="preloaded-suggestions suggestions grid grid--list grid--striped"></div>
+</div>
+</form>
+</div>
+</div>
+<div id="cart" class="minicart minicart--fixed state-container" data-cart-state="empty" data-cart-config="{&quot;state&quot;:&quot;empty&quot;,&quot;isSummary&quot;:null,&quot;count&quot;:0,&quot;hasError&quot;:null,&quot;urls&quot;:{&quot;reloadCart&quot;:&quot;/on/demandware.store/Sites-acne_kr-Site/ko_KR/Cart-Get&quot;,&quot;reloadLineItems&quot;:&quot;/on/demandware.store/Sites-acne_kr-Site/ko_KR/Cart-MiniCartShow&quot;}}" tabindex="-1" aria-hidden="true">
+<a href="https://www.acnestudios.com/kr/ko/register-account#" onclick="document.body.classList.remove(&#39;state--cart&#39;)" aria-expanded="false" aria-controls="minicart" class="state-close-trigger state-trigger--cart as-cell">닫기</a>
+<div class="minicart__header as-cell bg--white">
+<span class="minicart-bag--lable">
+쇼핑백
+</span>
+<span class="minicart--icon">
+<svg class="svg-icon" width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="30" height="45" fill="white"></rect>
+<rect x="18" y="12.5" width="9" height="7" stroke="black"></rect>
+<rect x="20" y="10.5" width="5" height="2" stroke="black"></rect>
+</svg>
+</span>
+<span class="font--monospace space--before products--count" data-cart-count="" is-not-zero="false">00</span>
+</div>
+<div class="progress-bar" data-cart-progress-bar="" data-on-cart-state="loading">
+<div class="progress-bar--status" role="progressbar" aria-valuetext="minicart.loding" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+<div class="progress-bar--message as-cell loading--results_heading" aria-hidden="true">장바구니 제품 로딩 <span></span></div>
+</div>
+<div class="minicart__main" data-off-cart-state="loading">
+<div class="scroll-area scroll-gradients--y scroll--start" data-lazy-init="{&quot;scrollHelper&quot;: {}}">
+<div class="minicart__error text--align-center" role="alert" data-cart-error="" data-cart-error-value="" data-off-cart-state="loading"></div>
+<div data-on-cart-state="empty" class="minicart__empty-message">
+<div class="ascii-art-wrapper ascii-art-wrapper--before-init" aria-hidden="true" data-lazy-init="{&quot;scaleMonoTextToFit&quot;: {}}">
+<div class="ascii-art"><pre>####### #     # ######  ####### #     #
+#       ##   ## #     #    #     #   # 
+#       # # # # #     #    #      # #  
+#####   #  #  # ######     #       #   
+#       #     # #          #       #   
+#       #     # #          #       #   
+####### #     # #          #       #   </pre>
+</div>
+</div>
+<div class="as-cell border-top--white">
+<h2 class="hide-visually">장바구니가 비어있습니다</h2>
+<h3>장바구니에서 빠진 제품이 있나요?</h3>
+<p class="text--no-case">
+로그인하고 이전에 추가한 제품을 확인해보세요.
+</p>
+</div>
+<div class="grid">
+<a class="cell cell--span-8" href="https://www.acnestudios.com/kr/ko/account">로그인</a>
+<a class="cell cell--span-8" href="https://www.acnestudios.com/kr/ko/register-account">가입하기</a>
+</div>
+</div>
+<ul class="minicart__items" data-cart-items=""></ul>
+</div>
+</div>
+<div class="minicart__footer" data-off-cart-state="loading">
+<div class="minicart__totals info info--column" data-cart-totals="">
+<div class="cell">
+<div class="info info--bar">
+<span>소계</span>
+<span class="font--monospace sub-total">0 KRW</span>
+</div>
+<p class="text--no-case color--gray">관세나 부가세가 추가로 부가되지 않습니다.</p>
+</div>
+<div class="cell flex flex--space-between align-items--center border-top--concrete hide" data-cart-discount="discount" data-off-cart-state="empty">
+<span>할인</span>
+<span class="font--monospace" data-cart-discount-value="discount">0</span>
+</div>
+<div class="cell flex flex--space-between align-items--center border-top--concrete hide" data-cart-discount="giftCard" data-off-cart-state="empty">
+<span>기프트카드</span>
+<span class="font--monospace" data-cart-discount-value="giftCard">0</span>
+</div>
+<div class="cell border-top--concrete">
+<div class="info info--bar">
+<span>배송</span>
+<span class="font--monospace shipping-cost">무료</span>
+</div>
+<p class="text--no-case color--gray">UPS Express Saver 영업일 기준 3~5일 내 배송.</p>
+</div>
+<div class="cell flex flex--space-between align-items--center border-top--concrete hide" data-cart-discount="shipping">
+<span>Shipping Discount</span>
+<span class="font--monospace" data-cart-discount-value="shipping">0</span>
+</div>
+<div class="cell border-top--concrete">
+<div class="info info--bar">
+<span>세금</span>
+<span class="font--monospace tax-total">0 KRW</span>
+</div>
+<p class="text--no-case color--gray">모든 제품은 관세와 부가세가 모두 포함된 가격입니다.</p>
+</div>
+<div class="cell flex flex--space-between align-items--center border-top--black bg--white" data-off-cart-state="empty">
+<span>합계</span>
+<span class="font--monospace" data-cart-sum="grandTotal" data-cart-gtm-total="0,00">0 KRW</span>
+</div>
+</div>
+<div class="info info--column bg--white">
+<div class="minicart__error-notice text--no-case hide" data-off-cart-state="empty" data-cart-error-note="" data-cart-error-note-value="">
+구매 불가한 제품을 제거해주세요.
+</div>
+<a href="https://www.acnestudios.com/kr/ko/checkout-login" class="minicart__checkout-button action--tertiary action--color-green" data-off-cart-state="empty" data-cart-checkout-button="" aria-label="Cart 0 Items" title="Cart 0 Items">
+<span>Checkout</span>
+</a>
+<div class="cell bg--white border-top--black" data-on-cart-state="empty">
+<span>결제</span>
+</div>
+<div class="minicart__payment-logos cell cell--no-padding text-mask">
+<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://www.acnestudios.com/on/demandware.static/-/Library-Sites-acne/default/dw8a495d30/icons/payment/visa.png" class="lazyload" alt="Visa">
+<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://www.acnestudios.com/on/demandware.static/-/Library-Sites-acne/default/dwa0263b78/icons/payment/mastercard.png" class="lazyload" alt="Mastercard">
+<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://www.acnestudios.com/on/demandware.static/-/Library-Sites-acne/default/dw0a1a9378/icons/payment/amex.png" class="lazyload" alt="American Express">
+<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://www.acnestudios.com/on/demandware.static/-/Library-Sites-acne/default/dwa646f644/icons/payment/jcb.png" class="lazyload" alt="JCB">
+<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://www.acnestudios.com/on/demandware.static/-/Library-Sites-acne/default/dw10dfb11f/icons/payment/paypal.png" class="lazyload" alt="PayPal">
+</div>
+</div>
+</div>
+</div>
+<nav id="contactus-state-container" tabindex="-1" aria-hidden="true" class="contactus-state-container state-container grid grid--dense highlight-visited-links state-container--overflow-auto---small-down">
+<div class="state-container__header border-bottom--black cell--span-all flex flex--space-between show-for-small-down">
+<button type="button" aria-expanded="false" onclick="document.body.classList.remove(&#39;state--contactus&#39;)" aria-controls="contactus-state-container" class="as-cell button icon--angle-left state-close-trigger--navigation go-back">뒤로 가기</button>
+<h2 class="as-cell">고객 지원</h2>
+<button type="button" aria-expanded="false" onclick="document.body.classList.remove(&#39;state--contactus&#39;)" aria-controls="contactus-state-container" class="as-cell button icon--x state-close-trigger--contactus">닫기</button>
+</div>
+<button title="Live chat" class="as-cell---small-down border-top---small-down cell--pad-bottom---small-down content-trigger" role="button" data-lazy-init="
+            {&quot;contentToggle&quot;: {
+                &quot;toggleId&quot;: &quot;footer-chat-global&quot;,
+                &quot;triggerElActiveClass&quot;: &quot;active&quot;,
+                &quot;contentElHideClass&quot;: &quot;hide&quot;,
+                &quot;screenSizes&quot;: [&quot;xsmall&quot;, &quot;small&quot;, &quot;medium&quot;, &quot;large&quot;, &quot;xlarge&quot;]
+            },
+            &quot;supportAvailability&quot;: {
+                &quot;contentWrapperSelector&quot;: &quot;.footer-chat-content-global&quot;,
+                &quot;schedule&quot;: [{&quot;day&quot;:2,&quot;from&quot;:&quot;00:00&quot;,&quot;to&quot;:&quot;24:00&quot;},{&quot;day&quot;:3,&quot;from&quot;:&quot;00:00&quot;,&quot;to&quot;:&quot;24:00&quot;},{&quot;day&quot;:4,&quot;from&quot;:&quot;00:00&quot;,&quot;to&quot;:&quot;24:00&quot;},{&quot;day&quot;:5,&quot;from&quot;:&quot;00:00&quot;,&quot;to&quot;:&quot;24:00&quot;},{&quot;day&quot;:6,&quot;from&quot;:&quot;00:00&quot;,&quot;to&quot;:&quot;24:00&quot;},{&quot;day&quot;:7,&quot;from&quot;:&quot;00:00&quot;,&quot;to&quot;:&quot;24:00&quot;},{&quot;day&quot;:1,&quot;from&quot;:&quot;00:00&quot;,&quot;to&quot;:&quot;24:00&quot;}],
+                &quot;specialDates&quot;: [],
+                &quot;timeZone&quot;: &quot;GMT+9&quot;
+            }
+        }">
+<span class="show-for-small-down icon--chevron-toggle left" aria-hidden="true"></span>
+<span class="button-trigger-title">
+실시간 채팅
+</span>
+<sup class="color--gray sup--no-margin hide" aria-hidden="true" data-show-for="offline">
+오프라인
+</sup>
+<sup class="color--validation-green sup--no-margin hide" aria-hidden="true" data-show-for="online">
+가능
+</sup>
+</button>
+<div class="hide state-container-toggle footer-chat-content-global" data-content-toggle-id="footer-chat-global" id="footerChatContent">
+<div>
+<a title="Start live chat" href="https://v2.zopim.com/widget/livechat.html?key=4exEMnfS0JeybHKWUWKzEHbel5wrTIUc" target="_blank" rel="noopener" class="link hide" role="button" aria-hidden="true" data-show-for="online" onclick="window.open(&#39;https://v2.zopim.com/widget/livechat.html?key=4exEMnfS0JeybHKWUWKzEHbel5wrTIUc&#39;,&#39;qMyWindow&#39;,&#39;toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=600&#39;); return false;">Start live chat</a>
+</div>
+<div class="content--margin--top">
+<div>
+<span>
+월–일</span><span class="space--before space--after">00:00–24:00</span>GMT+9
+</div>
+</div>
+<div class="content--margin--top">
+</div>
+<div class="chat-offline-content color--gray text--no-case content--margin--top hide" aria-hidden="true" data-show-for="offline">
+Send us an email and we'll get back to you soon!
+</div>
+</div>
+<button title="Call" class="as-cell---small-down border-top---small-down cell--pad-bottom---small-down content-trigger" role="button" data-lazy-init="{
+            &quot;contentToggle&quot;: {
+                &quot;toggleId&quot;: &quot;footer-phone-global&quot;,
+                &quot;triggerElActiveClass&quot;: &quot;active&quot;,
+                &quot;contentElHideClass&quot;: &quot;hide&quot;,
+                &quot;screenSizes&quot;: [&quot;xsmall&quot;, &quot;small&quot;, &quot;medium&quot;, &quot;large&quot;, &quot;xlarge&quot;]
+            },
+            &quot;supportAvailability&quot;: {
+                &quot;contentWrapperSelector&quot;: &quot;.footer-phone-content-global&quot;,
+                &quot;schedule&quot;: [{&quot;day&quot;:2,&quot;from&quot;:&quot;00:00&quot;,&quot;to&quot;:&quot;24:00&quot;},{&quot;day&quot;:3,&quot;from&quot;:&quot;00:00&quot;,&quot;to&quot;:&quot;24:00&quot;},{&quot;day&quot;:4,&quot;from&quot;:&quot;00:00&quot;,&quot;to&quot;:&quot;24:00&quot;},{&quot;day&quot;:5,&quot;from&quot;:&quot;00:00&quot;,&quot;to&quot;:&quot;24:00&quot;},{&quot;day&quot;:6,&quot;from&quot;:&quot;00:00&quot;,&quot;to&quot;:&quot;24:00&quot;},{&quot;day&quot;:7,&quot;from&quot;:&quot;00:00&quot;,&quot;to&quot;:&quot;24:00&quot;},{&quot;day&quot;:1,&quot;from&quot;:&quot;00:00&quot;,&quot;to&quot;:&quot;24:00&quot;}],
+                &quot;timeZone&quot;: &quot;GMT+9&quot;
+            }
+        }">
+<span class="show-for-small-down icon--chevron-toggle left" aria-hidden="true"></span>
+<span class="button-trigger-title">
+전화
+</span>
+<sup class="color--validation-green sup--no-margin hide" aria-hidden="true" data-show-for="online">
+가능
+</sup>
+<sup class="color--gray sup--no-margin hide" aria-hidden="true" data-show-for="offline">
+오프라인
+</sup>
+</button>
+<div class="hide state-container-toggle footer-phone-content-global" data-content-toggle-id="footer-phone-global" id="footer-phone-content">
+<div class="show-for-medium-up">+46108887305</div>
+<div class="show-for-small-down">
+<a title="Call" data-show-for="online" href="tel:+46108887305" class="link hide-for-large-up" role="button">전화 +46108887305</a>
+</div>
+<div class="content--margin--top">
+<div>
+<span>
+월–일</span><span class="space--before space--after">00:00–24:00</span>GMT+9
+</div>
+</div>
+<div class="content--margin--top">
+</div>
+<div class="phone-offline-content color--gray text--no-case hide content--margin--top" aria-hidden="true" data-show-for="offline">
+Leave us a voicemail or send us a message and we'll get back to you soon!
+</div>
+</div>
+<button title="Email" href="mailto:customercare@acnestudios.com" class="as-cell---small-down border-top---small-down cell--pad-bottom---small-down content-trigger" role="button" data-lazy-init="{&quot;contentToggle&quot;: {&quot;toggleId&quot;: &quot;footer-email-global&quot;, &quot;triggerElActiveClass&quot;: &quot;active&quot;, &quot;contentElHideClass&quot;: &quot;hide&quot;, &quot;screenSizes&quot;: [&quot;xsmall&quot;, &quot;small&quot;, &quot;medium&quot;, &quot;large&quot;, &quot;xlarge&quot;]}}">
+<span class="show-for-small-down icon--chevron-toggle left" aria-hidden="true"></span>
+<span class="button-trigger-title">
+이메일
+</span>
+</button>
+<div class="hide state-container-toggle" data-content-toggle-id="footer-email-global" id="footer-email-content">
+<div class="email--content show-for-small-down">
+<a class="text--no-case" id="email" href="mailto:customercare@acnestudios.com">customercare@acnestudios.com</a>
+<a class="copy--button" href="https://www.acnestudios.com/kr/ko/COPY" data-lazy-init="{&quot;copyTrigger&quot;: {&quot;targetId&quot;: &quot;email&quot;, &quot;successText&quot;: &quot;복사됨&quot;}}">복사</a>
+</div>
+<div class="show-for-medium-up content--margin--top">
+<a class="text--no-case" id="email" href="mailto:customercare@acnestudios.com">customercare@acnestudios.com</a> / <a href="https://www.acnestudios.com/kr/ko/COPY" data-lazy-init="{&quot;copyTrigger&quot;: {&quot;targetId&quot;: &quot;email&quot;, &quot;successText&quot;: &quot;복사됨&quot;}}">복사</a>
+</div>
+<div class="text--no-case">가능한 한 24시간 이내에 답변드리겠습니다</div>
+</div>
+<div class="as-cell---small-down cell--pad-bottom---small-down border-top--concrete">
+</div>
+<div class="menu-mobile-list styled-list-background grid cell cell--span-16">
+<a class="help-page-menu-mobile-list-item cell cell--span-16 border-top--concrete" href="https://www.acnestudios.com/kr/ko/contact/online-inquiries">고객 지원</a>
+<a class="help-page-menu-mobile-list-item cell cell--span-16" href="https://www.acnestudios.com/kr/ko/shopping-help/returns-exchanges.html">반품 및 교환</a>
+<a class="help-page-menu-mobile-list-item cell cell--span-16" href="https://www.acnestudios.com/kr/ko/shopping-help/size-guide.html">사이즈 가이드</a>
+<a class="help-page-menu-mobile-list-item cell cell--span-16" href="https://www.acnestudios.com/kr/ko/shopping-help/shipping-information.html">배송 정보</a>
+<a class="help-page-menu-mobile-list-item cell cell--span-16" href="https://www.acnestudios.com/kr/ko/shopping-help/order-status.html">주문</a>
+<a class="help-page-menu-mobile-list-item cell cell--span-16" href="https://www.acnestudios.com/kr/ko/faq/">자주 묻는 질문</a>
+<a class="help-page-menu-mobile-list-item cell cell--span-16" href="https://www.acnestudios.com/kr/ko/shopping-help/my-account.html">계정</a>
+<a class="help-page-menu-mobile-list-item cell cell--span-16" href="https://www.acnestudios.com/kr/ko/shopping-help/shoe-care.html">신발 관리법</a>
+<a class="help-page-menu-mobile-list-item cell cell--span-16" href="https://www.acnestudios.com/kr/ko/shopping-help/product-personalisation.html">커스터마이징 제품</a>
+</div>
+</nav>
+<main id="main">
+<div data-search-result-holder=""></div>
+<div data-main-content="">
+<nav aria-label="Breadcrumb" class="breadcrumbs">
+<ol class="highlight-visited-links scroll--start">
+<li class="hide-for-medium-up">
+<a class="as-cell" href="https://www.acnestudios.com/on/demandware.store/Sites-acne_kr-Site/ko_KR/Account-Landing"> 계정</a>
+</li>
+
+<li class="show-for-medium-up">
+<a class="as-cell" href="https://www.acnestudios.com/kr/ko/account"> 계정</a>
+</li>
+<li>
+<a class="as-cell" aria-current="page" href="https://www.acnestudios.com/kr/ko/register-account"> 회원가입</a>
+</li>
+</ol>
+</nav>
+<a href="https://www.acnestudios.com/kr/ko/home" class="logo logo--relative logo--fixed---small-down" aria-hidden="true">
+<img src="./Acne Studios – 남성 및 여성 레디투웨어, 액세서리, 신발, 데님 더보기_files/acne_studios_logo.svg" class=" ls-is-cached lazyloaded" alt="Acne Studios">
+</a>
+<div class="grid">
+<form id="registration" action="https://www.acnestudios.com/on/demandware.store/Sites-acne_kr-Site/ko_KR/Account-SubmitRegistration" method="POST" class="cell--col-pos-5---medium-up cell--span-8 cell--span-all---small-down form margin-between--large" data-registration-form="" novalidate="novalidate">
+<h2 class="field-title">
+회원가입
+</h2>
+<div class="field margin-between--micro">
+<input type="text" id="dwfrm_profile_customer_firstnameundefined" name="dwfrm_profile_customer_firstname" required="true" aria-required="true" maxlength="50" placeholder=" " class="error" aria-invalid="true">
+<label for="dwfrm_profile_customer_firstnameundefined" class="field__label field__placement--on-active-top">이름</label>
+<div class="field__error" id="dwfrm_profile_customer_firstnameundefined--error" aria-hidden="true"></div>
+</div>
+<div class="field margin-between--micro">
+<input type="text" id="dwfrm_profile_customer_lastnameundefined" name="dwfrm_profile_customer_lastname" required="true" aria-required="true" maxlength="50" placeholder=" ">
+<label for="dwfrm_profile_customer_lastnameundefined" class="field__label field__placement--on-active-top">성</label>
+<div class="field__error" id="dwfrm_profile_customer_lastnameundefined--error" aria-hidden="true">Error</div>
+</div>
+<div class="field margin-between--micro">
+<input type="tel" id="dwfrm_profile_customer_phoneundefined" name="dwfrm_profile_customer_phone" required="true" aria-required="true" maxlength="20" minlength="8" placeholder=" ">
+<label for="dwfrm_profile_customer_phoneundefined" class="field__label field__placement--on-active-top">핸드폰 번호</label>
+<div class="field__error" id="dwfrm_profile_customer_phoneundefined--error" aria-hidden="true">전화번호가 유효하지 않습니다</div>
+</div>
+<div class="field margin-between--micro">
+<input type="email" id="dwfrm_profile_customer_emailundefined" name="dwfrm_profile_customer_email" required="true" aria-required="true" maxlength="80" pattern="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$" placeholder=" ">
+<label for="dwfrm_profile_customer_emailundefined" class="field__label field__placement--on-active-top">이메일 주소</label>
+<div class="field__error" id="dwfrm_profile_customer_emailundefined--error" aria-hidden="true">Error</div>
+</div>
+<div class="field margin-between--micro">
+<input type="password" id="dwfrm_profile_login_passwordundefined" name="dwfrm_profile_login_password" required="true" aria-required="true" autocomplete="true" maxlength="255" minlength="8" aria-describedby="dwfrm_profile_login_passwordundefined-description" placeholder=" " data-simulate-focus="false" class="error" aria-invalid="true">
+<label for="dwfrm_profile_login_passwordundefined" class="field__label field__placement--on-active-top">비밀번호</label>
+<div class="field__action field__placement--on-active-top">
+<button type="button" aria-label="Toggle password visibility">Show</button>
+</div>
+<div aria-hidden="true" class="field-description text--no-case" id="dwfrm_profile_login_passwordundefined-description">8~255자</div>
+<div class="field__error" id="dwfrm_profile_login_passwordundefined--error" aria-hidden="true"></div>
+</div>
+<div class="field margin-between--micro">
+<div class="field--margin-top">
+<input type="checkbox" id="dwfrm_profile_subscribe_0" name="dwfrm_profile_subscribe" value="true" aria-controls="newsletter-genders" aria-expanded="false">
+<label for="dwfrm_profile_subscribe_0">Acne Studios의 신상품 출시와 새로운 소식에 대한 업데이트를 받아보고 싶습니다.</label>
+</div>
+<div class="field__error" id="dwfrm_profile_subscribe--error" aria-hidden="true">Error</div>
+</div>
+<div id="newsletter-genders" class="margin-top--micro field--indent-large hide" aria-hidden="true" data-content-toggle-id="newsletter-genders">
+<div class="field margin-between--micro">
+<div class="field--margin-top">
+<input type="checkbox" id="dwfrm_profile_newsletter_woman-option" name="dwfrm_profile_newsletter_woman" value="true">
+<label for="dwfrm_profile_newsletter_woman-option">여성</label>
+</div>
+<div class="field__error" id="dwfrm_profile_newsletter_woman--error" aria-hidden="true">Error</div>
+</div>
+<div class="field margin-between--micro">
+<div class="field--margin-top">
+<input type="checkbox" id="dwfrm_profile_newsletter_man-option" name="dwfrm_profile_newsletter_man" value="true">
+<label for="dwfrm_profile_newsletter_man-option">남성</label>
+</div>
+<div class="field__error" id="dwfrm_profile_newsletter_man--error" aria-hidden="true">Error</div>
+</div>
+</div>
+<div class="field margin-between--micro">
+<div class="field--margin-top">
+<input type="checkbox" id="dwfrm_profile_termsandconditions-option" name="dwfrm_profile_termsandconditions" value="true" required="true" aria-required="true">
+<label for="dwfrm_profile_termsandconditions-option"><button type="button" data-toggle="modal" data-target="#membershipPolicy">멤버십 정책</button> 및 <button type="button" data-toggle="modal" data-target="#privacyPolicy">개인정보 보호 정책</button>을 읽고 이해했습니다</label>
+</div>
+
+<div class="field__error" id="dwfrm_profile_termsandconditions--error" aria-hidden="true">Error</div>
+</div>
+<input type="hidden" name="currentmpversion" value="0">
+<div role="dialog" id="membershipPolicy" class="modal " aria-modal="true" aria-labelledby="membershipPolicy--title" aria-describedby="membershipPolicy--description" tabindex="-1">
+<div class="modal-dialog modal-dialog-scrollable">
+<div class="modal-content">
+<div class="modal-header">
+<h2 id="membershipPolicy--title" class="as-cell">멤버십 정책</h2>
+<button data-close-modal="" type="button" class="button as-cell modal-close icon--x" data-dismiss="modal" aria-label="닫기">닫기</button>
+</div>
+<div id="membershipPolicy--description" class="modal-body modal-body--text">
+<h1>멤버십 정책</h1>
+<ol class="list--count">
+<li>
+<h4>회원 요건</h4>
+<p>회원은 개인에게 부여되는 것으로서 웹사이트 또는 실제 매장 중 한 곳에서 가입 시 회원님의 이메일 주소로 등록됩니다. 서비스를 사용하시려면 16세 이상이셔야 합니다. 회원 가입은 무료입니다.<br>
+회원 제공사는 등록번호 556504-7726를 가진 스웨덴 회사, Acne Studios AB입니다.
+</p>
+</li>
+<li>
+<h4>회원 서비스 및 이점</h4>
+<p>가입하여 회원이 되시면 다음 서비스를 받으시게 됩니다.</p>
+<h5 class="subtitle">특별 이벤트/프로모션 초대:</h5>
+<p>이메일, 소셜 미디어 계정 또는 기타 메신저 서비스를 통하여 특별 이벤트 및 프로모션에 관한 정보를 받으시게 될 겁니다.</p>
+<h5 class="subtitle">개인화된 서비스:</h5>
+<p>당사는 귀하의 이전 구매 및 당사 직원과 자발적으로 공유하신 의류/쇼핑 선호도에 관한 정보를 바탕으로 귀하에게 맞춤형 매장 서비스를 제공할 수 있습니다. 당사는 이 서비스를 당사 소유의 매장이 있는 모든 국가에서 제공하려 합니다. 이런 국가에는 스웨덴, 노르웨이, 덴마크, 독일, 프랑스, 이탈리아, 영국 호주, 미국, 일본 및 한국이 포함되지만 이에 국한되지 않습니다.</p>
+<h5 class="subtitle">프로필 마케팅:</h5>
+<p>회원님이 이전에 구매하신 내역 및 당사 직원과 공유하신 의류/쇼핑 선호도에 관한 정보를 바탕으로 회원님에게 프로필 마케팅을 제공할 수 있습니다.</p>
+<h5 class="subtitle">구매 개요:</h5>
+<p>계정에 로그인하시어 이전 구매를 검토하실 수 있게 됩니다. 매장이나 온라인에서 쇼핑하실 때 구매는 귀하의 이름으로 등록됩니다. 실제 매장 중 한 곳에서 구매를 등록하기 위하여 신분증을 보여주실 것을 요구받으실 수 있다는 점을 유념하시기 바랍니다. 온라인으로 쇼핑하실 때에는 귀하의 계정을 통하여 구매하신 경우에 구매가 등록됩니다.</p>
+<h5 class="subtitle">전자 영수증:</h5>
+<p>매장에서 제품을 구매하실 때 디지털 영수증을 요청하시면, 모든 영수증을 이메일로 받으실 수 있습니다.</p>
+</li>
+<li>
+<h4>개인정보의 처리</h4>
+<p>Acne Studios는 귀하에게 회원 서비스를 제공하기 위하여 Acne Studios의 개인정보보호 정책에 따라 귀하의 개인정보를 처리하고 Acne Studios의 계열사 및 제3자와 공유할 것입니다. 개인정보보호 정책은 <a href="https://www.acnestudios.com/kr/ko/terms-conditions-folder/privacy_policy_version1.html">여기</a> 에서 찾아보실 수 있습니다.
+<br>회원가입 즉시, 귀하는 귀하의 개인정보를 Acne Studios의 개인정보보호 정책에 따른 처리에 동의하시는 것입니다.
+</p>
+</li>
+<li>
+<h4>발송물 취소</h4>
+ <p>발송물 수령을 원하지 않으시는 경우 언제든지 귀하의 계정에 로그인하여 취소하시거나 이메일 푸터에 있는 취소 링크를 따르실 수 있습니다.</p>
+</li>
+<li>
+<h4>회원권 유효 기간 및 탈퇴 절차</h4>
+<p>귀하의 회원권은 추가 통지가 있을 때까지 유효합니다. 귀하의 회원권은 추가 통지가 있을 때까지 유효합니다. 36개월 동안 연속이용 기록이 없으신 경우 회원권은 자동으로 취소되고 귀하의 개인정보는 Acne Studios의 개인정보보호 정책에 따라 삭제됩니다. 또한 <a href="mailto:customercare@acnestudios.com">customercare@acnestudios.com</a>에 연락하시면 언제든지 회원권을 취소하실 수 있습니다. Acne Studios는 회원권이 남용되고 있다고 의심이 드는 경우에, 귀하는 언제든지 회원권을 취소할 수 있는 권리가 있습니다.</p>
+</li>
+<li>
+<h4>유효</h4>
+<p>회원권은 세계적으로 매장 및 온라인에서 유효합니다. 회원권은 현재 상하이, 도쿄, 홍콩 및 암스테르담에 보유하고 있는 프랜차이즈 매장에서는 유효하지 않습니다. 회원권은 현재 Åhléns City 스톡홀름, Nordiska Kompaniet 스톡홀름, Galeries Lafayette 파리 및 Harrods 런던에 보유하고 있는 당사의 백화점에서도 유효하지 않습니다.</p>
+</li>
+<li>
+<h4>조건 변경</h4>
+<p>Acne Studios는 조건을 변경할 권리를 가집니다. 어떠한 변경이 있는 경우 사전에 귀하에게 이를 통지할 것입니다.</p>
+</li>
+<li>
+<h4>연락처 정보</h4>
+<p>Acne Studios AB
+<br> Floragatan 13
+<br> 114 31 Stockholm
+<br> 전화번호: +46 10 888 73 05
+<br> 이메일: <a href="mailto:customercare@acnestudios.com">customercare@acnestudios.com</a>
+</p>
+</li>
+</ol>
+</div>
+<div class="modal-footer modal-footer--sticky">
+<label onclick="document.getElementById(&#39;dwfrm_profile_termsandconditions-option&#39;).checked=&#39;true&#39;" for="dwfrm_profile_termsandconditions-option" type="button" class="action--primary" data-dismiss="modal">Accept &amp; Continue</label>
+</div>
+</div>
+</div>
+</div>
+<input type="hidden" name="currentppversion" value="null">
+<div role="dialog" id="privacyPolicy" class="modal " aria-modal="true" aria-labelledby="privacyPolicy--title" aria-describedby="privacyPolicy--description" tabindex="-1">
+<div class="modal-dialog modal-dialog-scrollable">
+<div class="modal-content">
+<div class="modal-header">
+<h2 id="privacyPolicy--title" class="as-cell">개인정보 보호 정책</h2>
+<button data-close-modal="" type="button" class="button as-cell modal-close icon--x" data-dismiss="modal" aria-label="닫기">닫기</button>
+</div>
+<div id="privacyPolicy--description" class="modal-body modal-body--text">
+<h1>개인정보 보호 정책</h1>
+<ol class="list--count">
+<li>
+<h4>소개</h4>
+<p>Acne Studios는 귀하의 개인정보 보호의 중요성을 인식합니다. 귀하님이 제공하시는 정보를 보호하기 위해 엄격한 정책과 보안 조치를 도입했습니다.</p>
+</li>
+<li>
+<h4>누가 귀하의 개인정보 처리를 책임지는가?</h4>
+<p>
+등록번호 556504-7726를 가진 스웨덴 회사인 Acne Studios AB (“Acne Studios AB“)가 귀하의 개인정보의 관리자입니다. Acne Studios AB의 계열사(Acne Studios 그룹 내 다른 회사, 합작투자회사, 프랜차이즈 가맹점 및 라이선스 사용권자 포함)와 선정된 공급자는 아래에서 기술하는 바와 같이 Acne Studios를 대신하여, 그리고 Acne Studios의 지시에 따라 귀하의 개인정보를 처리할 수 있으며, 그에 의하여 귀하의 개인정보의 처리자가 됩니다. 귀하께서는 언제든지 Acne Studios에 연락하실 수 있습니다. 아래에 당사의 연락처 세부사항이 있습니다.
+<br> 우편 주소: P.O. Box 24266, 104 51 Stockholm, Sweden
+<br> 방문 주소: Floragatan 13, 114 31 Stockholm, Sweden
+<br> 전화번호: <span><a class="phone-number" href="tel:+46108887305">+46 10 888 73 05</a></span>
+<br> 이메일: <a href="mailto:customercare@acnestudios.com">customercare@acnestudios.com</a>
+<br>
+<a href="mailto:DPO@acnestudios.com">DPO@acnestudios.com</a>으로 당사 데이터 보호 책임자에게 문의하실 수 있습니다.
+</p>
+</li>
+<li>
+<h4>처리 정보의 범주, 목적 및 처리의 법적 근거</h4>
+<ol>
+<li>
+<h5>일반 사항</h5>
+<p>아래는 당사가 처리하는 정보의 카테고리, 데이터 처리 목적, 당사가 귀하의 정보를 처리하는 법적 근거를 요약한 것입니다. 당사가 귀하의 개인정보를 처리하는 것은 부분적으로는 귀하의 당사 회원권 구독 여부에 따라 달라집니다. 회원이 아닌 고객에 대한 개인정보 처리에 대해서는 아래 섹션 3.2에 설명되어 있습니다. 당사 회원의 개인정보 처리에 대해서는 아래 섹션 3.3에 설명되어 있습니다.</p>
+</li>
+<li>
+<h5>고객(비회원)</h5>
+<ol>
+<li>
+<h5>귀하가 당사 웹사이트에서 쇼핑하시거나 당사의 온라인 서비스를 사용하실 때 수집되는 정보</h5>
+<p>연락처 상세 정보: 귀하가 온라인으로 구매를 하시는 경우, 당사는 귀하의 이름, 주소, 이메일 주소, 전화번호, 거주 국가, 생년월일, 호칭(Ms./Mr. 또는 기타 호칭) 및 소셜 미디어 계정 연락처 상세 정보를 수집합니다. 일부 정보는 구매 시 필수 항목은 아닙니다. 당사는 당사 웹사이트에 필수 항목인 정보를 기호(*)로 표시했습니다. 당사는 귀하의 연락처 정보를 (i) 귀하의 구매/주문 및 귀하의 구매와 관련된 반품, 교환 및 불만을 처리하고, (ii) 귀하의 구매에 대해 귀하와 커뮤니케이션하고 당사 제품 또는 서비스에 대해 귀하가 가지고 있을 수 있는 질문 또는 의견에 답변하거나 이를 관리하기 위해 사용합니다. 법적 근거는 당사가 구매 계약에 따라 귀하에 대한 계약상의 의무를 이행할 수 있도록 정보를 처리하는 데 필요한지 여부입니다. 당사는 이 목적에 필요한 기간 동안 귀하의 정보를 보관합니다. 당사는 이메일, SMS, 서신, 전화, WeChat, Whatsapp 및 기타 소셜 미디어를 통해 귀하에게 당사의 특별 행사 및 판촉에 대한 정보를 제공하기 위해 귀하의 연락처 상세 정보를 처리할 수도 있습니다. 법적 근거는 당사의 기존 고객에게 당사 제품을 마케팅할 수 있도록 하는 당사의 합법적인 이해관계입니다. 당사는 귀하의 최근 구매 후 최대 12개월 간 직접 마케팅 목적으로 연락처 상세 정보를 사용할 수 있으며, 귀하는 이후 수신 거부를 하실 수 있습니다. 귀하는 언제든지 각 메시지에 포함된 구독 중단 링크를 클릭하거나 <a href="mailto:customercare@acnestudios.com">customercare@acnestudios.com</a> 으로 고객 지원팀에 문의하여 당사의 마케팅 메시지를 언제든지 거부하실 권리가 있습니다.</p>
+<p>신용카드 상세 정보: 귀하가 온라인으로 구매하고 신용카드 지불을 선택하신 경우, 귀하의 구매를 종료하기 위해 귀하의 신용카드 정보를 제공합니다. 귀하의 신용카드 상세 정보는 GlobalSign 암호화를 통해 보호됩니다. 처리의 법적 근거는 당사가 구매 계약에 따라 귀하에 대한 계약상의 의무를 이행할 수 있도록 하는 데 필요한지 여부입니다. 당사는 이 목적에 필요한 기간 동안 귀하의 정보를 보관합니다.</p>
+<p>
+이전의 구매 및 반품: 귀하가 계정에 가입하시고 이메일 주소를 당사 직원에게 제공하시면 당사는 (i) 온라인 구매 및 반품, 그리고 (ii) 실제 매장에서의 구매 및 반품에 관한 정보를 저장할 것입니다. 그러한 정보에는 제품, 사이즈, 가격 및 구매 날짜가 포함됩니다. 또한 당사는 귀하가 최근에 보신 상품에 대한 정보도 저장합니다. 이를 통해 개인 계정에 로그인하여 귀하의 구매 및 반품 및 최근에 보신 상품을 추적하실 수 있습니다. 법적 근거는 귀하가 계정을 신청할 때 요청하신 경우 귀하에게 개인 계정 서비스를 제공하기 위한 당사의 합법적 이해관계입니다. 귀하는 언제든지 계정의 등록을 해제하실 수 있습니다. 당사는 구매 후 36개월 동안 반품 및/또는 불만을 처리할 수 있도록 귀하의 연락처 상세 정보와 이전 구매 및 반품에 대한 정보를 저장합니다. 법적 근거는 구매 후 당사 고객께 신속하고 효율적인 서비스를 제공하기 위한 당사의 합법적 이해관계입니다.
+</p>
+<p>ID 번호: 귀하가 청구서 지급을 선택하신 경우 당사의 웹사이트에서 귀하의 개인 ID 번호를 제공해야 할 수 있습니다. 귀하의 ID 번호는 당사의 지급 서비스 제공자에게 직접 전송되어 동 서비스 제공자만이 이용할 수 있게 됩니다. 이 지급 서비스 제공자는 귀하의 ID 번호를 처리하여 신용 보고서를 얻고 귀하의 지급을 용이하게 할 것입니다. 법적 근거는 당사가 청구 목적으로 당사 고객을 정확하게 식별하는 데 필요하고 구매 계약에 따라 귀하에 대한 계약상의 의무를 이행할 수 있도록 정보를 처리하는 데 필요한지 여부입니다. 당사는 이 목적에 필요한 기간 동안 귀하의 정보를 보관합니다.</p>
+</li>
+<li>
+<h5>귀하가 당사의 실제 매장에서 쇼핑하실 때 수집되는 정보</h5>
+<p>귀하가 당사의 실제 매장 중 하나에서 구매를 하시는 경우, 당사는 귀하에게 디지털 영수증을 보내드리기 위해 귀하의 이메일 주소를 처리할 수 있습니다. 당사는 귀하가 요청 또는 수락하신 경우에만 귀하의 이메일 주소를 수집하고 디지털 영수증을 보내드립니다. 이러한 처리는 자발적으로 고객에게 디지털 영수증을 제공할 수 있는 합법적인 이해관계를 전제로 합니다. 당사는 이 목적에 필요한 기간 동안 귀하의 정보를 보관합니다.</p>
+</li>
+</ol>
+</li>
+<li>
+<h5>회원</h5>
+<p>귀하는 회원권 정책에 따라 Acne Studios가 제공하는 서비스를 구독하여 회원가입을 하실 수 있습니다. 회원권은 전적으로 자발적이며 회원권 구독은 Acne Studios의 상품을 구매하는 데 요구되는 사항이 아닙니다. 구독을 통해 회원이 되시면 Acne Studios와 계약을 체결하시게 됩니다(회원권 정책).</p>
+<ol>
+<li>
+<h5>회원가입 시 수집되는 정보</h5>
+<p>귀하가 회원가입을 하시는 경우(온라인 또는 Acne Studios의 실제 매장), Acne Studios는 귀하의 이름, 주소, 이메일 주소, 전화번호, 거주 국가, 생년월일, 호칭(Ms./Mr. 또는 기타 호칭) 및 소셜 미디어 계정 연락처 상세 정보를 수집합니다. Acne Studios는 귀하의 개인 계정을 생성하고 회원권을 처리하기 위해 정보를 처리하며, 여기에는 (i) 실제 매장에서 제품을 구매할 때 요청 시 디지털 영수증 전송, (ii) 특별 행사/판촉 초대 전달, (iii) 매장 내 맞춤 서비스, (iv) 이메일 또는 기타 메신저 서비스를 통한 프로파일링된 마케팅 제안과 같은 특정 기능이 포함됩니다. 처리의 법적 근거는 당사가 회원권 정책에 따라 귀하에 대한 계약상의 의무를 이행할 수 있도록 하는 데 필요한지 여부입니다. 당사는 이 목적에 필요한 기간 동안 귀하의 정보를 보관합니다.</p>
+</li>
+<li>
+<h5>온라인으로 쇼핑하실 때 수집되는 정보</h5>
+<p>연락처 상세 정보: 귀하가 온라인으로 제품을 구매하시는 경우, Acne Studios는 (i) 구매.주문 및 반품, 교환 및 불만을 처리하고, (ii) 귀하의 구매에 대해 귀하와 커뮤니케이션하고 Acne Studios 제품 또는 서비스에 대해 귀하가 가지고 있을 수 있는 질문 또는 의견에 답변하거나 이를 관리하기 위해 귀하의 연락처 상세 정보를 처리합니다. 처리의 법적 근거는 당사가 구매 계약에 따라 귀하에 대한 계약상의 의무를 이행할 수 있도록 하는 데 필요한지 여부입니다.</p>
+<p>
+이전의 구매 및 반품: Acne Studios는 구매 후 36개월 동안 귀하의 연락처 세부 정보 및 이전의 온라인 구매 및 반품에 대한 정보(제품, 사이즈, 가격, 구매 날짜)를 처리할 수도 있습니다. 정보는 다음 목적을 위해 처리됩니다.<br> 반품 및 불만의 관리. 처리는 구매 후 당사 회원께 신속하고 효율적인 서비스를 제공하기 위한 당사의 합법적 이해관계를 전제로 합니다.<br> 귀하가 계정에 로그인하여 귀하의 구매 및 반품을 추적할 수 있도록 합니다. 처리의 법적 근거는 당사가 회원권 정책에 따라 귀하에 대한 계약상의 의무를 이행할 수 있도록 하는 데 필요한지 여부입니다.<br> 이메일 또는 기타 메신저 서비스를 통해 특별 행사/판촉, 매장 내 맞춤 서비스 및 프로파일링된 마케팅 제안 초대를 보내기 위한 목적이 있습니다. 처리의 법적 근거는 당사가 회원권 정책에 따라 귀하에 대한 계약상의 의무를 이행할 수 있도록 하는 데 필요한지 여부입니다.
+</p>
+<p>신용카드 상세 정보: 귀하가 온라인으로 구매하고 신용카드 지불을 선택하신 경우, 웹사이트에서 구매 결제를 할 목적으로 귀하의 신용카드 정보를 제공합니다. 처리의 법적 근거는 당사가 구매 계약에 따라 귀하에 대한 계약상의 의무를 이행할 수 있도록 하는 데 필요한지 여부입니다. 귀하는 회원으로서 다음에 쇼핑할 때 결제 시간을 단축할 목적으로 귀하의 신용카드 상세 정보를 저장하기로 결정하실 수 있습니다. 이 처리의 법적 근거는 귀하의 동의입니다. 당사는 이 목적에 필요한 기간 동안 귀하의 정보를 보관합니다.</p>
+<p>ID 번호: 귀하가 청구서 지급을 선택하신 경우 당사의 웹사이트에서 귀하의 개인 ID 번호를 제공해야 할 수 있습니다. 귀하의 ID 번호는 당사의 지급 서비스 제공자에게 직접 전송되어 동 서비스 제공자만이 이용할 수 있게 됩니다. 이 지급 서비스 제공자는 귀하의 ID 번호를 처리하여 신용 보고서를 얻고 귀하의 지급을 용이하게 할 것입니다. 법적 근거는 당사가 청구 목적으로 당사 고객을 정확하게 식별하는 데 필요하고 구매 계약에 따라 귀하에 대한 계약상의 의무를 이행할 수 있도록 정보를 처리하는 데 필요한지 여부입니다. 당사는 이 목적에 필요한 기간 동안 귀하의 정보를 보관합니다.</p>
+</li>
+<li>
+<h5>실제 매장에서 쇼핑하실 때 수집되는 정보</h5>
+<p>귀하가 Acne Studios의 실제 매장에서 쇼핑하시는 경우, Acne Studios는 (i) 귀하의 의류 및 신발 사이즈, (ii) 귀하의 의류 선호 사항(선호하는 색상 및 스타일) 및 (iii) 기타 쇼핑 선호 사항에 대한 정보를 수신 및 저장할 수 있습니다. 단, 이는 귀하가 이 정보를 자발적으로 Acne Studios의 직원과 공유하신 경우에 한합니다. Acne Studios는 귀하가 Acne Studios의 직원에게 귀하의 이메일 주소를 제공하신 경우 실제 매장에서의 귀하의 구매 및 반품에 대한 정보(제품, 사이즈, 가격 및 구매 날짜)를 저장할 수도 있습니다. 이 정보는 귀하의 Acne Studios의 향후 구매 경험을 개선하고 Acne Studios의 회원권 서비스의 일부인 사용자 지정 서비스를 제공할 목적으로 처리됩니다. Acne Studios는 귀하의 쇼핑 선호 사항에 대한 정보를 이메일 또는 기타 메신저 서비스를 통해 특별 행사/판촉 및 프로파일링된 마케팅 제안 초대를 보내기 위한 목적으로도 사용할 수 있습니다. 이것의 법적 근거는 처리가 당사가 회원권 정책에 따라 귀하에 대한 계약상의 의무를 이행할 수 있도록 하는 데 필요한지 여부입니다. 당사는 이 목적에 필요한 기간 동안 귀하의 정보를 보관합니다.</p>
+</li>
+<li>
+<h5>Acne Studios 웹사이트 서비스를 사용하실 때 수집되는 정보</h5>
+<p>Acne Studios는 Acne Studios 웹사이트를 탐색할 때 귀하가 최근에 보신 상품에 대한 정보도 저장합니다. 이를 통해 개인 계정에 로그인하여 귀하가 최근에 보신 상품을 추적하실 수 있습니다. 이것의 법적 근거는 처리가 당사가 회원권 정책에 따라 귀하에 대한 계약상의 의무를 이행할 수 있도록 하는 데 필요한지 여부입니다. 당사는 이 목적에 필요한 기간 동안 귀하의 정보를 보관합니다.</p>
+</li>
+</ol>
+</li>
+<li>
+<h5>뉴스레터 구독자</h5>
+<p>귀하가 당사의 뉴스레터 중 하나를 구독하신 경우, 당사는 그러한 뉴스레터를 전달할 목적으로 귀하의 이름, 이메일 주소, 국가 및 귀하가 여성의류 또는 남성의류에 관심이 있으신지 여부에 대한 정보를 처리합니다. 이 처리의 법적 근거는 그러한 뉴스레터 수신을 구독한 개인들에게 당사 뉴스레터를 보낼 수 있도록 하는 당사의 합법적인 이해관계입니다. 귀하는 언제든지 각 뉴스레터에 포함된 구독 중단 링크를 클릭하거나 <a href="mailto:customercare@acnestudios.com">customercare@acnestudios.com</a>으로 고객 지원팀에 문의하여 당사 뉴스레터 구독을 언제든지 중단하실 권리가 있습니다. 당사는 귀하가 뉴스레터 서비스 구독을 중단하실 때까지 뉴스레터를 보내드립니다.</p>
+</li>
+<li>
+<h5>아카이브 구독자</h5>
+<p>귀하가 Acne Studios’ Archive의 아카이브 행사와 관련하여 이메일 및 문자 메시지를 통해 정보를 수신하도록 구독하신 경우, 당사는 아카이브 행사와 관련된 정보를 전달하기 위해 귀하의 이름, 전화번호, 이메일 주소, 거주국가 및 성별을 처리합니다. 이 처리의 법적 근거는 이 서비스를 구독한 개인들에게 아카이브 행사에 대한 정보를 보낼 수 있도록 하는 당사의 합법적인 이해관계입니다. 귀하는 언제든지 각 메시지에 포함된 구독 중단 링크를 클릭하거나 <a href="mailto:customercare@acnestudios.com">customercare@acnestudios.com</a>으로 고객 지원팀에 문의하여 당사 전달 자료 구독을 중단하실 권리가 있습니다. 당사는 귀하가 서비스 구독을 중단하실 때까지 아카이브 정보 전달 자료를 보내드립니다.</p>
+</li>
+<li>
+<h5>고객 지원</h5>
+<p>귀하가 불만, 반품 또는 질문과 관련하여 Acne Studios에 문의하신 경우, 12개월 이내의 후속 조치를 포함하여 이메일 또는 채팅 대화가 귀하의 사안을 관리하는 데 필요한 기간 동안 저장됩니다. 귀하가 당사에 문의하시는 문제의 성격에 따라, 법적 근거는 당사의 처리가 구매 계약 또는 회원권 정책에 따른 당사의 의무를 이행하는 데 필요한지 여부와 당사 고객 지원팀에 문의하는 개인과 커뮤니케이션할 수 있도록 하는 합법적인 이해관계가 될 수 있습니다.</p>
+</li>
+<li>
+<h5>익명화된 정보</h5>
+<p>또한 당사는 고객 패턴을 분석하고, 프로필을 작성하고, 모니터하여 당사 제품 및 서비스를 개선할 수 있도록 내부 마케팅 및 인구통계학적 연구를 목적으로 익명화된 정보 를 사용할 수 있습니다. </p>
+</li>
+<li>
+<h5>동의 및 취소</h5>
+<p>귀하는 이로써 본 개인정보 보호의 내용을 읽고 이해했음을 확인합니다. 귀하의 개인정보 처리의 법적 근거가 귀하의 동의인 경우, 귀하는 본 약관의 조항에 따라 Acne Studios가 귀하의 개인정보를 처리하는 데 동의하시는 것입니다. 당사의 처리에 대한 동의에 반대하거나 이를 취소하려는 경우 <a href="mailto:customercare@acnestudios.com">customercare@acnestudios.com</a>으로 당사에 문의하십시오. 하지만 귀하와의 당사의 계약상 의무 이행 및/또는 당사가 분쟁 시 법률에 따라 귀하의 정보를 처리하거나 당사를 방어해야 하는 범위 내에서, 사기 또는 오용을 방지하기 위해, 또는 당사 이용 약관을 시행하는 데 처리가 필요한 경우에는 귀하가 취소하더라도 귀하의 정보를 처리할 당사의 권리에 영향을 주지 않습니다. 동의를 전제로 한 처리에 대한 귀하의 동의를 취소하시는 경우, 당사는 그러한 모든 처리를 중단할 것입니다.
+</p>
+</li>
+</ol>
+</li>
+<li>
+<h4>Acne Studios는 귀하의 정보를 타인과 공유하는가?</h4>
+<p>Acne Studios는 당사 고객의 개인정보를 다른 기관에 판매하거나 빌려주지 않습니다.<br> 당사는 귀하의 정보를 Acne Studios 내의 다른 회사, 합작투자회사, 프랜차이즈 가맹점 및 라이선스 사용권자를 포함한 계열사와 공유할 수 있습니다. Acne Studios 회원권 가입을 신청하신 경우에 당사는 귀하에 대한 서비스를 개선하고 귀하의 거주국가 외의 다른 국가에 있는 Acne Studios 매장을 방문하실 때 쇼핑 경험을 강화하기 위하여 귀하의 정보를 귀하가 그러한 계열사에 제공하신 정보와 결합할 수 있습니다. 처리의 법적 근거는 Acne Studios의 회원권 정책의 이행에 필요한 경우입니다.<br> 또한 Acne Studios는 귀하의 정보를 주문 및 주문 납품 이행, 지급 처리, 판촉 서비스 또는 데이터 관리 수행, 당사 웹사이트 유지관리, 이메일 배포, 당사의 뉴스레터 발송, 고객 커뮤니케이션 제공 및 당사 고객 데이터베이스 관리와 같은 기능을 당사를 대신하여 수행하도록 선정된 공급자와 공유할 수 있습니다. 필요한 때에는 귀하가 당사에 제공한 개인정보를 오직 Acne Studios를 대신하여, 그리고 정보 처리자로서 Acne Studios의 지시에 따라서 이러한 제3자가 처리할 수 있습니다. 당사는 당사의 어느 공급자에게도 귀하의 개인정보를 달리 사용하도록 허가하지 않습니다.<br> Acne Studios 및/또는 그 자회사가 실제 또는 잠재적인 합병 또는 인수나 이와 비슷한 거래의 대상이 되는 경우, 당사는 귀하의 정보를 잠재 및 실제 구매자 및 그 재무 및 법률 자문과 공유할 수 있으며, 여기에는 해당 제3자의 적절한 기밀 유지 책임 이행이 수반됩니다.<br>
+</p>
+</li>
+<li>
+<h4>유럽연합/EEA 외부로의 전송</h4>
+<p>당사는 귀하의 정보를 위 섹션 4에서 정한 바와 같이 당사를 대신하여 업무를 수행하는, 유럽연합/EES 내부 및 외부의 국가에서 귀하의 정보를 처리할 수 있는, 당사가 선정한 공급자와 공유할 수 있습니다.<br>귀하가 Acne Studios 회원권 가입을 신청하신 경우 당사는 귀하의 연락처 세부사항과 이전 구매 및 선호 쇼핑에 관한 정보를 유럽연합/EEA 내부 및 외부의 당사 계열사와 공유할 것입니다(섹션 4의 추가 정보 참조).<br>유럽연합/EEA 외부의 국가는 귀하의 개인정보에 대해 충분한 수준의 보호를 제공하지 않을 수도 있습니다. 하지만 Acne Studios는 유럽연합/EEA 외부의 국가에 있는 귀하의 정보 수신 당사자가 귀하의 데이터에 대해 충분한 보호를 제공하도록 하기 위한 적절한 보호책을 강구했습니다. 그러한 보호책은 수신 당사자가 프라이버시 실드(Privacy Shield)에 가입하는 것(수신 당사자가 미국에 설립된 회사인 경우) 또는 수신 당사자가 유럽연합위원회가 채택한 소위 표준 데이터 보호 조항에 서명하는 것일 수 있습니다. 어떤 보호책이 강구되었는지에 대한 자세한 내용을 알아보고 싶으시거나 그러한 보호책의 사본을 원하시는 경우 <a href="mailto:customercare@acnestudios.com">customercare@acnestudios.com</a>으로 당사에 문의하십시오.
+</p>
+</li>
+<li>
+<h4>귀하의 정보 주체의 권리</h4>
+<p>이 섹션 6에는 개인정보에 접근, 이동성, 수정 및 말소를 요구하고 개인정보 처리를 제한하고 처리에 반대할 수 있는 귀하의 정보 주체의 권리, 그리고 불만을 감독당국에 제기할 수 있는 귀하의 권리가 요약되어 있습니다.<br> 권리를 행사하기를 원하시는 경우 <a href="mailto:customercare@acnestudios.com">customercare@acnestudios.com</a>으로 이메일을 보내주십시오. 하지만 감독당국에 불만을 제기하기를 원하시는 경우에는 당국에 직접 연락하셔야 한다는 점에 유의하시기 바랍니다.<br> Acne Studios 회원권에 가입하신 경우 개인 계정에 로그인함으로써 정보에 접근하여 일부를 수정 및 삭제하실 수도 있습니다. <a href="https://www.acnestudios.com/my-account">계정 로그인</a>
+<br> 여기에 있는 내용과 상반된 그 무엇에도 불구하고, Acne Studios는 귀하에 대한 당사의 계약상의 의무를 이행하기 위하여 필요한 범위 내에서, 그리고 법률에 따라 귀하의 정보를 처리하고 분쟁에서 당사를 방어하기 위하여, 사기나 남용을 방지하거나 당사의 조건을 집행하기 위하여 필요한 범위 내에서 본 정책에 따라 귀하의 개인정보를 보관하고 처리할 권리를 가집니다.
+</p>
+<p>
+접근권
+<br>귀하께서는 자신에 관한 개인정보가 처리되고 있는지 확인하고, 해당하는 경우 개인정보 및 그 중에서도 처리 목적, 관련된 개인정보의 범주, 귀하의 정보가 공개된 또는 공개될 수령인의 범주, 개인정보가 저장될 예상 기간(또는 이것을 결정하는 기준)에 관한 정보에 접근할 권리가 있습니다.
+</p>
+<p>
+수정권
+<br>귀하께서는 자신에 관한 부정확한 개인정보의 수정을 요구하고 불완전한 정보를 완성시킬 권리가 있습니다.
+</p>
+<p>
+삭제권
+<br>귀하는 다음과 같은 경우 당사에 귀하의 개인정보를 삭제하거나 정보 처리를 제한하도록 요구할 권리가 있습니다.<br> 정보 수집 목적을 고려할 때 당사의 귀하의 정보 처리가 더 이상 필요 없는 경우.<br> 당사의 처리가 귀하의 동의를 기반으로 하고 있을 때 귀하가 동의를 철회하시고 귀하의 정보 처리에 대한 다른 법적 근거가 없는 경우.<br> 당사의 귀하의 정보 처리가 합법적인 이해관계의 법적 근거를 전제로 하고 있을 때 귀하가 그러한 처리에 반대하시고 당사의 처리에 대한 우선적인 합법적인 근거가 없는 경우.<br> 귀하가 직접 마케팅 목적을 위한 당사의 정보 처리에 반대하신 경우.<br> 귀하의 개인정보가 불법적으로 처리된 경우.<br> 당사에 적용되는 법적 의무를 준수하기 위해 개인정보를 삭제해야 하는 경우.<br> 수집된 개인정보가 정보 사회 서비스 제공과 관련하여 아동(13세 미만)에 대한 것일 경우.
+</p>
+<p>
+반대할 권리 - 다이렉트 마케팅 및 프로파일링
+<br>귀하는 언제든지 당사의 귀하의 개인정보 처리에 반대할 권리가 있습니다. 여기에는 그러한 직접 마케팅과 관련된 범위 내의 프로파일링이 포함됩니다. 프로파일링을 포함하여 직접 마케팅 목적을 위한 개인정보 처리에 반대하시는 경우 당사는 귀하의 정보 처리를 중단할 것입니다.
+</p>
+<p>
+데이터 이동성
+<br>당사의 처리가 귀하의 동의에 기반한 경우, 또는 당사가 귀하와의 계약을 이행하는 데 처리가 필요한 경우, 귀하는 당사에 제공하신 정보를 체계적이고, 일반적으로 사용되며, 컴퓨터로 판독 가능한 형식으로 제공해 줄 것을 요청하실 권리가 있고, 그러한 정보를 다른 관리자에게 전송하실 권리도 있습니다.
+</p>
+<p>
+감독당국에 불만을 제기할 권리
+<br>귀하의 정보 처리가 해당 정보보호법을 위반한다고 간주하시는 경우에 특히 거주하고 계신 주나 침해를 주장하는 장소에 있는 감독당국에 불만을 제기할 권리가 있습니다.
+</p>
+</li>
+<li>
+<h4>Acne Studios 뉴스레터 및 이메일의 구독을 어떻게 중지하는가?</h4>
+<p>뉴스레터나 기타 이메일의 수령을 더 이상 원하시지 않는 경우 특정 커뮤니케이션에 표시된 대로, 즉 모든 뉴스레터나 기타 이메일에 포함된 구독 중단 링크를 사용하여 구독을 중단하실 수 있습니다. <a href="mailto:customercare@acnestudios.com">customercare@acnestudios.com</a>으로도 당사에 연락하실 수 있습니다.</p>
+</li>
+<li>
+<h4>귀하의 정보를 얼마나 오랫동안 보관하는가?</h4>
+<p>
+당사는 귀하의 개인정보를 수집하거나 달리 처리한 목적과 관련하여 필요한 기간 동안 보관할 것입니다. 위 섹션 3에 따라, 당사는 정보가 처리되는 여러 가지 목적과 관련하여 당사의 정보 처리에 대해 보유 시간 또는 보유 시간을 결정하기 위한 기준을 지정했습니다. 위 섹션 3에 명시된 보유 시간 외에, 다음 사항에도 유의하십시오.<br> 회원: 귀하가 연속해서 36개월 동안 전혀 구매하시지 않거나, 계정에 로그인하시지 않거나, 당사 서비스를 사용하시지 않은 경우 당사는 귀하의 회원권을 해지하므로 그 이후에는 회원권 서비스를 위하여, 또는 마케팅 목적으로 귀하의 정보를 사용하지 않을 것입니다. 그러한 경우에 당사는 법적으로 정당화될 수 있는 다른 목적을 위하여 보관하여야 할 필요가 있는 경우가 아니면 귀하의 정보를 삭제할 것입니다.<br> 당사는 해당 법적 의무를 준수하고, 분쟁을 해결하고, 당사의 합의를 이행하기 위하여 필요할 때 귀하의 개인정보를 보존할 것입니다. 추가로 정보를 보존해야 할 법적 의무는 영향을 받지 않습니다.
+</p>
+</li>
+<li>
+<h4>개인정보 제공이 의무적인가?</h4>
+<p>
+당사의 제품을 온라인으로 구매하시거나 Acne Studios 회원권 가입을 하실 때 당사는 어떤 필드에 (*) 표시를 하여 어느 정보가 의무적인지 귀하에게 알릴 것입니다. 의무적인 정보의 제공은 Acne Studios가 예를 들면 귀하의 주문 처리나 귀하가 요청하신 회원권 서비스 이행과 같이 귀하에 대한 당사의 계약상의 의무를 이행하는 데 필요합니다.<br> 귀하가 당사의 실제 매장에서 당사 제품을 구매하실 때 개인정보를 반드시 제공하시지 않아도 됩니다. 하지만 디지털 영수증 수령을 선택하신 경우에는 이메일 주소 제공은 의무이며 그렇지 않으면 귀하에게 디지털 영수증을 발송할 수 없음을 유념하시기 바랍니다.
+</p>
+</li>
+<li>
+<h4>어린이의 개인정보 보호 및 법적 구매 연령</h4>
+<p>Acne Studios는 십육(16) 세 미만의 어느 누구로부터도 개인정보를 수집하는 것을 원하지 않습니다. 귀하가 십팔(18) 세 미만인 경우에 당사는 귀하가 구매 전이나 acnestudios.com 또는 Acne Studios에 관련된 다른 웹사이트로 당사에 개인정보를 제공하기 전에 부모나 후견인에 알리고 그들의 동의를 받으셔야 합니다.</p>
+</li>
+<li>
+<h4>쿠키</h4>
+<p>당사는 당사의 웹사이트에서 쿠키를 사용합니다. 당사의 웹사이트에 있는 쿠키에 대한 별도의 정책을 참조하시기 바랍니다.</p>
+</li>
+<li>
+<h4>정책의 변경</h4>
+<p>Acne Studios는 개인정보 보호 정책이나 관행을 수시로 변경할 권리를 가집니다. 당사는 당사의 웹사이트에 개정된 정책을 게시할 것이므로 귀하는 수시로 이 페이지를 검토하여 주실 것을 권장합니다.<br> 최종 변경일: 2018년 5월</p>
+</li>
+</ol>
+</div>
+<div class="modal-footer modal-footer--sticky">
+<label onclick="document.getElementById(&#39;dwfrm_profile_termsandconditions-option&#39;).checked=&#39;true&#39;" onkeydown="document.getElementById(&#39;dwfrm_profile_termsandconditions-option&#39;).checked=&#39;true&#39;" for="dwfrm_profile_termsandconditions-option" role="button" class="action--primary" tabindex="0" data-dismiss="modal">Accept &amp; Continue</label>
+</div>
+</div>
+</div>
+</div>
+<input type="hidden" class="custtimezone" name="dwfrm_profile_customer_customertimezone" value="null">
+<input type="hidden" name="csrf_token" value="PCEy1yE0_yc-p4CddBM_Qwi7wFA0ySZjlXpow9L_zrQFfd1RtCmG8pTcUKyDv1KjXgrCn3kqDo-6SBjcUr41QvwFqRBQxm-RQVlLYs5N40RlbSKjnbJFl0Lg2D438jSqzkZ0y1COcHbbbyrjWXrI5j8Xa6WroKxIy0UgWQ162damUDxlEL8=">
+<div class="margin-top--small">
+<div class="form__error" aria-hidden="true"></div>
+<div class="flex">
+<div class="flex-col--50">
+<button id="registration-submit" type="submit" class="action--primary action--color-black action--force-active" aria-describedby="termsandconditions" value="적용" name="null">
+<div class="progress-bar--status"></div>
+<span class="progress-bar--message">회원가입</span>
+</button>
+</div>
+</div>
+</div>
+<div tabindex="-1" class="recaptcha-wrapper">
+<input type="hidden" name="dwfrm_profile_securekey" value="176430695">
+<div class="g-recaptcha recaptcha-#registration" data-sitekey="6Ld2JDQUAAAAAMg2G_fufzAconSNJ6qCEV7GcISu" data-callback="recaptchaSuccessregistration" data-size="invisible"><div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; position: fixed; visibility: hidden; display: block; transition: right 0.3s ease 0s; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"><iframe title="reCAPTCHA" src="./Acne Studios – 남성 및 여성 레디투웨어, 액세서리, 신발, 데님 더보기_files/anchor.html" width="256" height="60" role="presentation" name="a-wa5erz7wt0sc" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;" src="./Acne Studios – 남성 및 여성 레디투웨어, 액세서리, 신발, 데님 더보기_files/saved_resource(1).html"></iframe></div>
+<div class="recaptcha--disclaimer">
+본 사이트는 reCAPTCHA의 보호를 받으며, Google <a href="https://policies.google.com/privacy">개인정보 보호 정책</a> 및 <a href="https://policies.google.com/terms">서비스 이용 약관</a>이 적용됩니다.
+</div>
+</div>
+<p class="margin-top--small field-title">
+이미 회원이십니까? <a href="https://www.acnestudios.com/kr/ko/account">로그인</a>
+</p>
+</form>
+<div class="margin-between--large flex cell--col-pos-5---medium-up cell--span-8 cell--span-all---small-down">
+<div class="flex-col--50">
+<div class="margin-between--micro">
+<h2 class="field-title">
+SNS 계정 로그인/회원가입
+</h2>
+<form class="margin-between--micro" action="https://www.acnestudios.com/on/demandware.store/Sites-acne_kr-Site/ko_KR/Login-OAuthLogin?oauthProvider=Facebook&amp;oauthLoginTargetEndPoint=1" name="SocialLoginFormFacebook" method="get">
+<input type="hidden" name="oauthProvider" value="Facebook">
+<input type="hidden" name="oauthLoginTargetEndPoint" value="1.0">
+<button class="action--primary" type="submit">
+<img alt="" class="icon" src="./Acne Studios – 남성 및 여성 레디투웨어, 액세서리, 신발, 데님 더보기_files/facebook.svg" loading="lazy">
+Facebook
+</button>
+</form>
+<form class="margin-between--micro" action="https://www.acnestudios.com/on/demandware.store/Sites-acne_kr-Site/ko_KR/Login-OAuthLogin?oauthProvider=GooglePlus&amp;oauthLoginTargetEndPoint=1" name="SocialLoginFormGoogle" method="get">
+<input type="hidden" name="oauthProvider" value="GooglePlus">
+<input type="hidden" name="oauthLoginTargetEndPoint" value="1.0">
+<button class="action--primary" type="submit">
+<img alt="" class="icon" src="./Acne Studios – 남성 및 여성 레디투웨어, 액세서리, 신발, 데님 더보기_files/google.svg" loading="lazy">
+Google
+</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="footer grid---medium-up">
+<nav class="footer_nav cell--span-16---medium-up grid---medium-up">
+<div class="hide-for-medium-up footer-section__heading---small-down as-cell---small-down link--main-nav" role="button" data-lazy-init="{&quot;contentToggle&quot;: {&quot;toggleId&quot;: &quot;customer-service&quot;, &quot;triggerElActiveClass&quot;: &quot;active&quot;, &quot;contentElHideClass&quot;: &quot;hide-for-small-down&quot;, &quot;screenSizes&quot;: [&quot;xsmall&quot;, &quot;small&quot;]}}">고객 지원 </div>
+<div class="cell cell--span-4---medium-up hide-for-small-down" id="customer-service-content-1" data-content-toggle-id="customer-service">
+<button title="Live chat" class="as-cell---small-down border-top---small-down cell--pad-bottom---small-down content-trigger" role="button" aria-controls="footerChatContent" aria-expanded="false">
+<span class="show-for-small-down icon--chevron-toggle left" aria-hidden="true"></span>
+<span class="button-trigger-title">
+실시간 채팅
+</span>
+<sup class="color--gray sup--no-margin hide" aria-hidden="true" data-show-for="offline">
+오프라인
+</sup>
+<sup class="color--validation-green sup--no-margin" aria-hidden="false" data-show-for="online">
+가능
+</sup>
+</button>
+<div class="hide state-container-toggle footer-chat-content" data-content-toggle-id="footer-chat" id="footerChatContent" aria-hidden="true">
+<div>
+<a title="Start live chat" href="https://v2.zopim.com/widget/livechat.html?key=4exEMnfS0JeybHKWUWKzEHbel5wrTIUc" target="_blank" rel="noopener" class="link" role="button" aria-hidden="false" data-show-for="online" onclick="window.open(&#39;https://v2.zopim.com/widget/livechat.html?key=4exEMnfS0JeybHKWUWKzEHbel5wrTIUc&#39;,&#39;qMyWindow&#39;,&#39;toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=600&#39;); return false;">Start live chat</a>
+</div>
+<div class="content--margin--top">
+<div>
+<span>
+월–일</span><span class="space--before space--after">00:00–24:00</span>GMT+9
+</div>
+</div>
+<div class="content--margin--top">
+</div>
+<div class="chat-offline-content color--gray text--no-case content--margin--top hide" aria-hidden="true" data-show-for="offline">
+Send us an email and we'll get back to you soon!
+</div>
+</div>
+<button title="Call" class="as-cell---small-down border-top---small-down cell--pad-bottom---small-down content-trigger" role="button" aria-controls="footer-phone-content" aria-expanded="false">
+<span class="show-for-small-down icon--chevron-toggle left" aria-hidden="true"></span>
+<span class="button-trigger-title">
+전화
+</span>
+<sup class="color--validation-green sup--no-margin" aria-hidden="false" data-show-for="online">
+가능
+</sup>
+<sup class="color--gray sup--no-margin hide" aria-hidden="true" data-show-for="offline">
+오프라인
+</sup>
+</button>
+<div class="hide state-container-toggle footer-phone-content" data-content-toggle-id="footer-phone" id="footer-phone-content" aria-hidden="true">
+<div class="show-for-medium-up">+46108887305</div>
+<div class="show-for-small-down">
+<a title="Call" data-show-for="online" href="tel:+46108887305" class="link hide-for-large-up" role="button" aria-hidden="false">전화 +46108887305</a>
+</div>
+<div class="content--margin--top">
+<div>
+<span>
+월–일</span><span class="space--before space--after">00:00–24:00</span>GMT+9
+</div>
+</div>
+<div class="content--margin--top">
+</div>
+<div class="phone-offline-content color--gray text--no-case hide content--margin--top" aria-hidden="true" data-show-for="offline">
+Leave us a voicemail or send us a message and we'll get back to you soon!
+</div>
+</div>
+<button title="Email" href="mailto:customercare@acnestudios.com" class="as-cell---small-down border-top---small-down cell--pad-bottom---small-down content-trigger" role="button" aria-controls="footer-email-content" aria-expanded="false">
+<span class="show-for-small-down icon--chevron-toggle left" aria-hidden="true"></span>
+<span class="button-trigger-title">
+이메일
+</span>
+</button>
+<div class="hide state-container-toggle" data-content-toggle-id="footer-email" id="footer-email-content" aria-hidden="true">
+<div class="email--content show-for-small-down">
+<a class="text--no-case" id="email" href="mailto:customercare@acnestudios.com">customercare@acnestudios.com</a>
+<a class="copy--button" href="https://www.acnestudios.com/kr/ko/COPY" data-lazy-init="{&quot;copyTrigger&quot;: {&quot;targetId&quot;: &quot;email&quot;, &quot;successText&quot;: &quot;복사됨&quot;}}">복사</a>
+</div>
+<div class="show-for-medium-up content--margin--top">
+<a class="text--no-case" id="email" href="mailto:customercare@acnestudios.com">customercare@acnestudios.com</a> / <a href="https://www.acnestudios.com/kr/ko/COPY" data-lazy-init="{&quot;copyTrigger&quot;: {&quot;targetId&quot;: &quot;email&quot;, &quot;successText&quot;: &quot;복사됨&quot;}}">복사</a>
+</div>
+<div class="text--no-case">가능한 한 24시간 이내에 답변드리겠습니다</div>
+</div>
+<div class="as-cell---small-down cell--pad-bottom---small-down border-top--concrete">
+</div>
+</div>
+<div class="cell cell--span-4---medium-up hide-for-small-down " id="customer-service-content-2" data-content-toggle-id="customer-service" data-gtm-vis-recent-on-screen-12829788_367="3018" data-gtm-vis-first-on-screen-12829788_367="3018" data-gtm-vis-total-visible-time-12829788_367="100" data-gtm-vis-has-fired-12829788_367="1">
+<a title="고객 지원" class="as-cell---small-down link border-top---small-down" href="https://www.acnestudios.com/kr/ko/contact/online-inquiries">고객 지원</a>
+<a title="반품 및 교환" class="as-cell---small-down link border-top---small-down" href="https://www.acnestudios.com/kr/ko/shopping-help/returns-exchanges.html">반품 및 교환</a>
+<a title="배송 정보" class="as-cell---small-down link border-top---small-down" href="https://www.acnestudios.com/kr/ko/shopping-help/shipping-information.html">배송 정보</a>
+<a title="주문 상태" class="as-cell---small-down link border-top---small-down" href="https://www.acnestudios.com/kr/ko/shopping-help/order-status.html">주문 상태</a>
+<br class="show-for-medium-up">
+<a class="show-for-medium-up link" title="스토어" href="https://www.acnestudios.com/kr/ko/stores">스토어</a>
+<a class="show-for-medium-up link" title="Subscribe" href="https://www.acnestudios.com/kr/ko/register-account#newsletter" onclick="document.body.classList.add(&#39;state--newsletter&#39;)" aria-expanded="false" aria-controls="newsletter-state-container">뉴스레터 </a>
+</div>
+<a class="hide-for-medium-up footer-section__heading---small-down as-cell---small-down link---medium-up link--main-nav---small-down border-top---small-down" title="계정" href="https://www.acnestudios.com/on/demandware.store/Sites-acne_kr-Site/ko_KR/Account-Landing">계정</a>
+<a class="hide-for-medium-up footer-section__heading---small-down as-cell---small-down link---medium-up link--main-nav---small-down border-top---small-down" title="스토어" href="https://www.acnestudios.com/kr/ko/stores">스토어</a>
+<a class="hide-for-medium-up footer-section__heading---small-down as-cell---small-down link---medium-up link--main-nav---small-down border-top---small-down" title="Subscribe" href="https://www.acnestudios.com/kr/ko/register-account#newsletter" onclick="document.body.classList.add(&#39;state--newsletter&#39;)" aria-expanded="false" aria-controls="newsletter-state-container" data-lazy-init="{&quot;addStateTrigger&quot;: {&quot;state&quot;: &quot;newsletter&quot;}}">뉴스레터</a>
+<div class="hide-for-medium-up footer-section__heading---small-down as-cell---small-down link---medium-up link--main-nav---small-down border-top---small-down" role="button" data-lazy-init="{&quot;contentToggle&quot;: {&quot;toggleId&quot;: &quot;company&quot;, &quot;triggerElActiveClass&quot;: &quot;active&quot;, &quot;contentElHideClass&quot;: &quot;hide-for-small-down&quot;, &quot;screenSizes&quot;: [&quot;xsmall&quot;, &quot;small&quot;]}}">회사 </div>
+<div class="cell cell--span-4---medium-up hide-for-small-down" data-content-toggle-id="company">
+<a title="About" class="as-cell---small-down link border-top---small-down" href="https://www.acnestudios.com/kr/ko/companyfolder/about.html">소개</a>
+<a title="Press" class="as-cell---small-down link border-top---small-down" href="http://press.acnestudios.com/">미디어</a>
+<a title="Careers" class="as-cell---small-down link border-top---small-down" href="https://www.acnestudios.com/kr/ko/contact/careers.html">채용</a>
+<a title="Terms &amp; conditions" class="as-cell---small-down link border-top---small-down" href="https://www.acnestudios.com/kr/ko/legal/terms-of-use.html">이용 약관</a>
+<a title="개인정보 보호 정책" class="as-cell---small-down link border-top---small-down" href="https://www.acnestudios.com/kr/ko/terms-conditions-folder/privacy_policy_version1.html">개인정보 보호 정책</a>
+<a title="지속가능성" class="as-cell---small-down link border-top---small-down" href="https://www.acnestudios.com/kr/ko/companyfolder/csr.html">지속가능성</a>
+<a title="접근성" class="as-cell---small-down link border-top---small-down" href="https://www.acnestudios.com/kr/ko/companyfolder/accessibility.html">접근성</a>
+</div>
+<div class="cell cell--span-4---medium-up footer-social---small-down">
+<div class="content-asset">
+<a title="Instagram" class="as-cell---small-down link" href="http://www.instagram.com/acnestudios" target="_blank">
+<span class="show-for-medium-up">Instagram</span>
+<span class="show-for-small-down">IG</span>
+</a>
+<a title="Facebook" class="as-cell---small-down link" href="http://www.facebook.com/acnestudios" target="_blank">
+<span class="show-for-medium-up">Facebook</span>
+<span class="show-for-small-down">FB</span>
+</a>
+<a title="Twitter" class="as-cell---small-down link" href="http://www.twitter.com/acnestudios" target="_blank">
+<span class="show-for-medium-up">Twitter</span>
+<span class="show-for-small-down">TW</span>
+</a>
+<a title="Pinterest" class="as-cell---small-down link" href="http://www.pinterest.com/AcneStudios" target="_blank">
+<span class="show-for-medium-up">Pinterest</span>
+<span class="show-for-small-down">PT</span>
+</a>
+<a title="Kakao" class="as-cell---small-down link" href="http://pf.kakao.com/_DcCUK" target="_blank">
+<span class="show-for-medium-up">Kakao</span>
+<span class="show-for-small-down">KK</span>
+</a>
+</div> 
+</div>
+</nav>
+<div class="cell cell--span-16">
+</div>
+<div class="footer-bottom grid--medium-up cell--span-16---medium-up">
+<button class="country-selector-trigger country-selector-bar border-top---small-down color--black---small-down global-country-selector cell cell--col-pos-1 cell--span-8 footer-section__heading---small-down as-cell---small-down" id="location-toggle" onclick="document.body.classList.add(&#39;state--choose-location&#39;)" aria-expanded="false" aria-controls="choose-location-state-container">
+<div class="country-selector-bar">
+<div class="country-selector-bar__flag">
+<span class="flag flag-kr">
+</span></div>
+<div class="country-selector-bar__label">
+<span class="shipping-to"> 배송지: </span>
+<span class="valid-in"> 다음에서만 유효함 </span>
+<span data-shipping-to="">대한민국</span>
+</div>
+</div>
+</button>
+<div class="as-cell show-for-small-down border-top---small-down"></div>
+<div class="as-cell show-for-small-down"></div>
+<div class="copyright cell cell--col-pos-9 cell--span-8  as-cell---small-down border-top---small-down">
+© Acne Studios
+2022
+</div>
+</div>
+</footer>
+<div id="choose-location-state-container" class="choose-location-state-container state-container country-selector__wrapper" tabindex="-1" aria-hidden="true">
+<div class="state-container__header cell--span-all flex flex--space-between bg--concrete">
+<button type="button" aria-expanded="false" onclick="document.body.classList.remove(&#39;state--contactus&#39;)" aria-controls="contactus-state-container" class="as-cell button icon--angle-left state-close-trigger--navigation go-back">뒤로 가기</button>
+<h2 class="as-cell">위치 선택하기</h2>
+<button type="button" aria-expanded="false" onclick="document.body.classList.remove(&#39;state--choose-location&#39;)" aria-controls="choose-location-state-container" class="as-cell button icon--x state-close-trigger--choose-location">닫기</button>
+</div>
+<input class="country-selector__search-input field-size--small" placeholder-shown="" name="searchCountries" type="search" label="위치 검색하기" placeholder="위치 검색하기">
+<ul class="country-selector__list scroll-gradients--y scroll--start" data-lazy-init="{&quot;scrollHelper&quot;: {}}">
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_AX" data-country-code="AX" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/emea/en/home?locale=en_AX">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Aland Islands</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_AD" data-country-code="AD" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/emea/en/home?locale=en_AD">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Andorra</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_AU" data-country-code="AU" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/au/en/home?locale=en_AU">
+<div class="text-mask">
+<span>A$</span>
+<span class="countryText">Australia</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_AT" data-country-code="AT" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/eu/en/home?locale=en_AT">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Austria</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_BH" data-country-code="BH" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/emea/en/home?locale=en_BH">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Bahrain</span>
+</div>
+</button>
+</li>
+
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_BE" data-country-code="BE" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/be/en/home?locale=en_BE">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Belgium</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_BG" data-country-code="BG" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/eu/en/home?locale=en_BG">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Bulgaria</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_CA" data-country-code="CA" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/ca/en/home?locale=en_CA">
+<div class="text-mask">
+<span>C$</span>
+<span class="countryText">Canada</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_CL" data-country-code="CL" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/americas/en/home?locale=en_CL">
+<div class="text-mask">
+<span>$</span>
+<span class="countryText">Chile</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_CN" data-country-code="CN" data-country-group-default="false" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/cn/en/home?locale=en_CN">
+<div class="text-mask">
+<span>¥</span>
+<span class="countryText">China</span>
+<span class="country-selector__language">English</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="zh_CN" data-country-code="CN" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/cn/zh/home?locale=zh_CN">
+<div class="text-mask">
+<span>¥</span>
+<span class="countryText">China</span>
+<span class="country-selector__language">中文</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_HR" data-country-code="HR" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/eu/en/home?locale=en_HR">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Croatia</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_CY" data-country-code="CY" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/eu/en/home?locale=en_CY">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Cyprus</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_CZ" data-country-code="CZ" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/eu/en/home?locale=en_CZ">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Czech Republic</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_DK" data-country-code="DK" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/dk/en/home?locale=en_DK">
+<div class="text-mask">
+<span>DKK</span>
+<span class="countryText">Denmark</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_EE" data-country-code="EE" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/eu/en/home?locale=en_EE">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Estonia</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_FO" data-country-code="FO" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/emea/en/home?locale=en_FO">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Faroe Islands</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_FI" data-country-code="FI" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/fi/en/home?locale=en_FI">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Finland</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_FR" data-country-code="FR" data-country-group-default="false" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/fr/en/home?locale=en_FR">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">France</span>
+<span class="country-selector__language">English</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="fr_FR" data-country-code="FR" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/fr/fr/home?locale=fr_FR">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">France</span>
+<span class="country-selector__language">Français</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_DE" data-country-code="DE" data-country-group-default="false" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/de/en/home?locale=en_DE">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Germany</span>
+<span class="country-selector__language">English</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="de_DE" data-country-code="DE" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/de/de/home?locale=de_DE">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Germany</span>
+<span class="country-selector__language">Deutsch</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_GI" data-country-code="GI" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/emea/en/home?locale=en_GI">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Gibraltar</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_GR" data-country-code="GR" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/eu/en/home?locale=en_GR">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Greece</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_GL" data-country-code="GL" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/emea/en/home?locale=en_GL">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Greenland</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_GG" data-country-code="GG" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/uk/en/home?locale=en_GG">
+<div class="text-mask">
+<span>£</span>
+<span class="countryText">Guernsey</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_HK" data-country-code="HK" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/hk/en/home?locale=en_HK">
+<div class="text-mask">
+<span>HK$</span>
+<span class="countryText">Hong Kong China</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_HU" data-country-code="HU" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/eu/en/home?locale=en_HU">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Hungary</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_IS" data-country-code="IS" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/emea/en/home?locale=en_IS">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Iceland</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_IN" data-country-code="IN" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/apac/en/home?locale=en_IN">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">India</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_IE" data-country-code="IE" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/eu/en/home?locale=en_IE">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Ireland</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_IL" data-country-code="IL" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/emea/en/home?locale=en_IL">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Israel</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_IT" data-country-code="IT" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/it/en/home?locale=en_IT">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Italy</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_JP" data-country-code="JP" data-country-group-default="false" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/jp/en/home?locale=en_JP">
+<div class="text-mask">
+<span>¥</span>
+<span class="countryText">Japan</span>
+<span class="country-selector__language">English</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="zh_JP" data-country-code="JP" data-country-group-default="false" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/jp/zh/home?locale=zh_JP">
+<div class="text-mask">
+<span>¥</span>
+<span class="countryText">Japan</span>
+<span class="country-selector__language">中文</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="ja_JP" data-country-code="JP" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/jp/ja/home?locale=ja_JP">
+<div class="text-mask">
+<span>¥</span>
+<span class="countryText">Japan</span>
+<span class="country-selector__language">日本語</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_JE" data-country-code="JE" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/uk/en/home?locale=en_JE">
+<div class="text-mask">
+<span>£</span>
+<span class="countryText">Jersey</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_KW" data-country-code="KW" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/emea/en/home?locale=en_KW">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Kuwait</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_LV" data-country-code="LV" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/eu/en/home?locale=en_LV">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Latvia</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_LI" data-country-code="LI" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/eu/en/home?locale=en_LI">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Liechtenstein</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_LT" data-country-code="LT" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/eu/en/home?locale=en_LT">
+ <div class="text-mask">
+<span>€</span>
+<span class="countryText">Lithuania</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_LU" data-country-code="LU" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/eu/en/home?locale=en_LU">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Luxembourg</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_MO" data-country-code="MO" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/apac/en/home?locale=en_MO">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Macau, China</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_MY" data-country-code="MY" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/apac/en/home?locale=en_MY">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Malaysia</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_MT" data-country-code="MT" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/eu/en/home?locale=en_MT">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Malta</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_MX" data-country-code="MX" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/americas/en/home?locale=en_MX">
+<div class="text-mask">
+<span>$</span>
+<span class="countryText">Mexico</span>
+</div>
+ </button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_MC" data-country-code="MC" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/eu/en/home?locale=en_MC">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Monaco</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_NL" data-country-code="NL" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/nl/en/home?locale=en_NL">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Netherland</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_NZ" data-country-code="NZ" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/apac/en/home?locale=en_NZ">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">New Zealand</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_NO" data-country-code="NO" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/no/en/home?locale=en_NO">
+<div class="text-mask">
+<span>NOK</span>
+<span class="countryText">Norway</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_PL" data-country-code="PL" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/eu/en/home?locale=en_PL">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Poland</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_PT" data-country-code="PT" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/eu/en/home?locale=en_PT">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Portugal</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_QA" data-country-code="QA" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/emea/en/home?locale=en_QA">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Qatar</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_RO" data-country-code="RO" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/eu/en/home?locale=en_RO">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Romania</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_RU" data-country-code="RU" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/emea/en/home?locale=en_RU">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Russia</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_SA" data-country-code="SA" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/emea/en/home?locale=en_SA">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Saudi Arabia</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_SG" data-country-code="SG" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/apac/en/home?locale=en_SG">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Singapore</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_SK" data-country-code="SK" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/eu/en/home?locale=en_SK">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Slovakia</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_SI" data-country-code="SI" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/eu/en/home?locale=en_SI">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Slovenia</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_ZA" data-country-code="ZA" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/emea/en/home?locale=en_ZA">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">South Africa</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_KR" data-country-code="KR" data-country-group-default="false" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/kr/en/home?locale=en_KR">
+<div class="text-mask">
+<span>₩</span>
+<span class="countryText">South Korea</span>
+<span class="country-selector__language">English</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button active" data-locale="ko_KR" data-country-code="KR" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/kr/ko/home?locale=ko_KR">
+<div class="text-mask">
+<span>₩</span>
+<span class="countryText">South Korea</span>
+<span class="country-selector__language">한국어</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_ES" data-country-code="ES" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/eu/en/home?locale=en_ES">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Spain</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_SE" data-country-code="SE" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/se/en/home?locale=en_SE">
+<div class="text-mask">
+<span>SEK</span>
+<span class="countryText">Sweden</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_CH" data-country-code="CH" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/ch/en/home?locale=en_CH">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Switzerland</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_TW" data-country-code="TW" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/apac/en/home?locale=en_TW">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Taiwan, Region</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_TH" data-country-code="TH" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/apac/en/home?locale=en_TH">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Thailand</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_TR" data-country-code="TR" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/emea/en/home?locale=en_TR">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">Turkey</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_AE" data-country-code="AE" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/emea/en/home?locale=en_AE">
+<div class="text-mask">
+<span>€</span>
+<span class="countryText">United Arab Emirates</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_GB" data-country-code="GB" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/uk/en/home?locale=en_GB">
+<div class="text-mask">
+<span>£</span>
+<span class="countryText">United Kingdom</span>
+</div>
+</button>
+</li>
+<li class="country-selector__item">
+<button class="country-selector__button button" data-locale="en_US" data-country-code="US" data-country-group-default="true" data-toggle="modal" data-target="#switchCountryModalConfirm" data-href="https://www.acnestudios.com/us/en/home?locale=en_US">
+<div class="text-mask">
+<span>$</span>
+<span class="countryText">United States</span>
+</div>
+</button>
+</li>
+</ul>
+</div>
+<div class="modal country-selector__modal" id="switchCountryModalConfirm" tabindex="-1" role="dialog" aria-labelledby="switchCountryModalConfirm">
+<div class="modal-dialog modal-dialog--pos-bottom---small-down" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h2 class="as-cell gift-registry-modal-header">배송 지역 변경하기</h2>
+<button data-close-modal="" type="button" class="button as-cell modal-close icon--x" data-dismiss="modal" aria-label="닫기">닫기</button>
+</div>
+<div class="modal-body text--align-center">
+<p class="text--no-case">고객님께서는 현재 대한민국 스토어에서 구매 중입니다. 국가를 변경하면 장바구니에 있는 제품이 삭제됩니다. 계속 진행하시겠습니까?</p>
+</div>
+<div class="modal-footer">
+<button type="button" class="action action--primary action--color-white" data-dismiss="modal">
+취소
+</button>
+<button type="button" class="country-selector__target-wrapper action action--primary action--color-black">
+계속하기 <span class="country-selector__target"></span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div aria-hidden="true" tabindex="-1" class="newsletter-state-container state-container state-container--modal state-container--overflow-auto bg--white" id="newsletter-state-container">
+<div class="state-container__header bg--concrete">
+<h2 class="as-cell">뉴스레터</h2>
+</div>
+<form method="post" id="newsletter" action="https://www.acnestudios.com/on/demandware.store/Sites-acne_kr-Site/ko_KR/CustomerService-SendNewsletterData" class="form padding--small" data-lazy-init="{&quot;formHandler&quot;: {&quot;hideOnSuccess&quot;: true, &quot;clearOnSuccess&quot;: true, &quot;hasReCaptcha&quot;: true}}">
+<h3 id="newsletter--message" class="as-cell--small text--no-case margin-bottom--micro">
+Acne Studios 컬렉션, 행사 및 세일 정보 수신 등록하기.
+</h3>
+<div class="field margin-between--micro">
+<input type="text" id="dwfrm_newsletter_firstnameundefined" name="dwfrm_newsletter_firstname" required="true" aria-required="true" maxlength="50" pattern="^[\p{L}][^0-9]*" placeholder=" ">
+<label for="dwfrm_newsletter_firstnameundefined" class="field__label field__placement--on-active-top">이름</label>
+<div class="field__error" id="dwfrm_newsletter_firstnameundefined--error" aria-hidden="true">Error</div>
+</div>
+<div class="field margin-between--micro">
+<input type="text" id="dwfrm_newsletter_lastnameundefined" name="dwfrm_newsletter_lastname" required="true" aria-required="true" maxlength="50" pattern="^[\p{L}][^0-9]*" placeholder=" ">
+<label for="dwfrm_newsletter_lastnameundefined" class="field__label field__placement--on-active-top">성</label>
+<div class="field__error" id="dwfrm_newsletter_lastnameundefined--error" aria-hidden="true">Error</div>
+</div>
+<div class="field margin-between--micro">
+<input type="email" id="dwfrm_newsletter_emailundefined" name="dwfrm_newsletter_email" required="true" aria-required="true" maxlength="80" pattern="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$" placeholder=" ">
+<label for="dwfrm_newsletter_emailundefined" class="field__label field__placement--on-active-top">이메일 주소</label>
+<div class="field__error" id="dwfrm_newsletter_emailundefined--error" aria-hidden="true">Error</div>
+</div>
+<div id="newsletter-genders" class="flex margin-top--micro" aria-hidden="false">
+<div class="field flex-col--half">
+
+<div class="field--margin-top">
+<input type="checkbox" id="dwfrm_newsletter_newsletter_woman-option" name="dwfrm_newsletter_newsletter_woman" value="true">
+<label for="dwfrm_newsletter_newsletter_woman-option">여성</label>
+</div>
+<div class="field__error" id="dwfrm_newsletter_newsletter_woman--error" aria-hidden="true">Error</div>
+</div>
+<div class="field flex-col--half">
+<div class="field--margin-top">
+<input type="checkbox" id="dwfrm_newsletter_newsletter_man-option" name="dwfrm_newsletter_newsletter_man" value="true">
+<label for="dwfrm_newsletter_newsletter_man-option">남성</label>
+</div>
+<div class="field__error" id="dwfrm_newsletter_newsletter_man--error" aria-hidden="true">Error</div>
+</div>
+</div>
+<div class="field margin-between--micro">
+<div class="field--margin-top">
+<input type="checkbox" id="dwfrm_newsletter_termsandconditions-option" name="dwfrm_newsletter_termsandconditions" value="true" required="true" aria-required="true">
+<label for="dwfrm_newsletter_termsandconditions-option"><button type="button" data-toggle="modal" data-target="#privacyPolicyNewsletter">개인정보 보호 정책</button>을 읽고 이해했습니다</label>
+</div>
+<div class="field__error" id="dwfrm_newsletter_termsandconditions--error" aria-hidden="true">Error</div>
+</div>
+<input type="hidden" name="currentppversion" value="1">
+<div role="dialog" id="privacyPolicyNewsletter" class="modal nested-modal" aria-modal="true" aria-labelledby="privacyPolicy--title" aria-describedby="privacyPolicy--description" tabindex="-1">
+<div class="modal-dialog modal-dialog-scrollable">
+<div class="modal-content">
+<div class="modal-header">
+<h2 id="privacyPolicy--title" class="as-cell">개인정보 보호 정책</h2>
+<button data-close-modal="" type="button" class="button as-cell modal-close icon--x" data-dismiss="modal" aria-label="닫기">닫기</button>
+</div>
+<div id="privacyPolicy--description" class="modal-body modal-body--text">
+<h1>개인정보 보호 정책</h1>
+<ol class="list--count">
+<li>
+<h4>소개</h4>
+<p>Acne Studios는 귀하의 개인정보 보호의 중요성을 인식합니다. 귀하님이 제공하시는 정보를 보호하기 위해 엄격한 정책과 보안 조치를 도입했습니다.</p>
+</li>
+<li>
+<h4>누가 귀하의 개인정보 처리를 책임지는가?</h4>
+<p>
+등록번호 556504-7726를 가진 스웨덴 회사인 Acne Studios AB (“Acne Studios AB“)가 귀하의 개인정보의 관리자입니다. Acne Studios AB의 계열사(Acne Studios 그룹 내 다른 회사, 합작투자회사, 프랜차이즈 가맹점 및 라이선스 사용권자 포함)와 선정된 공급자는 아래에서 기술하는 바와 같이 Acne Studios를 대신하여, 그리고 Acne Studios의 지시에 따라 귀하의 개인정보를 처리할 수 있으며, 그에 의하여 귀하의 개인정보의 처리자가 됩니다. 귀하께서는 언제든지 Acne Studios에 연락하실 수 있습니다. 아래에 당사의 연락처 세부사항이 있습니다.
+<br> 우편 주소: P.O. Box 24266, 104 51 Stockholm, Sweden
+<br> 방문 주소: Floragatan 13, 114 31 Stockholm, Sweden
+<br> 전화번호: <span><a class="phone-number" href="tel:+46108887305">+46 10 888 73 05</a></span>
+<br> 이메일: <a href="mailto:customercare@acnestudios.com">customercare@acnestudios.com</a>
+<br>
+<a href="mailto:DPO@acnestudios.com">DPO@acnestudios.com</a>으로 당사 데이터 보호 책임자에게 문의하실 수 있습니다.
+</p>
+</li>
+<li>
+<h4>처리 정보의 범주, 목적 및 처리의 법적 근거</h4>
+<ol>
+<li>
+<h5>일반 사항</h5>
+<p>아래는 당사가 처리하는 정보의 카테고리, 데이터 처리 목적, 당사가 귀하의 정보를 처리하는 법적 근거를 요약한 것입니다. 당사가 귀하의 개인정보를 처리하는 것은 부분적으로는 귀하의 당사 회원권 구독 여부에 따라 달라집니다. 회원이 아닌 고객에 대한 개인정보 처리에 대해서는 아래 섹션 3.2에 설명되어 있습니다. 당사 회원의 개인정보 처리에 대해서는 아래 섹션 3.3에 설명되어 있습니다.</p>
+</li>
+<li>
+<h5>고객(비회원)</h5>
+<ol>
+<li>
+<h5>귀하가 당사 웹사이트에서 쇼핑하시거나 당사의 온라인 서비스를 사용하실 때 수집되는 정보</h5>
+<p>연락처 상세 정보: 귀하가 온라인으로 구매를 하시는 경우, 당사는 귀하의 이름, 주소, 이메일 주소, 전화번호, 거주 국가, 생년월일, 호칭(Ms./Mr. 또는 기타 호칭) 및 소셜 미디어 계정 연락처 상세 정보를 수집합니다. 일부 정보는 구매 시 필수 항목은 아닙니다. 당사는 당사 웹사이트에 필수 항목인 정보를 기호(*)로 표시했습니다. 당사는 귀하의 연락처 정보를 (i) 귀하의 구매/주문 및 귀하의 구매와 관련된 반품, 교환 및 불만을 처리하고, (ii) 귀하의 구매에 대해 귀하와 커뮤니케이션하고 당사 제품 또는 서비스에 대해 귀하가 가지고 있을 수 있는 질문 또는 의견에 답변하거나 이를 관리하기 위해 사용합니다. 법적 근거는 당사가 구매 계약에 따라 귀하에 대한 계약상의 의무를 이행할 수 있도록 정보를 처리하는 데 필요한지 여부입니다. 당사는 이 목적에 필요한 기간 동안 귀하의 정보를 보관합니다. 당사는 이메일, SMS, 서신, 전화, WeChat, Whatsapp 및 기타 소셜 미디어를 통해 귀하에게 당사의 특별 행사 및 판촉에 대한 정보를 제공하기 위해 귀하의 연락처 상세 정보를 처리할 수도 있습니다. 법적 근거는 당사의 기존 고객에게 당사 제품을 마케팅할 수 있도록 하는 당사의 합법적인 이해관계입니다. 당사는 귀하의 최근 구매 후 최대 12개월 간 직접 마케팅 목적으로 연락처 상세 정보를 사용할 수 있으며, 귀하는 이후 수신 거부를 하실 수 있습니다. 귀하는 언제든지 각 메시지에 포함된 구독 중단 링크를 클릭하거나 <a href="mailto:customercare@acnestudios.com">customercare@acnestudios.com</a> 으로 고객 지원팀에 문의하여 당사의 마케팅 메시지를 언제든지 거부하실 권리가 있습니다.</p>
+<p>신용카드 상세 정보: 귀하가 온라인으로 구매하고 신용카드 지불을 선택하신 경우, 귀하의 구매를 종료하기 위해 귀하의 신용카드 정보를 제공합니다. 귀하의 신용카드 상세 정보는 GlobalSign 암호화를 통해 보호됩니다. 처리의 법적 근거는 당사가 구매 계약에 따라 귀하에 대한 계약상의 의무를 이행할 수 있도록 하는 데 필요한지 여부입니다. 당사는 이 목적에 필요한 기간 동안 귀하의 정보를 보관합니다.</p>
+<p>
+이전의 구매 및 반품: 귀하가 계정에 가입하시고 이메일 주소를 당사 직원에게 제공하시면 당사는 (i) 온라인 구매 및 반품, 그리고 (ii) 실제 매장에서의 구매 및 반품에 관한 정보를 저장할 것입니다. 그러한 정보에는 제품, 사이즈, 가격 및 구매 날짜가 포함됩니다. 또한 당사는 귀하가 최근에 보신 상품에 대한 정보도 저장합니다. 이를 통해 개인 계정에 로그인하여 귀하의 구매 및 반품 및 최근에 보신 상품을 추적하실 수 있습니다. 법적 근거는 귀하가 계정을 신청할 때 요청하신 경우 귀하에게 개인 계정 서비스를 제공하기 위한 당사의 합법적 이해관계입니다. 귀하는 언제든지 계정의 등록을 해제하실 수 있습니다. 당사는 구매 후 36개월 동안 반품 및/또는 불만을 처리할 수 있도록 귀하의 연락처 상세 정보와 이전 구매 및 반품에 대한 정보를 저장합니다. 법적 근거는 구매 후 당사 고객께 신속하고 효율적인 서비스를 제공하기 위한 당사의 합법적 이해관계입니다.
+</p>
+<p>ID 번호: 귀하가 청구서 지급을 선택하신 경우 당사의 웹사이트에서 귀하의 개인 ID 번호를 제공해야 할 수 있습니다. 귀하의 ID 번호는 당사의 지급 서비스 제공자에게 직접 전송되어 동 서비스 제공자만이 이용할 수 있게 됩니다. 이 지급 서비스 제공자는 귀하의 ID 번호를 처리하여 신용 보고서를 얻고 귀하의 지급을 용이하게 할 것입니다. 법적 근거는 당사가 청구 목적으로 당사 고객을 정확하게 식별하는 데 필요하고 구매 계약에 따라 귀하에 대한 계약상의 의무를 이행할 수 있도록 정보를 처리하는 데 필요한지 여부입니다. 당사는 이 목적에 필요한 기간 동안 귀하의 정보를 보관합니다.</p>
+</li>
+<li>
+<h5>귀하가 당사의 실제 매장에서 쇼핑하실 때 수집되는 정보</h5>
+<p>귀하가 당사의 실제 매장 중 하나에서 구매를 하시는 경우, 당사는 귀하에게 디지털 영수증을 보내드리기 위해 귀하의 이메일 주소를 처리할 수 있습니다. 당사는 귀하가 요청 또는 수락하신 경우에만 귀하의 이메일 주소를 수집하고 디지털 영수증을 보내드립니다. 이러한 처리는 자발적으로 고객에게 디지털 영수증을 제공할 수 있는 합법적인 이해관계를 전제로 합니다. 당사는 이 목적에 필요한 기간 동안 귀하의 정보를 보관합니다.</p>
+</li>
+</ol>
+</li>
+<li>
+<h5>회원</h5>
+<p>귀하는 회원권 정책에 따라 Acne Studios가 제공하는 서비스를 구독하여 회원가입을 하실 수 있습니다. 회원권은 전적으로 자발적이며 회원권 구독은 Acne Studios의 상품을 구매하는 데 요구되는 사항이 아닙니다. 구독을 통해 회원이 되시면 Acne Studios와 계약을 체결하시게 됩니다(회원권 정책).</p>
+<ol>
+<li>
+<h5>회원가입 시 수집되는 정보</h5>
+<p>귀하가 회원가입을 하시는 경우(온라인 또는 Acne Studios의 실제 매장), Acne Studios는 귀하의 이름, 주소, 이메일 주소, 전화번호, 거주 국가, 생년월일, 호칭(Ms./Mr. 또는 기타 호칭) 및 소셜 미디어 계정 연락처 상세 정보를 수집합니다. Acne Studios는 귀하의 개인 계정을 생성하고 회원권을 처리하기 위해 정보를 처리하며, 여기에는 (i) 실제 매장에서 제품을 구매할 때 요청 시 디지털 영수증 전송, (ii) 특별 행사/판촉 초대 전달, (iii) 매장 내 맞춤 서비스, (iv) 이메일 또는 기타 메신저 서비스를 통한 프로파일링된 마케팅 제안과 같은 특정 기능이 포함됩니다. 처리의 법적 근거는 당사가 회원권 정책에 따라 귀하에 대한 계약상의 의무를 이행할 수 있도록 하는 데 필요한지 여부입니다. 당사는 이 목적에 필요한 기간 동안 귀하의 정보를 보관합니다.</p>
+</li>
+<li>
+<h5>온라인으로 쇼핑하실 때 수집되는 정보</h5>
+<p>연락처 상세 정보: 귀하가 온라인으로 제품을 구매하시는 경우, Acne Studios는 (i) 구매.주문 및 반품, 교환 및 불만을 처리하고, (ii) 귀하의 구매에 대해 귀하와 커뮤니케이션하고 Acne Studios 제품 또는 서비스에 대해 귀하가 가지고 있을 수 있는 질문 또는 의견에 답변하거나 이를 관리하기 위해 귀하의 연락처 상세 정보를 처리합니다. 처리의 법적 근거는 당사가 구매 계약에 따라 귀하에 대한 계약상의 의무를 이행할 수 있도록 하는 데 필요한지 여부입니다.</p>
+<p>
+이전의 구매 및 반품: Acne Studios는 구매 후 36개월 동안 귀하의 연락처 세부 정보 및 이전의 온라인 구매 및 반품에 대한 정보(제품, 사이즈, 가격, 구매 날짜)를 처리할 수도 있습니다. 정보는 다음 목적을 위해 처리됩니다.<br> 반품 및 불만의 관리. 처리는 구매 후 당사 회원께 신속하고 효율적인 서비스를 제공하기 위한 당사의 합법적 이해관계를 전제로 합니다.<br> 귀하가 계정에 로그인하여 귀하의 구매 및 반품을 추적할 수 있도록 합니다. 처리의 법적 근거는 당사가 회원권 정책에 따라 귀하에 대한 계약상의 의무를 이행할 수 있도록 하는 데 필요한지 여부입니다.<br> 이메일 또는 기타 메신저 서비스를 통해 특별 행사/판촉, 매장 내 맞춤 서비스 및 프로파일링된 마케팅 제안 초대를 보내기 위한 목적이 있습니다. 처리의 법적 근거는 당사가 회원권 정책에 따라 귀하에 대한 계약상의 의무를 이행할 수 있도록 하는 데 필요한지 여부입니다.
+</p>
+<p>신용카드 상세 정보: 귀하가 온라인으로 구매하고 신용카드 지불을 선택하신 경우, 웹사이트에서 구매 결제를 할 목적으로 귀하의 신용카드 정보를 제공합니다. 처리의 법적 근거는 당사가 구매 계약에 따라 귀하에 대한 계약상의 의무를 이행할 수 있도록 하는 데 필요한지 여부입니다. 귀하는 회원으로서 다음에 쇼핑할 때 결제 시간을 단축할 목적으로 귀하의 신용카드 상세 정보를 저장하기로 결정하실 수 있습니다. 이 처리의 법적 근거는 귀하의 동의입니다. 당사는 이 목적에 필요한 기간 동안 귀하의 정보를 보관합니다.</p>
+<p>ID 번호: 귀하가 청구서 지급을 선택하신 경우 당사의 웹사이트에서 귀하의 개인 ID 번호를 제공해야 할 수 있습니다. 귀하의 ID 번호는 당사의 지급 서비스 제공자에게 직접 전송되어 동 서비스 제공자만이 이용할 수 있게 됩니다. 이 지급 서비스 제공자는 귀하의 ID 번호를 처리하여 신용 보고서를 얻고 귀하의 지급을 용이하게 할 것입니다. 법적 근거는 당사가 청구 목적으로 당사 고객을 정확하게 식별하는 데 필요하고 구매 계약에 따라 귀하에 대한 계약상의 의무를 이행할 수 있도록 정보를 처리하는 데 필요한지 여부입니다. 당사는 이 목적에 필요한 기간 동안 귀하의 정보를 보관합니다.</p>
+</li>
+<li>
+<h5>실제 매장에서 쇼핑하실 때 수집되는 정보</h5>
+<p>귀하가 Acne Studios의 실제 매장에서 쇼핑하시는 경우, Acne Studios는 (i) 귀하의 의류 및 신발 사이즈, (ii) 귀하의 의류 선호 사항(선호하는 색상 및 스타일) 및 (iii) 기타 쇼핑 선호 사항에 대한 정보를 수신 및 저장할 수 있습니다. 단, 이는 귀하가 이 정보를 자발적으로 Acne Studios의 직원과 공유하신 경우에 한합니다. Acne Studios는 귀하가 Acne Studios의 직원에게 귀하의 이메일 주소를 제공하신 경우 실제 매장에서의 귀하의 구매 및 반품에 대한 정보(제품, 사이즈, 가격 및 구매 날짜)를 저장할 수도 있습니다. 이 정보는 귀하의 Acne Studios의 향후 구매 경험을 개선하고 Acne Studios의 회원권 서비스의 일부인 사용자 지정 서비스를 제공할 목적으로 처리됩니다. Acne Studios는 귀하의 쇼핑 선호 사항에 대한 정보를 이메일 또는 기타 메신저 서비스를 통해 특별 행사/판촉 및 프로파일링된 마케팅 제안 초대를 보내기 위한 목적으로도 사용할 수 있습니다. 이것의 법적 근거는 처리가 당사가 회원권 정책에 따라 귀하에 대한 계약상의 의무를 이행할 수 있도록 하는 데 필요한지 여부입니다. 당사는 이 목적에 필요한 기간 동안 귀하의 정보를 보관합니다.</p>
+</li>
+<li>
+<h5>Acne Studios 웹사이트 서비스를 사용하실 때 수집되는 정보</h5>
+<p>Acne Studios는 Acne Studios 웹사이트를 탐색할 때 귀하가 최근에 보신 상품에 대한 정보도 저장합니다. 이를 통해 개인 계정에 로그인하여 귀하가 최근에 보신 상품을 추적하실 수 있습니다. 이것의 법적 근거는 처리가 당사가 회원권 정책에 따라 귀하에 대한 계약상의 의무를 이행할 수 있도록 하는 데 필요한지 여부입니다. 당사는 이 목적에 필요한 기간 동안 귀하의 정보를 보관합니다.</p>
+</li>
+</ol>
+</li>
+<li>
+<h5>뉴스레터 구독자</h5>
+<p>귀하가 당사의 뉴스레터 중 하나를 구독하신 경우, 당사는 그러한 뉴스레터를 전달할 목적으로 귀하의 이름, 이메일 주소, 국가 및 귀하가 여성의류 또는 남성의류에 관심이 있으신지 여부에 대한 정보를 처리합니다. 이 처리의 법적 근거는 그러한 뉴스레터 수신을 구독한 개인들에게 당사 뉴스레터를 보낼 수 있도록 하는 당사의 합법적인 이해관계입니다. 귀하는 언제든지 각 뉴스레터에 포함된 구독 중단 링크를 클릭하거나 <a href="mailto:customercare@acnestudios.com">customercare@acnestudios.com</a>으로 고객 지원팀에 문의하여 당사 뉴스레터 구독을 언제든지 중단하실 권리가 있습니다. 당사는 귀하가 뉴스레터 서비스 구독을 중단하실 때까지 뉴스레터를 보내드립니다.</p>
+</li>
+<li>
+<h5>아카이브 구독자</h5>
+<p>귀하가 Acne Studios’ Archive의 아카이브 행사와 관련하여 이메일 및 문자 메시지를 통해 정보를 수신하도록 구독하신 경우, 당사는 아카이브 행사와 관련된 정보를 전달하기 위해 귀하의 이름, 전화번호, 이메일 주소, 거주국가 및 성별을 처리합니다. 이 처리의 법적 근거는 이 서비스를 구독한 개인들에게 아카이브 행사에 대한 정보를 보낼 수 있도록 하는 당사의 합법적인 이해관계입니다. 귀하는 언제든지 각 메시지에 포함된 구독 중단 링크를 클릭하거나 <a href="mailto:customercare@acnestudios.com">customercare@acnestudios.com</a>으로 고객 지원팀에 문의하여 당사 전달 자료 구독을 중단하실 권리가 있습니다. 당사는 귀하가 서비스 구독을 중단하실 때까지 아카이브 정보 전달 자료를 보내드립니다.</p>
+</li>
+<li>
+<h5>고객 지원</h5>
+<p>귀하가 불만, 반품 또는 질문과 관련하여 Acne Studios에 문의하신 경우, 12개월 이내의 후속 조치를 포함하여 이메일 또는 채팅 대화가 귀하의 사안을 관리하는 데 필요한 기간 동안 저장됩니다. 귀하가 당사에 문의하시는 문제의 성격에 따라, 법적 근거는 당사의 처리가 구매 계약 또는 회원권 정책에 따른 당사의 의무를 이행하는 데 필요한지 여부와 당사 고객 지원팀에 문의하는 개인과 커뮤니케이션할 수 있도록 하는 합법적인 이해관계가 될 수 있습니다.</p>
+</li>
+<li>
+<h5>익명화된 정보</h5>
+<p>또한 당사는 고객 패턴을 분석하고, 프로필을 작성하고, 모니터하여 당사 제품 및 서비스를 개선할 수 있도록 내부 마케팅 및 인구통계학적 연구를 목적으로 익명화된 정보 를 사용할 수 있습니다. </p>
+</li>
+<li>
+<h5>동의 및 취소</h5>
+<p>귀하는 이로써 본 개인정보 보호의 내용을 읽고 이해했음을 확인합니다. 귀하의 개인정보 처리의 법적 근거가 귀하의 동의인 경우, 귀하는 본 약관의 조항에 따라 Acne Studios가 귀하의 개인정보를 처리하는 데 동의하시는 것입니다. 당사의 처리에 대한 동의에 반대하거나 이를 취소하려는 경우 <a href="mailto:customercare@acnestudios.com">customercare@acnestudios.com</a>으로 당사에 문의하십시오. 하지만 귀하와의 당사의 계약상 의무 이행 및/또는 당사가 분쟁 시 법률에 따라 귀하의 정보를 처리하거나 당사를 방어해야 하는 범위 내에서, 사기 또는 오용을 방지하기 위해, 또는 당사 이용 약관을 시행하는 데 처리가 필요한 경우에는 귀하가 취소하더라도 귀하의 정보를 처리할 당사의 권리에 영향을 주지 않습니다. 동의를 전제로 한 처리에 대한 귀하의 동의를 취소하시는 경우, 당사는 그러한 모든 처리를 중단할 것입니다.
+</p>
+</li>
+</ol>
+</li>
+<li>
+<h4>Acne Studios는 귀하의 정보를 타인과 공유하는가?</h4>
+<p>Acne Studios는 당사 고객의 개인정보를 다른 기관에 판매하거나 빌려주지 않습니다.<br> 당사는 귀하의 정보를 Acne Studios 내의 다른 회사, 합작투자회사, 프랜차이즈 가맹점 및 라이선스 사용권자를 포함한 계열사와 공유할 수 있습니다. Acne Studios 회원권 가입을 신청하신 경우에 당사는 귀하에 대한 서비스를 개선하고 귀하의 거주국가 외의 다른 국가에 있는 Acne Studios 매장을 방문하실 때 쇼핑 경험을 강화하기 위하여 귀하의 정보를 귀하가 그러한 계열사에 제공하신 정보와 결합할 수 있습니다. 처리의 법적 근거는 Acne Studios의 회원권 정책의 이행에 필요한 경우입니다.<br> 또한 Acne Studios는 귀하의 정보를 주문 및 주문 납품 이행, 지급 처리, 판촉 서비스 또는 데이터 관리 수행, 당사 웹사이트 유지관리, 이메일 배포, 당사의 뉴스레터 발송, 고객 커뮤니케이션 제공 및 당사 고객 데이터베이스 관리와 같은 기능을 당사를 대신하여 수행하도록 선정된 공급자와 공유할 수 있습니다. 필요한 때에는 귀하가 당사에 제공한 개인정보를 오직 Acne Studios를 대신하여, 그리고 정보 처리자로서 Acne Studios의 지시에 따라서 이러한 제3자가 처리할 수 있습니다. 당사는 당사의 어느 공급자에게도 귀하의 개인정보를 달리 사용하도록 허가하지 않습니다.<br> Acne Studios 및/또는 그 자회사가 실제 또는 잠재적인 합병 또는 인수나 이와 비슷한 거래의 대상이 되는 경우, 당사는 귀하의 정보를 잠재 및 실제 구매자 및 그 재무 및 법률 자문과 공유할 수 있으며, 여기에는 해당 제3자의 적절한 기밀 유지 책임 이행이 수반됩니다.<br>
+</p>
+</li>
+<li>
+<h4>유럽연합/EEA 외부로의 전송</h4>
+<p>당사는 귀하의 정보를 위 섹션 4에서 정한 바와 같이 당사를 대신하여 업무를 수행하는, 유럽연합/EES 내부 및 외부의 국가에서 귀하의 정보를 처리할 수 있는, 당사가 선정한 공급자와 공유할 수 있습니다.<br>귀하가 Acne Studios 회원권 가입을 신청하신 경우 당사는 귀하의 연락처 세부사항과 이전 구매 및 선호 쇼핑에 관한 정보를 유럽연합/EEA 내부 및 외부의 당사 계열사와 공유할 것입니다(섹션 4의 추가 정보 참조).<br>유럽연합/EEA 외부의 국가는 귀하의 개인정보에 대해 충분한 수준의 보호를 제공하지 않을 수도 있습니다. 하지만 Acne Studios는 유럽연합/EEA 외부의 국가에 있는 귀하의 정보 수신 당사자가 귀하의 데이터에 대해 충분한 보호를 제공하도록 하기 위한 적절한 보호책을 강구했습니다. 그러한 보호책은 수신 당사자가 프라이버시 실드(Privacy Shield)에 가입하는 것(수신 당사자가 미국에 설립된 회사인 경우) 또는 수신 당사자가 유럽연합위원회가 채택한 소위 표준 데이터 보호 조항에 서명하는 것일 수 있습니다. 어떤 보호책이 강구되었는지에 대한 자세한 내용을 알아보고 싶으시거나 그러한 보호책의 사본을 원하시는 경우 <a href="mailto:customercare@acnestudios.com">customercare@acnestudios.com</a>으로 당사에 문의하십시오.
+</p>
+</li>
+<li>
+<h4>귀하의 정보 주체의 권리</h4>
+<p>이 섹션 6에는 개인정보에 접근, 이동성, 수정 및 말소를 요구하고 개인정보 처리를 제한하고 처리에 반대할 수 있는 귀하의 정보 주체의 권리, 그리고 불만을 감독당국에 제기할 수 있는 귀하의 권리가 요약되어 있습니다.<br> 권리를 행사하기를 원하시는 경우 <a href="mailto:customercare@acnestudios.com">customercare@acnestudios.com</a>으로 이메일을 보내주십시오. 하지만 감독당국에 불만을 제기하기를 원하시는 경우에는 당국에 직접 연락하셔야 한다는 점에 유의하시기 바랍니다.<br> Acne Studios 회원권에 가입하신 경우 개인 계정에 로그인함으로써 정보에 접근하여 일부를 수정 및 삭제하실 수도 있습니다. <a href="https://www.acnestudios.com/my-account">계정 로그인</a>
+<br> 여기에 있는 내용과 상반된 그 무엇에도 불구하고, Acne Studios는 귀하에 대한 당사의 계약상의 의무를 이행하기 위하여 필요한 범위 내에서, 그리고 법률에 따라 귀하의 정보를 처리하고 분쟁에서 당사를 방어하기 위하여, 사기나 남용을 방지하거나 당사의 조건을 집행하기 위하여 필요한 범위 내에서 본 정책에 따라 귀하의 개인정보를 보관하고 처리할 권리를 가집니다.
+</p>
+<p>
+접근권
+<br>귀하께서는 자신에 관한 개인정보가 처리되고 있는지 확인하고, 해당하는 경우 개인정보 및 그 중에서도 처리 목적, 관련된 개인정보의 범주, 귀하의 정보가 공개된 또는 공개될 수령인의 범주, 개인정보가 저장될 예상 기간(또는 이것을 결정하는 기준)에 관한 정보에 접근할 권리가 있습니다.
+</p>
+<p>
+수정권
+<br>귀하께서는 자신에 관한 부정확한 개인정보의 수정을 요구하고 불완전한 정보를 완성시킬 권리가 있습니다.
+</p>
+<p>
+삭제권
+<br>귀하는 다음과 같은 경우 당사에 귀하의 개인정보를 삭제하거나 정보 처리를 제한하도록 요구할 권리가 있습니다.<br> 정보 수집 목적을 고려할 때 당사의 귀하의 정보 처리가 더 이상 필요 없는 경우.<br> 당사의 처리가 귀하의 동의를 기반으로 하고 있을 때 귀하가 동의를 철회하시고 귀하의 정보 처리에 대한 다른 법적 근거가 없는 경우.<br> 당사의 귀하의 정보 처리가 합법적인 이해관계의 법적 근거를 전제로 하고 있을 때 귀하가 그러한 처리에 반대하시고 당사의 처리에 대한 우선적인 합법적인 근거가 없는 경우.<br> 귀하가 직접 마케팅 목적을 위한 당사의 정보 처리에 반대하신 경우.<br> 귀하의 개인정보가 불법적으로 처리된 경우.<br> 당사에 적용되는 법적 의무를 준수하기 위해 개인정보를 삭제해야 하는 경우.<br> 수집된 개인정보가 정보 사회 서비스 제공과 관련하여 아동(13세 미만)에 대한 것일 경우.
+</p>
+<p>
+반대할 권리 - 다이렉트 마케팅 및 프로파일링
+<br>귀하는 언제든지 당사의 귀하의 개인정보 처리에 반대할 권리가 있습니다. 여기에는 그러한 직접 마케팅과 관련된 범위 내의 프로파일링이 포함됩니다. 프로파일링을 포함하여 직접 마케팅 목적을 위한 개인정보 처리에 반대하시는 경우 당사는 귀하의 정보 처리를 중단할 것입니다.
+</p>
+<p>
+데이터 이동성
+<br>당사의 처리가 귀하의 동의에 기반한 경우, 또는 당사가 귀하와의 계약을 이행하는 데 처리가 필요한 경우, 귀하는 당사에 제공하신 정보를 체계적이고, 일반적으로 사용되며, 컴퓨터로 판독 가능한 형식으로 제공해 줄 것을 요청하실 권리가 있고, 그러한 정보를 다른 관리자에게 전송하실 권리도 있습니다.
+</p>
+<p>
+감독당국에 불만을 제기할 권리
+<br>귀하의 정보 처리가 해당 정보보호법을 위반한다고 간주하시는 경우에 특히 거주하고 계신 주나 침해를 주장하는 장소에 있는 감독당국에 불만을 제기할 권리가 있습니다.
+</p>
+</li>
+<li>
+<h4>Acne Studios 뉴스레터 및 이메일의 구독을 어떻게 중지하는가?</h4>
+<p>뉴스레터나 기타 이메일의 수령을 더 이상 원하시지 않는 경우 특정 커뮤니케이션에 표시된 대로, 즉 모든 뉴스레터나 기타 이메일에 포함된 구독 중단 링크를 사용하여 구독을 중단하실 수 있습니다. <a href="mailto:customercare@acnestudios.com">customercare@acnestudios.com</a>으로도 당사에 연락하실 수 있습니다.</p>
+</li>
+<li>
+<h4>귀하의 정보를 얼마나 오랫동안 보관하는가?</h4>
+<p>
+당사는 귀하의 개인정보를 수집하거나 달리 처리한 목적과 관련하여 필요한 기간 동안 보관할 것입니다. 위 섹션 3에 따라, 당사는 정보가 처리되는 여러 가지 목적과 관련하여 당사의 정보 처리에 대해 보유 시간 또는 보유 시간을 결정하기 위한 기준을 지정했습니다. 위 섹션 3에 명시된 보유 시간 외에, 다음 사항에도 유의하십시오.<br> 회원: 귀하가 연속해서 36개월 동안 전혀 구매하시지 않거나, 계정에 로그인하시지 않거나, 당사 서비스를 사용하시지 않은 경우 당사는 귀하의 회원권을 해지하므로 그 이후에는 회원권 서비스를 위하여, 또는 마케팅 목적으로 귀하의 정보를 사용하지 않을 것입니다. 그러한 경우에 당사는 법적으로 정당화될 수 있는 다른 목적을 위하여 보관하여야 할 필요가 있는 경우가 아니면 귀하의 정보를 삭제할 것입니다.<br> 당사는 해당 법적 의무를 준수하고, 분쟁을 해결하고, 당사의 합의를 이행하기 위하여 필요할 때 귀하의 개인정보를 보존할 것입니다. 추가로 정보를 보존해야 할 법적 의무는 영향을 받지 않습니다.
+</p>
+</li>
+<li>
+<h4>개인정보 제공이 의무적인가?</h4>
+<p>
+당사의 제품을 온라인으로 구매하시거나 Acne Studios 회원권 가입을 하실 때 당사는 어떤 필드에 (*) 표시를 하여 어느 정보가 의무적인지 귀하에게 알릴 것입니다. 의무적인 정보의 제공은 Acne Studios가 예를 들면 귀하의 주문 처리나 귀하가 요청하신 회원권 서비스 이행과 같이 귀하에 대한 당사의 계약상의 의무를 이행하는 데 필요합니다.<br> 귀하가 당사의 실제 매장에서 당사 제품을 구매하실 때 개인정보를 반드시 제공하시지 않아도 됩니다. 하지만 디지털 영수증 수령을 선택하신 경우에는 이메일 주소 제공은 의무이며 그렇지 않으면 귀하에게 디지털 영수증을 발송할 수 없음을 유념하시기 바랍니다.
+</p>
+</li>
+<li>
+<h4>어린이의 개인정보 보호 및 법적 구매 연령</h4>
+<p>Acne Studios는 십육(16) 세 미만의 어느 누구로부터도 개인정보를 수집하는 것을 원하지 않습니다. 귀하가 십팔(18) 세 미만인 경우에 당사는 귀하가 구매 전이나 acnestudios.com 또는 Acne Studios에 관련된 다른 웹사이트로 당사에 개인정보를 제공하기 전에 부모나 후견인에 알리고 그들의 동의를 받으셔야 합니다.</p>
+</li>
+<li>
+<h4>쿠키</h4>
+<p>당사는 당사의 웹사이트에서 쿠키를 사용합니다. 당사의 웹사이트에 있는 쿠키에 대한 별도의 정책을 참조하시기 바랍니다.</p>
+</li>
+<li>
+<h4>정책의 변경</h4>
+<p>Acne Studios는 개인정보 보호 정책이나 관행을 수시로 변경할 권리를 가집니다. 당사는 당사의 웹사이트에 개정된 정책을 게시할 것이므로 귀하는 수시로 이 페이지를 검토하여 주실 것을 권장합니다.<br> 최종 변경일: 2018년 5월</p>
+</li>
+</ol>
+</div>
+<div class="modal-footer modal-footer--sticky">
+<label onclick="document.getElementById(&#39;dwfrm_newsletter_termsandconditions-option&#39;).checked=&#39;true&#39;" onkeydown="document.getElementById(&#39;dwfrm_newsletter_termsandconditions-option&#39;).checked=&#39;true&#39;" for="dwfrm_newsletter_termsandconditions-option" role="button" class="action--primary" tabindex="0" data-dismiss="modal">Accept &amp; Continue</label>
+</div>
+</div>
+</div>
+</div>
+<input type="hidden" class="custtimezone" name="dwfrm_newsletter_customertimezone" value="Asia/Seoul">
+<input type="hidden" name="dwfrm_newsletter_securekey" value="851236944">
+<input type="hidden" name="currentppversion" value="1.0">
+<input type="hidden" name="csrf_token" value="r2WrMhtF0jUOx54291xSyrhwomVzoLEmde1JTBILe7h7g2JYyexhEdzDK303z-JnEnnUQhJPO05RlFtKE7MajjG6WtIYGSDXfb6U4if06uu1MDupJNbA1SbSevP2VHl_89ndnW1v3xU_QvJJ7S4Rghq4QOXBWFOYE5wtudiz6QML99Y2__k=">
+<div tabindex="-1" class="recaptcha-wrapper">
+<input type="hidden" name="dwfrm_profile_securekey" value="176430695">
+<div class="g-recaptcha recaptcha-#newsletter" data-sitekey="6Ld2JDQUAAAAAMg2G_fufzAconSNJ6qCEV7GcISu" data-callback="recaptchaSuccessnewsletter" data-size="invisible"></div>
+<div class="recaptcha--disclaimer">
+본 사이트는 reCAPTCHA의 보호를 받으며, Google <a href="https://policies.google.com/privacy">개인정보 보호 정책</a> 및 <a href="https://policies.google.com/terms">서비스 이용 약관</a>이 적용됩니다.
+</div>
+</div>
+<div class="margin-top--small">
+<div class="form__error form__error--no-padding" aria-hidden="true"></div>
+<button type="submit" aria-describedby="newsletter--message" class="action--primary action--color-black">
+<div class="progress-bar--status"></div>
+<span class="progress-bar--message">가입</span>
+</button>
+</div>
+</form>
+<div class="form__success padding--small">
+<h3 class="as-cell--small text--no-case">구독해주셔서 감사합니다</h3>
+<div class="ascii-art padding--small">
+<pre>#############
+#           #
+#   #   #   #
+#           #
+#   #####   #
+#           #
+#############
+</pre>
+</div>
+<button type="button" aria-expanded="false" aria-controls="newsletter-state-container" data-lazy-init="{&quot;addStateTrigger&quot;: {&quot;state&quot;: &quot;newsletter&quot;}}" class="action--primary margin-top--micro state-close-trigger--newsletter">Close</button>
+</div>
+<button aria-expanded="false" aria-controls="newsletter-state-container" data-lazy-init="{&quot;addStateTrigger&quot;: {&quot;state&quot;: &quot;newsletter&quot;}}" class="button state-close-trigger state-close-trigger--newsletter as-cell">닫기</button>
+</div>
+<div class="page-overlay cancel-state-trigger"></div>
+</div>
+<div class="error-messaging"></div>
+<script>var dataLayer = dataLayer || []; dataLayer.push({"currencyCode":"KRW","locale":"ko_KR","visitorType":"Not Logged In","storeCountryCode":"KR","userStatus":"guest"},);</script>
+<span class="api-true  tracking-consent" data-caonline="false" data-url="/on/demandware.store/Sites-acne_kr-Site/ko_KR/ConsentTracking-GetContent?cid=tracking_hint" data-reject="/on/demandware.store/Sites-acne_kr-Site/ko_KR/ConsentTracking-SetSession?consent=false" data-accept="/on/demandware.store/Sites-acne_kr-Site/ko_KR/ConsentTracking-SetSession?consent=true" data-accepttext="Yes" data-rejecttext="No" data-heading="Tracking Consent"></span>
+
+<script type="text/javascript">//<!--
+/* <![CDATA[ */
+function trackPage() {
+    try{
+        var trackingUrl = "https://www.acnestudios.com/on/demandware.store/Sites-acne_kr-Site/ko_KR/__Analytics-Start";
+        var dwAnalytics = dw.__dwAnalytics.getTracker(trackingUrl);
+        if (typeof dw.ac == "undefined") {
+            dwAnalytics.trackPageView();
+        } else {
+            dw.ac.setDWAnalytics(dwAnalytics);
+        }
+    }catch(err) {};
+}
+/* ]]> */
+// -->
+</script>
+<script type="text/javascript" src="./Acne Studios – 남성 및 여성 레디투웨어, 액세서리, 신발, 데님 더보기_files/dwanalytics-22.2.js.다운로드" async="async" onload="trackPage()"></script>
+
+<script src="./Acne Studios – 남성 및 여성 레디투웨어, 액세서리, 신발, 데님 더보기_files/dwac-21.7.js.다운로드" type="text/javascript" async="async"></script>
+<script src="./Acne Studios – 남성 및 여성 레디투웨어, 액세서리, 신발, 데님 더보기_files/gretel.min.js.다운로드" type="text/javascript" async="async"></script>
+
+
+<div style="display: none; visibility: hidden;"><script type="text/javascript" src="./Acne Studios – 남성 및 여성 레디투웨어, 액세서리, 신발, 데님 더보기_files/wcslog.js.다운로드"></script> 
+<script type="text/javascript">if(!wcs_add)var wcs_add={};wcs_add.wa="s_45436ddd0e33";if(!_nasa)var _nasa={};window.wcs&&(wcs.inflow("acnestudios.com"),wcs_do(_nasa));</script></div><div style="visibility: hidden; position: absolute; width: 100%; top: -10000px; left: 0px; right: 0px; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.5;"></div><div style="margin: 0px auto; top: 0px; left: 0px; right: 0px; position: absolute; border: 1px solid rgb(204, 204, 204); z-index: 2000000000; background-color: rgb(255, 255, 255); overflow: hidden;"><iframe title="reCAPTCHA 보안문자 2분 후 만료" src="./Acne Studios – 남성 및 여성 레디투웨어, 액세서리, 신발, 데님 더보기_files/bframe.html" name="c-wa5erz7wt0sc" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox" style="width: 100%; height: 100%;"></iframe></div></div></body></html>

@@ -1,0 +1,34 @@
+package com.iguest;
+
+import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
+import com.opensymphony.xwork2.Preparable;
+
+//Struts2는 DTO가 데이터를 넘기지만 Struts2+ajax로 만들 때는 ajax가 데이터를 넘긴다.
+//Struts2가 데이터를 넘길 필요가 없어진다.그래서 dto의 getter가 필요없다.
+public class GuestAction extends ActionSupport 
+	implements Preparable,ModelDriven<GuestDTO> {
+
+	private static final long serialVersionUID = 1L;
+	
+	private GuestDTO dto;
+	
+
+	public GuestDTO getDto() {
+		return dto;
+	}
+
+	
+	@Override
+	public GuestDTO getModel() {
+		return dto;
+	}
+
+	@Override
+	public void prepare() throws Exception {
+		dto = new GuestDTO();
+	}
+	
+	
+
+}

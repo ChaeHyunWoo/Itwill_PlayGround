@@ -1,0 +1,32 @@
+package com.iguest;
+
+import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
+import com.opensymphony.xwork2.Preparable;
+
+public class GuestAction extends ActionSupport 
+	implements Preparable,ModelDriven<GuestDTO> {
+
+	private static final long serialVersionUID = 1L;
+	
+	private GuestDTO dto;
+	
+
+	public GuestDTO getDto() {
+		return dto;
+	}
+
+	
+	@Override
+	public GuestDTO getModel() {
+		return dto;
+	}
+
+	@Override
+	public void prepare() throws Exception {
+		dto = new GuestDTO();
+	}
+	
+	
+
+}

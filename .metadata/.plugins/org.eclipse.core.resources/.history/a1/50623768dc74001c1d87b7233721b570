@@ -1,0 +1,22 @@
+package com.day18;
+
+// Class 클래스
+// 특정 클래스나 인터페이스의 정보를 검색할 수있는 메서드를 가지고 있다.
+
+class Test {
+	
+	public void write() {
+		
+		System.out.println("테스트...");
+	}
+}
+
+
+public class Test1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

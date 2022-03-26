@@ -1,0 +1,188 @@
+package com.util;
+
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.Calendar;
+
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.util.FileCopyUtils;
+
+
+
+@Service("fileManager")
+public class FileManager {
+	
+	
+					// 파일이 이름이 들어옴 
+	public static String doFileUpload(InputStream is,String originalFileName , String path) throws IOException { // 어떤파일을 업로드할지 , 어이다가 경로 
+		
+		// upload 에 a.txt가 오면
+		// a.txt 에서 txt를 빼내고 
+		// 파일명과 상관없이 20220310115020xxxxx 에 .txt를 붙일것이다
+		// 새롭게 저장되는 saveFileName이다
+		// 반환값으로 받아내야만 오리지널 파일네임과 세이브파일네임을 db에 저장하게된다.
+		// 그래서 반환값이 String이다.
+		
+		String newFileName = null;
+		
+		if(file==null) {
+			return null;
+		}
+		
+	
+		if(originalFileName.equals("")) {
+			return null;
+		}
+		
+		// 확장자 추출 뺴뇌야만 나중에 붙일수있으니
+		// abc.txt 뒤에서부터 .를 찾아서 끝까지 ( 인수의 개수가 하나면 끝까지) 
+		String fileExt = originalFileName.substring(originalFileName.lastIndexOf(".")); // 맨뒤의 인덱스부터 . 까지 txt 
+		
+		if(fileExt==null || fileExt.equals("")) {
+			return null;
+		}
+		
+		// 서버에 저장할 새로운 파일 이름 생성
+									// 월 분 일 시 분 초
+		// 1딸라 : 캘린더 겟 인스턴스 하나로 값을 싹다 받으려고
+	
+		//서버에 저장할 새로운 파일이름 생성
+				newFileName = String.format("%1$tY%1$tm%1$td%1$tH%1$tM%1$tS",
+						Calendar.getInstance());
+				newFileName += System.nanoTime();  // 절대중복되지않음 10의-9승값
+				newFileName += fileExt; // 확장자를 붙이면 업로드할 새로운 파일이름이 만들어짐
+		
+		// 파일업로드 
+		File f = new File(path);
+		
+		if(!f.exists()) {
+			f.mkdirs();
+		}
+		
+		// 풀 파일까지 포함된 경로
+		String fullFilePath = path + File.separator + newFileName;
+
+		
+		
+		
+		return newFileName;
+	}
+	
+	// db에 있는거 삭제는 dao
+	
+	// 파일다운로드
+	
+	// 다운로드는 서버에서 클라이언트로 response담아서 준다.
+	// 다운로드는 response가 필수이다.
+	
+	// response , 파일 저장이름 , 오리지널파일이름 ,  경로 매개변수로 받는다.
+	public static boolean doFileDownload(HttpServletResponse response,
+			String saveFileName, String originalFileName,String path) {
+		// a.txt를 올렸는데 a.txt로 저장되는데 b라는사람이 a.txt 올리게되면 a1.txt로저장
+		// a1이라는 이름으로 다운받을때 a1를 a.txt로 바꿔준다(오리지널파일네임). 
+		// 그래서 오리지널 파일이름이 필요
+		
+		try {
+			// 오리지널 파일이 없는경우 저장이름으로 넣음
+			
+			String filePath = path + File.separator + saveFileName;
+			
+			FileCopyUtils.copy(is, new FileOutputStream(fullFilePath));
+			
+			
+			if(originalFileName==null || originalFileName.equals("")) {
+				
+				originalFileName = saveFileName; // cat.jpg
+			
+			}
+			// 파일을 다운받아 클라이언트 컴에 저장할때 
+			// 파일 한글 이름 깨짐 방지 ( 반드시 써야한다. 한글파일을 받음 ) 
+			// 한글2바이트 영문 1바이트 웹에서는 한글을 3바이트로 쓰려고 UTF-8로씀
+			// ISO 생략가능 8859_1 만 써도 된다.
+			
+			originalFileName = 
+					new String(originalFileName.getBytes("euc-kr"),"ISO-8859-1");
+			
+			
+			File f = new File(filePath); // 파일이 존재하면 파일을 다운받음 , 없으면 자바스크립트로 에러 출력 
+			
+			// 존재하지않으면 false 
+			if(!f.exists()) {
+				return false;
+			}
+			
+			//  html 를 utf-8로 처리한다고 알려줬었음
+			// application : 모든 프로그램에서 돌아감
+			//  abc.txt 앞에있는건 특수기호 아니면 모두다 가능 뒤에는 3자리 
+			// .를 octet라고 부름 , 모든파일은 application서 만들고 octet라고 구분지음
+			// 형식
+			response.setContentType("application/octet-stream");
+			
+			
+			// 내려보냄 
+			// 서버가 파일을 read 읽어서 내보낼때 out를 쓴다.
+			
+			// setHeader(String name, String value) : name 헤더의 값을 value로 지정한다.
+			// 데이터형식/성향설정 (attachment: 첨부파일)
+			response.setHeader("Content-disposition",
+					"attachment;fileName=" + originalFileName);
+			
+			// 사진1
+			// 버퍼로 객체를 생성할 때 데이터를 읽어올 파일을 지정
+			BufferedInputStream bis = new BufferedInputStream(new FileInputStream(f));
+			
+			// 버퍼의 출력스트림을 출력
+			OutputStream out = response.getOutputStream();
+			
+			
+			int data;
+			byte[] bytes = new byte[4096];// 자동으로 내보내줌
+			
+			
+			// 4096 바이트로 읽어와서 없을때까지 읽어옴
+			// 사진2
+			// bytes의 0번째부터 4096번째 까지 읽어와서 
+			
+			while((data=bis.read(bytes, 0, 4096))!=-1) {		
+				out.write(bytes,0,data);// 0부터 data의 양만큼
+			}
+			out.flush();
+			out.close();
+			bis.close();
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+			// 에러가 났으면 false
+			return false;
+		}
+		return true;
+	}
+	
+	
+	// 파일을 삭제하는 메소드~~~~~~~~~~~~~
+	public static void doFileDelete(String fileName,String path) {
+		//---------------중요  파일삭제할때 파일이름,파일경로 필요 --------------------
+		try {
+			// path는 서블릿의 파일저장경로 path를 넘겨줄건데
+			// 파일의 이름은 db에 있다 
+			// 그리고 업로드된 파일 삭제하고 db정보도 삭제해야한다.
+			
+			String filePath = path + File.separator + fileName; // 풀네임
+			File f = new File(filePath); // 경로를 넘겨줌
+			
+			// 파일이 있으면 지워라 - 물리적인 파일삭제 
+			if(f.exists()) {
+				f.delete();
+			}
+		} catch (Exception e) {
+			System.out.println(e.toString());
+
+		}
+	}
+}

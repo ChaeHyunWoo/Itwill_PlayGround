@@ -1,0 +1,5 @@
+package com.bbs;
+//스프링의 DTO
+public class BoardCommand {
+
+}

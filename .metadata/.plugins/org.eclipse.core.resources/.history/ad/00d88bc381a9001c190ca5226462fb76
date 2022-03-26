@@ -1,0 +1,69 @@
+package com.test1;
+
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.validation.BindException;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.SimpleFormController;
+
+// onSubmit(데이터) / referenceData(창)
+public class LoginController extends SimpleFormController {
+	
+	private Authenticator authenticator;
+	
+	public void setAuthenticator(Authenticator authenticator) {
+		this.authenticator = authenticator;
+	}
+	
+	//2. 로그인버튼을 누르면 subit이 실행되서 이 메서드를 실행한다.
+	//   실행되면서 DTO가 command로 넘어와서 여기서 받아준다.
+	//   그리고 _ok에 있는 {message}로 던져준다.
+	@Override
+	protected ModelAndView onSubmit(HttpServletRequest request, 
+			HttpServletResponse response, Object command, //입력한 데이터는 command로 들어온다.
+			BindException errors) throws Exception {
+		
+		LoginCommand login = (LoginCommand)command;
+		
+		try {
+			
+			authenticator.authen(login.getUserId(), login.getUserPwd());
+			
+			String message = "id: " + login.getUserId();
+			message += ", pwd: " + login.getUserPwd();
+			message += ", type: " + login.getLoginType();
+			
+			request.getAttribute("message");
+			
+		} catch (Exception e) {
+			
+		}
+		
+		
+		
+		return super.onSubmit(request, response, command, errors);
+	}
+	
+	
+
+	//1. 여기에 코딩한 부분이 login.jsp가 뜰때 로그인 타입에 들어가고 
+	//   그래서 여기에는 타입부분에 들어갈 내용을 코딩 ( referenceData가 먼저 실행된다)
+	@Override
+	protected Map referenceData(HttpServletRequest request) throws Exception {
+		
+		
+		
+		
+		
+		return super.referenceData(request);
+		
+	}
+	
+	
+	
+	
+
+}

@@ -1,0 +1,14 @@
+package com.test1;
+
+import org.springframework.web.servlet.mvc.SimpleFormController;
+
+public class LoginController extends SimpleFormController {
+	
+	private Authenticator authenticator;
+	
+	public void setAuthenticator(Authenticator authenticator) {
+		this.authenticator = authenticator;
+	}
+	
+
+}

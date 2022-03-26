@@ -1,0 +1,16 @@
+package com.di.test;
+
+public class TestService {
+	
+	private Test test;
+	
+	//생성자 - 생성자로 test 초기화 (의존성 주입)
+	public TestService(Test test) {
+		this.test = test;
+	}
+	
+	public String getValue() {
+		return test.result();
+	}
+
+}

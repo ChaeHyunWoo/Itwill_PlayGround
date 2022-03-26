@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts
+PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="fileTestDB" extends="default" namespace="/fileTestDB">
+		<action name="created" class="com.fileTestDB.FileTestDBAction"
+			method="created">
+			<result name="input">/fileTestDB/write.jsp</result>
+			<result name="success" type="redirectAction">list?pageNum=${dto.pageNum}
+			</result>
+		</action>
+
+		<action name="down" class="com.fileTestDB.FileTestDBAction"
+			method="down">
+			<result name="success" type="stream">
+				<param name="inputName">inputStream</param>
+				<param name="contentType">application/octet-stream</param>
+				<param name="contentDisposition">fileName=${originalFileName}</param>
+				<param name="bufferSize">1000000</param>
+			</result>
+		</action>
+
+		<action name="download" class="com.fileTestDB.FileTestDBAction"
+			method="download">
+
+		</action>
+
+		<action name="write" class="com.fileTestDB.FileTestDBAction"
+			method="login">
+			<result name="success">/fileTestDB/write.jsp</result>
+		</action>
+
+		<action name="list" class="com.fileTestDB.FileTestDBAction"
+			method="list">
+			<result name="success">/fileTestDB/list.jsp</result>
+		</action>
+
+		<action name="delete" class="com.fileTestDB.FileTestDBAction"
+			method="delete">
+			<result name="success" type="redirectAction">list?pageNum=${dto.pageNum}
+			</result>
+		</action>
+
+		<action name="login" class="com.fileTestDB.FileTestDBAction"
+			method="login">
+			<result name="success">/fileTestDB/login.jsp</result>
+		</action>
+
+		<action name="login_ok" class="com.fileTestDB.FileTestDBAction"
+			method="login_ok">
+			<result name="login">/fileTestDB/login.jsp</result>
+			<result name="success" type="redirectAction">list?pageNum=${dto.pageNum}
+			</result>
+		</action>
+
+		<action name="logout" class="com.fileTestDB.FileTestDBAction"
+			method="logout">
+			<result name="success" type="redirectAction">list?pageNum=${dto.pageNum}
+			</result>
+		</action>
+
+		<action name="join" class="com.fileTestDB.FileTestDBAction"
+			method="join">
+			<result name="success">/fileTestDB/join.jsp</result>
+		</action>
+
+	</package>
+</struts>

@@ -1,0 +1,42 @@
+package com.test2;
+
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.validation.BindException;
+import org.springframework.validation.Errors;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.AbstractWizardFormController;
+
+//컨트롤러 역할을 하기 위해  AbstractWizardFormController상속
+public class MemController extends AbstractWizardFormController {
+
+	@Override
+	protected void postProcessPage(HttpServletRequest request, Object command, Errors errors, int page)
+			throws Exception {
+		super.postProcessPage(request, command, errors, page);
+	}
+
+	@Override
+	protected ModelAndView processCancel(HttpServletRequest request, HttpServletResponse response, Object command,
+			BindException errors) throws Exception {
+		return super.processCancel(request, response, command, errors);
+	}
+
+	@Override
+	protected ModelAndView processFinish(HttpServletRequest arg0, HttpServletResponse arg1, Object arg2,
+			BindException arg3) throws Exception {
+		return null;
+	}
+
+	@Override
+	protected Map referenceData(HttpServletRequest request, Object command, Errors errors, int page) throws Exception {
+		return super.referenceData(request, command, errors, page);
+	}
+	
+	
+	
+	
+}

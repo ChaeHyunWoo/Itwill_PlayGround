@@ -1,0 +1,32 @@
+package com.day18;
+
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.ArrayList;
+
+public class ServerTest2 {
+	
+	//여기 ArrayList에는 Socket만 들어간다
+	private ArrayList<Socket> clients = new ArrayList<>();
+	
+	
+	public void serverStar() {
+		
+		try {
+			
+			ServerSocket ss = new ServerSocket(7777);
+			System.out.println("서버시작...");
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

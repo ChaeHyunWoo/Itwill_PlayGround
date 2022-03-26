@@ -1,0 +1,23 @@
+package com.di.test;
+
+public class TestImpl2 implements Test {
+
+	
+	private String name;
+	private int age;
+	
+	
+	//기본 생성자
+	public TestImpl2() {
+		this.name = "배수지";
+		this.age = 27;
+	}
+	
+	
+	//오버로딩된 생성자
+	public TestImpl2(String name, int age) {
+		this().name = name;
+		this.age = age;
+	}
+	
+}

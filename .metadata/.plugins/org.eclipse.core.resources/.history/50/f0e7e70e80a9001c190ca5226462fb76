@@ -1,0 +1,49 @@
+package com.test1;
+
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.validation.BindException;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.SimpleFormController;
+
+public class LoginController extends SimpleFormController {
+	
+	private Authenticator authenticator;
+	
+	public void setAuthenticator(Authenticator authenticator) {
+		this.authenticator = authenticator;
+	}
+	
+	
+	@Override
+	protected ModelAndView onSubmit(HttpServletRequest request, 
+			HttpServletResponse response, Object command, //입력한 데이터는 command로 들어온다.
+			BindException errors) throws Exception {
+		//사용자가 버튼을 누르면 여기로 넘어온다.
+		LoginCommand login = (LoginCommand)command;
+		
+		
+		
+		return super.onSubmit(request, response, command, errors);
+	}
+	
+	//referenceData가 먼저 실행되고 위의 onSubmit이 실행된다.
+	@Override
+	protected Map referenceData(HttpServletRequest request) throws Exception {
+		
+		
+		
+		
+		
+		return super.referenceData(request);
+		
+	}
+	
+	
+	
+	
+
+}

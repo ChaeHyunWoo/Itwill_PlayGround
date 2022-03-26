@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts 
+PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="default" extends="struts-default" namespace="">
+		<global-results>
+			<result name="error">/exception/error.jsp</result>
+		</global-results>	
+	</package>
+	
+	<include file="struts-test.xml"/>
+	<include file="struts-board.xml"/>
+	<include file="struts-fileTest.xml"/>
+	<include file="struts-fileTestDB.xml"/>
+	<include file="struts-iguest.xml"/>
+
+</struts>

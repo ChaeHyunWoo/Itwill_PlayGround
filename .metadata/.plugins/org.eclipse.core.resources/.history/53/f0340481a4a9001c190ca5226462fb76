@@ -1,0 +1,19 @@
+package com.anno;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+@Controller("anno.testController")
+public class TestController {
+	
+	
+	//MainController 에 @Request가 2개있는데 여기선 합쳐서쓴다.
+	@RequestMapping(value="/demo/write.action",method= {RequestMethod.GET})
+	public String write() throws Exception {
+		
+		return "anno/create";
+		
+	}
+
+}

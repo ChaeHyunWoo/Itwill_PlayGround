@@ -1,0 +1,299 @@
+package com.util.dao;
+
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.ibatis.SqlMapClientTemplate;
+
+import com.ibatis.sqlmap.client.SqlMapClient;
+
+//인터페이스를 구현한 클래스
+public class CommonDAOImpl implements CommonDAO {
+	
+	@Autowired
+	private SqlMapClientTemplate sqlMapClientTemplate;
+	
+	//어노테이션을 써서 sqlMapClientTemplate와 이름이 일치하는 것을 찾아와라
+	public void setSqlMapClientTemplate(SqlMapClientTemplate sqlMapClientTemplate) {
+		this.sqlMapClientTemplate = sqlMapClientTemplate;
+	}
+	
+	
+	@Override
+	public void insertData(String id, Object value) {
+		
+		try {
+			//xml에서 트랙잭션 처리를 해서 여기서 안해도된다.
+			
+			sqlMapClientTemplate.insert(id, value);
+			
+			
+		} catch (SQLException e) {
+			System.out.println(e.toString());
+		}  
+		
+		
+	}
+
+	@Override
+	public int updateData(String id, Object value) {
+		
+		int result = 0;
+		
+		try {
+			
+			
+			result = sqlMapClientTemplate.update(id, value);
+			
+			
+		} catch (SQLException e) {
+			System.out.println(e.toString());
+		} finally {
+			//try-catch문을 더써줘야함. transaction을 닫을 때는
+			try {	
+				sqlMap.endTransaction();
+			} catch (Exception e2) {
+				
+			}
+		}
+		
+	
+		return result;
+	}
+
+	@Override
+	public int updateData(String id, Map<String, Object> map) {
+		
+		int result = 0;
+		
+		try {
+			
+			sqlMap.startTransaction();
+			
+			result = sqlMap.update(id, map);
+			
+			sqlMap.commitTransaction();
+			
+		} catch (SQLException e) {
+			System.out.println(e.toString());
+		} finally {
+			//try-catch문을 더써줘야함. transaction을 닫을 때는
+			try {	
+				sqlMap.endTransaction();
+			} catch (Exception e2) {
+				
+			}
+		}
+		
+	
+		return result;
+	}
+
+	@Override
+	public int deleteData(String id, Object value) {
+		
+		int result = 0;
+		
+		try {
+			
+			sqlMap.startTransaction();
+			
+			result = sqlMap.delete(id, value);
+			
+			sqlMap.commitTransaction();
+			
+		} catch (SQLException e) {
+			System.out.println(e.toString());
+		} finally {
+			//try-catch문을 더써줘야함. transaction을 닫을 때는
+			try {	
+				sqlMap.endTransaction();
+			} catch (Exception e2) {
+				
+			}
+		}
+		
+	
+		return result;
+	}
+
+	@Override
+	public int deleteData(String id, Map<String, Object> map) {
+		
+		int result = 0;
+		
+		try {
+			
+			result = sqlMapClientTemplate.delete(id, map);
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		} 
+		
+		return result;
+	}
+
+	@Override
+	public int deleteAllData(String id) {
+		
+		int result = 0;
+		
+		try {
+			
+			sqlMap.startTransaction();
+			
+			result = sqlMap.delete(id); //이게 실제 삭제하는 명령어
+			
+			sqlMap.commitTransaction();
+			
+		} catch (SQLException e) {
+			System.out.println(e.toString());
+		} finally {
+			//try-catch문을 더써줘야함. transaction을 닫을 때는
+			try {	
+				sqlMap.endTransaction();
+			} catch (Exception e2) {
+				
+			}
+		}
+		
+	
+		return result;
+	}
+
+	@Override
+	public Object getReadData(String id) {
+		//애는 트랜잭션 시작이 안된다
+		try {
+			
+			return sqlMapClientTemplate.queryForObject(id);
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		
+		return null;
+	}
+
+	@Override
+	public Object getReadData(String id, Object value) {
+		
+		try {
+			
+			return sqlMapClientTemplate.queryForObject(id, value);
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		
+		return null;
+	}
+
+	@Override
+	public Object getReadData(String id, Map<String, Object> map) {
+		
+		try {
+			
+			return sqlMapClientTemplate.queryForObject(id, map);
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		
+		return null;
+	}
+
+	@Override
+	public int getIntValue(String id) {
+		
+		try {
+			//int값으로 형변환해서 반환
+			return ((Integer)sqlMapClientTemplate.queryForObject(id)).intValue();
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		
+		return 0;
+	}
+
+	@Override
+	public int getIntValue(String id, Object value) {
+		
+		try {
+			//int값으로 형변환해서 반환
+			return ((Integer)sqlMapClientTemplate.queryForObject(id, value)).intValue();
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		
+		return 0;
+	}
+
+	@Override
+	public int getIntValue(String id, Map<String, Object> map) {
+		
+		try {
+			//int값으로 형변환해서 반환
+			return ((Integer)sqlMap.queryForObject(id, map)).intValue();
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		
+		return 0;
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Object> getListData(String id) {
+		
+		try {
+			
+			return (List<Object>)sqlMap.queryForList(id);
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		
+		return null;
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Object> getListData(String id, Object value) {
+
+		try {
+			
+			return (List<Object>)sqlMap.queryForList(id, value);
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		
+		return null;
+		
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Object> getListData(String id, Map<String, Object> map) {
+		
+		try {
+			
+			return (List<Object>)sqlMap.queryForList(id, map);
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		
+		return null;
+		
+	}
+	
+	
+
+}

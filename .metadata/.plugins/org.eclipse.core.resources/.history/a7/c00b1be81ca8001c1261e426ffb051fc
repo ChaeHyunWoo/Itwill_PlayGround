@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts 
+PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!--  Controller 역할  -->
+<!-- ajax를 써서 리다이렉트가 필요 x -->
+
+<struts>
+
+<package name="ibbs" extends="default" namespace="/ibbs">
+
+	<action name="guest">
+		<result>/iguest/guest.jsp</result>
+	</action>
+	
+	<action name="created" class="com.iguest.GuestAction" method="created">
+		<result>/iguest/list.jsp</result>
+	</action>
+	
+	<action name="list" class="com.iguest.GuestAction" method="list">
+		<result>/iguest/list.jsp</result>
+	</action>
+	
+	<action name="deleted" class="com.iguest.GuestAction" method="deleted">
+		<result>/iguest/list.jsp</result>
+	</action>
+
+</package>
+
+</struts>

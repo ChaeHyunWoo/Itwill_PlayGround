@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;FileManager.java&apos; to &apos;struts2/src/com.util&apos;&#x0D;&#x0A;- Original project: &apos;struts&apos;&#x0D;&#x0A;- Destination element: &apos;struts2/src/com.util&apos;&#x0D;&#x0A;- Original element: &apos;com.util.FileManager.java&apos;" description="Copy compilation unit" destination="=struts2/src&lt;com.util" element1="/src&lt;com.util{FileManager.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1647233562712" units="1" version="1.0"/>
+</session>

@@ -1,0 +1,16 @@
+package com.di.test;
+
+public class ResultMain {
+
+	public static void main(String[] args) {
+		
+		//TestImpl1 ob1 = new TestImpl1();
+		Test ob1 = new TestImpl1();
+		System.out.println(ob1.result());
+		
+		TestImpl2 ob2 = new TestImpl2();
+		System.out.println(ob2.result());
+
+	}
+
+}

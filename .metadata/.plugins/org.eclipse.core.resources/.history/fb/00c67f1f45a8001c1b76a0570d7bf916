@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts 
+PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!--  Controller 역할  -->
+<!-- ajax를 써서 리다이렉트가 필요 x -->
+
+<struts>
+
+<package name="ibbs" extends="default" namespace="/ibbs">
+
+	<action name="article">
+		<result>/ibbs/article.jsp</result>
+	</action>
+	
+	<action name="created" class="com.ibbs.BoardAction" method="create">
+		<result name="input">/ibbs/created.jsp</result>
+		<!-- 입력이 됬으므로 리다이랙트(수정,세션된건) -->
+		<result name="success" type="redirectAction">list</result>
+	</action>
+	
+	<action name="created_c" class="com.ibbs.CommentAction" method="created">
+		<result>/ibbs/article.jsp</result>
+	</action>
+	
+	<action name="list" class="com.ibbs.BoardAction" method="list">
+		<result name="success">/ibbs/list.jsp</result>
+	</action>
+	
+	<action name="list_c" class="com.ibbs.CommentAction" method="list">
+		<result name="success">/ibbs/list.jsp</result>
+	</action>
+	
+	<action name="article" class="com.ibbs.BoardAction" method="article">
+			<result name="success">/ibbs/article.jsp</result>
+	</action>
+	
+	<action name="deleted_b" class="com.ibbs.BoardAction" method="deleted_b">
+		<result>/ibbs/list.jsp</result>
+	</action>
+	
+	<action name="deleted_c" class="com.ibbs.CommentAction" method="deleted_c">
+		<result>/ibbs/list.jsp</result>
+	</action>
+
+	
+	
+</package>
+
+</struts>

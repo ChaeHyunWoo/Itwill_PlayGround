@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+
+<!-- 접두사(prefix) : 앞에 오는 단어나 문자 -->
+<!-- 접미사(suffix) : 끝에 오는 단어나 문자 -->
+
+
+
+<!-- 뷰와 관련된 애를 읽어냄 -->
+<!-- 뷰 - jsp 보여주는곳을 관리 
+전에 	/board/creadted.jsp 로 가라   뒤 / 가 prefix , 뒤부분 .jsp 가 suffix 이다.-->
+<bean id="viewResolver"
+class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<property name="prefix" value="/"/>
+	<property name="suffix" value=".jsp"/>
+</bean>
+
+
+<!-- 핸들러매핑 : 다루는 방법 ,  Name으로 찾아간다.  -->
+<!--  /test/msg/action 주소가 오면 com.test.TestController 로 가라  -->
+
+<!-- http://localhost:8080/spring/test/msg.action   test/msg.action은 내맘대로 준다 (사용자 정의)   -->
+
+<bean id="beanNameUrlMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+<bean name="/test/msg.action" class="com.test.TestController"/> <!-- TestController로 가도록/ name은 사용자정의 -->
+
+
+<!-- 어노테이션이랑 같이썻다면 value=1를 줘서 애를 먼저 실행시켜라(우선순위 지정) -->
+<!-- 두번째 value=true를 주면 중간 주소를 사용할수있다. 무조건 true -->
+
+<!-- SimpleUrlMapping 방법 -->
+<bean id="simpleUrlMapping"
+class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	<property name="order" value="1"/>
+	<property name="alwaysUseFullPath" value="true"/>
+	<property name="mappings">
+		<props>
+			<prop key="/test/write.action">listFormController</prop>
+			<prop key="/test/write_ok.action">listController</prop>
+		</props>
+	</property>
+</bean>
+
+<!-- 3/22 -->
+
+
+
+
+<bean name="listFormController" class="com.test.ListFormController"/><!-- 넘어가려면 객체생성해줘야함 -->
+<bean name="listController" class="com.test.ListController"/>
+
+
+
+</beans>  

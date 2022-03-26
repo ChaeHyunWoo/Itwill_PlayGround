@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="bbs">
+
+<select id="boardNumMax" resultClass="int">
+	select nvl(max(boardNum),0) from sbbs
+</select>
+
+<insert id="insertData" parameterClass="com.bbs.BoardCommand">
+	insert into sbbs (boardNum,name,pwd,email,subject,content,
+	ipAddr,hitCount,created) values 
+	(#boardNum#,#name#,#pwd#,#email#,#subject#,#content#,
+	#ipAddr#,0,sysdate)
+</insert>
+
+<select id="dataCount" resultClass="int" parameterClass="map">
+	select nvl(count(*),0) from sbbs
+	where $searchKey$ like '%' || #searchValue# || '%'
+</select>
+
+<select id="listData" resultClass="com.bbs.BoardCommand" parameterClass="map">
+	select * from (
+	select rownum rnum, data.* from(
+	select boardNum,name,subject,hitCount,
+	to_char(created,'YYYY-MM-DD') created, from sbbs
+	where $searchKey$ like '%' || #searchValue# || '%'
+	order by boardNum desc) data)
+<![CDATA[
+	where rnum>=#start# and rnum<=#end#
+]]>
+</select>
+
+<!-- 아티클은 하나의 데이터 가져와야한다. -->
+<select id="readData" resultClass="com.bbs.BoardCommand" parameterClass="int">
+	select boardNum,name,pwd,email,subject,content,ipAddr,
+	hitCount,created from sbbs where boardNum=#boardNum#
+</select>
+
+<!-- 이전글 -->
+<select id="preReadData" resultClass="com.bbs.BoardCommand" parameterClass="map">
+	select rownum,data.* from (
+	select boardNum,subject from sbbs
+	where ($searchKey$ like '%' || #searchValue# || '%')
+	and (boardNum>#boardNum#) order by boardNum asc) data
+	where rownum=1
+</select>
+
+<!-- 다음글 -->
+<select id="nextReadData" resultClass="com.bbs.BoardCommand" parameterClass="map">
+	select rownum,data.* from (
+	select boardNum,subject from sbbs
+	where ($searchKey$ like '%' || #searchValue# || '%')
+<![CDATA[
+	and (boardNum<#boardNum#) order by boardNum desc) data
+	where rownum=1
+]]>
+</select>
+
+<!-- 조회수 증가 -->
+<update id="updateHitCount" parameterClass="int">
+	update sbbs set hitCount=hitCount+1 where boardNum=#boardNum#
+</update>
+
+</sqlMap>

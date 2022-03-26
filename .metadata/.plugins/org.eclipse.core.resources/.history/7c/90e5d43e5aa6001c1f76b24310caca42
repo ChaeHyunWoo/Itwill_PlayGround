@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+PUBLIC "-/ibatis.apache.org//DTO SQL Map 2.0//EN"
+"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="iguest">
+
+<select id="numMax" resultClass="int">
+	select nvl(max(num),0) from iguest
+</select>	
+
+<insert id="insertData" parameterClass="com.iguest.GuestDTO">
+	insert into iguest (num,name,email,content,ipAddr,created)
+	values (#num,#name#,#email#,#content#,#ipAddr#,sysdate)
+</insert>
+
+<select id="dataCount" resultClass="int">
+	select nvl(count(*),0) from iguest
+</select>
+
+<select id="listData" parameterClass="map" resultClass="com.iguest.GuestDTO">
+	select
+</select>
+
+
+</sqlMap>
+

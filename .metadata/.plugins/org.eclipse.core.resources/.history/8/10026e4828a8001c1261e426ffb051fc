@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+PUBLIC "-/ibatis.apache.org//DTO SQL Map 2.0//EN"
+"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ibbs">
+
+<!-- 방명록(ibbsComment) -->
+<!-- numMax : 게시물 번호 -->
+<select id="numMax" resultClass="int">
+	select nvl(max(commentNum),0) from ibbsComment 
+</select>
+<!-- insertData : 방명록 추가 -->
+<insert id="insertData_c" parameterClass="com.ibbs.CommentDTO">
+	insert into ibbsComment  (commentNum,name,content,ipAddr,created)
+	values (#commentNum#,#name#,#content#,#ipAddr#,sysdate)
+</insert>
+<!-- dataCount : 게시물 갯수 -->
+<select id="dataCount_c" resultClass="int">
+	select nvl(count(*),0) from ibbsComment 
+</select>
+<!-- listData : 게시물 리스트 출력 -->
+<select id="listData_c" resultClass="com.ibbs.CommentDTO" parameterClass="map" >
+	select * from (
+	select rownum rnum, data.* from (
+	select commentNum,name,content,ipAddr,created
+	from ibbsComment  order by commentNum desc) data)
+<![CDATA[
+	where rnum>=#start# and rnum<=#end#
+]]>
+</select>
+<!-- deleteData : 게시물 삭제 -->
+<delete id="deleteData_c" parameterClass="int">
+	delete ibbsComment  where commentNum=#commentNum#
+</delete>
+
+
+<!-- 게시판(ibbs) -->
+<select id="maxBoardNum" resultClass="int">
+	select nvl(max(boardNum),0) from ibbs
+</select>	
+
+<insert id="insertData_b" parameterClass="com.ibbs.BoardDTO">
+	insert into ibbs (boardNum,name,pwd,email,subject,content,
+	ipAddr,groupNum,depth,orderNo,parent,hitCount,created) values
+	(#boardNum#,#name#,#pwd#,#email#,#subject#,#content#,
+	#ipAddr#,#groupNum#,#depth#,#orderNo#,#parent#,0,sysdate)
+</insert>
+
+<select id="dataCount" resultClass="int" parameterClass="map">
+	select nvl(count(*),0) from bbs
+	where $searchKey$ like '%' || #searchValue# || '%'
+</select>
+
+
+
+</sqlMap>

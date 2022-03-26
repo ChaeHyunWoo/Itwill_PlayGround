@@ -1,0 +1,23 @@
+package com.test;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.Controller;
+
+//가장 기본적인 spring 컨트롤러이다.
+public class ListFormController implements Controller {//Controller
+
+	@Override
+	public ModelAndView handleRequest(HttpServletRequest request, 
+			HttpServletResponse response) throws Exception {
+		
+		
+		//return ModelAndView("test/write");
+		return ModelAndView("test/write");
+	}
+	
+	
+
+}

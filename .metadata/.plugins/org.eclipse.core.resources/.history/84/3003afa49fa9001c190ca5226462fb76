@@ -1,0 +1,12 @@
+package com.anno;
+
+import org.springframework.stereotype.Controller;
+
+//@Controller를 쓰면 extends가 필요없고 스프링한테 적당한 컨트롤러를 가져오라고 맡긴다.
+
+@Controller
+public class MainController {
+	
+	// <bean name="listFormController" class="com.test.ListFormController"/> 이런식으로 @Controller를 써서 알아서 객체생성
+
+}

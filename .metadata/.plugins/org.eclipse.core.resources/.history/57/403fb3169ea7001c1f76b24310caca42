@@ -1,0 +1,145 @@
+package com.join;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.apache.struts2.ServletActionContext;
+
+import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
+import com.opensymphony.xwork2.Preparable;
+import com.util.dao.CommonDAO;
+import com.util.dao.CommonDAOImpl;
+
+public class MemberAction extends ActionSupport 
+	implements Preparable,ModelDriven<MemberDTO> {
+
+	private static final long serialVersionUID = 1L;
+	
+	private MemberDTO dto;
+	private String message;
+	
+	
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public MemberDTO getDto() {
+		return dto;
+	}
+
+	@Override
+	public MemberDTO getModel() {
+		
+		return dto;
+	}
+
+	@Override
+	public void prepare() throws Exception {
+		
+		dto = new MemberDTO();
+		
+	}
+	
+	
+	
+	//회원가입
+	public String created() throws Exception {
+		
+		if(dto==null||dto.getMode()==null||dto.getMode().equals("")) {
+			return INPUT;
+		}
+		
+		HttpServletRequest request = ServletActionContext.getRequest();
+		CommonDAO dao = CommonDAOImpl.getInstance();
+		
+		
+		//입력
+		if(dao.getReadData("member.getId", dto)==null) {
+			
+			dao.insertData("member.insertData", dto);
+			dao=null;
+		}else {
+			request.setAttribute("message", "동일한 아이디가 존재합니다!!");
+			
+			return INPUT;
+		}
+		
+		return SUCCESS;
+		
+	}
+	
+	
+	//로그인
+	public String login() throws Exception {
+		
+		if(dto==null||dto.getMode()==null||dto.getMode().equals("")) {
+			return INPUT;
+		}
+		
+		HttpServletRequest request = ServletActionContext.getRequest();
+		CommonDAO dao = CommonDAOImpl.getInstance();
+		MemberDTO login = (MemberDTO)dao.getReadData("join.getReadData",dto);
+		
+		if(loginDTO==null) {
+			request.setAttribute("message", "아이디 또는 패스워드를 정확히 입력하세요!");
+			
+			return INPUT;
+		}
+		HttpSession session = request.getSession();
+		session.setAttribute("MemberDTO", loginDTO);
+		
+		return SUCCESS;
+	}
+	
+	
+	//로그아웃
+	public String logout() throws Exception {
+		
+		HttpServletRequest request = ServletActionContext.getRequest();
+		HttpSession session = request.getSession();
+		
+		session.removeAttribute("dto");
+		session.removeAttribute("MemberDTO");
+		session.invalidate();
+		
+		return SUCCESS;
+	}
+	
+	//비밀번호찾기 페이지
+	public String searchpw() throws Exception {
+		
+		if(dto==null||dto.getMode()==null||dto.getMode().equals("")) {
+			return INPUT;
+		}
+		
+		CommonDAO dao = CommonDAOImpl.getInstance();
+		HttpServletRequest request = ServletActionContext.getRequest();
+		MemberDTO searchDTO = (MemberDTO)dao.getReadData("member.getPwd", dto);
+		
+		//dto==null일 경우 해당정보 없음
+		if(searchDTO==null) {
+			request.setAttribute("message", "해당하는 정보가 없어요!");
+		}else {
+			String str = "비밀번호는 [" + searchDTO.getUserPwd() +"]입니다.";
+			request.setAttribute("message", str);
+		}
+		
+		return INPUT;
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+
+}

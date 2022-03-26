@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		 http://www.springframework.org/schema/aop 
+		 http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+		 http://www.springframework.org/schema/context
+		 http://www.springframework.org/schema/context/spring-context-2.5.xsd
+		 http://www.springframework.org/schema/util
+		 http://www.springframework.org/schema/util/spring-util-2.5.xsd">   
+    <!-- db연결해주는곳  -->
+    <!--  아이바티스 세팅  - 클라이언트 , 템플릿이 필요 -->
+     
+	<!--  destoy-method : 닫아주는 역할 -->
+	<!--  BasicDataSource" 를 dataSource로 객체생성하고 driver라는 setter를 통해 OracleDriver를 넘겨준다. , setUrl, setUsername .... 각각 value를 넣어주게된다.
+	propert로 의존성주입을 한다. -->
+	<!-- dataSource는 사용자정의 -->
+	
+<!-- 프로퍼티(메소드)로 의존성 주입	-->	
+<!-- basic소스안에 driver가 있다는것이다. -->
+	<!-- BasicDataSource 안에 driverClass에  -->
+<bean id="dataSource" destroy-method ="close"
+	 class="org.apache.commons.dbcp.BasicDataSource">
+	<property name="driverClassName" value="oracle.jdbc.drive.OracleDriver"/> 
+	<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+	<property name="username" value="suzi"/>
+	<property name="password" value="a123"/>	
+</bean>
+
+<!-- Inversion on Control (IOC 제어의 역전) : 차례대로 딸려옴 즉, transectionManager 으로 위의 dataSource로 가져옴 -->
+<!-- Transaction 처리 -->
+
+<bean id="transactionManager"
+class="org.springframework.jdbc.datasource.DataSourceTransactionManager">	
+	<property name="dataSource" ref="dataSource"/>	 <!-- 위에 bean id="dataSoruce를 불러옴 , 메소드로 의존성주입 -->
+</bean>
+
+<!-- ibatis연결 세팅  -->
+<!-- CommonDAOImpl에 sqlMapClientTemplate를 넘겨주면 됨 -->
+<bean id="sqlMapClientTemplate"
+class="org.springframework.orm.ibatis.SqlMapClientTemplate"
+p:sqlMapClient-ref="sqlMapClient"/>
+
+
+
+<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean" 
+p:dataSource-ref="dataSource"
+p:configLocation="WEB-INF/sqlMapConfig/sqlMapConfig.xml"/>
+  <!-- 빈 객체를 만드는 공장 , 위에 p namespace로 의존성주입을함 , 위 dataSoure와  sqlMapConfig를 불러온다 -->
+
+
+<!--  객체를 생성하고 메소드에 의존성 주입  -->
+<!-- <bean id="commandDAOImpl" class="com.util.dao.CommonDAOImpl">
+	<property name="sqlMapClientTemplate"> 메소드 이름  setSqlMapClientTemplate 로 찾아가서 결과값을 넘겨줌 
+		<ref bean="sqlMapClientTemplate"/> // <bean id="sqlMapClientTemplate" 참조 
+	</property>	
+</bean> -->
+
+
+<!-- 이런식으로 쓸수있지만 어노테이션으로 만들었다. -->
+<!-- <bean id="myUtil" class="com.util.MyUtil"/> 객체 생성시 myUtil 가져다가 그냥 쓸수있다. -->
+<!-- <bean id="fileManager" class="com.util.FileManager"/> 객체 생성시 myUtil 가져다가 그냥 쓸수있다. -->
+
+
+</beans>  

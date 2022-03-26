@@ -1,0 +1,312 @@
+package com.bbs;
+//컨트롤러 : 분배기(어디로 갈지 경로 분배)
+
+import java.net.URLDecoder;
+import java.net.URLEncoder;
+import java.util.HashMap;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.Map;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.util.MyUtil;
+import com.util.dao.CommonDAO;
+
+@Controller("bbs.boardController")
+public class BoardController {
+	
+	//@Qualifier("com.salMap") 이 두개를 합친게 @Resource이다,
+	@Resource(name="dao") //이름을 가지고 와서
+	private CommonDAO dao;// 여기에 넣어라
+	
+	@Resource(name="myUtil") //MyUtil를 읽어와서 
+	private MyUtil myUtil;// = new MyUtil();   / 여기에 넣어라
+	
+	@RequestMapping(value="/bbs/created.action",
+			method= {RequestMethod.GET,RequestMethod.POST})
+	public String created(BoardCommand command,
+			HttpServletRequest request) throws Exception{
+		
+		//입력창으로 만들어진다
+		if (command==null||command.getMode()==null 
+				|| command.getMode().equals("")) {
+					
+			//넘어갈 때 mode를 가져가야 한다.
+			request.setAttribute("mode", "insert");
+					
+			return "board/created";
+		}
+		
+		
+		//입력을 시키는 코딩을 써준다
+		int boardNumMax = dao.getIntValue("bbs.boardNumMax");
+				
+		command.setBoardNum(boardNumMax + 1);
+		command.setIpAddr(request.getRemoteAddr());
+				
+		dao.insertData("bbs.insertData", command);
+				
+		return "redirect:/bbs/list.action";//실제주소가 아닌 가상 주소라서 주소 다 써줘야한다
+		
+	}//end created()
+	
+	
+	//list는 form을 쓰는게 아니라 get방식으로 넘어온다. post를 지워도 되는데 그냥 써놓는다
+	@RequestMapping(value="/bbs/list.action",
+			method= {RequestMethod.GET,RequestMethod.POST})
+	public String list(HttpServletRequest request) throws Exception{
+		
+		HttpSession session = request.getSession();
+		String cp = request.getContextPath();
+		
+		int numPerPage = 5; //페이지 5개씩 띄움
+		int totalPage = 0;
+		int totalDataCount = 0;
+		
+		String pageNum = request.getParameter("pageNum");
+		
+		//수정 메서드에서 updateSubmit()에서 보낸 pageNum을  받음
+		if(pageNum==null) {
+			pageNum = (String)session.getAttribute("pageNum"); //세션으로 올린건 여기서 받는다
+		}
+		
+		session.removeAttribute("pageNum");//받았으면 지운다. 세션을 지워야 나중에 쓸수 있다
+		
+		int currentPage = 1;
+		if(pageNum!=null && !(pageNum.equals(""))) {
+			currentPage = Integer.parseInt(pageNum);
+		}
+		
+		String searchKey = request.getParameter("searchKey");
+		String searchValue = request.getParameter("searchValue");
+		
+		if(searchValue==null) {
+			searchKey = "subject";
+			searchValue = "";
+		}
+		
+		if(request.getMethod().equalsIgnoreCase("GET")) {
+			searchValue = URLDecoder.decode(searchValue, "UTF-8");
+		}
+		
+		Map<String, Object> hMap = new HashMap<String, Object>();
+		hMap.put("searchKey", searchKey);
+		hMap.put("searchValue", searchValue);
+		
+		totalDataCount = dao.getIntValue("bbs.dataCount", hMap);
+		
+		if(totalDataCount!=0) {
+			totalPage = myUtil.getPageCount(numPerPage, totalDataCount);
+		}
+		
+		if(currentPage>totalPage) {
+			currentPage = totalPage;
+		}
+		
+		int start = (currentPage-1)*numPerPage+1;
+		int end = currentPage*numPerPage;
+		
+		hMap.put("start", start);
+		hMap.put("end", end);
+		
+		List<Object> lists = dao.getListData("bbs.listData", hMap); //여기까지하면 리스트를 구함
+		
+		int listNum,n=0;
+		ListIterator<Object> it = lists.listIterator();
+		while(it.hasNext()) {
+			
+			BoardCommand data = (BoardCommand)it.next();
+			
+			listNum = totalDataCount - (start + n -1);
+			data.setListNum(listNum);
+			
+			n++;
+		}
+		
+		String params = "";
+		String urlList = "";
+		String urlArticle = "";
+		
+		if(!searchValue.equals("")) {
+			
+			searchValue = URLEncoder.encode(searchValue, "UTF-8");
+			params = "searchKey=" + searchKey +
+					"&searchValue=" + searchValue;
+		}
+		
+		//검색을 안했다면
+		if(params.equals("")) {
+			
+			urlList = cp + "/bbs/list.action";
+			urlArticle = cp + "/bbs/article.action?pageNum=" + currentPage;
+			
+		}else { //null이 아니면
+			
+			urlList = cp + "/bbs/list.action" + params;
+			urlArticle = cp + "/bbs/article.action?pageNum=" + 
+					currentPage + "&" + params;
+		}
+		
+		request.setAttribute("lists", lists);
+		request.setAttribute("urlArticle", urlArticle);
+		request.setAttribute("pageNum", pageNum);
+		request.setAttribute("totalPage", totalPage);
+		request.setAttribute("totalDataCount", totalDataCount);
+		request.setAttribute("pageIndexList", myUtil.pageIndexList(currentPage, totalPage, urlList));
+		
+		return "board/list";
+	}
+	
+	
+	@RequestMapping(value="/bbs/article.action",
+			method= {RequestMethod.GET, RequestMethod.POST})
+	public String article(HttpServletRequest request) throws Exception {
+		
+		int boardNum = Integer.parseInt(request.getParameter("boardNum"));
+		String pageNum = request.getParameter("pageNum");
+		
+		String searchKey = request.getParameter("searchKey");
+		String searchValue = request.getParameter("searchValue");
+		
+		//4개를 받는다.
+		if(searchValue==null) {
+			searchKey = "subject";
+			searchValue = "";
+		}
+		
+		if(request.getMethod().equalsIgnoreCase("GET")) {
+			searchValue = URLDecoder.decode(searchValue, "UTF-8");
+		}
+		
+		//들어갈때 조회수 증가시킨다.
+		dao.updateData("bbs.updateHitCount", boardNum);
+		
+		BoardCommand dto = (BoardCommand)dao.getReadData("bbs.readData", boardNum);
+		
+		if(dto==null) {
+			return "redirect:/bbs/list.action";
+		}
+		
+		int lineSu = dto.getContent().split("\r\n").length;
+		
+		dto.setContent(dto.getContent().replace("\r\n", "<br/>"));
+		
+		Map<String, Object> hMap = new HashMap<>();
+		hMap.put("searchKey", searchKey);
+		hMap.put("searchValue", searchValue);
+		hMap.put("boardNum", boardNum);
+		
+		BoardCommand preReadData = (BoardCommand)dao.getReadData("bbs.preReadData", hMap);
+		
+		int preBoardNum = 0;
+		String preSubject = "";
+		
+		if(preReadData!=null) {
+			preBoardNum = preReadData.getBoardNum();
+			preSubject = preReadData.getSubject();
+		}
+		
+		
+		BoardCommand nextReadData = (BoardCommand)dao.getReadData("bbs.nextReadData", hMap);
+		
+		int nextBoardNum = 0;
+		String nextSubject = "";
+		
+		if(nextReadData!=null) {
+			nextBoardNum = nextReadData.getBoardNum();
+			nextSubject = nextReadData.getSubject();
+		}
+		
+		String params = "pageNum=" + pageNum;
+		
+		if(!searchValue.equals("")) {
+			searchValue = URLEncoder.encode(searchValue, "UTF-8");
+			params += "&searchKey=" + searchKey;
+			params += "&searchValue=" + searchValue;
+		}
+		
+		request.setAttribute("dto", dto);
+		request.setAttribute("preBoardNum", preBoardNum);
+		request.setAttribute("preSubject", preSubject);
+		request.setAttribute("nextBoardNum", nextBoardNum);
+		request.setAttribute("nextSubject", nextSubject);
+		request.setAttribute("pageNum", pageNum);
+		request.setAttribute("params", params);
+		request.setAttribute("lineSu", lineSu);
+		
+		return "board/article";
+		
+	}//end article()
+	
+	
+	//수정창을 띄우는것
+	@RequestMapping(value="/bbs/updated.action",method= {RequestMethod.GET})
+	public String updateForm(HttpServletRequest request) throws Exception{
+		
+		//created에서 hidden으로 넘긴 값이 넘어오는거
+		int boardNum = Integer.parseInt(request.getParameter("boardNum"));
+		String pageNum = request.getParameter("pageNum");
+			
+		BoardCommand dto = (BoardCommand)dao.getReadData("bbs.readData",boardNum);
+			
+		if(dto==null) {
+				return "redirect:/bbs/list.aciton?pageNum=" + pageNum;
+		}
+			
+		//이제 수정창의 띄우고 데이터 넘길 것이다.
+		request.setAttribute("dto", dto);
+		request.setAttribute("mode", "update");//입력창으로 띄울때 mode는 insert 수정창으로 띄울때 mode는 update
+		request.setAttribute("pageNum", pageNum);
+			
+		return "board/created"; //여기로 데이터 넘긴다.
+	}
+	
+	//실제로 수정처리를 하는것.
+	@RequestMapping(value="/bbs/updated.action",method= {RequestMethod.POST})
+	public String updateSubmit(BoardCommand command, HttpServletRequest request) throws Exception{//입력/수정할때는 command
+	
+		//수정하고 돌아가는값을 session에 올림
+		
+		dao.updateData("bbs.updateData", command); //데이터 수정해주고
+		
+		//다시 list로 들어갈려면 pageNum 필요
+		
+		
+		//list()에서 session으로 받음
+		
+		//방법 1
+		//HttpSession session = request.getSession();
+		//session.setAttribute("pageNum", command.getPageNum()); //command에서 받은 pageNum을 넘긴다.
+		
+		//return "redirect:/bbs/list.action"; //업데이트 했으니 리다이렉트
+		
+		//위 방법으로 session써도 되고 리다에릭트할때 pageNum을 붙여서도 갈 수 있다.
+		//방법 2
+		return "redirect:/bbs/list.action?pageNum=" + command.getPageNum(); //업데이트 했으니 리다이렉트
+	}
+	
+	
+	@RequestMapping(value="/bbs/deleted.action",method= {RequestMethod.GET})
+	public String updateSubmit(HttpServletRequest request) throws Exception{
+	
+		int boardNum = Integer.parseInt(request.getParameter("boardNum"));
+		String pageNum = request.getParameter("pageNum");
+		
+		dao.deleteData("bbs.deleteData", boardNum);
+		
+		
+		return "redirect:/bbs/list.action?pageNum=" + command.getPageNum(); //업데이트 했으니 리다이렉트
+	}
+	
+	
+}
+	
+
+

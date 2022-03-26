@@ -1,0 +1,125 @@
+package com.day18;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.ArrayList;
+
+public class ServerTest2 {
+
+	private ArrayList<Socket> clients = new ArrayList<Socket>();
+
+	public void serverStart() {
+
+		try {
+
+			ServerSocket ss = new ServerSocket(7777);
+			System.out.println("서버 시작...!");
+
+			while(true) {
+
+				Socket sc = ss.accept();
+
+				WorkThread wt = new WorkThread(sc); //workThread는 Thread가 필수다.
+				wt.start();
+
+
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+	class WorkThread extends Thread {
+
+		private Socket sc;
+
+		public WorkThread(Socket sc) {
+			this.sc = sc; //의존성 주입
+		}
+
+
+		@Override
+		public void run() {
+
+			String ip = null;
+			String msg = null;
+
+			try {
+
+				BufferedReader br = new BufferedReader(new InputStreamReader(sc.getInputStream()));
+
+				ip = sc.getInetAddress().getHostAddress();
+
+				clients.add(sc);
+
+				//다른 클라이언트에게 접속 사실을 알린다.(나를 제외)
+
+				msg = ip + "]가 입장했습니다";
+
+				for(Socket s : clients) {
+
+					if(s==sc)
+						continue; //본인이라면 한번만 찍지말고 패스해라
+
+					PrintWriter pw = new PrintWriter(s.getOutputStream(),true); //list에 있는 sc와 s가 같지않으면 문자를 보내라.
+
+					pw.println(msg);
+				}
+
+				System.out.println(msg);//서버에 보임
+
+				while((msg = br.readLine())!=null) {
+					for(Socket s : clients) {
+
+						if(s==sc)
+							continue; //본인이라면 한번만 찍지말고 패스해라
+
+						PrintWriter pw = new PrintWriter(s.getOutputStream(),true); //list에 있는 sc와 s가 같지않으면 문자를 보내라.
+
+						pw.println(msg);
+					}
+					System.out.println(msg);
+				}
+
+			} catch (Exception e) {
+				msg = ip + "]가 퇴장했습니다.";
+
+				try {
+
+					for(Socket s : clients) {
+
+						if(s==sc)
+							continue; //본인이라면 한번만 찍지말고 패스해라
+
+						PrintWriter pw = new PrintWriter(s.getOutputStream(),true); //list에 있는 sc와 s가 같지않으면 문자를 보내라.
+
+						pw.println(msg);
+					}
+					System.out.println(msg); 
+
+					sc = null;
+
+				} catch (Exception e2) {
+
+				}
+
+			}
+
+		}
+
+
+	}
+
+	
+
+	public static void main(String[] args) {
+		
+		new ServerTest2().serverStart();
+
+	}
+
+}
