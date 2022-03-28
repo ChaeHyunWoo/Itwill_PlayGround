@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	https://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context 
+	https://www.springframework.org/schema/context/spring-context-3.0.xsd
+	http://www.springframework.org/schema/aop
+	https://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+	<description>Example configuration to get you started.</description>
+
+	<context:component-scan base-package="com.exe.aop" />
+	
+	<!-- 이번엔 하단에서 했던 노가다를  어노테이션으로 사용 -->
+	<aop:aspectj-autoproxy/>
+	
+	<!-- 어드바이스
+	<bean id="beforeAdvice" class="com.exe.aop.MyBeforeAdvice"/>
+	<bean id="afterAdvice" class="com.exe.aop.MyAfterAdvice"/>
+	<bean id="aroundAdvice" class="com.exe.aop.MyAroundAdvice"/>
+	<bean id="afterReturnAdvice" class="com.exe.aop.MyAfterReturnAdvice"/>
+	<bean id="afterThrowAdvice" class="com.exe.aop.MyAfterThrowAdvice"/>
+	
+	excution(메서드접근지정자 반환값 패키지.클래스.메서드명(인수)
+	excution(* com..aop.*.*(String)
+	<aop:config>
+	
+		before
+		<aop:aspect ref="beforeAdvice">
+			<aop:pointcut id="beforePointcut" 
+				expression="execution(public void com..aop.*.*(..))" /> com.누구나.aop
+			<aop:before method="beforeMethodCall"
+				pointcut-ref="beforePointcut"/>
+		</aop:aspect>
+		
+		after
+		<aop:aspect ref="afterAdvice"> afterAdvice를 가져와서
+			<aop:pointcut id="afterPointcut" 
+				expression="execution(public void com.exe.aop.*.*(..))"/>
+			<aop:after method="afterMethodCall"
+				pointcut-ref="afterPointcut"/>
+		</aop:aspect>
+		 
+		around : before + after
+		<aop:aspect ref="aroundAdvice">
+			<aop:pointcut id="aroundPointcut" 
+				expression="execution(public void com.exe.aop.*.*(..))"/> 이조건에 만족하는 aroundMethodCall
+			<aop:around method="aroundMethodCall"
+				pointcut-ref="aroundPointcut"/>
+		</aop:aspect>
+		
+		after-returning
+		<aop:aspect ref="afterReturnAdvice">
+			<aop:pointcut id="afterReturnPointcut" 
+				expression="execution(public void com.exe.aop.*.*(..))"/>
+			<aop:after-returning method="afterReturnMethodCall"
+				pointcut-ref="afterReturnPointcut"/>
+		</aop:aspect>
+		
+		after-throw-
+		<aop:aspect ref="afterThrowAdvice">
+			<aop:pointcut id="afterThrowPointcut" 
+				expression="execution(public void com.exe.aop.*.*(..))"/>
+			<aop:after-throwing method="afterThrowMethodCall"
+				pointcut-ref="afterThrowPointcut"/>
+		</aop:aspect> 
+		
+	</aop:config>-->
+	
+
+</beans>
