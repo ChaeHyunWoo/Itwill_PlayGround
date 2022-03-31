@@ -12,7 +12,7 @@ import com.spring.boot.mapper.BoardMapper;
 @Service //객체 생성
 public class BoardServiceImpl implements BoardService{
 	
-	@Autowired						 // boardMapper.xml에 있는 쿼리를 읽어온다.
+	@Autowired	//boardMapper에 있는 sql문을 BoardServiceImpl로 읽어와서 의존성주입하여 객체생성 한것.
 	private BoardMapper boardMapper; // BoardMapper의 의존성 주입
 	
 	
@@ -38,6 +38,26 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public List<BoardDTO> getLists(int start, int end, String searchKey, String searchValue) throws Exception {
 		return boardMapper.getLists(start, end, searchKey, searchValue);
+	}
+
+	@Override
+	public BoardDTO getReadData(int num) throws Exception {
+		return boardMapper.getReadData(num);
+	}
+
+	@Override
+	public void updateHitCount(int num) throws Exception {
+		boardMapper.updateHitCount(num);
+	}
+
+	@Override
+	public void updateData(BoardDTO dto) throws Exception {
+		boardMapper.updateData(dto);
+	}
+
+	@Override
+	public void deleteData(int num) throws Exception {
+		boardMapper.deleteData(num);
 	}
 
 }

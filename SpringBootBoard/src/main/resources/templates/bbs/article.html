@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>게 시 판(Spring Boot + MyBatis)</title>
+
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<link rel="stylesheet" type="text/css" href="css/article.css"/>
+
+</head>
+<body>
+
+<div id="bbs">
+	
+	<div id="bbs_title">
+		게 시 판(Spring Boot + MyBatis)
+	</div>
+	<div id="bbsArticle">
+		
+		<div id="bbsArticle_header">
+			<p th:text="${dto.subject}"></p> 
+		</div>
+		
+		<div class="bbsArticle_bottomLine">
+			<dl>
+				<dt>작성자</dt>
+				<dd th:text="${dto.name }"></dd>
+				<dt>줄수</dt>
+				<dd th:text="${lineSu }"></dd>
+			</dl>		
+		</div>
+		
+		<div class="bbsArticle_bottomLine">
+			<dl>
+				<dt>등록일</dt>
+				<dd th:text="${dto.created }"></dd>
+				<dt>조회수</dt>
+				<dd th:text="${dto.hitCount }"></dd>
+			</dl>		
+		</div>
+		
+		<div id="bbsArticle_content">
+			<table width="600" border="0">
+			<tr>
+				<td style="padding-left: 20px 80px 20px 62px;" 
+				valign="top" height="200" >
+				<textarea rows="12" cols="82" name="content"
+				style="border: none"
+				class="boxTA" th:text="${dto.content }"></textarea>
+			</tr>			
+			</table>
+		</div>
+		
+	</div>
+	
+	<div class="bbsArticle_noLine" style="text-align: right">
+	
+	<p th:text="'From : ' + ${dto.ipAddr}"></p>
+	<!-- From : [[${dto.ipAddr}]] -->
+		
+	</div>
+	
+	<div id="bbsArticle_footer">
+		<div id="leftFooter">
+			<input type="button" value=" 수정 " class="btn2" 
+			th:onclick="'location.href=\'updated.action?num=' +
+					@{${dto.num}} + '&' + @{${params}} + '\''"/>
+			<input type="button" value=" 삭제 " class="btn2" 
+			th:onclick="'location.href=\'deleted_ok.action?num=' +
+					@{${dto.num}} + '&' + @{${params}} + '\''"/>
+		</div>
+		<div id="rightFooter">
+			<input type="button" value=" 리스트 " class="btn2" 
+			th:onclick="'location.href=\'list.action?' + @{${params}} + '\''"/>
+			
+		</div>	
+	</div>
+	
+</div>
+
+</body>
+</html>

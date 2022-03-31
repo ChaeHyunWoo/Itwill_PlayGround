@@ -32,6 +32,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 ]]>
 </select>
 
+<update id="updateHitCount" parameterType="int">
+	update board set hitCount=hitCount+1 where num=#{num}
+</update>
+
+<select id="getReadData" parameterType="int" resultType="com.spring.boot.dto.BoardDTO">
+	select num,name,pwd,email,subject,content,IpAddr,
+	hitCount,created from board where num=#{num}
+</select>
+
+<update id="updateData" parameterType="com.spring.boot.dto.BoardDTO">
+	update board set name=#{name},pwd=#{pwd},email=#{email},
+	subject=#{subject},content=#{content} where num=#{num}
+</update>
+
+<delete id="deleteData" parameterType="int">
+	delete board where num=#{num}
+</delete>
 
 
 </mapper>
