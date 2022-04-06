@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>사용자 추가 테스트</title>
+</head>
+<body>
+
+<h1>회원가입</h1>
+<form action="/process/addUser" method="post">
+	<table>
+		<tr>
+			<td>아이디</td>
+			<td><input type="text" name="id"></td>
+		</tr>
+		<tr>
+			<td>비밀번호</td>
+			<td><input type="text" name="pwd"></td>
+		</tr>
+		<tr>
+			<td>이름</td>
+			<td><input type="text" name="name"></td>
+		</tr>
+	</table>
+		<input type="submit" value="가입하겠소"/>
+		<br/><br/>
+		<a href='/public/login.html'>로그인하기</a>
+		<br/><br/>
+		<a href='/public/listUser.html'>리스트보기</a>
+	
+</form>
+
+
+</body>
+</html>
