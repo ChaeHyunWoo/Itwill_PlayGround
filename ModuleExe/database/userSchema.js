@@ -111,6 +111,7 @@ Schema.createSchema = function(mongoose){
 			console.log("DB에 저장되어 있는 pwd: " + hashed_password);// db에 저장되어있는 암호화된 패스워드  abc가 db에저장된 암호화된 데이터
 			
 			return this.encryptPassword(inputPwd)==this.hashed_password;
+			
 		}
 
 		
