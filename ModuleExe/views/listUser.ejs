@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1">
+<title>사용자 리스트 페이지</title>
+</head>
+<body>
+
+<h1>사용자 리스트(View - ejs)</h1>
+
+<div>
+	<ul>
+		<%for(var i=0; i<result.length; i++) { %>
+		
+			<li>
+			#<%=i+1 %> - 
+			아이디: <%=result[i]._doc.id %>,
+			이름: <%=result[i]._doc.name %>,
+			나이: <%=result[i]._doc.age %>
+			</li>
+		<%} %>
+	</ul>
+</div>
+<br/><br/>
+<a href="/public1/listUser.html">다시 요청</a>
+
+
+</body>
+</html>
