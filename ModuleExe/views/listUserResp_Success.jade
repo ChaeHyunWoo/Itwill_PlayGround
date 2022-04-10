@@ -1,0 +1,55 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width,height=device-height,initial-scale=1')
+    title 사용자 리스트 목록
+    link(rel='stylesheet' type='text/css' href='../public1/data/semantic.min.css')
+    link(rel='stylesheet' type='text/css' href='../public1/data/listUserResp.css')
+    script(src='https://code.jquery.com/jquery-3.1.1.min.js')
+    script(src='../public1/data/semantic.min.js')
+  body
+    .container
+      br
+      .ui.raised.segment
+        a.ui.blue.ribbon.label 사용자 리스트(View - jade)
+        br
+        br
+        .ui.two.column.grid
+          - for(var i=0;i<result.length;i++){
+            .column
+              .ui.card
+                .image
+                  img(src='../public1/image/suzi.png')
+                .content
+                  a.header #{result[i]._doc.name}
+                  .meta
+                    span.date
+                      #{moment(result[i]._doc.created).format('YYYY-MM-DD')}
+                  .description
+                    br
+                    p 신장: 168cm
+                    p 직업: 가수
+                .extra.content
+                  | #{i+100} Friends
+          - } 
+            
+            
+            - for(var i=0;i<result.length;i++){
+              .column
+                .ui.blue.fluid.card
+                  .content
+                    .header #{result[i]._doc.name}
+                    .meta
+                      span.right.floated.time #{result[i]._doc.age}세
+                      span.category #{result[i]._doc.id}
+                    .description
+                      br
+                      p 생일: #{moment(result[i]._doc.created).format("YYYY년 MM월 DD일")}
+                      p 키: 168cm
+                      p 직업: 가수
+                  .extra.content
+                    .right.floated.author
+                      img.ui.avatar.image(src='../public1/image/suzi.png')
+                      010-1234-1234
+            - }
