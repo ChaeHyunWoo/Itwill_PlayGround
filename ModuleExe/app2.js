@@ -23,8 +23,11 @@ var app = express();
 
 //뷰 엔진 설정
 app.set("views",__dirname + "/views");
-app.set("view engine","ejs"); //엔진을 ejs로 할꺼얌
-console.log("뷰엔진이 ejs로 설정되었습니다.");
+//app.set("view engine","ejs"); //엔진을 ejs로 할꺼얌
+//console.log("뷰엔진이 ejs로 설정되었습니다.");
+
+app.set("view engine","jade"); //엔진을 ejs로 할꺼얌
+console.log("뷰엔진이 jade로 설정되었습니다.");
 
 app.set("port",process.env.PORT||config.serverPort);
 
