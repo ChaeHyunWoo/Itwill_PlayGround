@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1">
+<title>에러 페이지</title>
+</head>
+
+
+<link rel="stylesheet" type="text/css" href="./data/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="./data/login.css">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="./data/semantic.min.js"></script>
+
+
+<body>
+
+<div class="container">
+	<div id="cardbox" class="ui blue fluid card">
+		<div class="content">
+			<div class="left floated author">
+				<img id="iconImage" class="ui avatar image" src="./image/404.png">
+			</div>
+			<div>
+				<div id="titleText" class="header">에러</div>
+				<div id="contentsText" class="description">
+				요청하신 문서를 찾을 수 없습니다.
+				</div>
+			</div>
+		</div>
+		
+		<form action="/process/listUser" id="myForm" method="post">
+			
+			<table>
+				<tr class="row" align="center" valign="middle">
+					<td id="buttonContainer">
+						<input id="submitButton" class="ui primary button"
+						type="submit" value=" 확인"/>
+					</td>
+				</tr>	
+			</table>	
+			
+		</form>
+		
+	</div>
+	
+	<a href="/public1/login.html">로그인</a>
+	<a href="/public1/listUser.html">회원리스트</a>
+	
+</div>
+
+</body>
+</html>

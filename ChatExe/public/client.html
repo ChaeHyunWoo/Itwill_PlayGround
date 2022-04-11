@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1">
+<title>Chat</title>
+
+<link rel="stylesheet" type="text/css" href="./data/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="./data/chatClient.css">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="./data/semantic.min.js"></script>
+<script type="text/javascript" src="https://cdn.socket.io/4.0.1/socket.io.js"></script>
+
+<script type="text/javascript">
+
+var host;
+var port;
+var socket;
+
+$(function(){
+	
+	$("#connectBtn").on("click",function(event){
+		
+		printMsg("connectBtn이 클릭 되었습니다");
+		
+		host = $("#host").val();
+		port = $("#port").val();
+		
+		connectToServer();
+		
+	});	
+	
+	$("#sendBtn").on("click",function(event){
+		
+		var sender = $("#senderId").val();
+		var receiver = $("#receiverId").val();
+		var msg= $("#msg").val();
+		
+		//message 이벤트 객체의 형식은 사용자 정의
+		//sender : 보내는 사람
+		//receiver : 받는 사람
+		//command : 데이터의 종류를 구별(채팅문자와 다른 )
+		//type : 전송될 데이터의 형태
+		//data : 데이터
+		
+		var output = {sender:sender,receiver:receiver,command:"chat",type:"text",data:msg};
+		
+		if(socket==undefined){
+			alert("서버에 연결되어있지 않습니다.");
+			return;
+		}
+		
+		socket.emit("message",output);
+		
+		addToDiscussion("self",msg);
+		
+		$("#msg").val("");
+		$("#msg").focus();
+			
+	});
+	
+	$("#loginBtn").on("click",function(event){
+		
+		var id = $("#id").val();
+		var pwd = $("#pwd").val();
+		var alias = $("#alias").val();
+		var today = $("#today").val();
+		
+		$("#senderId").val(id);
+		
+		var output = {id:id,pwd:pwd,alias:alias,today:today};
+		
+		if(socket==undefined){
+			alert("서버에 연결 되어있지 않습니다.");
+			return;
+		}
+		
+		socket.emit("login",output);
+		
+	});
+	
+	$("#logoutBtn").on("click",function(event){
+		
+		if(socket==undefined){
+			alert("서버에 연결 되어있지 않습니다.");
+			return;
+		}
+		
+		var id = $("#id").val();
+		
+		var output = {id:id};
+		
+		socket.emit("logout",output);
+		
+		$("#id").val("");
+		$("#pwd").val("");
+		$("#alias").val("");
+		$("#today").val("");
+		
+	});
+	
+});
+
+//서버에 연결하는 함수
+function connectToServer(){
+	
+	var options = {forceNew:true};//연결 세션을 생성
+	var url = "http://" + host + ":" + port;
+	
+	socket = io.connect(url,options);
+	
+	socket.on("connect",function(){
+		printMsg("웹소켓 서버에 연결 되었습니다. : " + url);
+		
+		socket.on("message",function(message){
+			
+			addToDiscussion("other",message.data);
+			
+		});
+		
+		socket.on("response", function(response){
+			
+			//logout
+			if(response.code==444){
+				socket.close();
+			}
+			
+			
+		});
+		
+	});
+	
+	socket.on("disconnect",function(){
+		printMsg("웹소켓 연결이 종료되었습니다.");
+	});
+	
+}
+
+function printMsg(msg){
+	
+	$('#result').append("<p>" + msg + "</p>");
+	
+}
+
+function showClock(date){
+	
+	var year = date.getFullYear();
+	
+	var month = (date.getMonth()+1);
+	month = month>=10 ? month : "0"+month;
+	
+	var day = date.getDate();
+	day = day>=10 ? day : "0"+day;
+	
+	var h = date.getHours();
+	hh = h>=10 ? h : "0"+h;
+	
+	var m = date.getMinutes();
+	mm = m>=10 ? m : "0"+m;
+	
+	var s = date.getSeconds();
+	ss = s>=10 ? s : "0" + s;
+	
+	return year + "-" + month + "-" + day + "-" + hh + " : " + mm + " : " + ss;
+}
+
+function addToDiscussion(writer,msg){
+	
+	var img = "./image/suzi.png";
+	
+	if(writer=="other"){
+		img = "./image/angelina.png";
+	}
+	
+	var contents = "<li class='" + writer + "'>"
+					+"<div class='avatar'>"
+					+"<img src='" + img + "'/>"
+					+"<div>"
+					+"<div class='message'>"
+					+"<p>" + msg + "</p>"
+					+"<time datetime='" + showClock(new Date()) + "'>"
+					+ showClock(new Date()) + "</time>"
+					+ "</div></li>";
+					
+	$(".discussion").prepend(contents); //append(아래로)
+					
+		
+}
+
+</script>
+
+</head>
+<body>
+
+<div class ="container">
+	<div id="cardbox" class="ui blue fluid card">
+	
+		<br>
+		
+		<div class="content">
+			<div class="left floated author">
+				<img id="iconImage" class="ui avatar image" src="./image/author.png">
+			</div>
+		</div>
+		
+		<div>
+			<div id="titleText" class="header">일대일 채팅</div>
+			<div id="contentsText" class="description">연결 후 로그인 후 메세지를 보내세요</div>
+		</div>
+	
+		<div>
+			<div class="ui input">
+				<input type="text" id="host" value="localhost"/>
+			</div>
+			
+			<div class="ui input">
+				<input type="text" id="port" value="3000"/>
+			</div>
+			<br><br>
+			<input type="button" class="ui primary button" id="connectBtn" value="연결하기"/>
+		</div>
+		<br>
+		
+		<div>
+			<div class="ui input">
+				아이디 : <input type="text" id="id"/><br>
+			</div>
+			
+			<div class="ui input">
+				패스워드 : <input type="password" id="pwd"/><br>
+			</div>
+			
+			<div class="ui input">
+				별명 : <input type="text" id="alias"/><br>
+			</div>
+			
+			<div class="ui input">
+				상태 : <input type="text" id="today"/><br>
+			</div>
+			<br><br>
+			<input type="button" class="ui primary button" id="loginBtn" value="로그인"/>
+			<input type="button" class="ui primary button" id="logoutBtn" value="로그아웃"/>
+			
+		</div>
+		
+		
+		<div>
+			<div class="description">
+				<label>보내는 사람 아이디</label>
+				<div class="ui input">
+					<input type="text" id="senderId"/>
+				</div>
+			</div>
+			<div class="description">
+				<label>받는 사람 아이디</label>
+				<div class="ui input">
+					<input type="text" id="receiverId"/>
+				</div>
+			</div>
+			<div class="description">
+				<label>메세지 데이터</label>
+				<div class="ui input">
+					<textarea rows="5" cols="40" id="msg"></textarea>
+				</div>
+			</div>
+			<br>
+			<input type="button" class="ui primary button" id="sendBtn" value="전송">
+			<input type="button" class="ui primary button" id="clearBtn" value="지우기"/>
+		</div>
+		<br>
+		
+		<h4 class="ui horizontal divider header">메세지</h4>
+		<div class="ui segment" id="result">
+			<ol class="discussion">
+				<!-- <li class="other">
+					<div class="avatar">
+						<img src="./image/suzi.png"/>
+					</div>
+					<div class="message">
+						<p>어디쯤이야? 다들 기다리고 있어</p>
+						<time datetime="2021-06-04 10:39">10시 39분</time>
+					</div>
+				</li>
+				
+				<li class="self">
+					<div class="avatar">
+						<img src="./image/angelina.png"/>
+					</div>
+					<div class="message">
+						<p>차가 막히네 조금 늦을 듯..</p>
+						<time datetime="2021-06-04 10:40">10시 40분</time>
+					</div>
+				</li>
+				
+				<li class="other">
+					<div class="avatar">
+						<img src="./image/suzi.png"/> 
+					</div>
+					<div class="message">
+						<p>강남역에있는 술집이야..빨랑 와..</p>
+						<time datetime="2021-06-04 10:41">10시 41분</time>
+					</div>
+				</li> -->
+			</ol>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

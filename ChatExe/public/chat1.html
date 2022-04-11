@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1">
+<title>채팅 클라이언트</title>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="https://cdn.socket.io/4.0.1/socket.io.js"></script>
+
+<script type="text/javascript">
+
+var host;
+var port;
+var socket;
+
+$(function() {
+						//클릭 버튼을 누르면 함수 실행
+	$("#connectBtn").bind("click",function(event) {
+							
+		printMsg("connectBtn이 클릭 되었습니다.");		
+		
+		host = $("#host").val();
+		port = $("#port").val();
+		
+		connectToServer();
+		
+	});
+	
+});
+
+//서버에 연결하는 함수
+function connectToServer() {
+	
+	var options = {"forceNew":true};//연결 세션을 생성
+	var url = "http://" + host + ":" + port;
+	
+	socket = io.connect(url,options);
+	
+	socket.on("connect",function() {
+		printMsg("웹소켓 서버에 연결 되었습니다 : " + url);	
+	})
+	
+	socket.on("disconnect",function() {
+		printMsg("웹소켓 연결이 종료되었습니다." + url);	
+	})
+	
+}
+
+
+function printMsg(msg) {
+	
+	//결과를 아래 result에 띄울 것이다. / 결과 : msg
+	$("#result").append("<p>" + msg + "</p>");
+	
+}
+
+</script>
+
+</head>
+<body>
+
+<h3>채팅 클라이언트-1</h3>
+
+<br/>
+<div class="">
+	<input type="text" id="host" value="localhost"/>
+	<input type="text" id="port" value="3000"/>
+	
+	<input type="button" id="connectBtn" value="연결하기"/>
+</div>
+
+<hr/>
+<p>결과: </p>
+<div id="result"></div>
+
+</body>
+</html>
