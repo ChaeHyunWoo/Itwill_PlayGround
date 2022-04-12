@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width,height=device-height,initial-scale=1'>
+<title>가까운 스타벅스 찾기</title>
+</head>
+<body>
+
+<p>반경 내 스타벅스 찾기</p>
+<br/>
+
+<form action="/process/circleCoffeeShop" method="post">
+
+<table>
+<tr>
+	<td><label>중심점 경도</label></td>
+	<td><input type="text" name="center_longitude" value="127.037216"/></td>
+</tr>
+<tr>
+	<td><label>중심점 위도</label></td>
+	<td><input type="text" name="center_latitude" value="37.501104"/></td>
+</tr>
+<tr>
+	<td><label>반경</label></td>
+	<td><input type="text" name="radius"/>m</td>
+</tr>
+</table>
+
+<input type="submit" value="찾기"/>
+
+</form>
+
+</body>
+</html>
