@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Document</title>
+    <script>
+        const data = [
+            {id:1,name:'배수지',age:29},
+            {id:2,name:'유인나',age:22},
+            {id:3,name:'정인선',age:21},
+            {id:4,name:'정인나',age:25},
+            {id:5,name:'에일리',age:27},
+        ]
+        //6번 예제와 다르게 이번에는 data가 id가 있다. 
+        data.map((item,index)=>{
+            return(console.log(item.id, item.name, item.age, index)) //return 생략 가능
+        })
+        console.log('---------------------------')
+        data.map((item,index)=>{
+            (console.log(item.id, item.name, item.age, index)) //return 생략 가능
+        })
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

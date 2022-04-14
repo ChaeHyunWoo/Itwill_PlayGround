@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Document</title>
+    <script>
+        const arr = ['토끼','고양이','강아지']
+
+        const result1 = arr.concat();
+        const result2 = [...arr] //...arr은 내용을 그대로 가져오라는 뜻이다.
+        const result3 = arr.concat('조랑말')
+        const result4 = [...arr,'개구리','도마뱀'] //arr을 그대로 가져와서 뒤에 개구리,도마뱀을 붙인다. (원본인 arr을 수정하는 것은 아니다.)
+
+        console.log(result1) // ['토끼', '고양이', '강아지']
+        console.log('--------------------')
+        console.log(result2) // ['토끼', '고양이', '강아지']
+        console.log('--------------------')
+        console.log(result3) // ['토끼', '고양이', '강아지', '조랑말']
+        console.log('--------------------')
+        console.log(result4) // ['토끼', '고양이', '강아지', '개구리', '도마뱀']
+        console.log('--------------------')
+        console.log(arr) // ['토끼', '고양이', '강아지'] -> 원본은 안바뀌고 유지된다.
+        console.log('--------------------')
+
+        const dog = {name:'치와와',age:5}
+        const dog1 = {...dog,name:'불독',age:3} //수정 : dog객체를 가져와서 수정한다.
+
+        console.log(dog) // {name: '치와와', age: 5}
+        console.log(dog1) // {name: '불독', age: 3}
+
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>

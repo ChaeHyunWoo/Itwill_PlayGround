@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Document</title>
+    
+    <script>
+        // [''] : 작은 따옴표
+        // [`] : Backtick 구분
+        // ${} : Template literal
+
+        const a = 20
+        let b = 100
+        const str1 = a + '와' + b + "의 합은" + (a+b) //20와100의 합은120
+        console.log(str1)
+        //-------------------------------
+
+        const str2 = `${a}와 ${b}의 합은 ${a+b}`//20와 100의 합은 120
+        console.log(str2)
+
+         //-------------------------------
+
+         const name = '홍길동'
+         const age = 20
+         const addr = '서울'
+         const gender = '남자'
+         
+         const str3 = `이름은 ${name}이고, 나이는 ${age}이며 집주소는 ${addr}, 성별은 ${gender}입니다.`
+         console.log(str3)
+
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>

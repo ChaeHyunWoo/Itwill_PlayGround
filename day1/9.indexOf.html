@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Document</title>
+    <script>
+        //indexOf : 검색,한글,영문 - 정규화 표현식
+        const arr = ['고구마','감자','고기','고단백','수박']
+
+        const text1 = '고'
+        const result1 = arr.filter(item=>item.indexOf(text1)!==-1) // !== -1은 없을때까지 찾아라
+        console.log(result1)
+
+        const data = [
+            {act:'운동을 하다'},
+            {act:'영화를 보다'},
+            {act:'저녘을 먹다'},
+            {act:'요리를 하다'},
+            {act:'게임을 하다'},
+            {act:'공부를 하다'},
+        ]
+
+        const text2 = '하다'
+        const result2 = data.filter(item=>item.act.indexOf(text2)!==-1)
+        console.log(result2)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

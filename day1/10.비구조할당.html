@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Document</title>
+    <script>
+
+        //객체 선언
+        const dog = {
+            name:'치와와',
+            age:2,
+        }
+
+        console.log(dog.name,dog.age) //객체이름.변수이름, 객체이름.변수이름
+
+        //비구조할당
+        const {name,age} = dog
+        console.log(name,age)
+
+        const arr = {
+            a:10,b:20,c:30
+        }
+
+        const {a,b,c} = arr //비구조할당
+        console.log(a,b,c)
+
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>

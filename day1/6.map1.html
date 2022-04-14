@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Document</title>
+    <script>
+        const arr1 = [10,20,30,40,50]
+
+        /*
+        //일반 for문
+        for(let i=0;i<arr1.length; i++) {
+            console.log(i + ':' + arr1[i])
+        }
+        console.log("------------------------------")
+        //확장 for문
+        for(let item of arr1) { //item은 사용자 정의
+            console.log(item)
+        }
+        console.log("------------------------------")
+        for(let item in arr1) { // of는 데이터가 나오고 in은 index번호가 나온다.
+            console.log(item)
+        }
+        */
+
+        //@중요@
+        // JS의 반복분 : map  / map(value,index) 이 순서는 규칙(변경x) / value=item
+        arr1.map((item,index)=>{
+            return(console.log(item,index)) //출력 순서는 바꿀 수 있음
+        })
+        console.log("-------------------------------")
+        arr1.map((item,index)=>{
+            (console.log(item,index)) //return은 생략가능 / return을 쓰는게 정석
+        })
+        console.log("-------------------------------")
+        //위의 방법을 한줄로 쓰는 방법( 이방법을 많이 쓴다.)
+        arr1.map((item,index)=> console.log(index,item))
+
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>
