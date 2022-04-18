@@ -1,0 +1,11 @@
+.wrap {width:100%; background:#f5f5f5}
+.wrap h2 { font-size:50px; text-align: center; font-weight: 600; padding:50px 0}
+.wrap .movie { width:1600px; margin:auto; display: flex; flex-wrap: wrap;}
+.wrap .movie article { display: flex; margin:10px; background:#fff8e1; width:500px; height:350px}
+.wrap .movie .left {}
+.wrap .movie .left img  {width:250px; height:350px;}
+.wrap .movie .right  { width: 220px; margin-left: 20px; }
+.wrap .movie .right h3  { font-size: 20px; margin-bottom: 15px; padding-top: 30px;}
+.wrap .movie .right ul  {}
+.wrap .movie .right ul li  {line-height: 50px; border-bottom:1px dotted #dcdcdc; overflow: hidden; text-overflow: ellipsis; white-space: normal;}
+.wrap .movie .right button { margin-top: 50px; padding: 10px 45px; background: #333; color:#fff; border: none; cursor: pointer;}
