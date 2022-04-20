@@ -1,0 +1,19 @@
+.wrap {width: 400px; margin:20px auto; border:1px solid #999; padding:25px ; position: relative;}
+.wrap h1 {font-size: 25px; margin-bottom: 15px;}
+.wrap ul { margin-bottom: 20px;}
+.wrap ul li {display: flex; margin-bottom: 10px;}
+.wrap ul li p { width: 100px; height: 100px; border-radius: 50%; overflow: hidden; position: relative; }
+.wrap ul li p img{position: absolute; left: -10px;}
+.wrap ul li div { width: 160px; margin-left: 40px; padding-top: 20px;}
+.wrap ul li div strong { display: block; font-size: 16px;}
+.wrap ul li div span { display: block; font-size: 15px;margin-top: 10px; }
+.wrap .btn { text-align: center;}
+.wrap .btn button { padding:15px  45px ; border: none; background: #b2ebf2; outline: none; margin-right: 10px; }
+.wrap .btn button:last-child { margin-right: 0; }
+.wrap .chk { position: absolute; right: 20px; top: 20px; border-radius: 20px; display: block; background:#333; color:#fff; width: 100px; text-align: center;padding:10px 0; font-size: 12px;  }
+
+.wrap .formadd { padding: 20px; background: beige; margin-top: 20px;}
+.wrap .formadd p  {margin-bottom: 5px;}
+.wrap .formadd p  label { display: inline-block; width: 80px;}
+.wrap .formadd p:nth-child(3) input { width: 270px;}
+.wrap .formadd button { width: 100%;margin-top: 15px; height: 50px;}

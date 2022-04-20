@@ -1,0 +1,5 @@
+.TodoInput{text-align: center;}
+.TodoInput input {width: 250px; height: 40px; box-sizing: border-box;  margin-bottom: 30px;
+                    padding: 0 15px; border: 1px solid #dcdcdc; vertical-align: top; }
+.TodoInput button {border: none; color: rgb(166, 192, 231); margin-left: 45px; }    
+.TodoInput .icon {color: rgb(95, 150, 160); }
