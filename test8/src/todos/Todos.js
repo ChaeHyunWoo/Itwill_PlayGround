@@ -7,19 +7,38 @@ const Todos = () => {
 
     const no = useRef(1)
 
-    const [todos,setTodos] = useState([
-        //{id:1,text:'점심먹기', done:false}
-    ])
+    const [todos,setTodos] = useState([])
 
-    const onAdd = () => {
-        alert('추가')
+    const onAdd = (text) => {
+        setTodos([
+            ...todos,
+            {
+                id:no.current++,
+                text:text,
+                done:false
+            }
+        ])
+    }
+
+    const onDel = (id) => {
+        setTodos(todos.filter(todo=>todo.id !== id))
+    }
+
+    const onToggle = (id) => {
+        setTodos(todos.map(todo=>todo.id===id ?
+            {
+                ...todo,
+                done:!todo.done
+            }
+            : todo
+            ))
     }
 
     return (
         <div className='Todos'>
             <h1>Todo List</h1>
             <TodoInput onAdd={onAdd}/>
-            <TodoList todos={todos}/>
+            <TodoList todos={todos} onDel={onDel} onToggle={onToggle}/>
         </div>
     );
 };

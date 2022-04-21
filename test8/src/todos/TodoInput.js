@@ -28,8 +28,10 @@ const TodoInput = ({onAdd}) => {
         <form className='TodoInput' onSubmit={onSubmit}>
             <input type='text' value={text} 
             onChange={changeInput} ref={textRef}/>
-            <button onClick={onAdd}><MdAddCircle className='icon' size='50'>
-            </MdAddCircle></button>
+            <button>
+                <MdAddCircle className='icon' size='50'>
+                </MdAddCircle>
+            </button>
         </form>
     );
 };
