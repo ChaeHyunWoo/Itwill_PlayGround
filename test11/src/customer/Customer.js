@@ -17,7 +17,8 @@ const Customer = () => {
 
     ]
     
-
+    //users라는 상태를 만들건데, 초기값을 userData로 지정
+    //setUsers : useState(userData)에서 초기값을 userData로 바꿔주는 함수
     const [users,setUsers] = useState(userData)
 
     //공간을 만들고 수정 데이터를 넣어놨다가 input창으로 전달

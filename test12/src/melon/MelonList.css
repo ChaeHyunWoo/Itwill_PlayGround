@@ -1,0 +1,20 @@
+.MelonList { }
+.MelonList table {width:100% }
+.MelonList table .w1{ width: 7% }
+.MelonList table .w2{}
+.MelonList table .w3{ width:25% }
+.MelonList table .w4{ width:10% }
+.MelonList table .w5{ width:10% }
+.MelonList table .w6{ width:10% }
+.MelonList table th ,.MelonList table td { border-bottom: 1px solid #dcdcdc; vertical-align: middle; text-align: center; }
+.MelonList table thead tr th { border-top: 1px solid #000 ; height:50px }
+.MelonList table tbody tr td { padding:5px }
+.MelonList table tbody tr td:nth-child(2) {text-align: left;}
+.MelonList table tbody tr td:nth-child(3) {text-align: left;}
+.MelonList table tbody tr:last-child td {border-bottom:1px solid #000}
+.MelonList table tbody tr td img {margin-right:20px; vertical-align: middle;}
+.MelonList table tbody tr td i {font-size: 20px; vertical-align: middle; cursor: pointer;}
+.MelonList table tbody tr td.like i {margin-right: 5px;}
+.MelonList table tbody tr td.img  {display: flex}
+.MelonList table tbody tr td.img p {padding-top: 5px;}
+.MelonList table tbody tr td.img p span{display: block;; color:#000}

@@ -4,7 +4,7 @@ const EditUser = ({current,onUpdate,setIsEdit}) => {
 
     const [user,setUser] = useState(current)
 
-    const {id,name,job} = user
+    const {name,job} = user
 
     const changeInput = (evt) => {
         const {value,name} = evt.target

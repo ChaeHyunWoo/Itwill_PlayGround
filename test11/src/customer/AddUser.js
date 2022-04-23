@@ -6,7 +6,7 @@ const AddUser = ({onAdd}) => {
         name:'',job:''    
     })
 
-    const nameRef = useRef()
+    const nameRef = useRef() //useRef 생성
 
     const {name,job} = user
 
