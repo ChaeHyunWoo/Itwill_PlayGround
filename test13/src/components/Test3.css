@@ -1,0 +1,26 @@
+.wrap {
+    width: 600px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #000;
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #000;
+    margin: 10px;
+    background: pink;
+}
+
+.size {
+    width: 150px;
+    height: 150px;
+    margin: 15px;
+}
+
+.bg {
+    background: tomato;
+}
