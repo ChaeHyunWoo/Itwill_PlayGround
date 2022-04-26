@@ -1,23 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
+import {ImageItem} from '../styled/pixabaycss';
 
-//그림 크기 수정하는 곳
-const ImageItem = styled.article`
-    width:430px; margin-bottom:60px;
-    border: 1px solid #999;
-    padding: 20px 15px 35px;
-    img {width:400px; margin-bottom:15px}
-    h3{font-size:25px; color:tomato; font-weight:600;
-        margin-bottom:20px;}
-    ul {
-        li{margin-bottom:5px;
-            em{display:inline-block; width:80px;}
-        }
-    }
-    p {margin-top:20px;
-        span{margin-right:10px;}
-    }
-`
 
 const GalleryItem = ({item}) => {
 

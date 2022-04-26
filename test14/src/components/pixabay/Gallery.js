@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
 import axios from 'axios';
 import GlobalStyle from '../styled/Global';
 import GalleryList from './GalleryList';
 import GallerySearch from './GallerySearch';
+import {Container} from '../styled/pixabaycss';
 
-const Container = styled.div`
-width:1400px; margin:auto
-`
 const Gallery = () => {
 
     const [data,setData] = useState([]) //객체로 받아온다.

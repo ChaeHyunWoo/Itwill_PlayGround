@@ -1,27 +1,8 @@
 import React from 'react';
 import Masonry from 'react-masonry-css';
-import styled from 'styled-components';
 import GalleryItem from './GalleryItem';
+import {ImageContainer} from '../styled/pixabaycss';
 
-const ImageContainer = styled.div`
-.my-masonry-grid {
-    display: -webkit-box; 
-    display: -ms-flexbox; 
-    display: flex;
-    margin-left: -30px; 
-    width: auto;
-  }
-  .my-masonry-grid_column {
-    padding-left: 30px;
-    background-clip: padding-box;
-  }
-  
-  /* Style your items */
-  .my-masonry-grid_column > div { 
-    background: grey;
-    margin-bottom: 30px;
-  }
-`
 
 const GalleryList = ({data}) => {
     return (
