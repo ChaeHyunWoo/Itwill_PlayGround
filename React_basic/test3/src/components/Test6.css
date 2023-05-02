@@ -1,0 +1,12 @@
+*{margin: 0; padding: 0;}
+.wrap {width: 500px; padding: 20px;}
+.wrap h2{font-size: 25px; text-align: center; padding: 15px 0;}
+.wrap table{width: 100%; border-collapse: collapse;}
+.wrap table .w1{width: 10%;}
+.wrap table .w2{width: 22%;}
+.wrap table .w3{width: 20%;}
+.wrap table .w4{width: 25%;}
+.wrap table .w5{}
+.wrap table th, .wrap table td {border: 1px solid #6799FF; height: 45px; vertical-align: middle; text-align: center;}
+.wrap table thead tr th {border-top: 3px solid skyblue; font-weight: 600;}
+.wrap table tbody tr:last-child td {border-bottom: 2px solid #0054FF;}

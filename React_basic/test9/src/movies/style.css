@@ -1,0 +1,30 @@
+.gallery { width:1100px; margin:20px auto; display:flex; justify-content: space-between; }
+.gallery .view { width:570px; display:flex }
+.gallery .view img {width:300px; height:440px; }
+.gallery .view div { width:250px; margin-left:30px}
+.gallery .view div h3 {font-size:25px; padding-top:15px; margin-bottom:20px  }
+.gallery .view div ul {}
+.gallery .view div ul li {margin-bottom:10px}
+.gallery .view div ul li em { display:inline-block; width:100px; }
+
+.gallery .list { width:490px;}
+.gallery .list table {width:100%}
+.gallery .list table .w1 { width:35px }
+.gallery .list table .w2 {}
+.gallery .list table .w3 {width:110px}
+.gallery .list table .w4 {width:110px}
+.gallery .list table .w5 {width:50px}
+.gallery .list table th ,.gallery .list table td  { text-align: center; height: 40px; border-bottom: 1px solid #dcdcdc;; vertical-align: middle;}
+
+.gallery .list table th { border-bottom: 2px solid #000;}
+.gallery .list table tr:hover{background-color: rgba(0, 0, 0, 0.165);}
+.gallery .list table thead tr:hover{background-color: #fff;}
+
+.modal {}
+.modal .bg { position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.33);}
+.modal .popup { position: absolute; left: 50%; top: 50%; width: 500px; height: 600px; padding: 30px; background: #fff; transform: translate(-50%, -50%);}
+.modal .popup h3 { font-size: 30px; margin-bottom: 20px;}
+.modal .popup div {width: 100%; height: 430px; overflow: hidden;}
+.modal .popup div img  {width: 100%;}
+.modal .popup strong {font-size: 20px;}
+.modal .popup .close {position: absolute; right: 30px; top: 30px; font-size: 40px; cursor: pointer;}

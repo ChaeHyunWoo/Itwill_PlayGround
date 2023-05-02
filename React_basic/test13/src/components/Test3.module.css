@@ -1,0 +1,17 @@
+.box {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #000;
+    margin: 10px;
+    background: yellow;
+}
+
+.size {
+    width: 150px;
+    height: 150px;
+    margin: 15px;
+}
+
+.bg {
+    background: skyblue;
+}

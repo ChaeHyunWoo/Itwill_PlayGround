@@ -1,0 +1,23 @@
+/* w500쓰고 컨트롤+스페이스 : width:500px;  */
+.con-box {
+    width: 500px; 
+    display: flex;
+    border: 1px solid #000;
+    padding: 20px;
+}
+
+.con-box article {
+    width: 100px;
+    margin-right: 10px;
+    height: 80px;
+    background: tomato;
+    text-align: center;
+    line-height: 80px;
+    transition: 0.4;
+    cursor: pointer;
+}
+
+/* hover는 마우스를 올려놓았을 때 */
+.con-box article:hover {
+    background: yellow;
+}

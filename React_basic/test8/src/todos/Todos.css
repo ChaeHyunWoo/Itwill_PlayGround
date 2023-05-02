@@ -1,0 +1,9 @@
+body {background: #d9d6da;}
+
+.Todos{width: 400px; border-radius: 10px / 10px;
+	margin-left: auto; margin-right: auto; margin-top: 50px; margin-bottom: 50px; 
+	background: rgb(240, 242, 245); box-shadow:  5px 5px 20px gray;}
+
+.Todos h1 {text-align: center; padding: 20px 0; background: #0da8d3;
+    	font-size: 30px;  color: #fff; 
+    	margin-top: 0; border-radius: 10px 10px 50% 50%;}
