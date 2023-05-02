@@ -1,0 +1,32 @@
+{
+  "name": "chatexe",
+  "version": "1.0.0",
+  "description": "Created with [Nodeclipse](https://github.com/Nodeclipse/nodeclipse-1)\r  ([Eclipse Marketplace](http://marketplace.eclipse.org/content/nodeclipse), [site](http://www.nodeclipse.org))",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-error-handler": "^1.1.0",
+    "express-session": "^1.17.2",
+    "jade": "^1.11.0",
+    "moment": "^2.29.2",
+    "mongodb": "^4.4.1",
+    "mongoose": "^6.2.10",
+    "multer": "^1.4.4",
+    "oracledb": "^5.3.0",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0",
+    "semantic": "^0.0.1",
+    "socket.io": "^4.4.1"
+  }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width,height=device-height,initial-scale=1'>
+<title>영역 내 스타벅스 찾기</title>
+</head>
+<body>
+
+<p>영역 내 스타벅스</p>
+<br/>
+<p>CGV 강남역점에서 역삼역 3번출구 영역</p>
+
+<form action="/process/withinCoffeeShop" method="post">
+
+<table>
+
+<tr>
+	<td><label>CGV강남점</label></td>
+	<td></td>
+</tr>
+<tr>
+	<td><label>경도</label></td>
+	<td><input type="text" name="topleft_longitude" value="127.026319"/></td>
+</tr>
+<tr>
+	<td><label>위도</label></td>
+	<td><input type="text" name="topleft_latitude" value="37.501591"/></td>
+</tr>
+<tr>
+	<td><label>역삼역3번출구</label></td>
+	<td></td>
+</tr>
+<tr>
+	<td><label>경도</label></td>
+	<td><input type="text" name="bottomright_longitude" value="127.035363"/></td>
+</tr>
+<tr>
+	<td><label>위도</label></td>
+	<td><input type="text" name="bottomright_latitude" value="37.500105"/></td>
+</tr>
+</table>
+
+<input type="submit" value="찾기"/>
+
+</form>
+
+</body>
+</html>

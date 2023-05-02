@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width,height=device-height,initial-scale=1'>
+<title>구글맵</title>
+
+<style type="text/css">
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+html,body {
+	width: 100%;
+	height: 100%;
+}
+
+#map {
+	width: 100%;
+	height: 95%;
+}
+
+</style>
+
+<!-- 구글 지도 api키 : 이게 있어야 구글맵이 보인다. -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxgSpw5aHnyVE8_MhnxWji5qK8Cjl6zzQ"></script>
+
+<script type="text/javascript">
+
+	function onLoad() {
+		
+		initMap(); //initMap()함수 생성
+		
+	}
+	
+	var map; //전역변수 생성
+	
+	//현재 내위치
+	var myLocation = {lng:<%=longitude%>,lat:<%=latitude%>}; 
+	
+	//스타벅스의 위치
+	var coffeeLocation = {
+			lng:<%=result.geometry.coordinates[0]%>,
+			lat:<%=result.geometry.coordinates[1]%>
+			};
+	
+	function initMap() {
+		
+		map = new google.maps.Map(document.getElementById("map"),{
+			
+			center:myLocation,//가운데를 기준으로 확대
+			zoom:17 // 구글의 지도는 1~22까지 있다. /1을 세계지도나옴. 숫자가 높을수록 자세한 지도
+		});
+		
+		//내위치 마커
+		var myMarker = new google.maps.Marker({
+			position:myLocation,
+			icon:"../public/image/mylocation.png",
+			animation:google.maps.Animation.BOUNCE,
+			title:"ITWILL!!"
+		});
+		
+		myMarker.setMap(map); //maker를 map에 표시한다.
+		
+		//스타벅스 마커
+		var coffeeMarker = new google.maps.Marker({
+			position:coffeeLocation,
+			icon:"../public/image/coffee.png",
+			animation:google.maps.Animation.BOUNCE,
+			title:"starbucks!!"
+		});
+		
+		coffeeMarker.setMap(map); //maker를 map에 표시한다.
+		
+	}
+
+</script>
+
+</head>
+<body onload="onLoad();">
+
+<p>구글맵으로 내위치 표시하기</p>
+<div id="map"></div> <!-- 여기에 지도를 띄운다 -->
+
+</body>
+</html>
