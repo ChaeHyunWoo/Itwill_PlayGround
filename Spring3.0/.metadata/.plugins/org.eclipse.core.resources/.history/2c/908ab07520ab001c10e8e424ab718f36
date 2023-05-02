@@ -1,0 +1,33 @@
+package com.exe.springdi4;
+
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+public class ServiceConsumer {
+	
+	//의존성 주입(DI) - 생성자를 통한
+	MessageService ms;
+	
+	public ServiceConsumer(MessageService ms) {
+		this.ms = ms;
+	}
+	
+	
+	public void consumerService() {
+	
+		/*
+		 * GenericXmlApplicationContext context = new
+		 * GenericXmlApplicationContext("app-context.xml");
+		 * 
+		 * 
+		 * MessageService ms = (MessageService)context.getBean("messageService");
+		 */
+	
+	//반환값은 String
+	String message = ms.getMessage();
+	
+	System.out.println(message);
+	
+	}
+	
+
+}

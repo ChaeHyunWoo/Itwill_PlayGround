@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="SpringDI"/>
+<aop-project name="SpringJdbcTemplate"/>
+<aop-project name="SpringMVC1"/>
+<aop-project name="SpringMybatis"/>
+<aop-project name="SpringDI2"/>
+</aop-reference-model>

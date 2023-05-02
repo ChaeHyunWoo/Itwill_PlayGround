@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	https://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context 
+	https://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<description>Example configuration to get you started.</description>
+
+	<context:component-scan base-package="com.exe.springmybatis" />
+	
+	<bean id="customDAO" class="com.exe.springmybatis.CustomDAO">
+		<property name="sessionTemplate" ref="sessionTemplate"/> <!-- name은 메소드의 이름이니 내맘대로. 의존성 주입. ref는 밑의 id -->
+	</bean>
+	
+	<bean id="sessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/> <!-- 얘의 name은 org~안에있으니 바꾸면안됌 -->
+		<property name="configLocation" value="classpath:/com/exe/springmybatis/mybatis-config.xml"/>
+	</bean>
+	
+	
+	<bean id="dataSource" 
+		class="org.apache.commons.dbcp.BasicDataSource" 
+		destroy-method="close" 
+		p:driverClassName="oracle.jdbc.driver.OracleDriver"
+		p:url="jdbc:oracle:thin:@localhost:1521:xe" 
+		p:username="suzi" 
+		p:password="a123"/>
+	</beans> <!-- DB위치정보 -->

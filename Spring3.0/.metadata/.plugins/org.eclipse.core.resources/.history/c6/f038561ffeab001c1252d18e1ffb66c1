@@ -1,0 +1,143 @@
+package com.exe.springJdbcTemplate;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.sql.DataSource;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+public class CustomDAO2 {
+	
+	private JdbcTemplate jdbcTemplate;
+	
+	//의존성 주입 - 이 메서드가 app-context.xml로 가서 프로퍼티 네임에 set이 빼고 들어감
+	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
+	}
+	
+	Connection conn = null;
+	
+	public int insertData(CustomDTO dto) {
+		
+		StringBuilder sql = new StringBuilder();
+			
+		sql.append("insert into custom (id,name,age) values (?,?,?)");
+		
+		jdbcTemplate.update(sql.toString(),
+				dto.getId(),dto.getName(),dto.getAge());
+					
+	}
+	
+	public int updateData(CustomDTO dto) {
+		
+		//Buffer보다는 Builder가 더 빠르다.
+		StringBuffer sql = new StringBuffer();
+			
+		sql.append("update custom set name=?,age=? where id=?");
+		
+		jdbcTemplate.update(sql.toString(),
+				dto.getName(),dto.getAge(),dto.getId());
+			
+
+	}
+	
+	
+	public int deleteData(String id) {
+		
+		StringBuilder sql = new StringBuilder();
+		
+		sql.append("delete custom where id=?");
+		
+		jdbcTemplate.update(sql.toString(),id);
+			
+		
+	}
+	
+	
+	public List<CustomDTO> getList(String id) {
+		
+		List<CustomDTO> lists = new ArrayList<CustomDTO>();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String sql;
+		
+		try {
+			
+			conn = dataSource.getConnection(); //DB연결자
+			sql = "select id,name,age from custom";
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, id);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				CustomDTO dto = new CustomDTO();
+				
+				dto.setId(rs.getString("id"));
+				dto.setName(rs.getString("name"));
+				dto.setAge(rs.getInt("age"));
+				
+				lists.add(dto);
+				
+			}
+			
+			rs.close();
+			pstmt.close();
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		
+		return lists;
+		
+	}
+	
+	//하나의 데이터 가져옴
+	public CustomDTO getReadData(String id) {
+		
+		CustomDTO dto = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String sql;
+		
+		try {
+			
+			conn = dataSource.getConnection(); //DB연결자
+			sql = "select id,name,age from custom where id=?";
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				
+				dto = new CustomDTO();
+				
+				dto.setId(rs.getString("id"));
+				dto.setName(rs.getString("name"));
+				dto.setAge(rs.getInt("age"));
+								
+			}
+			
+			rs.close();
+			pstmt.close();
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		
+		return dto;
+		
+	}
+	
+
+}

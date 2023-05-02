@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	https://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context 
+		https://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<description>Example configuration to get you started.</description>
+
+	<context:component-scan base-package="com.exe.springJdbcTemplate" />
+	
+	<!-- JDBC 의존성 주입 -->
+	<bean id="customDAO" class="com.exe.springJdbcTemplate.CustomDAO">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	
+	
+	<!-- DB연동은 어노테이션이 안된다.-->
+	<!-- 1. DB위치정보 등록 -->
+	<!-- spring 바깥의 기능이라 spring의 bean객체로 객체생성해주어야함. -->
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close"
+		p:driverClassName="oracle.jdbc.driver.OracleDriver"
+		p:url="jdbc:oracle:thin:@localhost:1521:xe"
+		p:username="suzi" <!-- p 위에 만듬 context복사해서 / 제어의 역전IOC -->
+		p:password="a123"/>
+
+</beans>

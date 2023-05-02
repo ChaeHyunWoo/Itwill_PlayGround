@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.exe.custom">
+
+<insert id="insert" parameterType="com.exe.springmybatis.CustomDTO">
+	insert into custom (id,name,age) values (#{id},#{name},#{age})
+</insert>
+
+<select id="list" resultType="com.exe.springmybatis.CustomDTO">
+	select id,name,age from custom
+</select>
+
+<select id="listOne" parameterType="int" resultType="com.exe.springmybatis.CustomDTO"> 
+<!-- 하나의 데이터 id 읽어오면됌 id의 타입 String이라 string --> 
+	select id,name,age from custom where id=#{id}
+</select>
+
+<update id="update" parameterType="com.exe.springmybatis.CustomDTO">
+	update custom set name=#{name},age=#{age} where id=#{id}
+</update>
+
+<delete id="delete" parameterType="int">
+	delete custom where id=#{id}
+</delete>
+
+</mapper>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>게 시 판(Spring Boot + MyBatis)</title>
+
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<link rel="stylesheet" type="text/css" href="css/list.css"/>
+
+<script type="text/javascript">
+
+	function sendIt(){
+		
+		var f = document.searchForm;
+		f.action = "/list.action";
+		f.submit();
+	}
+
+</script>
+
+
+</head>
+<body>
+
+<div id="bbsList">
+
+	<div id="bbsList_title">
+		게 시 판(Spring Boot + MyBatis)
+	</div>
+	<div id="bbsList_header">
+		<div id="leftHeader">
+		<form action="" method="post" name="searchForm">
+			<select name="searchKey" class="selectField">
+				<option value="subject">제목</option>
+				<option value="name">작성자</option>
+				<option value="content">내용</option>
+			</select>
+			<input type="text" name="searchValue" class="textField"/>
+			<input type="button" value=" 검 색 " class="btn2" onclick="sendIt();"/>		
+		</form>				
+		</div>
+		<div id="rightHeader">
+			<input type="button" value=" 글올리기 " class="btn2" onclick="javascript:location.href='/created.action';"/>			
+		</div>		
+	</div>
+	
+	
+	
+	<div id="bbsList_list">
+		<table>		
+		<thead id="title">
+			<tr>
+				<th class="num">번호</th>
+				<th class="subject">제목</th>
+				<th class="name">작성자</th>
+				<th class="created">작성일</th>
+				<th class="hitCount">조회수</th>
+			</tr>
+		</thead>
+		<tbody id="lists">			
+			<tr th:if="${#lists.size(lists)}>0" th:each="dto:${lists}">
+				<td class="num" th:text="${dto.num}"></td>
+				<td class="subject">
+				<a th:href="@{${articleUrl}} + '&num=' + 
+				@{${dto.num}}" th:text="${dto.subject}">제목</a>
+				</td>
+				<td class="name" th:text="${dto.name}">이름</td>
+				<td class="created" th:text="${dto.created}">날짜</td>
+				<td class="hitCount" th:text="${dto.hitCount}">조회수</td>
+			</tr>
+			
+			<tr th:if="${#lists.size(dataCount)}>0" th:each="dataCount:${dataCount}">
+			
+				<td colspan="5" id="footer">
+					<a th:utext="${pageIndexList}"></a>
+				</td>
+			</tr>
+			
+			<tr th:if="${#lists.size(dataCount)}<0" th:each="dataCount:${dataCount}">
+				<td colspan="5">등록된 게시물이 없습니다.</td>
+			</tr>
+			
+		</tbody>		
+	</table>
+	
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+package com.exe.springdi4;
+
+public class DiMain {
+
+	public static void main(String[] args) {
+
+	}
+
+}

@@ -1,0 +1,72 @@
+package com.exe.springJdbcTemplate;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.sql.DataSource;
+
+public class CustomDAO {
+	
+	private DataSource dataSource;
+	
+	//의존성 주입 - 이 메서드가 app-context.xml로 가서 프로퍼티 네임에 set이 빼고 들어감
+	public void setDataSource(DataSource dataSource) {
+		this.dataSource = dataSource;
+	}
+	
+	Connection conn = null;
+	
+	public int insertData(CustomDTO dto) {
+		
+		int result = 0;
+		
+		PreparedStatement pstmt = null;
+		String sql;
+		
+		try {
+			
+			conn = dataSource.getConnection();
+			
+			sql = "insert into custom (id,name,age) values (?,?,?)";
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, dto.getId());
+			pstmt.setString(2, dto.getName());
+			pstmt.setInt(3, dto.getAge());
+			
+			result = pstmt.executeUpdate();
+			
+			pstmt.close();
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		
+		return result;
+		
+	}
+	
+	public List<CustomDTO> getList() {
+		
+		List<CustomDTO> lists = new ArrayList<CustomDTO>();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String sql;
+		
+		try {
+			
+			conn = dataSource.getConnection(); //DB연결자
+			sql = "select id,name,age from custom";
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
+
+}

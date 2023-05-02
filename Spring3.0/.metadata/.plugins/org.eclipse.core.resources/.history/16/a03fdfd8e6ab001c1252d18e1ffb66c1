@@ -1,0 +1,14 @@
+package com.exe.springJdbcTemplate;
+
+import javax.sql.DataSource;
+
+public class CustomDAO {
+	
+	private DataSource dataSource;
+	
+	//의존성 주입
+	public void setDataSource(DataSource dataSource) {
+		this.dataSource = dataSource;
+	}
+
+}

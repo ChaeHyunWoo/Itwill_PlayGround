@@ -1,0 +1,122 @@
+package com.exe.springJdbcTemplate;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.sql.DataSource;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+
+public class CustomDAO2 {
+	
+	private JdbcTemplate jdbcTemplate;
+	
+	//의존성 주입 - 이 메서드가 app-context.xml로 가서 프로퍼티 네임에 set이 빼고 들어감
+	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
+	}
+	
+		Connection conn = null;
+	
+	public void insertData(CustomDTO dto) {
+		
+		StringBuilder sql = new StringBuilder(); 
+		
+			
+		sql.append("insert into custom (id,name,age) values (?,?,?)");
+	
+		jdbcTemplate.update(sql.toString(),dto.getId(),dto.getName(),dto.getAge());
+		
+		//스프링의jdbc
+	}
+	
+	
+	public void updateData(CustomDTO dto) {
+		
+		StringBuffer sql = new StringBuffer();//버퍼보단 빌더가 빠르다.
+		
+		sql.append("update custom set name=?,age=? where id=?");
+		
+		jdbcTemplate.update(sql.toString(),dto.getName(),dto.getAge(),dto.getId());
+			
+	}
+	
+	
+	public void deleteData(String id) {
+		
+		StringBuilder sql = new StringBuilder();
+		
+		sql.append("delete custom where id=?");
+		
+		jdbcTemplate.update(sql.toString(),id);
+			
+		
+	}
+	
+	
+	public List<CustomDTO> getList() {
+		
+		StringBuilder sql = new StringBuilder();
+			
+		sql.append("select id,name,age from custom");
+		
+		List<CustomDTO> lists =  //sql.toString() : 쿼리를 문자화 한것
+				jdbcTemplate.query(sql.toString(), 
+						new RowMapper<CustomDTO>() {
+					
+					public CustomDTO mapRow(ResultSet rs, int rowNum) //rowNum:index번호
+						throws SQLException {
+						
+						CustomDTO dto = new CustomDTO();
+						
+						dto.setId(rs.getString("id"));
+						dto.setName(rs.getString("name"));
+						dto.setAge(rs.getInt("age"));
+						
+						return dto;
+					}
+					
+			});
+		
+		return lists;
+					
+	}
+	
+	//하나의 데이터 가져옴
+	public CustomDTO getReadData(String id) {
+		
+		StringBuilder sql = new StringBuilder();
+		
+		sql.append("select id,name,age from custom where id=?");
+		
+		CustomDTO dtoOne = 
+				jdbcTemplate.queryForObject(sql.toString(),
+						new RowMapper<CustomDTO>() {
+
+							public CustomDTO mapRow(ResultSet rs, int rowNum) 
+									throws SQLException {
+								
+								CustomDTO dto = new CustomDTO();
+								
+								dto.setId(rs.getString("id"));
+								dto.setName(rs.getString("name"));
+								dto.setAge(rs.getInt("age"));
+								
+								return null;
+							}
+					
+					
+					
+				});
+			
+			
+		
+	}
+	
+
+}
