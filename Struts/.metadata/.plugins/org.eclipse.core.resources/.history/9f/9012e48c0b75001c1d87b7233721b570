@@ -1,0 +1,137 @@
+package com.day18;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.ArrayList;
+
+public class ServerTest2 {
+	
+	//여기 ArrayList에는 Socket만 들어간다
+	private ArrayList<Socket> clients = new ArrayList<>();
+	
+	
+	public void serverStar() {
+		
+		try {
+			
+			ServerSocket ss = new ServerSocket(7777);
+			System.out.println("서버시작...");
+			
+			//몇명 접속하는지 모르니 while문
+			while(true) {
+				
+				Socket sc = ss.accept();
+				
+				WorkThread wt = new WorkThread(sc); //sc를 생성자로 넣어주는이유는 sc는 스레드가 필수이기 때문
+				wt.start();
+			}
+			
+			
+		} catch (Exception e) {
+			
+		}
+	}
+	
+	
+	
+	//스레드를 전담으로 만드는 클래스
+	class WorkThread extends Thread {
+		
+		private Socket sc;
+		
+		public WorkThread(Socket sc) {
+			this.sc = sc;
+		}
+		
+		
+		@Override
+		public void run() {
+			
+			String ip = null;
+			String msg = null;
+			
+			try {
+				
+				BufferedReader br = new BufferedReader(new InputStreamReader(sc.getInputStream()));
+				
+				ip = sc.getInetAddress().getHostAddress();
+				
+				// b가 접속했으면 sc가 b가되고 c가 접속했으면 sc 가 c가된다.
+				clients.add(sc);
+				
+				//다른 클라이언트에게 접속사실을 알림
+				msg = ip + "]가 입장했습니다!";
+				
+				for(Socket s : clients) { //Socket을 모아둔 곳은 clients
+					
+					
+					if(s == sc)
+						continue;
+					
+					PrintWriter pw = new PrintWriter(s.getOutputStream(), true);
+					
+					pw.println(msg);
+					
+				}
+				
+				System.out.println(msg); // 서버에 보임
+				
+				while((msg = br.readLine()) != null) {
+					
+					for(Socket s : clients) { //Socket을 모아둔 곳은 clients
+						
+						
+						if(s == sc)
+							continue;
+						
+						PrintWriter pw = new PrintWriter(s.getOutputStream(), true);
+						
+						pw.println(msg);
+						
+					}
+					System.out.println(msg);
+					
+					
+				}
+					
+					
+					
+					
+				
+			} catch (Exception e) {
+				
+				msg = ip + "]가 퇴장했습니다.";
+				
+				try {
+					
+					for(Socket s : clients) { //Socket을 모아둔 곳은 clients
+						
+						
+						if(s == sc)
+							continue;
+						
+						PrintWriter pw = new PrintWriter(s.getOutputStream(), true);
+						
+						pw.println(msg);
+						
+					}
+					
+					sc = null;
+					
+				} catch (Exception e2) {
+					// TODO: handle exception
+				}
+			}
+		}
+	}
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

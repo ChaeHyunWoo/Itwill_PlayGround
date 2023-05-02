@@ -1,0 +1,145 @@
+package com.day18;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.ArrayList;
+
+
+
+
+public class ServerTest2 {
+
+
+
+	private ArrayList<Socket> clients = new ArrayList<>();
+
+	public void serverStart() {
+
+		try {
+
+			ServerSocket ss = new ServerSocket(7777);
+			System.out.println("서버시작...");
+
+			while(true) {
+
+				Socket sc = ss.accept();
+
+				WorkThread wt = new WorkThread(sc); // 워크스레드는 무조건 소켓이 필요하다
+				wt.start();      // 이 부분에 빨간줄이 뜨는데 기본생성자가 없어서 그렇다.
+				// 소켓을 받게끔 워크스레드 클래스에 소켓을 만들어줘야 한다.
+			}
+
+
+
+
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+
+	}
+
+	class WorkThread extends Thread{
+
+		private Socket sc;
+
+		public WorkThread(Socket sc) {
+			this.sc = sc;
+		}//의존성 주입
+
+		@Override
+		public void run() {
+
+			String ip = null;
+			String msg = null;
+
+			try {
+
+				BufferedReader br = new BufferedReader(new InputStreamReader(sc.getInputStream()));
+				//사용자 입력 값을 비알로 받아냄
+
+				ip = sc.getInetAddress().getHostAddress();
+				//아이피를 받아낸다.
+
+				clients.add(sc); //클라이언트 에드 해서 추가한다.(sc를)
+
+				//다른 클라이언트에게 접속사실을 알림
+
+				msg = ip + "]가 접속 했습니다..";
+
+				for(Socket s : clients) { // 확장포문
+
+					if(s==sc)
+						continue; // 컨티뉴는 이번만 패스! (보내지마소) 
+
+					PrintWriter pw = new PrintWriter(s.getOutputStream(),true);
+
+					pw.println(msg);
+
+				}
+
+				System.out.println(msg); // 서버에 보인다.
+
+				while((msg = br.readLine())!=null) {
+
+					//나를 제외한 사람에게 문자보내는 코딩이라 그대로 왔다.
+					for(Socket s : clients) { 
+
+						if(s==sc)
+							continue; 
+
+						PrintWriter pw = new PrintWriter(s.getOutputStream(),true);
+
+						pw.println(msg);
+
+					}
+					System.out.println(msg);
+
+				}
+
+			} catch (Exception e) {
+
+				msg = ip + "가] 퇴장했습니다.";
+
+				try {
+
+					for(Socket s : clients) { 
+
+						if(s==sc)
+							continue; 
+
+						PrintWriter pw = new PrintWriter(s.getOutputStream(),true);
+
+						pw.println(msg);
+
+					}
+					System.out.println(msg); // 서버에서 보기위해서 찍어놓은 것.
+					sc = null; // 끊긴사람의 데이터는 null로 초기화를 해 놔야 한다네
+
+				} catch (Exception e2) {
+					// TODO: handle exception
+				}
+			}
+
+
+
+			super.run();
+		}
+
+	}
+
+
+
+	public static void main(String[] args) {
+		
+		new ServerTest2().serverStart();
+
+
+
+
+	}
+
+}

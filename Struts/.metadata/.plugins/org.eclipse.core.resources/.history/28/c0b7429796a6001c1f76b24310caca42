@@ -1,0 +1,96 @@
+package com.iguest;
+
+public class GuestDTO {
+	
+	private int listNum;//일렬번호
+	private int num;
+	private String name;
+	private String email;
+	private String content;
+	private String ipAddr;  // 아이피는 db에 저장 클라이언트에 보여줄필요는없다. (누가접근했는지알기위해)
+	private String created;
+	
+	private String pageNum; // 부수적으로 만듬
+
+	
+	public int getListNum() {
+		return listNum;
+	}
+
+
+	public void setListNum(int listNum) {
+		this.listNum = listNum;
+	}
+
+
+	public int getNum() {
+		return num;
+	}
+
+
+	public void setNum(int num) {
+		this.num = num;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+	public String getContent() {
+		return content;
+	}
+
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+
+	public String getIpAddr() {
+		return ipAddr;
+	}
+
+
+	public void setIpAddr(String ipAddr) {
+		this.ipAddr = ipAddr;
+	}
+
+
+	public String getCreated() {
+		return created;
+	}
+
+
+	public void setCreated(String created) {
+		this.created = created;
+	}
+
+
+	public String getPageNum() {
+		return pageNum;
+	}
+
+
+	public void setPageNum(String pageNum) {
+		this.pageNum = pageNum;
+	}
+	
+	
+}

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+PUBLIC "-/ibatis.apache.org//DTO SQL Map 2.0//EN"
+"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="fileTest">
+
+<select id="maxNum" resultClass="int">
+	select nvl(max(num),0) from fileTest
+</select>
+
+<insert id="insertData" parameterClass="com.fileTest.FileTestForm">
+	insert into fileTest (num,subject,saveFileName,originalFileName)
+	values (#num#,#subject#,#saveFileName#,#originalFileName#)
+</insert>
+
+<select id="dataCount" resultClass="int">
+	select nvl(count(num),0) from fileTest
+</select>
+
+<select id="readData" resultClass="com.fileTest.FileTestForm"
+	parameterClass="int">
+	select num,subject,saveFileName,originalFileName
+	from fileTest where num=#num#
+</select>
+
+<select id="listData" resultClass="com.fileTest.FileTestForm"
+	parameterClass="map">
+<![CDATA[
+	select * from (
+	select rownum rnum, data.* from (
+	select num,subject,saveFileName,originalFileName
+	from fileTest order by num desc) data)
+	where rnum>=#start# and rnum<=#end#	
+]]>
+</select>
+
+<delete id="deleteData" parameterClass="int">
+	delete filetest where num=#num#
+</delete>
+
+
+</sqlMap>

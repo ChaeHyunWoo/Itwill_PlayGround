@@ -1,0 +1,23 @@
+package com.test;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.validation.BindException;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.AbstractCommandController;
+
+//애는 데이터를 처리해주는 컨트롤러 - 여기로 들어올때 DTO를 가져오는데 DTO를 담을 그릇이 필요한데 그게 ListFormController이다.
+public class ListController extends AbstractCommandController {
+
+	@Override
+	protected ModelAndView handle(HttpServletRequest request, 
+			HttpServletResponse response, Object command, 
+			BindException errors)throws Exception {
+		
+		
+		
+		return null;
+	}
+
+}

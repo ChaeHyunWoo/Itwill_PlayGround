@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts 
+PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!-- created라는 문자가오면 com.board.BoardAction으로가서 created라는 메서드 실행해라 -->
+
+<struts>
+
+<package name="board" extends="struts-default" namespace="/bbs">
+	
+	<action name="created" class="com.board.BoardAction" method="created" >
+		<result name="input">/board/created.jsp</result>
+		<result name="success" type="redirectAction">list</result>
+	</action>
+	
+	<action name="list" class="com.board.BoardAction" method="list" >
+		<result name="success">/board/list.jsp</result>
+	</action>
+	
+	<action name="article" class="com.board.BoardAction" method="article" >
+		<result name="success">/board/article.jsp</result>
+	</action>
+	
+</package>
+
+</struts>

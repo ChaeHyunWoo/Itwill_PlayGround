@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-2.5.xsd
+		http://www.springframework.org/schema/util 
+		http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+    
+
+<!-- 여기서 DB연결 작업한다. (spring2.5에서 iBatis세팅 --><!-- 스프링에서는 sqlMapConfig.java가 필요없다 -->
+<!-- destoy-method : 닫아주는 역할 -->
+<!-- BasicDataSource" 를 dataSource로 객체생성하고 driver라는 setter를 통해 OracleDriver를 넘겨준다. 
+, setUrl, setUsername .... 각각 value를 넣어주게된다.propert로 의존성주입을 한다. -->
+<!-- dataSource는 사용자정의 -->
+
+<!-- BasicDataSource 안에 setDriverClassName메서드가 있다는것. 그 매개변수 초기화 -->
+<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+	<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+	<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+	<property name="username" value="suzi"/>
+	<property name="password" value="a123"/>
+</bean>
+
+<!-- Inversion on Control (Ioc : 제어의 역전) -->
+<!-- Transaction 처리 --> <!-- 이 클래스를 가지고 트랜잭션 처리를 한다. -->
+<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+	<property name="dataSource" ref="dataSource"/>  <!-- 메서드로 의존성 주입(DI)(위의 dataSource를 불러옴) -->
+</bean>  <!-- name은 메서드명이라 바뀌면 안됌 / ref는 위의 dataSource(id)가져오는것.트랜잭션이 감싸듯 위의값이 들어온다. -->
+
+<!-- sqlMapClientTemplate 안에 sqlMapClient가 있고 이 안에 dataSource가 있어서
+	 sqlMapClientTemplate를 갖다 쓰면 나머지 2개도 딸려온다.  (이걸 Ioc: 제어의 역전 이라 한다.)-->
+<bean id="sqlMapClientTemplate"
+class="org.springframework.orm.ibatis.SqlMapClientTemplate"
+p:sqlMapClient-ref="sqlMapClient"/>
+
+
+<!-- iBatis를 연결할려면 클라이언트 필요 --><!-- dataSource와 sqlMapConfig.xml를 같이 불러온다. -->
+<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean" 
+p:dataSource-ref="dataSource"
+p:configLocation="WEB-INF/sqlMapConfig/sqlMapConfig.xml"/>
+<!-- 빈 객체를 만드는 공장 / 위에 p namespace로 의존성주입을함. 위 dataSource와 salMapConfig를 불러온다. -->
+
+
+<!-- <bean id="commandDAOImpl" class="com.util.dao.CommonDAOImpl">
+	<property name="sqlMapClientTemplate">
+		<ref bean="sqlMapClientTemplate"/>
+	</property>
+</bean>  이걸 CommonDAOImpl.java에 써준다-->
+
+<!-- 이런식으로 쓸수있지만 어노테이션으로 만들었다. -->
+<!-- <bean id="myUtil" class="com.util.MyUtil"/> 객체 생성시 myUtil 가져다가 그냥 쓸수있다. -->
+<!-- <bean id="fileManager" class="com.util.FileManager"/> 객체 생성시 myUtil 가져다가 그냥 쓸수있다. -->
+	
+
+</beans>  

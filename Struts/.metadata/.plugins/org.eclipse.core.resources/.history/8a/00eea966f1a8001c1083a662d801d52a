@@ -1,0 +1,32 @@
+package com.di.test;
+
+// applicationContext -> TestService(완충역할) -> TestImpl1, TestImpl2 접근
+public class TestService {  
+	
+	//Dependency Injection(의존성 주입) 
+	//XML에서 TestService 클래스를 중간 다리 역할로 등록  
+	//의존성을 최소로 한다 
+	private Test test;  // 초기화 역할 
+	
+	//기본 생성자 / 3.프로퍼티(메소드)로 의존성 주입을 위한 
+	public TestService() {
+		
+	}
+	
+	//생성자 - 생성자로 test 초기화
+	//Dependency Injection (DI : 의존성 주입)
+	public TestService(Test test) {
+		this.test = test;
+		
+	}
+	
+	//3.프로퍼티(메소드)를 통한 의존성 주입 
+	public void setTest(Test test) {  //setter  
+		this.test = test;
+	}
+	
+
+	public String getValue() {
+		return test.result(); // Test가 가진 메서드를 불러다 쓺 
+	}
+}

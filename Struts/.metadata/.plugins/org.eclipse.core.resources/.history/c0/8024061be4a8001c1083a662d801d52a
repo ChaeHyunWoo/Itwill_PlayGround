@@ -1,0 +1,6 @@
+package com.test;
+
+//스프링은 컨트롤러의 종류가 많다.
+public class TestController {
+
+}

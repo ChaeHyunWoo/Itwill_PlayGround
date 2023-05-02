@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ScoreDAO.java&apos; to &apos;com.score6.ScoreDAO.java&apos;&#x0D;&#x0A;- Original project: &apos;demo&apos;&#x0D;&#x0A;- Destination element: &apos;com.score6.ScoreDAO.java&apos;&#x0D;&#x0A;- Original element: &apos;com.score6.ScoreDAO.java&apos;" description="Copy compilation unit" destination="/src&lt;com.score6{ScoreDAO.java" element1="/src&lt;com.score6{ScoreDAO.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1644210622697" units="1" version="1.0"/>
+</session>

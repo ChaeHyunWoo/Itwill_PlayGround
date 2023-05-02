@@ -1,0 +1,15 @@
+package com.ibbs;
+
+public class CommentDTO {
+	
+	private int listNum;//일련번호
+	private int num;
+	private String name;
+	private String email;
+	private String content;
+	private String ipAddr;  // 아이피는 db에 저장 클라이언트에 보여줄필요는없다. (누가접근했는지알기위해)
+	private String created;
+	
+	private String pageNum; // 부수적으로 만듬
+
+}

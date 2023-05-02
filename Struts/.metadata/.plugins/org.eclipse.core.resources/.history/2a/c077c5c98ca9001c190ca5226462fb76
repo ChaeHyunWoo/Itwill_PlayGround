@@ -1,0 +1,89 @@
+package com.test2;
+
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.validation.BindException;
+import org.springframework.validation.Errors;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.AbstractWizardFormController;
+
+//컨트롤러 역할을 하기 위해  AbstractWizardFormController상속
+public class MemController extends AbstractWizardFormController {
+	
+	//MemberCommand 객체 생성
+	public MemController() {
+		setCommandClass(MemCommand.class);
+		setCommandName("info");
+		//MemCommand info = new MemCommand();
+	}
+
+	@Override
+	protected void postProcessPage(HttpServletRequest request, //각 페이지에서 submit한 경우 postProcessPage메서드 실행
+			Object command, Errors errors, int page)
+			throws Exception {
+		
+		//각 페이지에서 submit한 경우 
+		MemCommand mem = (MemCommand)command;
+		
+		//mem1,2,3 어떤 페이지에서 왔는지 알아야함
+		if(page==0) {
+			
+			if(mem.getSsn().equals("123")) { //mem.getSsn()는 사용자가 입력한 주민번호
+				
+				String str = mem.getName() + "님 이미 가입 되어있습니다.";
+				
+				//이미 가입되어있으면 men1.jsp에서 멈춰야한다. -> 다음페이지로 못넘어감
+				errors.rejectValue("message", str); //에러 코드를 저장
+				
+				//에러 코드를 담아서 setMessage에 str을 담는다.
+				mem.setMessage(str); //mem에 다시 넣는다
+			}
+			
+		}else if(page==1) {
+			
+		}
+		
+		
+	}
+
+	@Override
+	protected ModelAndView processCancel(HttpServletRequest request, 
+			HttpServletResponse response, Object command,
+			BindException errors) throws Exception {
+		
+		//회원가입을 취소한 경우
+		
+		return new ModelAndView("test2/mem_cancel", errors.getModel()); //넘어갈때 errors의 getModel()를 가져간다.
+	}
+
+	@Override
+	protected ModelAndView processFinish(HttpServletRequest request, 
+			HttpServletResponse response, Object command,
+			BindException errors) throws Exception {
+		
+		// 데이터 입력이 정상적일 떄
+		
+		
+		//회원가입 처리 - (DB가 있으면 DB에 insert한다)
+		
+		return new ModelAndView("test2/mem_ok");
+	}
+
+	@Override
+	protected Map<String, List<String>> referenceData(HttpServletRequest request, 
+			Object command, Errors errors, int page) throws Exception {
+		
+		
+		
+		
+		return super.referenceData(request, command, errors, page);
+	}
+	
+	
+	
+	
+}

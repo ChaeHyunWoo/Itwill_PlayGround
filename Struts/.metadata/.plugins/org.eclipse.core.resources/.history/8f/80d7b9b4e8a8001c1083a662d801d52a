@@ -1,0 +1,36 @@
+package com.test;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.validation.BindException;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.AbstractCommandController;
+
+//애는 데이터를 처리해주는 컨트롤러 - 여기로 들어올때 DTO를 가져오는데 DTO를 담을 그릇이 필요한데 그게 ListFormController이다.
+//그리고 command으로 들어간다.
+public class ListController extends AbstractCommandController {
+	
+	
+	public public ListController() {
+		setCommandClass(ListCommand.class);
+		setCommandName("listCommand");
+		//ListCommand listCommand = new listCommand(); 와 같은 의미
+	}
+	
+	
+
+	@Override
+	protected ModelAndView handle(HttpServletRequest request, 
+			HttpServletResponse response, Object command,  //들어온데이터가 command로 들어간다.
+			BindException errors)throws Exception {
+		
+		ListCommand vo = (ListCommand)command;
+		
+		String message = "이름: " + vo.getUserName();
+		message += ", 아이디: " + vo.getUserId();
+		
+		return null;
+	}
+
+}

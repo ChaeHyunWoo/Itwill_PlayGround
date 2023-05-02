@@ -1,0 +1,5 @@
+package com.test;
+//이게 DTO역할
+public class ListCommand {
+
+}

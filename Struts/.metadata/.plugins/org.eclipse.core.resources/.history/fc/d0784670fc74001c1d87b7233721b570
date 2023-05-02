@@ -1,0 +1,39 @@
+package com.day18;
+
+import java.awt.Frame;
+import java.awt.TextArea;
+import java.awt.TextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class ServerTest extends Frame implements ActionListener, Runnable {
+
+	private static final long serialVersionUID = 1L;
+	
+	private TextArea ta = new TextArea();
+	private TextField tf = new TextField();
+	private ServerSocket ss = null; //소켓들은 클래스이고  클래스의 초기값은 null이다.
+	private Socket sc = null;
+
+	
+	
+	
+	public static void main(String[] args) {
+		
+		new ServerTest();
+	}
+
+	
+	@Override
+	public void run() {
+		//데이터를 받을 때
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		//데이터를 보낼 때
+	}
+
+}

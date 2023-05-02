@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<SAVED_DATA>
+	<bookmarks>
+		<jdbcDriver className="org.apache.derby.jdbc.EmbeddedDriver" name="org.apache.derby.jdbc.EmbeddedDriver" type="DERBY" version="">
+			<jar fileName="C:/java/eclipse/file::/C::/java/eclipse/plugins/com.quantum.derby_3.3.10.jar!/lib/derby.jar" />
+		</jdbcDriver>
+		<jdbcDriver className="oracle.jdbc.OracleDriver" name="Oracle JDBC driver" type="ORACLE" version="11.2.0.2.0">
+			<jar fileName="C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib\ojdbc6.jar" />
+		</jdbcDriver>
+		<bookmark>
+			<name>(Internal) Derby</name>
+			<username>QUANTUM</username>
+			<password />
+			<prompt>false</prompt>
+			<connect>jdbc:derby:C:/java/eclipse/file::/C::/java/eclipse/plugins/com.quantum.derby_3.3.10.jar!/data/quantum</connect>
+			<autoCommit>true</autoCommit>
+			<autoCommitPreference>Always True</autoCommitPreference>
+			<autoCommitIgnoreView>false</autoCommitIgnoreView>
+			<quoteAll>false</quoteAll>
+			<sendQueryAsIs>false</sendQueryAsIs>
+			<stripNewline>false</stripNewline>
+			<shutdownOnDisconnect>true</shutdownOnDisconnect>
+			<defaultEncoding />
+			<driver>org.apache.derby.jdbc.EmbeddedDriver</driver>
+			<type>DERBY</type>
+			<substituteVariables>false</substituteVariables>
+			<variablesRegexp>\$\{(.*?)\}</variablesRegexp>
+			<driverLocation>C:/java/eclipse/file::/C::/java/eclipse/plugins/com.quantum.derby_3.3.10.jar!/lib/derby.jar</driverLocation>
+			<Other_Schemas schemaRule="useAll" />
+			<quickList />
+			<queryList />
+		</bookmark>
+		<bookmark>
+			<name>XE</name>
+			<username>suzi</username>
+			<password>a123</password>
+			<prompt>false</prompt>
+			<connect>jdbc:oracle:thin:@localhost:1521:xe</connect>
+			<autoCommit>true</autoCommit>
+			<autoCommitPreference>Always True</autoCommitPreference>
+			<autoCommitIgnoreView>false</autoCommitIgnoreView>
+			<quoteAll>false</quoteAll>
+			<sendQueryAsIs>false</sendQueryAsIs>
+			<stripNewline>false</stripNewline>
+			<shutdownOnDisconnect>false</shutdownOnDisconnect>
+			<defaultEncoding />
+			<driver>oracle.jdbc.OracleDriver</driver>
+			<type>ORACLE</type>
+			<substituteVariables>false</substituteVariables>
+			<variablesRegexp>\$\{(.*?)\}</variablesRegexp>
+			<driverLocation>C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib\ojdbc6.jar</driverLocation>
+			<Other_Schemas schemaRule="useAll" />
+			<quickList />
+			<queryList>
+				<query>
+					<queryString>select * from score</queryString>
+				</query>
+				<query>
+					<queryString>select * from naver</queryString>
+				</query>
+			</queryList>
+		</bookmark>
+	</bookmarks>
+</SAVED_DATA>

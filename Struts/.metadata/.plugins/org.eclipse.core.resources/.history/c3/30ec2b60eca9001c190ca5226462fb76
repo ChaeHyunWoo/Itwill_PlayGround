@@ -1,0 +1,10 @@
+package com.test1;
+
+public interface Authenticator {
+	
+	//예외처리를 UserException한테 맡긴다.
+	public void authen(String userId,String userPwd) 
+		throws UserException;
+		
+	
+}

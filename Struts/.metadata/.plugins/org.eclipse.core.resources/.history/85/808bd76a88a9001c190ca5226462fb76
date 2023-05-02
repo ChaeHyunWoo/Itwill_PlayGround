@@ -1,0 +1,13 @@
+package com.test2;
+//Command는 스프링의 DTO
+public class MemCommand {
+	
+	private String name;
+	private String ssn;
+	private String type;
+	private String id;
+	private String pwd;
+	private String tel;
+	private String message;
+
+}

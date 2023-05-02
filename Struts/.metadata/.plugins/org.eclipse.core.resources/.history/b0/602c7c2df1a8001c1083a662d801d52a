@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+<!-- p: personall 객체를 생성할 때 씀 오라클DB에 연결 할 때 -->
+
+
+<!-- 1.기본 생성자로 의존성 주입  -->
+<!-- <bean id="testImpl1" class="com.di.test.TestImpl1"/> -->
+<bean id="testImpl2" class="com.di.test.TestImpl2"/>
+<!-- 이렇게 객체 생성한 것을 (구현한 클래스를) TESt라는 인터페이스에 넣어 TEstService에 -->
+<!-- 이렇게 만든 객체를 생성자로 넘겨서 Test test;로 넘겨줌 -->
+
+<!-- 2.오버로딩 생성자로 의존성 주입 -->
+<bean id="testImpl1" class="com.di.test.TestImpl1"><!-- 오버로딩된 생성자로 객체생성하는 법 -->
+	<constructor-arg>
+		<value type="int">50</value>
+	</constructor-arg>
+	<constructor-arg>
+		<value type="int">70</value>
+	</constructor-arg>
+</bean>
+
+<!-- <bean id="testImpl2" class="com.di.test.TestImpl2">
+	<constructor-arg value="유인나"/>  String은 바로 value에 써주면됨
+	<constructor-arg>
+		<value type="int">40</value>
+	</constructor-arg>
+</bean> -->
+
+<!-- 3.프로퍼티(메소드)로 의존성 주입 / 메서드로 초기화 하는것.이걸 주로 많이씀 -->
+<!-- <bean id="testService" class="com.di.test.TestService">
+	<property name="test">
+		<ref bean="testImpl2"/> 
+	</property>
+</bean> -->
+
+<!-- name = setTest()의 set뒤에 붙은 이름을 소문자로 쓴 것 -->
+<!-- 3번 쓰려면 1번의 testImlp2 살려야됨 -->
+
+
+<!-- 4. XML 네임스페이스로 의존성 주입 --><!-- 이건 DB연결할때 많이 씀 -->
+<bean id="testService" class="com.di.test.TestService" p:test-ref="testImpl2"/>
+
+
+
+
+<!-- 1,2번 것. 고정 -->
+<!-- <bean id="testService" class="com.di.test.TestService">//애도 객체생성되야 새성자 사용가능
+	<constructor-arg>//생성자
+		<ref bean="testImpl2"/>  //매개변수로,참조 + impl1할지 2할지만 바로바로수정해주면된다. 생성자에 ref넘김
+	</constructor-arg>
+</bean>	 -->
+<!-- com.di.test.TestImpl1 객체 생성이 되었고 
+테스트 서비스의 7번줄 Test test로 new TestImpl() 객체가 넘어가게 됨 --> 
+<!-- xml 파일은 text로 읽기 때문에 객체로 변경해서 가져와야 함 (like 돔객체)
+ResultMain에서 객체화 진행 -->
+
+<!-- 모든 데이터를 건들 필요 없이 1 > 2로 바꾸기만 하면 불러올 result()의 원하는 값을 가져올 수 있게 된다  -->
+
+
+
+</beans>  

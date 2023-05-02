@@ -1,0 +1,29 @@
+package com.day18;
+
+import java.awt.Frame;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class ServerTest extends Frame implements ActionListener, Runnable {
+
+	private static final long serialVersionUID = 1L;
+
+	
+	
+	
+	public static void main(String[] args) {
+		
+		new ServerTest();
+	}
+
+	@Override
+	public void run() {
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		
+	}
+
+}

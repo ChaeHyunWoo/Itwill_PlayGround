@@ -1,0 +1,157 @@
+package com.ibbs;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.ServletActionContext;
+
+import com.iguest.GuestDTO;
+import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
+import com.opensymphony.xwork2.Preparable;
+import com.util.MyUtil;
+import com.util.dao.CommonDAO;
+import com.util.dao.CommonDAOImpl;
+
+//방명록
+public class CommentAction extends ActionSupport
+	implements Preparable,ModelDriven<CommentDTO> {
+	
+private static final long serialVersionUID = 1L;
+	
+	private CommentDTO dto;
+	
+	
+	//데이터는 ajax가 넘기기때문에 이건 필요없당
+	/*public GuestDTO getDto() {
+		return dto;
+	}*/
+
+	
+	@Override
+	public CommentDTO getModel() {
+		return dto;
+	}
+
+	@Override
+	public void prepare() throws Exception {
+		dto = new CommentDTO();
+	}
+	
+	//방명록 작성(created)
+	public String created() throws Exception {
+		
+		
+		HttpServletRequest request = ServletActionContext.getRequest();
+		
+		//DB연결자
+		CommonDAO dao = CommonDAOImpl.getInstance();
+		
+		int numMax = dao.getIntValue("iguest.numMax");
+		
+		dto.setNum(numMax + 1);
+		dto.setIpAddr(request.getRemoteAddr());
+		
+		dao.insertData("ibbs.insertData_c", dto);
+		
+		return list(); //반환값은 직접찾아가고자하는 list() 메서드를 써주면 된다.
+		
+	}
+	
+	//방명록 리스트
+	public String list() throws Exception {
+		
+		HttpServletRequest request = ServletActionContext.getRequest();//request를 가져온것
+		
+		// DB연결자
+		CommonDAO dao = CommonDAOImpl.getInstance();
+		
+		MyUtil myUtil = new MyUtil();
+		
+		//페이징 처리
+		int numPerPage = 3;//하나의 페이지에 표시할 데이터 갯수
+		int totalPage = 0;
+		int totalDataCount = 0;
+		
+		String pageNum = request.getParameter("pageNum");
+		
+		int currentPage = 1; //currentPage는 1페이지를 뿌린다.
+		
+		if(pageNum!=null && !pageNum.equals("")) {
+			currentPage = Integer.parseInt(pageNum);
+		}
+		
+		totalDataCount = dao.getIntValue("ibbs.dataCount_c");//ModelDriven이 움직여준다.
+		
+		if(totalDataCount!=0) {
+			totalPage = myUtil.getPageCount(numPerPage, totalDataCount);
+		}
+		
+		if(currentPage>totalPage) { //삭제했을때 마지막페이지를 현재 페이지로 맞춰줌
+			currentPage = totalPage;
+		}
+		
+		Map<String, Object> hMap = new HashMap<String, Object>();
+		
+		//start와 end는 게시물의 시작과 끝을 뜻함
+		int start = (currentPage-1)*numPerPage+1;
+		int end = currentPage*numPerPage;
+		
+		hMap.put("start", start);//hMap에 start와 end를 넣은것
+		hMap.put("end", end);
+		
+		//iguest의 listsData를 실행시키는데 hMap을 넘겨준다.
+		List<Object> lists = dao.getListData("iguest.listData", hMap);
+		
+		
+		//일련번호 정렬
+		int listNum,n = 0;
+		
+		Iterator<Object> it = lists.iterator();
+		while(it.hasNext()) {
+			
+			GuestDTO vo = (GuestDTO)it.next();
+			
+			listNum = totalDataCount-(start+n-1);
+			
+			vo.setListNum(listNum);
+			
+			vo.setContent(vo.getContent().replaceAll("\n", "<br/>"));
+			
+			n++;
+		}
+		
+		//JS로 만든 페이징 처리 호출
+		String pageIndexList = myUtil.pageIndexList(currentPage, totalPage);
+		
+		request.setAttribute("lists", lists);
+		request.setAttribute("pageIndexList", pageIndexList);
+		request.setAttribute("totalDataCount", totalDataCount);
+		request.setAttribute("pageNum", currentPage);
+		
+		return SUCCESS; // select는 리다이렉트가 필요없기때문에 SUCCESS값만 반환하면 된다.
+						// insert/delete는 리다이렉트가 필요
+	}
+	
+	
+	public String deleted() throws Exception {
+		
+		HttpServletRequest request = ServletActionContext.getRequest();
+		
+		CommonDAO dao = CommonDAOImpl.getInstance();
+		
+		int num = Integer.parseInt(request.getParameter("num"));
+		
+		dao.deleteData("iguest.deleteData", num);
+		
+		return list();//반환값은 직접찾아가고자하는 list() 메서드를 써주면 된다.
+		
+	}
+	
+	
+
+}

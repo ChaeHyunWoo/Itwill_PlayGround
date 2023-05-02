@@ -1,0 +1,9 @@
+127.0.0.1 - - [09/Mar/2022:02:07:31 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [09/Mar/2022:02:07:37 +0900] "POST /struts/boardTest.do?method=list HTTP/1.1" 200 3592
+0:0:0:0:0:0:0:1 - - [09/Mar/2022:02:07:38 +0900] "GET /struts/boardTest/css/list.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [09/Mar/2022:02:07:38 +0900] "GET /struts/boardTest/css/style.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [09/Mar/2022:02:08:28 +0900] "GET /struts/board.do?method=list HTTP/1.1" 200 3631
+0:0:0:0:0:0:0:1 - - [09/Mar/2022:02:08:28 +0900] "GET /struts/board/css/list.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [09/Mar/2022:02:08:28 +0900] "GET /struts/board/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [09/Mar/2022:18:10:28 +0900] "GET / HTTP/1.1" 404 807
+127.0.0.1 - - [09/Mar/2022:20:14:09 +0900] "GET / HTTP/1.1" 404 807

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+    
+<!-- 뷰와 관련된 애를 읽어냄 -->
+<!-- 뷰 - jsp 보여주는곳을 관리   TestController 에 찾아오는 방법은 dispatcher-servlet.xml 에적는다
+전에 	/board/creadted.jsp 로 가라   뒤 / 가 prefix , 뒤부분 .jsp 가 suffix 이다.-->
+<!--  prefix 접두사 앞에오는 단어 , suffix 뒤에오는 접미사  -->
+
+
+<!--  bean : 스프링에서의 객체 생성이다. -->
+<bean id="viewResolver"
+class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<property name="prefix" value="/"/>   
+	<property name="suffix" value=".jsp"/>   <!-- .접미사 .jsp 니까 write가 오면 /write.jsp (준비)-->
+</bean>
+
+
+<!--  BeanNameUrlHandlerMapping : 요청 URI와 동일한 이름을 가진 Controller 빈을 매핑한다  -->
+<!--  /test/msg/action 주소가 오면 com.test.TestController 로 가라  -->
+<!-- http://localhost:8080/spring/test/msg.action   test/msg.action은 내맘대로 준다 (사용자 정의)   -->
+<bean id="beanNameUrlMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+<bean name="/test/msg.action" class="com.test.TestController"/> 
+
+
+<!-- 핸들러매핑 : dispatcherServlet으로 받은 요청을 Controller로 보내지는데 그런 요청이 어떤룰으로 컨트롤러에게 매핑되는지 그방법을 정해주는 클래스가 바로 핸들러 -->
+<!-- SimpleUrlHandlerMapping : url과 컨트롤러의 매핑할 정보를 프로퍼티로 한곳에 모아놓고 설정하는 방식 -->
+
+<bean id="simpleUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	
+	<property name="order" value="1"/> <!-- Spring은 어노테이션으로 쓸수있는데  수동적인 주소 어떤걸 우선할것인가 , value = 1  얘를 먼저 실행해라 -->
+	<property name="alwaysUseFullPath" value="true"/> <!--  스트럿츠에서 struts 에서 study/create.do를 쓰고
+														스트럿츠2에서 study/bbs/cerared.action 으로 쓰고
+														                guest/list.action 
+														            value = true를 쓰면 위처럼 중간에 bbs guest 처럼 주소를 쓸수있다. -->	
+	<property name="mappings">
+		<props>
+			<prop key = "/test/write.action">listFormController</prop> <!--  write.action이 오면 밑에 name = listformcontroller 로 가라 -->
+			<prop key = "/test/write_ok.action">listController</prop> <!--  write_ok.action이 오면 밑에 name =  listController 로 가라 -->
+			
+			
+			<prop key = "/test1/login.action">loginController</prop> <!-- login.action 으로 이동하면 bean name=loginController 찾는다.  -->
+		</props>
+	</property>
+</bean>
+
+<!-- 빈으로 authenticator 객체 생성을 해야만 의존성 주입으로 넣어준다. -->
+<!-- property name:setter에 ref:bean으로 객체 생성한걸 넣어주면서 의존성 주입 -->
+<bean name="authenticator" class="com.test1.LoginAuthenticatorImpl"/>  
+<bean name="loginController" class="com.test1.LoginController"> <!-- LoginController 에 setAuthenticator(Authenticator authenticator) 에 의존성주입을 한다. -->
+	<property name="authenticator" ref="authenticator"></property> <!--(의존성주입) authenticator 객체를 생성해서 LoginController authenticator를 setter로 저장한다. -->
+	<property name="commandClass" value="com.test1.LoginCommand"/> <!-- LoginCommand(dto)를 사용하려면 객체생성을 해줘야함 -->
+	<property name="commandName" value="loginCommand"></property> <!-- LoginCommand 클래스를 loginCommand객체를 생성한다.  -->
+	<property name="formView" value="test1/login"/><!-- 처음실행시 login.jsp띄우고 에러발생시 login.jsp가 떠야한다. -->
+	
+</bean>
+	
+
+
+
+<!-- 객체생성 2개 -->
+<bean name="listFormController" class="com.test.ListFormController"/>
+<bean name="listController" class="com.test.ListController"/>
+</beans>  

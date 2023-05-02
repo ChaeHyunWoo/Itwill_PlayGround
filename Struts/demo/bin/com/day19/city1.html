@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>XML파싱</title>      
+
+<script type="text/javascript">
+
+	//전역변수 //Text를 짝을 이뤄 Object로 만드는 작업 DOM이라고 한다.
+	var xmlDoc = new ActiveXObject("Msxml2.DOMDocument");
+	xmlDoc.load("city.xml") //city.xml 파일이 xmlDoc에 읽혀져 들어온다
+
+	//함수(메소드)
+	function printNodeName(){
+		
+		//alert("Hello World");
+		
+		var city = xmlDoc.getElementsByTagName("도시")[0];
+		var cityName = city.firstChild.nodeName; //city에서 첫번째 자식의.이름을 가져와라
+		alert("첫번째 도시: " + cityName);
+		
+		cityName = city.lastChild.nodeName;
+		alert("마지막 도시: " + cityName);
+		
+		var cityNames = "";
+		for(var i=0;i<city.childNodes.length;i++){ //자식의 갯수만큼
+			cityNames = cityNames + "\n" + city.childNodes[i].nodeName;
+		}
+		alert("전체도시: " + cityNames);
+	}
+	
+	function printNodeValue(){
+		
+		var incheon = xmlDoc.getElementsByTagName("인천")[0];
+		var items = incheon.getElementsByTagName("구");
+		
+		var out = "";
+		
+		for(var i=0; i<items.length;i++){
+			out += "\n" + items[i].childNodes[0].nodeValue;
+			
+		}
+		
+		alert(out);
+	}
+	
+	
+</script>
+
+
+</head> 	
+<body>
+
+<h1>XML 파싱...</h1>
+
+<input type="button" value="노드이름출력" onclick="printNodeName();"/><br/>
+<input type="button" value="노드값출력" onclick="printNodeValue();"/><br/>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

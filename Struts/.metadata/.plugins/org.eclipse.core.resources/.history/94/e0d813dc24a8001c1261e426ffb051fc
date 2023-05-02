@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts 
+PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!--  Controller 역할  -->
+<!-- ajax를 써서 리다이렉트가 필요 x -->
+
+<struts>
+
+<package name="ibbs" extends="default" namespace="/ibbs">
+
+	<action name="article">
+		<result>/ibbs/article.jsp</result>
+	</action>
+	
+	<action name="created_b" class="com.ibbs.BoardAction" method="created_b">
+		<result>/ibbs/list.jsp</result>
+	</action>
+	
+	<action name="created_c" class="com.ibbs.CommentAction" method="created_c">
+		<result>/ibbs/list.jsp</result>
+	</action>
+	
+	<action name="article">
+		<result>/ibbs/article.jsp</result>
+	</action>
+	
+	<action name="article">
+		<result>/ibbs/article.jsp</result>
+	</action>
+
+	
+	
+</package>
+
+</struts>

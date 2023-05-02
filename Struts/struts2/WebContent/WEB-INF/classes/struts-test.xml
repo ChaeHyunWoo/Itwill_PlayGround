@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts 
+PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+<!-- struts.xml의 default랑 맞춰줘야한다. -->
+<!-- package name는 사용자 정의 -->
+<package name="test" extends="default" namespace="/itwill">
+	
+	<action name="write">
+		<result>/test/write.jsp</result>
+	</action>
+	
+	<action name="write_ok" class="com.test.TestAction">
+		<result name="success">/test/view.jsp</result>
+	</action>
+	
+	<action name="created">
+		<result>/test1/created.jsp</result>
+	</action>
+	
+	<action name="created_ok" class="com.test1.TestAction">
+		<result name="ok">/test1/result.jsp</result>
+	</action>
+
+</package>
+
+
+<package name="test2" extends="default" namespace="/modelDri">
+
+	<action name="write" class="com.test2.TestAction" method="created">
+		<result name="input">/test2/write.jsp</result>
+		<result name="success">/test2/view.jsp</result>
+	</action>
+
+</package>
+
+</struts>

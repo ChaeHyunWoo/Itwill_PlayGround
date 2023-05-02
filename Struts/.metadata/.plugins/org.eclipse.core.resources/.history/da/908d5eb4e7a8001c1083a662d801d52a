@@ -1,0 +1,10 @@
+package com.test;
+
+import org.springframework.web.servlet.mvc.Controller;
+
+//가장 기본적인 spring 컨트롤러이다.
+public class ListFormController implements Controller {//Controller
+	
+	
+
+}

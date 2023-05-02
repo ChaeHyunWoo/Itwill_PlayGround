@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+PUBLIC "-/ibatis.apache.org//DTO SQL Map 2.0//EN"
+"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ibbs">
+
+<!-- 방명록 부분 -->
+<!-- numMax : 게시물 번호 -->
+<select id="numMax" resultClass="int">
+	select nvl(max(num),0) from iguest
+</select>
+<!-- insertData : 방명록 추가 -->
+<insert id="insertData" parameterClass="com.iguest.GuestDTO">
+	insert into iguest (num,name,email,content,ipAddr,created)
+	values (#num#,#name#,#email#,#content#,#ipAddr#,sysdate)
+</insert>
+<!-- dataCount : 게시물 갯수 -->
+<select id="dataCount" resultClass="int">
+	select nvl(count(*),0) from iguest
+</select>
+<!-- listData : 게시물 리스트 출력 -->
+<select id="listData" resultClass="com.iguest.GuestDTO" parameterClass="map" >
+	select * from (
+	select rownum rnum, data.* from (
+	select num,name,email,content,ipAddr,created
+	from iguest order by num desc) data)
+<![CDATA[
+	where rnum>=#start# and rnum<=#end#
+]]>
+</select>
+<!-- deleteData : 게시물 삭제 -->
+<delete id="deleteData" parameterClass="int">
+	delete iguest where num=#num#
+</delete>
+
+</sqlMap>

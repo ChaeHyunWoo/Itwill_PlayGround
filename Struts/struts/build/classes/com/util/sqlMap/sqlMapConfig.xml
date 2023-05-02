@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig
+PUBLIC "-/ibatis.apache.org//DTO SQL Map Config 2.0//EN"
+"http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+
+<!-- cacheModelsEnabled="false" -> 캐쉬를 사용하지 말라는 뜻 -->
+<!-- useStatementNamespaces -> sqlMap.xml에서 namespace 사용가능하게 해줌 -->
+<!-- <dataSource type="SIMPLE"> -> 단일 DB사용 -->
+<!-- property : 등록 -->
+<!-- sqlMap resource :  com/util/sqlMap/boardTest_sqlMap.xml 를 불러옴-->
+<sqlMapConfig>
+
+	<settings
+	cacheModelsEnabled="false"	
+	useStatementNamespaces="true"/> 
+	
+	<transactionManager type="JDBC" commitRequired="false">
+		<dataSource type="SIMPLE">
+			<property name="JDBC.Driver" value="oracle.jdbc.driver.OracleDriver"/>
+			<property name="JDBC.ConnectionURL" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+			<property name="JDBC.Username" value="suzi"/>
+			<property name="JDBC.Password" value="a123"/>
+		</dataSource>
+	</transactionManager>
+	
+	<sqlMap resource="com/util/sqlMap/boardTest_sqlMap.xml"/>
+	
+
+
+
+
+
+
+
+
+
+
+</sqlMapConfig>

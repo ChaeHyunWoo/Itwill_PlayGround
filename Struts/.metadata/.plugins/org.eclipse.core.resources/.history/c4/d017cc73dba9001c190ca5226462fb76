@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+
+<!-- 
+실행할때 xml파일인데.. 텍스트이다.
+텍스트는 읽어낼수없으므로 객체로 바꿔야 한다. 객체로 만들어서 메모리상에 올려야지 호출할수있다.
+객체를 만들려면 콘솔의 시작점은 main절 
+ResultMain 에서 객체화 시킨다
+
+-->
+
+<!-- applicationContext.xml :  코어에 있는 내용을 불러들어와서 객체를 생성해 준다.   -->
+<!-- applicationContext.xml에서 만듬 읽어들어서 객체화 하는 방법이 필요  -->
+
+<!-- p : personall 객체를 생성할때 씀 오라클db에 연결할때 --> 	
+
+
+
+<!-- 1.기본생성자로 의존성 방법 -->	
+<!-- <bean id="testImpl1" class="com.di.test.TestImpl1"/>	 -->
+
+
+<!-- 2. 오버로딩된 생성자로 의존성 주입 -->
+<!-- 오버로딩된 생성자로 객체 생성 하면서 인수값2개들어감 -->
+<!-- String은 value  -->
+<!-- int는 teyp -->
+
+
+<!-- bean 객체생성  -->
+<bean id="testImpl1" class="com.di.test.TestImpl1"> <!--  class="com.di.test.TestImpl1" 얘로 만들것  -->
+	<constructor-arg>
+		<value type="int">50</value>	
+	</constructor-arg>	
+	<constructor-arg>
+		<value type="int">70</value>
+	</constructor-arg>
+</bean> 
+
+<!--  테스트를 구현한 클래스를 TestService(Test test)로 들어와 
+Test test 인터페이스한테 줄것이다.
+ -->
+ 
+<!-- <bean id="testImpl2" class="com.di.test.TestImpl2">
+	<constructor-arg value="유인나"></constructor-arg>
+	<constructor-arg>
+		<value type="int">40</value>
+	</constructor-arg>
+</bean> -->
+
+<!-- <bean id="testImpl2" class="com.di.test.TestImpl2"/> -->
+<!-- constructor-arg 생성자에다가  ref 참조해라 객체이름은  testImpl1
+ TestService(Test test) 에 오는것이 new 해서 TestImpl1 이 넘어오게 된다. Test test; 에는  = new TestImpl1 과같은 효과가 나오게 된다. -->
+
+<!--<bean id="testService" class="com.di.test.TestService">
+	<constructor-arg>
+		<ref bean="testImpl2"/>   
+	</constructor-arg>
+</bean>	  -->
+
+<!-- 3. 프로퍼티(메소드)로 의존성 주입 -->
+<!-- 메소드를가지고 의존성주입을 하려면 TestService에 기본생성자도 만들어줘야함  -->
+<!-- 
+
+<bean id="testService" class="com.di.test.TestService">
+<property name="test"> 메소드의 이름  , public void setTest에 뒤에 Test를 test로 적어줌
+		<ref bean="testImpl1"/> 
+	</property>
+</bean>
+ -->
+ 
+<!-- 4. xml 네임스페이스로 의존성주입 (DB연결할때 씀) -->
+<bean id="testService" class="com.di.test.TestService" 
+p:test-ref="testImpl2"/> <!-- ref 를 가지고  -->
+
+<!-- 5. 어노테이션을 가지고 의존성 주입(나중에할것임) ,어노테이션은 Spring 2.5는 jdk8이 지원하지않음 그래서 우리는 7.0을깔음  -->
+</beans>  
