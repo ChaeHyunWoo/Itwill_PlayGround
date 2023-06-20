@@ -1,9 +1,0 @@
-.Modal { }
-.Modal .bg { position: fixed; width: 100%; height: 100%; left: 0; top: 0; background-color: #000; opacity: 0.85;}
-.Modal .popup { position: fixed; width: 600px; height: 600px; left: 50%; top: 50%; background-color: #fff; transform: translate(-50%, -50%); padding: 20px;}
-.Modal .popup h2 { font-size: 25px; }
-.Modal .popup div { width: 100%; height: 450px; overflow: hidden;}
-.Modal .popup iframe { width: 100%; height: 450px;}
-.Modal .popup p { font-size: 25px; margin-top: 10px;}
-.Modal .popup span {position: absolute; right: 20px; top: 20px; }
-.Modal .popup span i {font-size: 35px;}
